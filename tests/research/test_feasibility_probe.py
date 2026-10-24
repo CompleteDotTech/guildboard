@@ -89,6 +89,26 @@ class ProbeTests(unittest.TestCase):
         finally:
             probe.MAX_UNPACKED = original
 
+    def test_pax_metadata_cannot_bypass_expanded_byte_limit(self):
+        data, expected = self.fixture()
+        # PAX records are consumed inside tarfile before yielding a member. They
+        # must count even when the sum of visible file sizes is below the limit.
+        expanded = io.BytesIO()
+        with tarfile.open(fileobj=io.BytesIO(data), mode="r:gz") as source:
+            with tarfile.open(fileobj=expanded, mode="w:gz", format=tarfile.PAX_FORMAT) as target:
+                for member in source:
+                    member.pax_headers = {"comment": "x" * 8192}
+                    target.addfile(member, source.extractfile(member))
+        attack = expanded.getvalue()
+        expected["integrity"] = "sha512-" + base64.b64encode(hashlib.sha512(attack).digest()).decode()
+        original = probe.MAX_UNPACKED
+        try:
+            probe.MAX_UNPACKED = 16384
+            with self.assertRaisesRegex(ValueError, "expanded byte limit"):
+                probe.inspect_archive(attack, expected)
+        finally:
+            probe.MAX_UNPACKED = original
+
 
 if __name__ == "__main__":
     unittest.main()

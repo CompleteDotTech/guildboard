@@ -6,6 +6,7 @@ This is static research evidence, not an editor, Discord, or VPS integration tes
 import argparse
 import base64
 from datetime import datetime, timezone
+import gzip
 import hashlib
 import io
 import json
@@ -43,9 +44,16 @@ def inspect_archive(data, spec):
     wanted = {"package/package.json", *[c["path"] for c in spec["checks"]]}
     if spec["archive_license"]:
         wanted.add(spec["archive_license"])
+    # Bound actual expanded bytes, including PAX/GNU metadata that tarfile may
+    # consume internally before yielding any member to our loop.
+    with gzip.GzipFile(fileobj=io.BytesIO(data)) as expanded:
+        try:
+            raw_tar = read_bounded(expanded, MAX_UNPACKED)
+        except ValueError as error:
+            raise ValueError("archive exceeds expanded byte limit") from error
     selected, seen, total = {}, set(), 0
-    # Stream members; never extract paths or follow archive links to the filesystem.
-    with tarfile.open(fileobj=io.BytesIO(data), mode="r|gz") as archive:
+    # Never extract paths or follow archive links to the filesystem.
+    with tarfile.open(fileobj=io.BytesIO(raw_tar), mode="r|") as archive:
         for index, member in enumerate(archive):
             total += member.size
             if index >= 10000 or total > MAX_UNPACKED:

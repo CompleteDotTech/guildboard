@@ -77,7 +77,7 @@ python3 scripts/research/probe_feasibility.py --cache /tmp/guildboard-feasibilit
 python3 scripts/research/probe_feasibility.py --cache /tmp/guildboard-feasibility --offline
 ```
 
-The first probe fetches pinned public tarballs/licenses with bounded reads; subsequent offline runs use the cache and check the same bytes. No install scripts execute. Tests reject corrupt bytes, identity substitution, missing/changed declarations, duplicate members and symlinked selected files. Exit zero means these static checks passed; it is not a software adoption or runtime acceptance result. Compare `pins_sha256` before using old output after a pin change.
+The first probe fetches pinned public tarballs/licenses with bounded reads; subsequent offline runs use the cache and check the same bytes. Expanded tar bytes are bounded before parsing, including PAX metadata hidden from member iteration. No install scripts execute. Tests reject corrupt bytes, identity substitution, missing/changed declarations, duplicate members, symlinked selected files and metadata expansion beyond the byte budget. Exit zero means these static checks passed; it is not a software adoption or runtime acceptance result. Compare `pins_sha256` before using old output after a pin change.
 
 The [platform source ledger](evidence/platform-sources-2026-10-24.json) records dated raw fetches and byte hashes where available, including HTTP failures. Sources with denied raw requests were successfully inspected through the web tool. Hashes detect drift; they are not immutable documentation revisions or archived page contents. Source links are primary publisher pages. Refresh them before implementation and record any changed constraints.
 
