@@ -1290,7 +1290,8 @@
       "acceptance_criteria": [
         "Provide environment schema with PORT integer 1–65535, NODE_ENV development/test/production, DATABASE_URL mysql scheme, DISCORD_CLIENT_ID decimal string and SESSION_SECRET minimum 32 characters.",
         "Report missing names without secret values.",
-        "Test valid, missing and malformed input."
+        "Test valid, missing and malformed input.",
+        "The documented parseConfig contract passes every listed boundary and secret-redaction scenario."
       ],
       "expected_tests": [
         "Positive acceptance: Provide environment schema with PORT integer 1–65535, NODE_ENV development/test/production, DATABASE_URL mysql scheme, DISCORD_CLIENT_ID decimal string and SESSION_SECRET minimum 32 characters.",
@@ -1303,7 +1304,10 @@
       "requirements": [
         "Provide environment schema with PORT integer 1–65535, NODE_ENV development/test/production, DATABASE_URL mysql scheme, DISCORD_CLIENT_ID decimal string and SESSION_SECRET minimum 32 characters",
         "report missing names without secret values",
-        "test valid, missing and malformed input"
+        "test valid, missing and malformed input",
+        "Implement the pure parseConfig API, exact types, workspace files, validation rules and table-driven tests in planning/configuration-contract.md",
+        "do not read global environment, log values or perform network IO in the parser",
+        "service startup integration is owned by later runtime entry-point issues"
       ],
       "assignees": [],
       "github": {
@@ -1312,7 +1316,7 @@
         "id": "I_kwDOVVah6M8AAAABZiLhEg"
       },
       "body_hash": "0fb5ea971f60aeefb7e97bd03a0b08a8086db3dad09fc6d101663f73456612b1",
-      "description": "Provide environment schema with PORT integer 1–65535, NODE_ENV development/test/production, DATABASE_URL mysql scheme, DISCORD_CLIENT_ID decimal string and SESSION_SECRET minimum 32 characters; report missing names without secret values; test valid, missing and malformed input"
+      "description": "Provide environment schema with PORT integer 1–65535, NODE_ENV development/test/production, DATABASE_URL mysql scheme, DISCORD_CLIENT_ID decimal string and SESSION_SECRET minimum 32 characters; report missing names without secret values; test valid, missing and malformed input; Implement the pure parseConfig API, exact types, workspace files, validation rules and table-driven tests in planning/configuration-contract.md; do not read global environment, log values or perform network IO in the parser; service startup integration is owned by later runtime entry-point issues"
     },
     {
       "id": "GB-T0.03.02.V1",
@@ -25895,7 +25899,7 @@
       "acceptance_criteria": [
         "Return structured CONFIG_INVALID with sorted missing or invalid variable names.",
         "Never include environment values, database credentials or session secrets.",
-        "Exit nonzero before service binds a listener.",
+        "Return failure for later startup to translate to nonzero exit; do not terminate the process inside the parser.",
         "Snapshot tests contain variable names only."
       ],
       "expected_tests": [
@@ -25909,11 +25913,11 @@
       "requirements": [
         "Return structured CONFIG_INVALID with sorted missing or invalid variable names",
         "never include environment values, database credentials or session secrets",
-        "exit nonzero before service binds a listener",
+        "return failure for later startup to translate to nonzero exit; do not terminate the process inside the parser",
         "snapshot tests contain variable names only"
       ],
       "assignees": [],
-      "description": "Return structured CONFIG_INVALID with sorted missing or invalid variable names; never include environment values, database credentials or session secrets; exit nonzero before service binds a listener; snapshot tests contain variable names only"
+      "description": "Return structured CONFIG_INVALID with sorted missing or invalid variable names; never include environment values, database credentials or session secrets; return failure for later startup to translate to nonzero exit; do not terminate the process inside the parser; snapshot tests contain variable names only"
     },
     {
       "id": "GB-T0.03.02.T1.S2",

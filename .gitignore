@@ -11,3 +11,4 @@ planning/audit/bootstrap-progress.log
 planning/audit/failures.jsonl
 planning/audit/*-progress.log
 planning/audit/local-validation-output.json
+planning/audit/*.log

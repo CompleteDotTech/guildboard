@@ -195,7 +195,7 @@ if args.phase in ['links','fields','all']:
 if args.phase in ['comments','all']:
  for x in ordered:
   if not x.get('github'):continue
-  if x['work_type']=='Epic' or x['id'].endswith('.D1'):
+  if x['work_type']=='Epic' or x['id'].endswith('.D1') or x['id']=='GB-T0.03.02.T1':
    content=body(x);r=api(f"repos/{repo}/issues/{x['github']['number']}");oldbody=r.get('body') or ''
    # Only update bootstrap-owned body when it has not been edited by a maintainer.
    if hashlib.sha256(oldbody.encode()).hexdigest()==x.get('body_hash') and content!=oldbody:
@@ -205,5 +205,6 @@ if args.phase in ['comments','all']:
   if any(marker in c.get('body','') for c in comments):continue
   deps=', '.join(link(d) for d in x['dependencies']) or 'none'
   text=marker+'\nNext action: review the prerequisite evidence from '+deps+'. Produce the exact schemas/invariants and consuming test fixtures listed above before implementation.\n\nIntegration strategy: separate server authority from client rendering; treat Discord guild/role context and GoDaddy networking as independently verified boundaries. Record rejected alternatives and unresolved platform assumptions in the ADR. Security review must cover stale permissions and cross-tenant requests; validation must identify mocked versus real-environment evidence.\n\nNo architecture approval, implementation result or maintainer agreement is implied by this triage comment.'
+  if x['id']=='GB-T0.03.02.T1':text=marker+'\nImplementation handoff: follow [the explicit configuration contract](https://github.com/'+repo+'/blob/main/planning/configuration-contract.md). Create packages/config with pure parseConfig, the exact success/failure union, strict boundary validation and secret-safe errors. Keep service startup/Discord/database integration out of this focused change. Run table-driven parser tests and prove sentinel secrets never appear in diagnostics; the sibling verification issue accepts the evidence separately.'
   c=api(f"repos/{repo}/issues/{x['github']['number']}/comments",'POST',{'body':text});x['comment_id']=c['id'];persist();time.sleep(1.2)
 print('Requested reconciliation phase complete',flush=True)

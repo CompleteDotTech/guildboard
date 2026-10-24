@@ -31,7 +31,7 @@ for t,w in enumerate(streams):
    add(fid+'.V1','Verify '+title,t,'Test',fid,requirements='Execute acceptance scenarios for '+title+'; '+req+'; retain raw results, tested revision/environment and defects; no pass claims from mocks alone for Discord or GoDaddy integration',deps=[impl['id']],release=rel,priority=pri,milestone=8 if post else None)
  add(root+'.D1','Document '+w['name']+' integration and handoff',t,'Documentation',root,requirements='Explain accepted contracts and operator/contributor steps for '+w['name']+'; link actual implementation and test evidence; distinguish planned behavior, supported behavior and unresolved limitations',deps=[root+'.S1'])
 # Small independent implementation boundaries with complete contracts.
-add('GB-T0.03.02.T1.S1','Implement secret-safe configuration diagnostics',0,'Subtask','GB-T0.03.02.T1',requirements='Return structured CONFIG_INVALID with sorted missing or invalid variable names; never include environment values, database credentials or session secrets; exit nonzero before service binds a listener; snapshot tests contain variable names only',ready='Ready',milestone=1)
+add('GB-T0.03.02.T1.S1','Implement secret-safe configuration diagnostics',0,'Subtask','GB-T0.03.02.T1',requirements='Return structured CONFIG_INVALID with sorted missing or invalid variable names; never include environment values, database credentials or session secrets; return failure for later startup to translate to nonzero exit; do not terminate the process inside the parser; snapshot tests contain variable names only',ready='Ready',milestone=1)
 add('GB-T0.03.02.T1.S2','Implement strict numeric and URL configuration parsers',0,'Subtask','GB-T0.03.02.T1',requirements='Accept PORT only as base-10 whole integer 1–65535; reject whitespace-only, fractional, exponential, negative and overflow values; accept DATABASE_URL only with mysql protocol and nonempty hostname/database; test all boundary values without logging credentials',ready='Ready',milestone=1)
 by={x['id']:x for x in items}
 def block(target,*sources):
@@ -70,6 +70,10 @@ for t in range(14):
     gate=next(x for x in items if x['id']==(f'GB-T{t}.G1' if t<13 else 'GB-T13.G3'))
     gate['dependencies'].append(doc['id'])
 for x in items:x['description']='; '.join(x['requirements'])
+config=next(x for x in items if x['id']=='GB-T0.03.02.T1')
+config['requirements'].append('Implement the exact parseConfig API, types, files and validation/evidence rules in planning/configuration-contract.md; no global environment reads, network IO or value logging inside the parser')
+config['acceptance_criteria'].append('The documented parseConfig contract passes every listed boundary and secret-redaction scenario.')
+config['description']='; '.join(config['requirements'])
 # No guessed issue URLs: rendering resolves only existing GitHub mappings.
 save(ROOT/'planning/guildboard-backlog.json',{'schema_version':1,'repository':state['repo'],'project':state['project'],'items':items})
 print('Compiled',len(items),'items')
