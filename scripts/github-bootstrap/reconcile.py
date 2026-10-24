@@ -26,16 +26,35 @@ persist()
 def link(id):
  x=by[id];return f"[{id}]({x['github']['url']})" if x.get('github') else f'`{id}` (not yet created; see manifest)'
 def body(x):
- f=x['fields'];typ=x['work_type'];scope='\n'.join('- '+v for v in x['requirements']);ac='\n'.join('- [ ] '+v for v in x['acceptance_criteria']);tests='\n'.join('- '+v for v in x['expected_tests']);deps='\n'.join('- Blocked by (native): '+link(d) for d in x['dependencies']) or '- No execution blockers recorded. Information inputs do not imply sequencing.'
+ f=x['fields'];typ=x['work_type'];scope='\n'.join('- '+v for v in x['requirements']);ac='\n'.join('- [ ] '+v for v in x['acceptance_criteria']);tests='\n'.join('- '+v for v in x['expected_tests']);deps='\n'.join('- Blocked by (native): '+link(d)+(' — '+x.get('dependency_rationale',{}).get(d,'') if d in x.get('dependency_rationale',{}) else '') for d in x['dependencies']) or '- No execution blockers recorded. Information inputs do not imply sequencing.'
  parent='- Parent: '+link(x['parent_id']) if x['parent_id'] else '- Top-level workstream; no parent.'
  children=[v for v in m['items'] if v['parent_id']==x['id']]
- childlinks='\n'.join('- '+link(c['id']) for c in children) if children and all(c.get('github') for c in children) else 'Use the native Sub-issues panel for the authoritative child list. Every child is enrolled in the Project.'
+ childlinks='\n'.join('- '+link(c['id'])+' — '+c['title'].split(' — ',1)[-1] for c in children) if children and all(c.get('github') for c in children) else 'Use the native Sub-issues panel for the authoritative child list. Every child is enrolled in the Project.'
  deliver='A reviewed, source-cited decision record with alternatives and unresolved uncertainty.' if typ=='Research' else 'A reviewed versioned contract with schemas, invariants and consumer handoffs.' if typ=='Specification' else 'Executable scenarios and raw evidence tied to an exact revision/environment; record failures and defects.' if typ=='Test' else 'Reviewed documentation with reproducible steps and honest implementation status.' if typ=='Documentation' else 'Focused implementation with automated regression coverage and updated integration documentation.'
  triage='\n'.join('- **'+k+'**: '+v for k,v in f.items())+'\n- **Milestone**: '+x['milestone']+'\n- **Assignee**: intentionally unassigned; claim through maintainer workflow.'
  common=f'''<!-- guildboard-id:{x['id']} -->
 Stable ID: `{x['id']}`. Scope source: [canonical planning manifest](https://github.com/{repo}/blob/main/planning/guildboard-backlog.json).
 '''
- if typ=='Epic':return common+f'''
+ if typ=='Epic':
+  capabilities=[c for c in children if c['work_type']=='Capability']
+  scope+='\n'+'\n'.join('- **'+c['title'].split(' — ',1)[-1]+'**: '+', '.join(v['title'].split(' — ',1)[-1] for v in m['items'] if v['parent_id']==c['id'] and v['work_type']=='Feature')+'.' for c in capabilities)
+  boundaries={
+   'T0':'Own product, system boundaries, developer foundation and decisions. Identity belongs to T1, policy T2, canvas T3, collaboration T4, data T5 and release/operations to T9–T13.',
+   'T1':'Own Discord lifecycle, verified identity/context and token handling. Authorization policy belongs to T2; authoritative editing and room sequencing belong to T4.',
+   'T2':'Own permission evaluation, grants, restrictions and moderation authority. T1 supplies verified Discord identity; T3 supplies editor UI; T4 enforces the policy on mutation processing.',
+   'T3':'Own editor tools, adapter, canonical element serialization and rendering. T4 owns authoritative collaboration/conflicts; T5 owns durable storage and board recovery.',
+   'T4':'Own transport, rooms, operation processing and presence. Consume current policy from T2 and durable transactions from T5; do not duplicate editor rendering from T3.',
+   'T5':'Own tenant data, board lifecycle, assets, snapshots and restore lineage. VPS provisioning belongs to T10; infrastructure backups/disaster recovery to T11; canvas undo semantics to T3/T4.',
+   'T6':'Own mode state transitions, presenter authority and follow behavior. Consume writing-grant policy from T2, transport from T4 and accessible shell controls from T7.',
+   'T7':'Own responsive interaction, controls, feedback and accessibility. Backend policy is T2, editor primitives T3, protocol T4 and API routes T8; UI visibility never substitutes for enforcement.',
+   'T8':'Own Fastify route/bot composition, validation and published API contracts. Delegate policy to T2, concurrency to T4 and persistence invariants to T5.',
+   'T9':'Own threat analysis, security/privacy requirements and independent assurance. Feature owners implement controls at their boundaries; security review is not implied by passing generic tests.',
+   'T10':'Own mandatory GoDaddy VPS topology, networking, service delivery and rollback. Application routes belong to T8; operational alerts/backups/incident response to T11.',
+   'T11':'Own monitoring, service resilience, backups, disaster recovery and operational response. Board history/restore logic belongs to T5; functional acceptance harnesses to T12.',
+   'T12':'Own test strategy, cross-system fixtures, acceptance and evidence quality. Feature implementation remains with T0–T11; independent security review remains T9.',
+   'T13':'Own documentation, community governance and release orchestration. Runtime implementation stays with engineering workstreams; production/security acceptance requires real T9–T12 evidence.'}
+  boundary=boundaries[x['workstream']]
+  return common+f'''
 ## Product or Engineering Question
 How will Guildboard deliver {x['title'].split(': ',1)[-1]} with testable security, Discord compatibility and production evidence?
 
@@ -43,7 +62,7 @@ How will Guildboard deliver {x['title'].split(': ',1)[-1]} with testable securit
 {scope}
 
 ## Boundaries
-Own this Tier's contracts and accepted outcomes. Cross-workstream consumers retain their implementation and review ownership. Planning completion does not certify application behavior or deployment.
+{boundary} Planning completion does not certify application behavior or deployment.
 
 ## Native Sub-Issues
 {childlinks}
@@ -195,7 +214,7 @@ if args.phase in ['links','fields','all']:
 if args.phase in ['comments','all']:
  for x in ordered:
   if not x.get('github'):continue
-  if x['work_type']=='Epic' or x['id'].endswith('.D1') or x['id']=='GB-T0.03.02.T1':
+  if hashlib.sha256(body(x).encode()).hexdigest()!=x.get('body_hash'):
    content=body(x);r=api(f"repos/{repo}/issues/{x['github']['number']}");oldbody=r.get('body') or ''
    # Only update bootstrap-owned body when it has not been edited by a maintainer.
    if hashlib.sha256(oldbody.encode()).hexdigest()==x.get('body_hash') and content!=oldbody:

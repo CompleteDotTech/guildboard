@@ -8,15 +8,20 @@ Run from this repository using Python 3.11+ and authenticated `gh`. Never put to
 
 ## Execution
 
+For a missing initial state, `initialize.py` resolves the authorized viewer and current reference ID, detects existing entities, and copies configuration with no draft items. Existing state pins this destination; initialization never publishes an existing private repository or silently replaces an unavailable Project. Then use `configure.py`/`views.py` only for deliberate schema administration.
+
 1. `python3 scripts/github-bootstrap/validate.py`
 2. `python3 scripts/github-bootstrap/reconcile.py --phase issues`
 3. `python3 scripts/github-bootstrap/reconcile.py --phase links`
 4. `python3 scripts/github-bootstrap/reconcile.py --phase fields`
 5. `python3 scripts/github-bootstrap/reconcile.py --phase comments`
-6. `python3 scripts/github-bootstrap/reports.py`
-7. `python3 scripts/github-bootstrap/audit.py`
+6. `python3 scripts/github-bootstrap/reconcile_dependency_status.py`
+7. `python3 scripts/github-bootstrap/repair_visible_blockers.py`
+8. `python3 scripts/github-bootstrap/reports.py`
+9. `python3 scripts/github-bootstrap/repair_repository_metadata.py`
+10. `python3 scripts/github-bootstrap/audit.py`
 
-Use `reconcile.py --verify-only` for independent readback. `configure.py` and `views.py` are explicit schema-administration commands; they intentionally reconcile the declared schema/view definitions and should not be run casually after maintainers customize them.
+Use `reconcile.py --verify-only` for independent readback. Initial bootstrap acceptance uses `audit.py --strict-initial`; ordinary audit records legitimate execution-field drift as informational while still failing missing/contradictory metadata. `repair_repository_metadata.py` fills missing labels/milestones and preserves existing milestone changes unless explicitly invoked with `--apply-planned-milestones`. `configure.py` and `views.py` are explicit schema-administration commands; they intentionally reconcile the declared schema/view definitions and should not be run casually after maintainers customize them.
 
 Every issue is detected by durable body marker before creation. Before a failed create is retried, restart the phase to refresh markers, preventing duplication after uncertain transport outcomes. Writes are paced; rate limits back off. Failures log to ignored `planning/audit/failures.jsonl`; review/redact before sharing. Stable mappings persist atomically after every successful creation. Native hierarchy/dependencies are read before repair; a conflicting existing parent aborts instead of replacing legitimate work. Field reconciliation fills missing fields and preserves existing changes after initial triage. Deliberate field drift is reported for review rather than reset. Reruns do not reassign contributors, close issues or repeat marked handoff comments.
 

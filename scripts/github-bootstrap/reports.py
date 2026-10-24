@@ -6,7 +6,7 @@ def link(id):
 rows=[]
 for x in m['items']:
  if x['work_type']!='Feature':continue
- impl=[c for c in m['items'] if c['parent_id']==x['id'] and c['work_type'] in ['Task','Documentation']]
+ impl=[c for c in m['items'] if c['parent_id']==x['id'] and c['work_type'] in ['Task','Documentation','Operations']]
  tests=[c for c in m['items'] if c['parent_id']==x['id'] and c['work_type']=='Test']
  doc=by[x['workstream'].replace('T','GB-T')+'.D1'];gate='GB-T13.G3' if x['fields']['Release Target']=='v1.0' else 'GB-T13.G1' if x['fields']['Release Target']=='MVP' else None
  for criterion in x['requirements']:
@@ -15,8 +15,12 @@ save(ROOT/'planning/traceability.json',rows)
 md='# Requirements traceability\n\nEvery authored mandatory behavior clause maps to focused implementation, verification, documentation and release acceptance. These links track planned acceptance, not completed behavior. Post-v1.0 work is explicitly outside mandatory release scope.\n\n| Requirement | Implementation | Tests | Documentation | Release gate |\n| --- | --- | --- | --- | --- |\n'
 for r in rows:md+='| '+r['requirement'].replace('|','/')+' | '+', '.join(link(i) for i in r['implementation'])+' | '+', '.join(link(i) for i in r['tests'])+' | '+link(r['documentation'])+' | '+(link(r['release_gate']) if r['release_gate'] else 'Post-v1.0')+' |\n'
 (ROOT/'planning/TRACEABILITY.md').write_text(md)
-local=json.loads((ROOT/'planning/audit/local-validation.json').read_text())
-md='# Dependency graph and critical path\n\nOnly native blocking prerequisites impose execution order. Parent completion is aggregation, never a blanket blocker. Compatibility and information inputs can be bidirectional without becoming dependency cycles.\n\n## Longest prerequisite chain\n\nThis is an unweighted chain, not a scheduled duration estimate. No dates or staffing commitments exist. Parallel release branches also matter.\n\n'+' → '.join(link(i) for i in local['longest_prerequisite_chain'])+'\n\n## Native blocking edges\n\n| Blocked issue | Prerequisite |\n| --- | --- |\n'
+local=json.loads((ROOT/'planning/audit/local-validation.json').read_text());chain=local['longest_prerequisite_chain']
+remote_path=ROOT/'planning/audit/remote-audit.json'
+if remote_path.exists():
+ remote=json.loads(remote_path.read_text());num_to_id={x['github']['number']:x['id'] for x in m['items'] if x.get('github')}
+ if remote.get('result')=='pass' and all(n in num_to_id for n in remote.get('longest_unweighted_dependency_chain',[])):chain=[num_to_id[n] for n in remote['longest_unweighted_dependency_chain']]
+md='# Dependency graph and critical path\n\nOnly native blocking prerequisites impose execution order. Parent completion is aggregation, never a blanket blocker. Compatibility and information inputs can be bidirectional without becoming dependency cycles.\n\n## Longest prerequisite chain\n\nThis is an unweighted chain, not a scheduled duration estimate. No dates or staffing commitments exist. Parallel release branches also matter.\n\n'+' → '.join(link(i) for i in chain)+'\n\n## Native blocking edges\n\n| Blocked issue | Prerequisite |\n| --- | --- |\n'
 for x in m['items']:
  for d in x['dependencies']:md+='| '+link(x['id'])+' | '+link(d)+' |\n'
 (ROOT/'planning/DEPENDENCIES.md').write_text(md)

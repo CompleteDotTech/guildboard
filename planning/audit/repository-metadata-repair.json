@@ -1,0 +1,12 @@
+{
+  "changed": [
+    {
+      "id": "GB-T13.04.01",
+      "fields": [
+        "labels",
+        "milestone"
+      ]
+    }
+  ],
+  "preserved_milestone_drift": []
+}

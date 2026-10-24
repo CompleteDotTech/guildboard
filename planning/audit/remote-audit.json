@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T02:59:39.858008+00:00",
+  "generated_at": "2026-10-24T03:50:13.924642+00:00",
   "repository": {
     "url": "https://github.com/CompleteDotTech/guildboard",
     "owner": "CompleteDotTech",
@@ -45,11 +45,12 @@
         "status": "disabled"
       }
     },
-    "head": "4899186c2c81bd89cadd3e1b434289a8b88cd186",
+    "head": "ff2bdfec51ee0c5aa398891922d7195cdd525b9d",
     "settings": {
       "actions": {
         "enabled": true,
-        "allowed_actions": "all",
+        "allowed_actions": "selected",
+        "selected_actions_url": "https://api.github.com/repositories/1431740904/actions/permissions/selected-actions",
         "sha_pinning_required": false
       },
       "vulnerability_alerts": {},
@@ -77,6 +78,359 @@
       "private_vulnerability_reporting": {
         "enabled": true
       },
+      "workflow_token_permissions": {
+        "default_workflow_permissions": "read",
+        "can_approve_pull_request_reviews": false
+      },
+      "allowed_actions": {
+        "github_owned_allowed": true,
+        "patterns_allowed": [],
+        "verified_allowed": true
+      },
+      "milestones": [
+        {
+          "url": "https://api.github.com/repos/CompleteDotTech/guildboard/milestones/1",
+          "html_url": "https://github.com/CompleteDotTech/guildboard/milestone/1",
+          "labels_url": "https://api.github.com/repos/CompleteDotTech/guildboard/milestones/1/labels",
+          "id": 18877568,
+          "node_id": "MI_kwDOVVah6M4BIAyA",
+          "number": 1,
+          "title": "M0 — Research, Feasibility & Architecture",
+          "description": "Sequence gate; no delivery date committed. Completion requires linked acceptance evidence.",
+          "creator": {
+            "login": "CompleteDotTech",
+            "id": 5861166,
+            "node_id": "MDQ6VXNlcjU4NjExNjY=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/5861166?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/CompleteDotTech",
+            "html_url": "https://github.com/CompleteDotTech",
+            "followers_url": "https://api.github.com/users/CompleteDotTech/followers",
+            "following_url": "https://api.github.com/users/CompleteDotTech/following{/other_user}",
+            "gists_url": "https://api.github.com/users/CompleteDotTech/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/CompleteDotTech/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/CompleteDotTech/subscriptions",
+            "organizations_url": "https://api.github.com/users/CompleteDotTech/orgs",
+            "repos_url": "https://api.github.com/users/CompleteDotTech/repos",
+            "events_url": "https://api.github.com/users/CompleteDotTech/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/CompleteDotTech/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "open_issues": 49,
+          "closed_issues": 0,
+          "state": "open",
+          "created_at": "2026-10-24T02:30:04Z",
+          "updated_at": "2026-10-24T03:37:52Z",
+          "due_on": null,
+          "closed_at": null
+        },
+        {
+          "url": "https://api.github.com/repos/CompleteDotTech/guildboard/milestones/2",
+          "html_url": "https://github.com/CompleteDotTech/guildboard/milestone/2",
+          "labels_url": "https://api.github.com/repos/CompleteDotTech/guildboard/milestones/2/labels",
+          "id": 18877569,
+          "node_id": "MI_kwDOVVah6M4BIAyB",
+          "number": 2,
+          "title": "M1 — Repository, Discord & Backend Foundation",
+          "description": "Sequence gate; no delivery date committed. Completion requires linked acceptance evidence.",
+          "creator": {
+            "login": "CompleteDotTech",
+            "id": 5861166,
+            "node_id": "MDQ6VXNlcjU4NjExNjY=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/5861166?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/CompleteDotTech",
+            "html_url": "https://github.com/CompleteDotTech",
+            "followers_url": "https://api.github.com/users/CompleteDotTech/followers",
+            "following_url": "https://api.github.com/users/CompleteDotTech/following{/other_user}",
+            "gists_url": "https://api.github.com/users/CompleteDotTech/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/CompleteDotTech/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/CompleteDotTech/subscriptions",
+            "organizations_url": "https://api.github.com/users/CompleteDotTech/orgs",
+            "repos_url": "https://api.github.com/users/CompleteDotTech/repos",
+            "events_url": "https://api.github.com/users/CompleteDotTech/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/CompleteDotTech/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "open_issues": 60,
+          "closed_issues": 0,
+          "state": "open",
+          "created_at": "2026-10-24T02:30:04Z",
+          "updated_at": "2026-10-24T03:41:28Z",
+          "due_on": null,
+          "closed_at": null
+        },
+        {
+          "url": "https://api.github.com/repos/CompleteDotTech/guildboard/milestones/3",
+          "html_url": "https://github.com/CompleteDotTech/guildboard/milestone/3",
+          "labels_url": "https://api.github.com/repos/CompleteDotTech/guildboard/milestones/3/labels",
+          "id": 18877570,
+          "node_id": "MI_kwDOVVah6M4BIAyC",
+          "number": 3,
+          "title": "M2 — Collaborative Whiteboard MVP",
+          "description": "Sequence gate; no delivery date committed. Completion requires linked acceptance evidence.",
+          "creator": {
+            "login": "CompleteDotTech",
+            "id": 5861166,
+            "node_id": "MDQ6VXNlcjU4NjExNjY=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/5861166?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/CompleteDotTech",
+            "html_url": "https://github.com/CompleteDotTech",
+            "followers_url": "https://api.github.com/users/CompleteDotTech/followers",
+            "following_url": "https://api.github.com/users/CompleteDotTech/following{/other_user}",
+            "gists_url": "https://api.github.com/users/CompleteDotTech/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/CompleteDotTech/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/CompleteDotTech/subscriptions",
+            "organizations_url": "https://api.github.com/users/CompleteDotTech/orgs",
+            "repos_url": "https://api.github.com/users/CompleteDotTech/repos",
+            "events_url": "https://api.github.com/users/CompleteDotTech/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/CompleteDotTech/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "open_issues": 82,
+          "closed_issues": 0,
+          "state": "open",
+          "created_at": "2026-10-24T02:30:05Z",
+          "updated_at": "2026-10-24T03:42:01Z",
+          "due_on": null,
+          "closed_at": null
+        },
+        {
+          "url": "https://api.github.com/repos/CompleteDotTech/guildboard/milestones/4",
+          "html_url": "https://github.com/CompleteDotTech/guildboard/milestone/4",
+          "labels_url": "https://api.github.com/repos/CompleteDotTech/guildboard/milestones/4/labels",
+          "id": 18877571,
+          "node_id": "MI_kwDOVVah6M4BIAyD",
+          "number": 4,
+          "title": "M3 — Moderation, Persistence & Recovery",
+          "description": "Sequence gate; no delivery date committed. Completion requires linked acceptance evidence.",
+          "creator": {
+            "login": "CompleteDotTech",
+            "id": 5861166,
+            "node_id": "MDQ6VXNlcjU4NjExNjY=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/5861166?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/CompleteDotTech",
+            "html_url": "https://github.com/CompleteDotTech",
+            "followers_url": "https://api.github.com/users/CompleteDotTech/followers",
+            "following_url": "https://api.github.com/users/CompleteDotTech/following{/other_user}",
+            "gists_url": "https://api.github.com/users/CompleteDotTech/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/CompleteDotTech/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/CompleteDotTech/subscriptions",
+            "organizations_url": "https://api.github.com/users/CompleteDotTech/orgs",
+            "repos_url": "https://api.github.com/users/CompleteDotTech/repos",
+            "events_url": "https://api.github.com/users/CompleteDotTech/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/CompleteDotTech/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "open_issues": 46,
+          "closed_issues": 0,
+          "state": "open",
+          "created_at": "2026-10-24T02:30:05Z",
+          "updated_at": "2026-10-24T03:40:43Z",
+          "due_on": null,
+          "closed_at": null
+        },
+        {
+          "url": "https://api.github.com/repos/CompleteDotTech/guildboard/milestones/5",
+          "html_url": "https://github.com/CompleteDotTech/guildboard/milestone/5",
+          "labels_url": "https://api.github.com/repos/CompleteDotTech/guildboard/milestones/5/labels",
+          "id": 18877572,
+          "node_id": "MI_kwDOVVah6M4BIAyE",
+          "number": 5,
+          "title": "M4 — Complete Application Functionality",
+          "description": "Sequence gate; no delivery date committed. Completion requires linked acceptance evidence.",
+          "creator": {
+            "login": "CompleteDotTech",
+            "id": 5861166,
+            "node_id": "MDQ6VXNlcjU4NjExNjY=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/5861166?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/CompleteDotTech",
+            "html_url": "https://github.com/CompleteDotTech",
+            "followers_url": "https://api.github.com/users/CompleteDotTech/followers",
+            "following_url": "https://api.github.com/users/CompleteDotTech/following{/other_user}",
+            "gists_url": "https://api.github.com/users/CompleteDotTech/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/CompleteDotTech/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/CompleteDotTech/subscriptions",
+            "organizations_url": "https://api.github.com/users/CompleteDotTech/orgs",
+            "repos_url": "https://api.github.com/users/CompleteDotTech/repos",
+            "events_url": "https://api.github.com/users/CompleteDotTech/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/CompleteDotTech/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "open_issues": 79,
+          "closed_issues": 0,
+          "state": "open",
+          "created_at": "2026-10-24T02:30:05Z",
+          "updated_at": "2026-10-24T03:41:28Z",
+          "due_on": null,
+          "closed_at": null
+        },
+        {
+          "url": "https://api.github.com/repos/CompleteDotTech/guildboard/milestones/6",
+          "html_url": "https://github.com/CompleteDotTech/guildboard/milestone/6",
+          "labels_url": "https://api.github.com/repos/CompleteDotTech/guildboard/milestones/6/labels",
+          "id": 18877573,
+          "node_id": "MI_kwDOVVah6M4BIAyF",
+          "number": 6,
+          "title": "M5 — GoDaddy Production Readiness",
+          "description": "Sequence gate; no delivery date committed. Completion requires linked acceptance evidence.",
+          "creator": {
+            "login": "CompleteDotTech",
+            "id": 5861166,
+            "node_id": "MDQ6VXNlcjU4NjExNjY=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/5861166?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/CompleteDotTech",
+            "html_url": "https://github.com/CompleteDotTech",
+            "followers_url": "https://api.github.com/users/CompleteDotTech/followers",
+            "following_url": "https://api.github.com/users/CompleteDotTech/following{/other_user}",
+            "gists_url": "https://api.github.com/users/CompleteDotTech/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/CompleteDotTech/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/CompleteDotTech/subscriptions",
+            "organizations_url": "https://api.github.com/users/CompleteDotTech/orgs",
+            "repos_url": "https://api.github.com/users/CompleteDotTech/repos",
+            "events_url": "https://api.github.com/users/CompleteDotTech/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/CompleteDotTech/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "open_issues": 62,
+          "closed_issues": 0,
+          "state": "open",
+          "created_at": "2026-10-24T02:30:06Z",
+          "updated_at": "2026-10-24T03:36:06Z",
+          "due_on": null,
+          "closed_at": null
+        },
+        {
+          "url": "https://api.github.com/repos/CompleteDotTech/guildboard/milestones/7",
+          "html_url": "https://github.com/CompleteDotTech/guildboard/milestone/7",
+          "labels_url": "https://api.github.com/repos/CompleteDotTech/guildboard/milestones/7/labels",
+          "id": 18877574,
+          "node_id": "MI_kwDOVVah6M4BIAyG",
+          "number": 7,
+          "title": "M6 — Security, Performance & Final Acceptance",
+          "description": "Sequence gate; no delivery date committed. Completion requires linked acceptance evidence.",
+          "creator": {
+            "login": "CompleteDotTech",
+            "id": 5861166,
+            "node_id": "MDQ6VXNlcjU4NjExNjY=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/5861166?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/CompleteDotTech",
+            "html_url": "https://github.com/CompleteDotTech",
+            "followers_url": "https://api.github.com/users/CompleteDotTech/followers",
+            "following_url": "https://api.github.com/users/CompleteDotTech/following{/other_user}",
+            "gists_url": "https://api.github.com/users/CompleteDotTech/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/CompleteDotTech/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/CompleteDotTech/subscriptions",
+            "organizations_url": "https://api.github.com/users/CompleteDotTech/orgs",
+            "repos_url": "https://api.github.com/users/CompleteDotTech/repos",
+            "events_url": "https://api.github.com/users/CompleteDotTech/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/CompleteDotTech/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "open_issues": 63,
+          "closed_issues": 0,
+          "state": "open",
+          "created_at": "2026-10-24T02:30:06Z",
+          "updated_at": "2026-10-24T03:36:08Z",
+          "due_on": null,
+          "closed_at": null
+        },
+        {
+          "url": "https://api.github.com/repos/CompleteDotTech/guildboard/milestones/8",
+          "html_url": "https://github.com/CompleteDotTech/guildboard/milestone/8",
+          "labels_url": "https://api.github.com/repos/CompleteDotTech/guildboard/milestones/8/labels",
+          "id": 18877575,
+          "node_id": "MI_kwDOVVah6M4BIAyH",
+          "number": 8,
+          "title": "M7 — Stable v1.0 Release",
+          "description": "Sequence gate; no delivery date committed. Completion requires linked acceptance evidence.",
+          "creator": {
+            "login": "CompleteDotTech",
+            "id": 5861166,
+            "node_id": "MDQ6VXNlcjU4NjExNjY=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/5861166?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/CompleteDotTech",
+            "html_url": "https://github.com/CompleteDotTech",
+            "followers_url": "https://api.github.com/users/CompleteDotTech/followers",
+            "following_url": "https://api.github.com/users/CompleteDotTech/following{/other_user}",
+            "gists_url": "https://api.github.com/users/CompleteDotTech/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/CompleteDotTech/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/CompleteDotTech/subscriptions",
+            "organizations_url": "https://api.github.com/users/CompleteDotTech/orgs",
+            "repos_url": "https://api.github.com/users/CompleteDotTech/repos",
+            "events_url": "https://api.github.com/users/CompleteDotTech/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/CompleteDotTech/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "open_issues": 27,
+          "closed_issues": 0,
+          "state": "open",
+          "created_at": "2026-10-24T02:30:07Z",
+          "updated_at": "2026-10-24T03:42:01Z",
+          "due_on": null,
+          "closed_at": null
+        },
+        {
+          "url": "https://api.github.com/repos/CompleteDotTech/guildboard/milestones/9",
+          "html_url": "https://github.com/CompleteDotTech/guildboard/milestone/9",
+          "labels_url": "https://api.github.com/repos/CompleteDotTech/guildboard/milestones/9/labels",
+          "id": 18877576,
+          "node_id": "MI_kwDOVVah6M4BIAyI",
+          "number": 9,
+          "title": "Post-v1.0 — Enhancements and Maintenance",
+          "description": "Sequence gate; no delivery date committed. Completion requires linked acceptance evidence.",
+          "creator": {
+            "login": "CompleteDotTech",
+            "id": 5861166,
+            "node_id": "MDQ6VXNlcjU4NjExNjY=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/5861166?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/CompleteDotTech",
+            "html_url": "https://github.com/CompleteDotTech",
+            "followers_url": "https://api.github.com/users/CompleteDotTech/followers",
+            "following_url": "https://api.github.com/users/CompleteDotTech/following{/other_user}",
+            "gists_url": "https://api.github.com/users/CompleteDotTech/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/CompleteDotTech/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/CompleteDotTech/subscriptions",
+            "organizations_url": "https://api.github.com/users/CompleteDotTech/orgs",
+            "repos_url": "https://api.github.com/users/CompleteDotTech/repos",
+            "events_url": "https://api.github.com/users/CompleteDotTech/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/CompleteDotTech/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "open_issues": 3,
+          "closed_issues": 0,
+          "state": "open",
+          "created_at": "2026-10-24T02:30:07Z",
+          "updated_at": "2026-10-24T03:35:19Z",
+          "due_on": null,
+          "closed_at": null
+        }
+      ],
       "workflows": {
         "total_count": 3,
         "workflows": [
@@ -126,6 +480,9 @@
     "url": "https://github.com/users/CompleteDotTech/projects/7",
     "number": 7,
     "public": true,
+    "owner": {
+      "login": "CompleteDotTech"
+    },
     "fields": {
       "nodes": [
         {
@@ -772,6 +1129,9 @@
           "name": "Workstream overview",
           "layout": "TABLE_LAYOUT",
           "filter": "",
+          "sortByFields": {
+            "nodes": []
+          },
           "groupByFields": {
             "nodes": [
               {
@@ -1319,6 +1679,9 @@
           "name": "Engineering backlog by priority",
           "layout": "TABLE_LAYOUT",
           "filter": "is:open -status:Done",
+          "sortByFields": {
+            "nodes": []
+          },
           "groupByFields": {
             "nodes": [
               {
@@ -1685,6 +2048,44 @@
           "name": "Ready to implement",
           "layout": "TABLE_LAYOUT",
           "filter": "is:open readiness:Ready dependency-status:Unblocked work-type:Task,Subtask status:Backlog,Ready",
+          "sortByFields": {
+            "nodes": [
+              {
+                "direction": "ASC",
+                "field": {
+                  "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XpQ",
+                  "name": "Priority",
+                  "dataType": "SINGLE_SELECT",
+                  "options": [
+                    {
+                      "id": "c9dae3c0",
+                      "name": "Critical",
+                      "color": "RED",
+                      "description": "P0 — release-blocking or foundational"
+                    },
+                    {
+                      "id": "4d75b4bb",
+                      "name": "High",
+                      "color": "ORANGE",
+                      "description": "P1 — important for v1.0"
+                    },
+                    {
+                      "id": "cdffb7f7",
+                      "name": "Medium",
+                      "color": "YELLOW",
+                      "description": "P2 — valuable but nonblocking"
+                    },
+                    {
+                      "id": "e064ed0c",
+                      "name": "Low",
+                      "color": "BLUE",
+                      "description": "P3 — optional or exploratory"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
           "groupByFields": {
             "nodes": []
           },
@@ -2019,6 +2420,9 @@
           "name": "Blocked or awaiting decision",
           "layout": "TABLE_LAYOUT",
           "filter": "is:open dependency-status:Blocked,\"Awaiting Decision\",\"External Blocker\"",
+          "sortByFields": {
+            "nodes": []
+          },
           "groupByFields": {
             "nodes": []
           },
@@ -2032,6 +2436,11 @@
                   "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-Xm8",
                   "name": "Title",
                   "dataType": "TITLE"
+                },
+                {
+                  "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XnE",
+                  "name": "Assignees",
+                  "dataType": "ASSIGNEES"
                 },
                 {
                   "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XpU",
@@ -2334,6 +2743,9 @@
           "name": "Unassigned or missing metadata",
           "layout": "TABLE_LAYOUT",
           "filter": "is:open no:assignee,priority,tier,readiness,work-type,release-target",
+          "sortByFields": {
+            "nodes": []
+          },
           "groupByFields": {
             "nodes": []
           },
@@ -2635,6 +3047,9 @@
           "name": "Kanban",
           "layout": "BOARD_LAYOUT",
           "filter": "",
+          "sortByFields": {
+            "nodes": []
+          },
           "groupByFields": {
             "nodes": []
           },
@@ -2848,6 +3263,9 @@
           "name": "Owner Workload",
           "layout": "TABLE_LAYOUT",
           "filter": "is:open",
+          "sortByFields": {
+            "nodes": []
+          },
           "groupByFields": {
             "nodes": [
               {
@@ -3175,7 +3593,10 @@
           "number": 8,
           "name": "Roadmap",
           "layout": "ROADMAP_LAYOUT",
-          "filter": "work-type:Epic,Capability,Test",
+          "filter": "work-type:Epic,Capability,Test,Operations",
+          "sortByFields": {
+            "nodes": []
+          },
           "groupByFields": {
             "nodes": [
               {
@@ -3200,6 +3621,9 @@
           "name": "MVP Critical Path",
           "layout": "TABLE_LAYOUT",
           "filter": "is:open release-target:MVP priority:Critical",
+          "sortByFields": {
+            "nodes": []
+          },
           "groupByFields": {
             "nodes": []
           },
@@ -3430,6 +3854,9 @@
           "name": "Discord Activity Integration",
           "layout": "TABLE_LAYOUT",
           "filter": "is:open label:\"topic: discord-sdk\",\"topic: discord-oauth\",\"topic: discord-bot\"",
+          "sortByFields": {
+            "nodes": []
+          },
           "groupByFields": {
             "nodes": []
           },
@@ -3885,6 +4312,9 @@
           "name": "Authorization and Moderation",
           "layout": "TABLE_LAYOUT",
           "filter": "is:open label:\"topic: authorization\",\"topic: moderation\"",
+          "sortByFields": {
+            "nodes": []
+          },
           "groupByFields": {
             "nodes": []
           },
@@ -4340,6 +4770,9 @@
           "name": "Canvas and Collaboration",
           "layout": "TABLE_LAYOUT",
           "filter": "is:open label:\"topic: canvas\",\"topic: websockets\",\"topic: synchronization\"",
+          "sortByFields": {
+            "nodes": []
+          },
           "groupByFields": {
             "nodes": []
           },
@@ -4795,6 +5228,9 @@
           "name": "GoDaddy Deployment",
           "layout": "TABLE_LAYOUT",
           "filter": "is:open label:\"topic: godaddy\"",
+          "sortByFields": {
+            "nodes": []
+          },
           "groupByFields": {
             "nodes": []
           },
@@ -5250,6 +5686,9 @@
           "name": "Security and Privacy",
           "layout": "TABLE_LAYOUT",
           "filter": "is:open label:\"topic: security\",\"topic: privacy\"",
+          "sortByFields": {
+            "nodes": []
+          },
           "groupByFields": {
             "nodes": []
           },
@@ -5705,6 +6144,9 @@
           "name": "Testing and Verification",
           "layout": "TABLE_LAYOUT",
           "filter": "is:open work-type:Test",
+          "sortByFields": {
+            "nodes": []
+          },
           "groupByFields": {
             "nodes": []
           },
@@ -5966,7 +6408,10 @@
           "number": 16,
           "name": "Release Readiness",
           "layout": "TABLE_LAYOUT",
-          "filter": "is:open work-type:Test priority:Critical",
+          "filter": "is:open work-type:Test,Operations priority:Critical",
+          "sortByFields": {
+            "nodes": []
+          },
           "groupByFields": {
             "nodes": []
           },
@@ -6229,6 +6674,9 @@
           "name": "Post-Release Enhancements",
           "layout": "TABLE_LAYOUT",
           "filter": "release-target:\"Post-v1.0\"",
+          "sortByFields": {
+            "nodes": []
+          },
           "groupByFields": {
             "nodes": []
           },
@@ -6732,312 +7180,134 @@
       ]
     }
   },
-  "expected_issues": 466,
-  "live_expected_issues": 428,
-  "project_items": 428,
-  "expected_enrolled": 428,
-  "max_actual_hierarchy_depth": 4,
-  "native_parent_links": 414,
-  "native_blocking_dependencies": 370,
+  "expected_issues": 471,
+  "live_expected_issues": 471,
+  "project_items": 471,
+  "expected_enrolled": 471,
+  "max_actual_hierarchy_depth": 5,
+  "native_parent_links": 457,
+  "native_blocking_dependencies": 600,
   "counts": {
     "Epic": 14,
-    "unassigned": 428,
+    "unassigned": 471,
     "Research": 14,
     "Specification": 14,
-    "Capability": 54,
-    "Feature": 107,
-    "Task": 104,
-    "Test": 106,
-    "Documentation": 15
+    "Capability": 56,
+    "Feature": 112,
+    "Task": 107,
+    "Test": 130,
+    "Documentation": 20,
+    "Subtask": 2,
+    "Operations": 2
   },
   "field_counts": {
     "Status": {
-      "Backlog": 428
+      "Backlog": 471
     },
     "Tier": {
-      "T0 Product Foundation & Architecture": 32,
-      "T1 Discord Activity & Identity": 32,
-      "T2 Authorization & Moderation": 32,
-      "T3 Whiteboard Canvas & Editing": 32,
-      "T4 Real-Time Collaboration & Presence": 32,
-      "T5 Boards, Persistence & Recovery": 32,
-      "T6 Collaboration Modes & Presentation": 32,
-      "T7 User Interface & Accessibility": 32,
-      "T8 Backend APIs & Discord Commands": 32,
-      "T9 Security, Privacy & Abuse Prevention": 32,
-      "T10 GoDaddy Infrastructure & CI/CD": 32,
-      "T11 Reliability, Monitoring & Operations": 32,
-      "T12 Quality Engineering & Acceptance": 32,
-      "T13 Documentation, Community & Release": 12
+      "T0 Product Foundation & Architecture": 35,
+      "T1 Discord Activity & Identity": 33,
+      "T2 Authorization & Moderation": 33,
+      "T3 Whiteboard Canvas & Editing": 33,
+      "T4 Real-Time Collaboration & Presence": 33,
+      "T5 Boards, Persistence & Recovery": 33,
+      "T6 Collaboration Modes & Presentation": 33,
+      "T7 User Interface & Accessibility": 33,
+      "T8 Backend APIs & Discord Commands": 35,
+      "T9 Security, Privacy & Abuse Prevention": 33,
+      "T10 GoDaddy Infrastructure & CI/CD": 33,
+      "T11 Reliability, Monitoring & Operations": 33,
+      "T12 Quality Engineering & Acceptance": 34,
+      "T13 Documentation, Community & Release": 37
     },
     "Priority": {
-      "Critical": 256,
-      "High": 172
+      "Critical": 286,
+      "High": 182,
+      "Low": 3
     },
     "Readiness": {
-      "Not Applicable": 175,
-      "Ready": 15,
-      "Blocked": 238
+      "Not Applicable": 182,
+      "Ready": 17,
+      "Blocked": 272
     },
     "Work Type": {
       "Epic": 14,
       "Research": 14,
       "Specification": 14,
-      "Capability": 54,
-      "Feature": 107,
-      "Task": 104,
-      "Test": 106,
-      "Documentation": 15
+      "Capability": 56,
+      "Feature": 112,
+      "Task": 107,
+      "Test": 130,
+      "Documentation": 20,
+      "Subtask": 2,
+      "Operations": 2
     },
     "Research Confidence": {
-      "Unverified": 428
+      "Unverified": 471
     },
     "Dependency Status": {
-      "Unblocked": 190,
-      "Blocked": 238
+      "Unblocked": 199,
+      "Blocked": 272
     },
     "Verification Status": {
-      "Unverified": 428
+      "Unverified": 471
     },
     "Release Target": {
-      "MVP": 224,
-      "v1.0": 204
+      "MVP": 177,
+      "v1.0": 291,
+      "Post-v1.0": 3
     },
     "Risk": {
-      "High": 227,
-      "Low": 9,
-      "Critical": 192
+      "High": 254,
+      "Low": 14,
+      "Critical": 203
     },
     "Effort": {
-      "XL": 68,
-      "M": 253,
-      "L": 107
+      "XL": 70,
+      "M": 285,
+      "L": 112,
+      "S": 4
     },
     "Owner Role": {
-      "Architecture": 32,
-      "Discord Integration": 32,
-      "Security & Authorization": 32,
-      "Frontend & Canvas": 64,
-      "Realtime Systems": 32,
-      "Data Engineering": 32,
-      "UX & Accessibility": 32,
-      "Backend & Bot": 32,
-      "Security Engineering": 32,
-      "Platform Engineering": 32,
-      "SRE": 32,
-      "Quality Engineering": 32,
-      "Maintainer & Documentation": 12
+      "Architecture": 35,
+      "Discord Integration": 33,
+      "Security & Authorization": 33,
+      "Frontend & Canvas": 66,
+      "Realtime Systems": 33,
+      "Data Engineering": 33,
+      "UX & Accessibility": 33,
+      "Backend & Bot": 35,
+      "Security Engineering": 33,
+      "Platform Engineering": 33,
+      "SRE": 33,
+      "Quality Engineering": 34,
+      "Maintainer & Documentation": 37
     }
   },
-  "missing_metadata_issues": 38,
+  "missing_metadata_issues": 0,
   "longest_unweighted_dependency_chain": [
-    34,
-    35,
-    52,
-    53,
-    55,
-    56,
-    73,
-    74,
-    77,
-    78,
-    80,
-    81,
-    203,
-    204,
-    226
+    146,
+    147,
+    148,
+    149,
+    178,
+    179,
+    182,
+    183,
+    185,
+    186,
+    378,
+    409,
+    410,
+    417,
+    418,
+    470,
+    472,
+    473
   ],
-  "findings": [
-    {
-      "kind": "missing_issue",
-      "id": "GB-T13.02.01.T1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T13.02.01.V1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T13.02.02",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T13.02.02.T1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T13.02.02.V1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T13.03",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T13.03.01",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T13.03.01.T1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T13.03.01.V1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T13.03.02",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T13.03.02.T1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T13.03.02.V1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T13.04",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T13.04.01",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T13.04.01.T1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T13.04.01.V1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T13.04.02",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T13.04.02.T1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T13.04.02.V1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T13.D1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T0.03.02.T1.S1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T0.03.02.T1.S2",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T13.G1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T13.G2",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T0.G1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T1.G1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T2.G1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T3.G1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T4.G1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T5.G1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T6.G1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T7.G1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T8.G1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T9.G1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T10.G1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T11.G1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T12.G1",
-      "detail": "No live issue found"
-    },
-    {
-      "kind": "missing_issue",
-      "id": "GB-T13.G3",
-      "detail": "No live issue found"
-    }
-  ],
-  "result": "incomplete"
+  "initial_handoff_comments": 17,
+  "strict_initial": true,
+  "observed_execution_drift": [],
+  "findings": [],
+  "result": "pass"
 }

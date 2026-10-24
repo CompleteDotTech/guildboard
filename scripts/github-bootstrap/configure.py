@@ -27,14 +27,17 @@ for name,values in schema.items():
  else:
   gql('mutation($i:CreateProjectV2FieldInput!){createProjectV2Field(input:$i){projectV2Field{... on ProjectV2SingleSelectField{id name}}}}',i={'projectId':pid,'name':name,'dataType':'SINGLE_SELECT','singleSelectOptions':opts})
  print('field',name,flush=True)
-if 'Target Date' not in fields:gql('mutation($i:CreateProjectV2FieldInput!){createProjectV2Field(input:$i){projectV2Field{... on ProjectV2Field{id}}}}',i={'projectId':pid,'name':'Target Date','dataType':'DATE'})
+for name,datatype in [('Target Date','DATE'),('Blocking Reason','TEXT')]:
+ if name not in fields:gql('mutation($i:CreateProjectV2FieldInput!){createProjectV2Field(input:$i){projectV2Field{... on ProjectV2Field{id}}}}',i={'projectId':pid,'name':name,'dataType':datatype})
 r=api('repos/'+repo);s['repository_id']=r['node_id'];save(STATE,s)
 gql('mutation($i:LinkProjectV2ToRepositoryInput!){linkProjectV2ToRepository(input:$i){repository{id}}}',i={'projectId':pid,'repositoryId':r['node_id']})
 gql('mutation($i:UpdateProjectV2Input!){updateProjectV2(input:$i){projectV2{id}}}',i={'projectId':pid,'public':True,'shortDescription':'Workstream-driven engineering roadmap for Guildboard, a moderated collaborative whiteboard Discord Activity on GoDaddy Linux VPS.','readme':'Guildboard engineering roadmap. Planning is not implementation evidence. Start with Workstream overview, then Ready to implement for actionable leaf tasks. Tier is workstream; Priority is sequencing. No deadlines have been invented. Native dependencies are authoritative for blockers. Assignees remain empty until maintainers take ownership. Manifest, readiness rules, audits and recovery instructions: https://github.com/'+repo+'/tree/main/planning'})
 topics='discord discord-activity whiteboard collaboration moderation typescript react excalidraw websockets godaddy self-hosted open-source realtime'.split()
 api('repos/'+repo,'PATCH',{'has_issues':True,'has_discussions':True,'allow_squash_merge':True,'allow_merge_commit':False,'allow_rebase_merge':False,'delete_branch_on_merge':True})
 api('repos/'+repo+'/topics','PUT',{'names':topics})
-api('repos/'+repo+'/actions/permissions','PUT',{'enabled':True,'allowed_actions':'all'})
+api('repos/'+repo+'/actions/permissions','PUT',{'enabled':True,'allowed_actions':'selected'})
+api('repos/'+repo+'/actions/permissions/selected-actions','PUT',{'github_owned_allowed':True,'verified_allowed':True,'patterns_allowed':[]})
+api('repos/'+repo+'/actions/permissions/workflow','PUT',{'default_workflow_permissions':'read','can_approve_pull_request_reviews':False})
 for endpoint in ['vulnerability-alerts','automated-security-fixes']:
  try:api('repos/'+repo+'/'+endpoint,'PUT')
  except RuntimeError as e:print('security setting',endpoint,e)

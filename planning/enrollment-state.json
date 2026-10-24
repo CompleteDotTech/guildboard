@@ -307,10 +307,6 @@
     "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJEhA",
     "applied_hash": "f52568f648f1b6306ed7d72a18ad9f1bd903fbb5126ea0d21a85edade2287cf9"
   },
-  "GB-T2.02.02.V1": {
-    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJEik",
-    "applied_hash": "b3af091d8cf9b5dc52667becf93d0dd8a1aa554ba1bea438cee05f6becca6c7a"
-  },
   "GB-T2.02.02.T1": {
     "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJEiM",
     "applied_hash": "d1e7cb21b930124539b938f55c9e89833363178e377ef8363ff7af234b7d7249"
@@ -527,10 +523,6 @@
     "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJBrc",
     "applied_hash": "828c8152fc4b135edec42edfb35842657044b6965ae71e4ef2215a93f3032809"
   },
-  "GB-T4.01.02.V1": {
-    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJBsM",
-    "applied_hash": "6a66440683c83a6c9a1f471055de64514594e4faabd480ed1306b27c9adaf2be"
-  },
   "GB-T4.02.01": {
     "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJBvE",
     "applied_hash": "60f33c0796145f83bf10282e6c9c7f6c900ed251c9262026b14af4925939f0f7"
@@ -547,17 +539,9 @@
     "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJB6g",
     "applied_hash": "60f33c0796145f83bf10282e6c9c7f6c900ed251c9262026b14af4925939f0f7"
   },
-  "GB-T4.02.01.V1": {
-    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJB5Q",
-    "applied_hash": "6a66440683c83a6c9a1f471055de64514594e4faabd480ed1306b27c9adaf2be"
-  },
   "GB-T4.02.02.T1": {
     "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJB7o",
     "applied_hash": "828c8152fc4b135edec42edfb35842657044b6965ae71e4ef2215a93f3032809"
-  },
-  "GB-T4.02.02.V1": {
-    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJB8k",
-    "applied_hash": "6a66440683c83a6c9a1f471055de64514594e4faabd480ed1306b27c9adaf2be"
   },
   "GB-T4.03.01.V1": {
     "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJCBI",
@@ -610,10 +594,6 @@
   "GB-T4.04.02.T1": {
     "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJCKo",
     "applied_hash": "828c8152fc4b135edec42edfb35842657044b6965ae71e4ef2215a93f3032809"
-  },
-  "GB-T4.04.02.V1": {
-    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJCLY",
-    "applied_hash": "6a66440683c83a6c9a1f471055de64514594e4faabd480ed1306b27c9adaf2be"
   },
   "GB-T5.S1": {
     "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJBzg",
@@ -1027,10 +1007,6 @@
     "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJDkM",
     "applied_hash": "77a4a80dab2bc4a4117ca05eddcbcd2f047e9b156d339bec2ce05bf6309e318a"
   },
-  "GB-T8.01.02.V1": {
-    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJDik",
-    "applied_hash": "54652b60a10d6b60f8981a9c3fa722af783bc45606ac50e9457e9f65326a6b96"
-  },
   "GB-T8.02.01.T1": {
     "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJDlI",
     "applied_hash": "92655785e9d84fe2ebf35679e5e146f58889a88baf8883caf69803e6399b26ea"
@@ -1046,14 +1022,6 @@
   "GB-T8.02.02": {
     "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJDnE",
     "applied_hash": "77a4a80dab2bc4a4117ca05eddcbcd2f047e9b156d339bec2ce05bf6309e318a"
-  },
-  "GB-T8.02.02.V1": {
-    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJDpY",
-    "applied_hash": "54652b60a10d6b60f8981a9c3fa722af783bc45606ac50e9457e9f65326a6b96"
-  },
-  "GB-T8.02.01.V1": {
-    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJDl0",
-    "applied_hash": "54652b60a10d6b60f8981a9c3fa722af783bc45606ac50e9457e9f65326a6b96"
   },
   "GB-T8.03.01": {
     "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJDq4",
@@ -1219,10 +1187,6 @@
     "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJEM8",
     "applied_hash": "9b817a89ed79d1422b279067ae5441594f5ba17f6b06b816a4135c463f556c46"
   },
-  "GB-T9.04.02.V1": {
-    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJERg",
-    "applied_hash": "f2b01c819b34034b22a118bf66f1671e3c89e426c0b5d5b7fe4c90fc93be586a"
-  },
   "GB-T9.04.02": {
     "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJEPg",
     "applied_hash": "9b817a89ed79d1422b279067ae5441594f5ba17f6b06b816a4135c463f556c46"
@@ -1343,10 +1307,6 @@
     "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJEuc",
     "applied_hash": "32be2c89e24b8be3c6e15b9793c1231c3a5fb67bda82a43aa294ef30f7348a47"
   },
-  "GB-T10.04.02.V1": {
-    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJEvM",
-    "applied_hash": "c3573117b5b622493b06e266217d1fcb018d32d247a2306474548a0938e790d8"
-  },
   "GB-T10.04.01.V1": {
     "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJEs0",
     "applied_hash": "c3573117b5b622493b06e266217d1fcb018d32d247a2306474548a0938e790d8"
@@ -1446,10 +1406,6 @@
   "GB-T11.03.02.T1": {
     "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJFHo",
     "applied_hash": "33bdf16d1e9199bb5518e62dd44724b7d3d186ee3842da7969f1a5f351e33b44"
-  },
-  "GB-T11.03.02.V1": {
-    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJFIU",
-    "applied_hash": "b7f33000c5d17aa4adf7a076709a22e530277d9726c5e0f0a5709175d8d6845f"
   },
   "GB-T11.04.02.T1": {
     "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJFOY",
@@ -1607,10 +1563,6 @@
     "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJF1k",
     "applied_hash": "ce1ac998679fc7c4a937348e214fd2e8d183af04da3963f0bd8e0efec265caf1"
   },
-  "GB-T12.04.02.V1": {
-    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJFxM",
-    "applied_hash": "e0367b64fe638e0f4db694f580cba19b2775d419b2f71437953f799ba30a1253"
-  },
   "GB-T13.S1": {
     "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJF2Y",
     "applied_hash": "5f91becd8b780d9cb8a7890ea78ad34d93454373919677a079d26cc6e1f430bd"
@@ -1691,10 +1643,6 @@
     "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJESU",
     "applied_hash": "4567c3c7447708269090266525a342c284ade15baa6bcfd35489449ca209226e"
   },
-  "GB-T8.D1": {
-    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJD3M",
-    "applied_hash": "de7ab19a34f3e3c51a07381beecaf7257636ad10bd1dd2dcfc2d84988db69ef5"
-  },
   "GB-T11.D1": {
     "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJFQM",
     "applied_hash": "9707b3492ac02dca40e39535683be0379e18021ae5254319d4bb4f0319821db6"
@@ -1707,8 +1655,232 @@
     "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJDZo",
     "applied_hash": "a13558c614c9476ccade0c9310e5deff668592b468013de33aea68226b5194b8"
   },
+  "GB-T4.02.02.V1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJB8k",
+    "applied_hash": "6a66440683c83a6c9a1f471055de64514594e4faabd480ed1306b27c9adaf2be"
+  },
+  "GB-T2.02.02.V1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJEik",
+    "applied_hash": "b3af091d8cf9b5dc52667becf93d0dd8a1aa554ba1bea438cee05f6becca6c7a"
+  },
+  "GB-T4.02.01.V1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJB5Q",
+    "applied_hash": "6a66440683c83a6c9a1f471055de64514594e4faabd480ed1306b27c9adaf2be"
+  },
+  "GB-T4.04.02.V1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJCLY",
+    "applied_hash": "6a66440683c83a6c9a1f471055de64514594e4faabd480ed1306b27c9adaf2be"
+  },
+  "GB-T8.01.02.V1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJDik",
+    "applied_hash": "54652b60a10d6b60f8981a9c3fa722af783bc45606ac50e9457e9f65326a6b96"
+  },
+  "GB-T4.01.02.V1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJBsM",
+    "applied_hash": "6a66440683c83a6c9a1f471055de64514594e4faabd480ed1306b27c9adaf2be"
+  },
+  "GB-T8.02.01.V1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJDl0",
+    "applied_hash": "54652b60a10d6b60f8981a9c3fa722af783bc45606ac50e9457e9f65326a6b96"
+  },
+  "GB-T8.02.02.V1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJDpY",
+    "applied_hash": "54652b60a10d6b60f8981a9c3fa722af783bc45606ac50e9457e9f65326a6b96"
+  },
+  "GB-T9.04.02.V1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJERg",
+    "applied_hash": "f2b01c819b34034b22a118bf66f1671e3c89e426c0b5d5b7fe4c90fc93be586a"
+  },
+  "GB-T10.04.02.V1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJEvM",
+    "applied_hash": "c3573117b5b622493b06e266217d1fcb018d32d247a2306474548a0938e790d8"
+  },
+  "GB-T12.04.02.V1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJFxM",
+    "applied_hash": "e0367b64fe638e0f4db694f580cba19b2775d419b2f71437953f799ba30a1253"
+  },
+  "GB-T11.03.02.V1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJFIU",
+    "applied_hash": "b7f33000c5d17aa4adf7a076709a22e530277d9726c5e0f0a5709175d8d6845f"
+  },
+  "GB-T13.02.02": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJWg8",
+    "applied_hash": "25c3a04ef6ea91b2c176f8b3ccba9cb2cfdd6d145e4a998dfb1939505a65511c"
+  },
+  "GB-T13.02.01.V1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJWfU",
+    "applied_hash": "6da258078de9f5cb518ee0574be3c0cad8f7413946248c8b590db002a43a67d1"
+  },
+  "GB-T13.02.01.T1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJWeI",
+    "applied_hash": "33ef1dc802d77e7bf906f1af8eb9641c48c6127e8c2c27ae66fd4a690df063d9"
+  },
+  "GB-T13.02.02.T1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJWiQ",
+    "applied_hash": "33ef1dc802d77e7bf906f1af8eb9641c48c6127e8c2c27ae66fd4a690df063d9"
+  },
+  "GB-T13.03": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJWks",
+    "applied_hash": "8f0d0d4917af6007eb5705bca2da4f5c648d19ad5c9769496fa03a91e785e182"
+  },
+  "GB-T13.02.02.V1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJWjQ",
+    "applied_hash": "6da258078de9f5cb518ee0574be3c0cad8f7413946248c8b590db002a43a67d1"
+  },
+  "GB-T13.03.01.T1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJWnE",
+    "applied_hash": "33ef1dc802d77e7bf906f1af8eb9641c48c6127e8c2c27ae66fd4a690df063d9"
+  },
+  "GB-T13.03.01": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJWmI",
+    "applied_hash": "25c3a04ef6ea91b2c176f8b3ccba9cb2cfdd6d145e4a998dfb1939505a65511c"
+  },
+  "GB-T13.03.02": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJWpc",
+    "applied_hash": "25c3a04ef6ea91b2c176f8b3ccba9cb2cfdd6d145e4a998dfb1939505a65511c"
+  },
+  "GB-T13.03.01.V1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJWoI",
+    "applied_hash": "6da258078de9f5cb518ee0574be3c0cad8f7413946248c8b590db002a43a67d1"
+  },
+  "GB-T13.04.01": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJWtU",
+    "applied_hash": "af77b83e233dae643f67ca36abd5d6dd93d9deb408063e6616888c9fc042bc54"
+  },
+  "GB-T13.03.02.T1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJWqc",
+    "applied_hash": "33ef1dc802d77e7bf906f1af8eb9641c48c6127e8c2c27ae66fd4a690df063d9"
+  },
+  "GB-T13.04": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJWsQ",
+    "applied_hash": "8f0d0d4917af6007eb5705bca2da4f5c648d19ad5c9769496fa03a91e785e182"
+  },
+  "GB-T13.03.02.V1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJWrU",
+    "applied_hash": "6da258078de9f5cb518ee0574be3c0cad8f7413946248c8b590db002a43a67d1"
+  },
+  "GB-T13.04.01.V1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJWwQ",
+    "applied_hash": "df54d2103c75ed0b6f5d3a894c023a80bdbd4a385ea8b53b689c05bbfad7f208"
+  },
+  "GB-T13.04.01.T1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJWuk",
+    "applied_hash": "185ea9130982dc4ac8e8d09109f40c993baddca4a2a79944fd9aeee237eed325"
+  },
+  "GB-T13.04.02.T1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJWx8",
+    "applied_hash": "d0d0e38b7e4491f77be54ece680dd64df822f04eea10fc7947655c4c7b5263a9"
+  },
+  "GB-T13.04.02.V1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJWzM",
+    "applied_hash": "03eb1e09d1c90898635a35db03a72553df294efe2c052e14124687a18e1e6be2"
+  },
+  "GB-T13.04.02": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJWxI",
+    "applied_hash": "2b056cee28c23c678b4dca669161f55bd73b24f11dd4f003cf78f448ce81188b"
+  },
+  "GB-T0.03.02.T1.S2": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJW18",
+    "applied_hash": "8cfebb5c5db1a1c7b8205bcad2138901ee86f892b0b88ca7546470c824ee27c4"
+  },
+  "GB-T13.D1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJW0A",
+    "applied_hash": "33ef1dc802d77e7bf906f1af8eb9641c48c6127e8c2c27ae66fd4a690df063d9"
+  },
+  "GB-T0.03.02.T1.S1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJW1c",
+    "applied_hash": "8cfebb5c5db1a1c7b8205bcad2138901ee86f892b0b88ca7546470c824ee27c4"
+  },
+  "GB-T8.02.01.T2": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJW34",
+    "applied_hash": "5cf7e22310f05a6d0043423efb9e570f23e50c6dd4c91ae333084870fd48568e"
+  },
+  "GB-T13.G2": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJW8Y",
+    "applied_hash": "b6095cfb75c0b2d894a609f046ffda7e2970255936f07098d8b6c4725240715e"
+  },
+  "GB-T12.MVP1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJW6A",
+    "applied_hash": "9a399b16ba71952c4860be0b4f392ea56e1e2d0354b9193f8eda2260c4a111ea"
+  },
+  "GB-T8.02.01.V2": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJW48",
+    "applied_hash": "bf1b01f67f8747db2bfff1ea409f6bb5b9c42074a2f8e70e79604fe5b7ba3d80"
+  },
+  "GB-T13.G1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJW60",
+    "applied_hash": "455f964a7bf7efa8d09251bd175e5e1cdc172eaee797fb3c5a51dbbdb1279dcb"
+  },
+  "GB-T0.G1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJW94",
+    "applied_hash": "50fcb983d68f06799e044ff64ab6304d3b8b9ea150c01f6ec0df6b12e542cee7"
+  },
+  "GB-T1.G1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJW-4",
+    "applied_hash": "0de5858e64cf8ca664e8bafb4d0142e5d1aa1b6b09acbaa763ae42bc488e66d3"
+  },
+  "GB-T2.G1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJXAE",
+    "applied_hash": "52cf8064a5578c23b1120464e1c3098ec893fd777c574b51fd069e32d6b4abe8"
+  },
+  "GB-T4.G1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJXC0",
+    "applied_hash": "6a66440683c83a6c9a1f471055de64514594e4faabd480ed1306b27c9adaf2be"
+  },
+  "GB-T3.G1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJXBg",
+    "applied_hash": "e444910ec43b369534e85ae9feddd710acdc5ce1c9e4aa6a71d709cc756c092d"
+  },
+  "GB-T6.G1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJXFU",
+    "applied_hash": "52f3c8ef8b1f23a757bb56f0291120f0ec85537e6be26f8e9fa7801ca4f4793e"
+  },
+  "GB-T8.G1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJXHg",
+    "applied_hash": "bb40d0ddabbde0edf0069c7668a23583adcf73719a721eea3c5f621eaa8ffc33"
+  },
+  "GB-T5.G1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJXEo",
+    "applied_hash": "3f02dc34165f0de720de8f1e54b46cd2e1e7b80cad74809010844acbe7ed0903"
+  },
+  "GB-T7.G1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJXGg",
+    "applied_hash": "b525e8c8d86987e652777080c5e3ad69e56c97feca79f2d9c3ac360977ec576f"
+  },
+  "GB-T10.G1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJXKQ",
+    "applied_hash": "c3573117b5b622493b06e266217d1fcb018d32d247a2306474548a0938e790d8"
+  },
+  "GB-T9.G1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJXIw",
+    "applied_hash": "f2b01c819b34034b22a118bf66f1671e3c89e426c0b5d5b7fe4c90fc93be586a"
+  },
+  "GB-T11.G1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJXL8",
+    "applied_hash": "0cfb4c399d69739944273be5087cb03bec9fc5291c615f4b01f5843216cfc7af"
+  },
+  "GB-T12.G1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJXMw",
+    "applied_hash": "e0367b64fe638e0f4db694f580cba19b2775d419b2f71437953f799ba30a1253"
+  },
+  "GB-T13.04.01.O1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJXOA",
+    "applied_hash": "e5ab0fd12e562dbe1b9fae077303d8f2997e1d55a1ad91f2e91124d1f803dbff"
+  },
+  "GB-T13.04.01.O2": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJXQI",
+    "applied_hash": "3442ccf11fe9af77212f6be3077d9a5643dbe09ee4119653f02eaf857ad3531f"
+  },
+  "GB-T8.D1": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJD3M",
+    "applied_hash": "1f1a787cd10f7a150add727fb1bdb779f732e6df4c90eac5aef3853ea36af046"
+  },
   "GB-T12.D1": {
     "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJFzA",
     "applied_hash": "9d87e204ad4a388a3f3a5cc38d8e7b2434e4abd0018122426207002b425a6295"
+  },
+  "GB-T13.G3": {
+    "project_item_id": "PVTI_lAHOAFlvLs4BoeZ9zhDJXPE",
+    "applied_hash": "b6095cfb75c0b2d894a609f046ffda7e2970255936f07098d8b6c4725240715e"
   }
 }

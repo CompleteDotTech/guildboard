@@ -1,8 +1,9 @@
 {
   "result": "pass",
-  "item_count": 466,
-  "native_relationships_expected": 452,
-  "dependencies_expected": 546,
+  "item_count": 471,
+  "native_relationships_expected": 457,
+  "dependencies_expected": 600,
+  "mvp_prerequisite_closure": 60,
   "max_depth": 5,
   "errors": [],
   "longest_prerequisite_chain": [
@@ -22,7 +23,8 @@
     "GB-T6.01.02.V1",
     "GB-T6.D1",
     "GB-T6.G1",
-    "GB-T13.G3"
+    "GB-T13.G3",
+    "GB-T13.04.01.O2"
   ],
   "critical_path_note": "Longest unweighted dependency chain, not a duration forecast. Parallel branches and role availability also constrain release."
 }

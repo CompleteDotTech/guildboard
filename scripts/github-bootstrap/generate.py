@@ -54,7 +54,7 @@ block('GB-T12.03.01.T1','GB-T4.02.02.V1','GB-T4.01.02.V1')
 block('GB-T12.03.02.T1','GB-T5.03.02.V1','GB-T11.03.02.V1')
 block('GB-T9.04.02.T1','GB-T9.01.01.V1','GB-T9.01.02.V1','GB-T9.02.01.V1','GB-T9.02.02.V1')
 # Concrete release gates depend on accepted verification, never just merged implementation.
-mvp=['GB-T1.01.01.V1','GB-T1.02.01.V1','GB-T1.03.02.V1','GB-T2.01.02.V1','GB-T2.03.01.V1','GB-T3.01.01.V1','GB-T3.04.02.V1','GB-T4.01.01.V1','GB-T4.01.02.V1','GB-T4.02.02.V1','GB-T5.02.02.V1','GB-T12.02.01.V1','GB-T12.03.01.V1']
+mvp=['GB-T8.01.01.V1','GB-T8.01.02.V1','GB-T8.02.01.V1','GB-T1.01.01.V1','GB-T1.02.01.V1','GB-T1.03.02.V1','GB-T2.01.02.V1','GB-T2.03.01.V1','GB-T3.01.01.V1','GB-T3.04.02.V1','GB-T4.01.01.V1','GB-T4.01.02.V1','GB-T4.02.02.V1','GB-T5.02.02.V1','GB-T12.02.01.V1','GB-T12.03.01.V1']
 add('GB-T13.G1','MVP acceptance gate',13,'Test','GB-T13',requirements='Demonstrate Discord startup and authenticated guild context; verify moderator roles and simultaneous moderators; deny viewer writes on backend; demonstrate canvas, live synchronization, saved boards, basic lock and reconnect; attach fundamental security and acceptance evidence',deps=mvp,milestone=2,release='MVP',priority='Critical')
 add('GB-T13.G2','Production recovery and GoDaddy acceptance gate',13,'Test','GB-T13',requirements='Demonstrate actual GoDaddy VPS HTTPS/WSS and Discord networking; restore database and assets in isolated environment with measured RPO/RTO; verify monitoring, rollback and production smoke tests; record deployment environment and unresolved findings',deps=['GB-T10.04.02.V1','GB-T11.03.02.V1','GB-T12.04.01.V1','GB-T12.04.02.V1'],milestone=6,priority='Critical')
 alltests=[x['id'] for x in items if x['work_type']=='Test' and x['fields']['Release Target']!='Post-v1.0' and not x['id'].endswith(('.G1','.G2'))]
@@ -63,13 +63,60 @@ for t in range(13):
  deps=[x['id'] for x in items if x['workstream']==f'T{t}' and x['work_type']=='Test']
  add(f'GB-T{t}.G1',f'T{t} accepted workstream verification gate',t,'Test',f'GB-T{t}',requirements='Confirm all mandatory verification children for '+streams[t]['name']+' have real evidence; resolve defects and security exceptions; verify handoff documentation and integration on release candidate',deps=deps,priority='Critical',milestone=6)
 add('GB-T13.G3','Stable v1.0 release approval gate',13,'Test','GB-T13',requirements='All mandatory functionality, modes, moderation, import/export, accessibility and recovery accepted; independent security review findings resolved; production acceptance and full integration tests pass; reviewed versioned artifacts, release notes and support documentation exist',deps=[f'GB-T{t}.G1' for t in range(13)]+['GB-T13.G1','GB-T13.G2','GB-T13.01.01.V1','GB-T13.01.02.V1','GB-T13.02.01.V1','GB-T13.02.02.V1','GB-T13.03.01.V1','GB-T13.03.02.V1'],milestone=7,priority='Critical')
+for target,source,reason in json.loads((ROOT/'planning/additional-dependencies.json').read_text()):
+    block(target,source)
+    by[target].setdefault('dependency_rationale',{})[source]=reason
+for x in items:
+    if x['id'].startswith('GB-T0.03'):x['milestone']=ms[1]
+    if x['work_type']=='Subtask':x['fields']['Effort']='S'
+for x in items:
+    if x['id'].startswith('GB-T8.01'):x['fields']['Priority']='Critical'
+# Independently owned MVP slices and post-approval publication avoid release cycles.
+add('GB-T8.02.01.T2','Implement MVP board list, creation and saved-state APIs',8,'Task','GB-T8.02.01',requirements='Provide authenticated tenant-scoped list/create/select and saved-state board endpoints using accepted versioned contracts; enforce verified guild membership and board policy on every request; exclude advanced grant administration and asset import/export from this focused slice; integration tests prove foreign-guild requests and viewer mutations are denied without side effects',deps=['GB-T8.S1','GB-T8.01.02.V1','GB-T5.01.01.V1','GB-T5.02.02.V1'],milestone=2,release='MVP',priority='Critical')
+add('GB-T8.02.01.V2','Verify MVP board APIs and persistence boundary',8,'Test','GB-T8.02.01',requirements='Exercise actual authenticated board list/create/select and saved-state routes; assert guild and viewer isolation and durable saved revision; reject expired credentials and malformed or foreign identifiers without side effects; retain exact revision, database fixture and raw integration results',deps=['GB-T8.02.01.T2'],milestone=2,release='MVP',priority='Critical')
+add('GB-T12.MVP1','MVP integrated security and collaboration acceptance',12,'Test','GB-T12',requirements='Launch real supported Discord Activity and verify authenticated guild context; demonstrate two simultaneous moderators and backend-enforced read-only viewers; save board state, lock editing and reconnect without losing acknowledged edits; reject expired sessions, foreign guild identifiers and forged writer operations; record actual client/environment evidence and distinguish mocks from platform checks',deps=['GB-T1.01.01.V1','GB-T1.02.02.V1','GB-T2.01.02.V1','GB-T2.03.01.V1','GB-T3.04.02.V1','GB-T4.01.01.V1','GB-T4.01.02.V1','GB-T4.02.01.V1','GB-T4.02.02.V1','GB-T5.02.02.V1','GB-T8.02.01.V2'],milestone=2,release='MVP',priority='Critical')
+add('GB-T13.04.01.O1','Publish MVP after accepted release gate',13,'Operations','GB-T13.04.01',requirements='Publish an actual versioned MVP tag and artifacts only after MVP acceptance and release-automation verification pass; attach release notes, checksums, known limitations and rollback/support guidance; verify published artifacts match the accepted candidate and record the actual release URL; do not claim v1.0 or production acceptance from MVP publication',deps=['GB-T13.G1','GB-T13.04.01.V1'],milestone=2,release='MVP',priority='Critical')
+add('GB-T13.04.01.O2','Publish stable v1.0 after production approval',13,'Operations','GB-T13.04.01',requirements='Publish a stable versioned release only after the v1.0 approval gate passes; attach reviewed artifacts, provenance, migration notes, security disposition and operator documentation; verify published checksums and actual production smoke evidence; record actual release and deployment receipts without fabricating approvals',deps=['GB-T13.G3','GB-T13.04.01.V1'],milestone=7,release='v1.0',priority='Critical')
+by={x['id']:x for x in items}
+block('GB-T12.MVP1','GB-T3.02.02.V1','GB-T4.03.02.V1','GB-T1.02.01.V1')
+by['GB-T12.MVP1']['requirements'].append('Exercise malicious text and URLs, malformed operations, resource flooding, OAuth replay and origin/session binding; prove rejection or safe rendering without credential exposure or persisted unauthorized side effects')
+by['GB-T12.MVP1']['acceptance_criteria'].append('Malicious text/URLs, replayed authentication, malformed operations and quota violations cannot execute active content, widen permissions or corrupt saved state.')
+by['GB-T12.MVP1']['expected_tests'].append('Capture negative XSS/link, OAuth replay/origin, malformed-message and message-flood scenarios against the actual integrated MVP.')
+block('GB-T13.04.01.T1','GB-T0.03.01.V1')
+block('GB-T13.G3','GB-T13.04.01.O1')
+gate=by['GB-T13.G1'];gate['dependencies']=[d for d in gate['dependencies'] if d not in ['GB-T12.02.01.V1','GB-T12.03.01.V1','GB-T8.02.01.V1']]+['GB-T12.MVP1','GB-T8.02.01.V2']
+block('GB-T8.G1','GB-T8.02.01.V2')
+block('GB-T12.G1','GB-T12.MVP1')
+# Milestones express executable phase order; MVP does not wait for full v1 verification.
+for x in items:
+    id=x['id'];t=int(x['workstream'][1:])
+    if id in ['GB-T0','GB-T0.D1','GB-T0.G1']:x['milestone']=ms[1]
+    if id.endswith('.G1') and t<13:x['milestone']=ms[1 if t==0 else streams[t]['milestone']]
+    if t in [2,5,8]:
+        rel='v1.0'
+        if x['work_type'] in ['Research','Specification']:rel='MVP'
+        if t==2 and (id.startswith('GB-T2.01') or id.startswith('GB-T2.03.01')):rel='MVP';x['milestone']=ms[1 if id.startswith('GB-T2.01') else 2]
+        if t==5 and (id.startswith('GB-T5.01.01') or id.startswith('GB-T5.02') or id.startswith('GB-T5.03.01')):
+            rel='MVP';x['milestone']=ms[1 if id.startswith('GB-T5.02.01') else 2]
+        if t==8:
+            if id.startswith('GB-T8.01'):rel='MVP';x['milestone']=ms[1]
+            elif id in ['GB-T8.02.01.T2','GB-T8.02.01.V2']:rel='MVP';x['milestone']=ms[2]
+            elif id.startswith('GB-T8.02'):x['milestone']=ms[3]
+            elif x['work_type'] not in ['Research','Specification']:x['milestone']=ms[4]
+        x['fields']['Release Target']=rel
+        x['labels']=[v for v in x['labels'] if not v.startswith('release:')]+['release: '+('mvp' if rel=='MVP' else 'v1.0')]
+    if id in ['GB-T13.04.01.T1','GB-T13.04.01.V1']:
+        x['milestone']=ms[2];x['fields']['Release Target']='MVP';x['labels']=[v for v in x['labels'] if not v.startswith('release:')]+['release: mvp']
+    if id.endswith(('.O1','.O2')):x['fields']['Risk']='Critical';x['fields']['Effort']='S'
 # Handoff documents require the actual verified outcomes they describe.
 for t in range(14):
     doc=next(x for x in items if x['id']==f'GB-T{t}.D1')
-    doc['dependencies']=list(dict.fromkeys(doc['dependencies']+[x['id'] for x in items if x['workstream']==f'T{t}' and x['id'].endswith('.V1') and x['fields']['Release Target']!='Post-v1.0']))
+    doc['dependencies']=list(dict.fromkeys(doc['dependencies']+[x['id'] for x in items if x['workstream']==f'T{t}' and x['work_type']=='Test' and ('.V' in x['id'] or x['id'].endswith('.MVP1')) and x['fields']['Release Target']!='Post-v1.0']))
     gate=next(x for x in items if x['id']==(f'GB-T{t}.G1' if t<13 else 'GB-T13.G3'))
     gate['dependencies'].append(doc['id'])
-for x in items:x['description']='; '.join(x['requirements'])
+for x in items:
+    x['description']='; '.join(x['requirements'])
+    if x['id'].startswith('GB-T13.G'):x['fields']['Risk']='Critical'
 config=next(x for x in items if x['id']=='GB-T0.03.02.T1')
 config['requirements'].append('Implement the exact parseConfig API, types, files and validation/evidence rules in planning/configuration-contract.md; no global environment reads, network IO or value logging inside the parser')
 config['acceptance_criteria'].append('The documented parseConfig contract passes every listed boundary and secret-redaction scenario.')

@@ -58,6 +58,7 @@
     "filter": "is:open dependency-status:Blocked,\"Awaiting Decision\",\"External Blocker\"",
     "columns": [
       "Title",
+      "Assignees",
       "Tier",
       "Priority",
       "Readiness",
@@ -114,7 +115,7 @@
   {
     "name": "Roadmap",
     "layout": "ROADMAP_LAYOUT",
-    "filter": "work-type:Epic,Capability,Test",
+    "filter": "work-type:Epic,Capability,Test,Operations",
     "columns": [
       "Title",
       "Assignees",
@@ -261,7 +262,7 @@
   {
     "name": "Release Readiness",
     "layout": "TABLE_LAYOUT",
-    "filter": "is:open work-type:Test priority:Critical",
+    "filter": "is:open work-type:Test,Operations priority:Critical",
     "columns": [
       "Title",
       "Tier",

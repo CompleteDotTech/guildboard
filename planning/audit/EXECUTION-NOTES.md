@@ -29,3 +29,11 @@ Daily restricted-token repository integrity checks and local manifest CI are con
 GitHub began rejecting new issue content at 2026-10-24T02:52 UTC after 428 roadmap issues. Creation retries were stopped; native links, field triage and read-only verification continued. The manifest records only successful issue responses. Resume creation after the service's cooldown and refresh stable markers before retrying; never switch accounts/APIs to evade a service limit. Final remote audit, not this note or an operational checkpoint, determines completion and counts.
 
 Transient GraphQL relationship errors were retried only after fresh live reads. Earlier failures are not evidence of unresolved defects when the final native readback confirms repair.
+
+## Final reconciliation
+
+Creation resumed under the same account/API after cooldown. Final strict remote readback verified 471 issues/items, 457 native parent-child links, 600 native blocking links, maximum depth five and 17 nonduplicated handoff comments, with zero findings. Five focused units separate MVP board APIs, integrated MVP acceptance and actual post-approval publication. MVP approval's 60-item native prerequisite closure uses only M0–M2 phases.
+
+Project text cells enforce 256 characters. Blocking Reason therefore shows the prerequisite count and issue numbers plus a direct first-blocker URL; every full relationship remains native and every required handoff is linked in issue bodies. Source configuration snapshots retain schema/views/workflows, public issue URLs, section headings and body fingerprints without importing unrelated full research narratives into the current audit file.
+
+The actual repository secret list was empty. Scheduled full Project-field auditing remains credential-gated; native workflows, on-demand full audit and daily repository integrity are implemented.

@@ -38,5 +38,12 @@ def visit(id):
 for id in by:visit(id)
 check(len([x for x in items if x['work_type']=='Epic'])==14,'expected 14 workstreams')
 for t in range(14):check(any(x['workstream']==f'T{t}' and x['work_type']=='Test' for x in items),f'T{t}: missing verification')
-report={'result':'fail' if errors else 'pass','item_count':len(items),'native_relationships_expected':sum(bool(x['parent_id']) for x in items),'dependencies_expected':sum(len(x['dependencies']) for x in items),'max_depth':max(depth(x) for x in by),'errors':errors,'longest_prerequisite_chain':max(paths.values(),key=len),'critical_path_note':'Longest unweighted dependency chain, not a duration forecast. Parallel branches and role availability also constrain release.'}
+mvp_closure=set()
+def mvp_visit(id):
+ if id in mvp_closure:return
+ mvp_closure.add(id)
+ for d in by[id]['dependencies']:mvp_visit(d)
+mvp_visit('GB-T13.G1')
+for id in mvp_closure:check(by[id]['milestone'].startswith(('M0','M1','M2')),id+': MVP approval depends on a later release phase')
+report={'result':'fail' if errors else 'pass','item_count':len(items),'native_relationships_expected':sum(bool(x['parent_id']) for x in items),'dependencies_expected':sum(len(x['dependencies']) for x in items),'mvp_prerequisite_closure':len(mvp_closure),'max_depth':max(depth(x) for x in by),'errors':errors,'longest_prerequisite_chain':max(paths.values(),key=len),'critical_path_note':'Longest unweighted dependency chain, not a duration forecast. Parallel branches and role availability also constrain release.'}
 save(ROOT/'planning/audit/local-validation.json',report);print(json.dumps(report,indent=2));raise SystemExit(bool(errors))
