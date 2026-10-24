@@ -1,0 +1,109 @@
+{
+  "status": "Partially complete",
+  "repository": "https://github.com/CompleteDotTech/guildboard",
+  "project": "https://github.com/users/CompleteDotTech/projects/7",
+  "issues": 471,
+  "items": 471,
+  "parents": 457,
+  "dependencies": 600,
+  "counts": {
+    "Epic": 14,
+    "unassigned": 471,
+    "Research": 14,
+    "Specification": 14,
+    "Capability": 56,
+    "Feature": 112,
+    "Task": 107,
+    "Test": 130,
+    "Documentation": 20,
+    "Subtask": 2,
+    "Operations": 2
+  },
+  "fields": {
+    "Status": {
+      "Backlog": 471
+    },
+    "Tier": {
+      "T0 Product Foundation & Architecture": 35,
+      "T1 Discord Activity & Identity": 33,
+      "T2 Authorization & Moderation": 33,
+      "T3 Whiteboard Canvas & Editing": 33,
+      "T4 Real-Time Collaboration & Presence": 33,
+      "T5 Boards, Persistence & Recovery": 33,
+      "T6 Collaboration Modes & Presentation": 33,
+      "T7 User Interface & Accessibility": 33,
+      "T8 Backend APIs & Discord Commands": 35,
+      "T9 Security, Privacy & Abuse Prevention": 33,
+      "T10 GoDaddy Infrastructure & CI/CD": 33,
+      "T11 Reliability, Monitoring & Operations": 33,
+      "T12 Quality Engineering & Acceptance": 34,
+      "T13 Documentation, Community & Release": 37
+    },
+    "Priority": {
+      "Critical": 286,
+      "High": 182,
+      "Low": 3
+    },
+    "Readiness": {
+      "Not Applicable": 182,
+      "Ready": 17,
+      "Blocked": 272
+    },
+    "Work Type": {
+      "Epic": 14,
+      "Research": 14,
+      "Specification": 14,
+      "Capability": 56,
+      "Feature": 112,
+      "Task": 107,
+      "Test": 130,
+      "Documentation": 20,
+      "Subtask": 2,
+      "Operations": 2
+    },
+    "Research Confidence": {
+      "Unverified": 471
+    },
+    "Dependency Status": {
+      "Unblocked": 199,
+      "Blocked": 272
+    },
+    "Verification Status": {
+      "Unverified": 471
+    },
+    "Release Target": {
+      "MVP": 177,
+      "v1.0": 291,
+      "Post-v1.0": 3
+    },
+    "Risk": {
+      "High": 254,
+      "Low": 14,
+      "Critical": 203
+    },
+    "Effort": {
+      "XL": 70,
+      "M": 285,
+      "L": 112,
+      "S": 4
+    },
+    "Owner Role": {
+      "Architecture": 35,
+      "Discord Integration": 33,
+      "Security & Authorization": 33,
+      "Frontend & Canvas": 66,
+      "Realtime Systems": 33,
+      "Data Engineering": 33,
+      "UX & Accessibility": 33,
+      "Backend & Bot": 35,
+      "Security Engineering": 33,
+      "Platform Engineering": 33,
+      "SRE": 33,
+      "Quality Engineering": 34,
+      "Maintainer & Documentation": 37
+    }
+  },
+  "findings": [],
+  "project_audit_credential_configured": false,
+  "initial_commit": "12254fa606aa59d6083ca241b5568958bfb9f626"
+}

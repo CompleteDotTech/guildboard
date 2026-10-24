@@ -10,6 +10,8 @@ An open-source, real-time moderated whiteboard Discord Activity with collaborati
 - [Development setup](docs/development.md)
 - [Contribution process](CONTRIBUTING.md)
 - [Security reporting](SECURITY.md)
+- [Verified bootstrap report](planning/BOOTSTRAP-REPORT.md)
+- [MVP acceptance traceability](planning/MVP-ACCEPTANCE.md)
 - [Live audit artifacts](planning/audit/)
 
 ## Intended system
