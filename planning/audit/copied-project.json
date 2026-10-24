@@ -1,0 +1,416 @@
+{
+  "data": {
+    "node": {
+      "id": "PVT_kwHOAFlvLs4BoeZ9",
+      "items": {
+        "totalCount": 0,
+        "nodes": []
+      },
+      "fields": {
+        "nodes": [
+          {
+            "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-Xm8",
+            "name": "Title",
+            "dataType": "TITLE"
+          },
+          {
+            "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XnE",
+            "name": "Assignees",
+            "dataType": "ASSIGNEES"
+          },
+          {
+            "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XnM",
+            "name": "Status",
+            "dataType": "SINGLE_SELECT",
+            "options": [
+              {
+                "id": "f75ad846",
+                "name": "Backlog",
+                "color": "GRAY",
+                "description": "Research not started"
+              },
+              {
+                "id": "163107ee",
+                "name": "Ready",
+                "color": "PURPLE",
+                "description": ""
+              },
+              {
+                "id": "47fc9ee4",
+                "name": "In Progress",
+                "color": "YELLOW",
+                "description": "Research actively under way"
+              },
+              {
+                "id": "efe5e9b3",
+                "name": "In Review",
+                "color": "BLUE",
+                "description": "Draft decision record open for owner / handoff review"
+              },
+              {
+                "id": "2e94491b",
+                "name": "Blocked",
+                "color": "RED",
+                "description": ""
+              },
+              {
+                "id": "98236657",
+                "name": "Done",
+                "color": "PURPLE",
+                "description": "Research deliverable merged and acceptance criteria met"
+              }
+            ]
+          },
+          {
+            "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XnU",
+            "name": "Labels",
+            "dataType": "LABELS"
+          },
+          {
+            "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-Xnc",
+            "name": "Linked pull requests",
+            "dataType": "LINKED_PULL_REQUESTS"
+          },
+          {
+            "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-Xnk",
+            "name": "Milestone",
+            "dataType": "MILESTONE"
+          },
+          {
+            "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-Xns",
+            "name": "Repository",
+            "dataType": "REPOSITORY"
+          },
+          {
+            "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XoE",
+            "name": "Reviewers",
+            "dataType": "REVIEWERS"
+          },
+          {
+            "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XoQ",
+            "name": "Parent issue",
+            "dataType": "PARENT_ISSUE"
+          },
+          {
+            "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XoY",
+            "name": "Sub-issues progress",
+            "dataType": "SUB_ISSUES_PROGRESS"
+          },
+          {
+            "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-Xog",
+            "name": "Created",
+            "dataType": "CREATED"
+          },
+          {
+            "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-Xoo",
+            "name": "Updated",
+            "dataType": "UPDATED"
+          },
+          {
+            "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-Xow",
+            "name": "Closed",
+            "dataType": "CLOSED"
+          },
+          {
+            "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XpQ",
+            "name": "Priority",
+            "dataType": "SINGLE_SELECT",
+            "options": [
+              {
+                "id": "c9dae3c0",
+                "name": "Critical",
+                "color": "RED",
+                "description": "Foundation: core build path (T0\u2013T2) that most other research depends on"
+              },
+              {
+                "id": "4d75b4bb",
+                "name": "High",
+                "color": "ORANGE",
+                "description": "Core: needed for a complete core build summary; consumes Critical outputs"
+              },
+              {
+                "id": "cdffb7f7",
+                "name": "Medium",
+                "color": "GRAY",
+                "description": "Later: optional capabilities or operational depth, sequenced after the core path"
+              },
+              {
+                "id": "e064ed0c",
+                "name": "Low",
+                "color": "RED",
+                "description": ""
+              }
+            ]
+          },
+          {
+            "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XpU",
+            "name": "Tier",
+            "dataType": "SINGLE_SELECT",
+            "options": [
+              {
+                "id": "fa5c0b5d",
+                "name": "T0 Configuration",
+                "color": "BLUE",
+                "description": ""
+              },
+              {
+                "id": "252b1251",
+                "name": "T1 Model Selection",
+                "color": "PURPLE",
+                "description": ""
+              },
+              {
+                "id": "0c6b0bb4",
+                "name": "T2 Infrastructure",
+                "color": "GREEN",
+                "description": ""
+              },
+              {
+                "id": "eef5381b",
+                "name": "T3 Knowledge & Retrieval (optional)",
+                "color": "YELLOW",
+                "description": ""
+              },
+              {
+                "id": "990c3be1",
+                "name": "T4 Agents & Integrations (optional)",
+                "color": "ORANGE",
+                "description": ""
+              },
+              {
+                "id": "dc3a843e",
+                "name": "T5 Training & Fine-Tuning (optional)",
+                "color": "PINK",
+                "description": ""
+              },
+              {
+                "id": "9d584ef5",
+                "name": "T6 Deployment & Operations",
+                "color": "RED",
+                "description": ""
+              }
+            ]
+          },
+          {
+            "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XpY",
+            "name": "Readiness",
+            "dataType": "SINGLE_SELECT",
+            "options": [
+              {
+                "id": "48dbd4d6",
+                "name": "Ready",
+                "color": "GREEN",
+                "description": "Can start now; inputs exist or are informational only"
+              },
+              {
+                "id": "6b38f8b0",
+                "name": "Needs input",
+                "color": "YELLOW",
+                "description": "Meaningful progress needs output from another issue first"
+              },
+              {
+                "id": "bd03c406",
+                "name": "Blocked",
+                "color": "RED",
+                "description": "Cannot proceed: native blocker, missing owner access, or missing permission"
+              },
+              {
+                "id": "8392393e",
+                "name": "Awaiting decision",
+                "color": "PURPLE",
+                "description": "Needs a named decision from an owner before research continues"
+              }
+            ]
+          },
+          {
+            "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-Xpc",
+            "name": "Work Type",
+            "dataType": "SINGLE_SELECT",
+            "options": [
+              {
+                "id": "959cf085",
+                "name": "Epic",
+                "color": "GRAY",
+                "description": ""
+              },
+              {
+                "id": "fd290d95",
+                "name": "Research",
+                "color": "GRAY",
+                "description": ""
+              },
+              {
+                "id": "edf9168f",
+                "name": "Specification",
+                "color": "GRAY",
+                "description": ""
+              },
+              {
+                "id": "b3196607",
+                "name": "Dataset",
+                "color": "GRAY",
+                "description": ""
+              },
+              {
+                "id": "5f6fe71d",
+                "name": "Validation",
+                "color": "GRAY",
+                "description": ""
+              }
+            ]
+          },
+          {
+            "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-Xpg",
+            "name": "Research Confidence",
+            "dataType": "SINGLE_SELECT",
+            "options": [
+              {
+                "id": "abe0e0a4",
+                "name": "Unverified",
+                "color": "GRAY",
+                "description": ""
+              },
+              {
+                "id": "3d88ef49",
+                "name": "Low",
+                "color": "GRAY",
+                "description": ""
+              },
+              {
+                "id": "2326e645",
+                "name": "Medium",
+                "color": "GRAY",
+                "description": ""
+              },
+              {
+                "id": "4d63c438",
+                "name": "High",
+                "color": "GRAY",
+                "description": ""
+              }
+            ]
+          },
+          {
+            "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-Xpk",
+            "name": "Dependency Status",
+            "dataType": "SINGLE_SELECT",
+            "options": [
+              {
+                "id": "cd12d923",
+                "name": "Unblocked",
+                "color": "GRAY",
+                "description": ""
+              },
+              {
+                "id": "70591731",
+                "name": "Waiting",
+                "color": "GRAY",
+                "description": ""
+              },
+              {
+                "id": "64dfbdc6",
+                "name": "Blocked",
+                "color": "GRAY",
+                "description": ""
+              }
+            ]
+          }
+        ]
+      },
+      "views": {
+        "nodes": [
+          {
+            "id": "PVTV_lAHOAFlvLs4BoeZ9zgMNtsc",
+            "name": "Workstream overview",
+            "number": 1,
+            "layout": "TABLE_LAYOUT",
+            "filter": ""
+          },
+          {
+            "id": "PVTV_lAHOAFlvLs4BoeZ9zgMNtso",
+            "name": "Research backlog by priority",
+            "number": 2,
+            "layout": "TABLE_LAYOUT",
+            "filter": "is:open label:\"type: research\""
+          },
+          {
+            "id": "PVTV_lAHOAFlvLs4BoeZ9zgMNtss",
+            "name": "Ready to research",
+            "number": 3,
+            "layout": "TABLE_LAYOUT",
+            "filter": "is:open label:\"type: research\" readiness:Ready status:Backlog,Ready"
+          },
+          {
+            "id": "PVTV_lAHOAFlvLs4BoeZ9zgMNtsw",
+            "name": "Blocked or awaiting decision",
+            "number": 4,
+            "layout": "TABLE_LAYOUT",
+            "filter": "is:open readiness:Blocked,\"Awaiting decision\""
+          },
+          {
+            "id": "PVTV_lAHOAFlvLs4BoeZ9zgMNts4",
+            "name": "Unassigned or missing metadata",
+            "number": 5,
+            "layout": "TABLE_LAYOUT",
+            "filter": "is:open no:assignee,priority,tier,readiness"
+          },
+          {
+            "id": "PVTV_lAHOAFlvLs4BoeZ9zgMNts8",
+            "name": "Kanban",
+            "number": 6,
+            "layout": "BOARD_LAYOUT",
+            "filter": ""
+          },
+          {
+            "id": "PVTV_lAHOAFlvLs4BoeZ9zgMNttA",
+            "name": "Owner Workload",
+            "number": 7,
+            "layout": "TABLE_LAYOUT",
+            "filter": ""
+          },
+          {
+            "id": "PVTV_lAHOAFlvLs4BoeZ9zgMNttE",
+            "name": "Roadmap",
+            "number": 8,
+            "layout": "ROADMAP_LAYOUT",
+            "filter": ""
+          }
+        ]
+      },
+      "workflows": {
+        "nodes": [
+          {
+            "id": "PWF_lAHOAFlvLs4BoeZ9zgeAyIk",
+            "name": "Auto-add sub-issues to project",
+            "enabled": true
+          },
+          {
+            "id": "PWF_lAHOAFlvLs4BoeZ9zgeAyIg",
+            "name": "Auto-close issue",
+            "enabled": true
+          },
+          {
+            "id": "PWF_lAHOAFlvLs4BoeZ9zgeAyIs",
+            "name": "Item added to project",
+            "enabled": true
+          },
+          {
+            "id": "PWF_lAHOAFlvLs4BoeZ9zgeAyIU",
+            "name": "Item closed",
+            "enabled": true
+          },
+          {
+            "id": "PWF_lAHOAFlvLs4BoeZ9zgeAyIo",
+            "name": "Pull request linked to issue",
+            "enabled": true
+          },
+          {
+            "id": "PWF_lAHOAFlvLs4BoeZ9zgeAyIc",
+            "name": "Pull request merged",
+            "enabled": true
+          }
+        ]
+      }
+    }
+  }
+}

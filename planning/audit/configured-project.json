@@ -1,0 +1,2231 @@
+{
+  "id": "PVT_kwHOAFlvLs4BoeZ9",
+  "title": "Guildboard — Engineering & Delivery",
+  "url": "https://github.com/users/CompleteDotTech/projects/7",
+  "number": 7,
+  "public": true,
+  "fields": {
+    "nodes": [
+      {
+        "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-Xm8",
+        "name": "Title",
+        "dataType": "TITLE"
+      },
+      {
+        "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XnE",
+        "name": "Assignees",
+        "dataType": "ASSIGNEES"
+      },
+      {
+        "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XnM",
+        "name": "Status",
+        "dataType": "SINGLE_SELECT",
+        "options": [
+          {
+            "id": "bd3fcc4b",
+            "name": "Triage",
+            "color": "GRAY",
+            "description": "Triage"
+          },
+          {
+            "id": "f75ad846",
+            "name": "Backlog",
+            "color": "BLUE",
+            "description": "Backlog"
+          },
+          {
+            "id": "163107ee",
+            "name": "Ready",
+            "color": "GREEN",
+            "description": "Ready"
+          },
+          {
+            "id": "47fc9ee4",
+            "name": "In Progress",
+            "color": "GREEN",
+            "description": "In Progress"
+          },
+          {
+            "id": "efe5e9b3",
+            "name": "In Review",
+            "color": "YELLOW",
+            "description": "In Review"
+          },
+          {
+            "id": "2e94491b",
+            "name": "Blocked",
+            "color": "RED",
+            "description": "Blocked"
+          },
+          {
+            "id": "98236657",
+            "name": "Done",
+            "color": "GREEN",
+            "description": "Done"
+          }
+        ]
+      },
+      {
+        "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XnU",
+        "name": "Labels",
+        "dataType": "LABELS"
+      },
+      {
+        "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-Xnc",
+        "name": "Linked pull requests",
+        "dataType": "LINKED_PULL_REQUESTS"
+      },
+      {
+        "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-Xnk",
+        "name": "Milestone",
+        "dataType": "MILESTONE"
+      },
+      {
+        "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-Xns",
+        "name": "Repository",
+        "dataType": "REPOSITORY"
+      },
+      {
+        "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XoE",
+        "name": "Reviewers",
+        "dataType": "REVIEWERS"
+      },
+      {
+        "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XoQ",
+        "name": "Parent issue",
+        "dataType": "PARENT_ISSUE"
+      },
+      {
+        "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XoY",
+        "name": "Sub-issues progress",
+        "dataType": "SUB_ISSUES_PROGRESS"
+      },
+      {
+        "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-Xog",
+        "name": "Created",
+        "dataType": "CREATED"
+      },
+      {
+        "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-Xoo",
+        "name": "Updated",
+        "dataType": "UPDATED"
+      },
+      {
+        "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-Xow",
+        "name": "Closed",
+        "dataType": "CLOSED"
+      },
+      {
+        "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XpQ",
+        "name": "Priority",
+        "dataType": "SINGLE_SELECT",
+        "options": [
+          {
+            "id": "c9dae3c0",
+            "name": "Critical",
+            "color": "RED",
+            "description": "P0 — release-blocking or foundational"
+          },
+          {
+            "id": "4d75b4bb",
+            "name": "High",
+            "color": "ORANGE",
+            "description": "P1 — important for v1.0"
+          },
+          {
+            "id": "cdffb7f7",
+            "name": "Medium",
+            "color": "YELLOW",
+            "description": "P2 — valuable but nonblocking"
+          },
+          {
+            "id": "e064ed0c",
+            "name": "Low",
+            "color": "BLUE",
+            "description": "P3 — optional or exploratory"
+          }
+        ]
+      },
+      {
+        "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XpU",
+        "name": "Tier",
+        "dataType": "SINGLE_SELECT",
+        "options": [
+          {
+            "id": "402b6e13",
+            "name": "T0 Product Foundation & Architecture",
+            "color": "GRAY",
+            "description": "T0 Product Foundation & Architecture"
+          },
+          {
+            "id": "0f8646bb",
+            "name": "T1 Discord Activity & Identity",
+            "color": "BLUE",
+            "description": "T1 Discord Activity & Identity"
+          },
+          {
+            "id": "659d04df",
+            "name": "T2 Authorization & Moderation",
+            "color": "PURPLE",
+            "description": "T2 Authorization & Moderation"
+          },
+          {
+            "id": "cc807dd3",
+            "name": "T3 Whiteboard Canvas & Editing",
+            "color": "GREEN",
+            "description": "T3 Whiteboard Canvas & Editing"
+          },
+          {
+            "id": "14b1a5e5",
+            "name": "T4 Real-Time Collaboration & Presence",
+            "color": "YELLOW",
+            "description": "T4 Real-Time Collaboration & Presence"
+          },
+          {
+            "id": "0c5ed212",
+            "name": "T5 Boards, Persistence & Recovery",
+            "color": "ORANGE",
+            "description": "T5 Boards, Persistence & Recovery"
+          },
+          {
+            "id": "4517b25d",
+            "name": "T6 Collaboration Modes & Presentation",
+            "color": "PINK",
+            "description": "T6 Collaboration Modes & Presentation"
+          },
+          {
+            "id": "8c92df9e",
+            "name": "T7 User Interface & Accessibility",
+            "color": "RED",
+            "description": "T7 User Interface & Accessibility"
+          },
+          {
+            "id": "3b2a74b7",
+            "name": "T8 Backend APIs & Discord Commands",
+            "color": "GRAY",
+            "description": "T8 Backend APIs & Discord Commands"
+          },
+          {
+            "id": "31086c4d",
+            "name": "T9 Security, Privacy & Abuse Prevention",
+            "color": "BLUE",
+            "description": "T9 Security, Privacy & Abuse Prevention"
+          },
+          {
+            "id": "2ba8e0f1",
+            "name": "T10 GoDaddy Infrastructure & CI/CD",
+            "color": "PURPLE",
+            "description": "T10 GoDaddy Infrastructure & CI/CD"
+          },
+          {
+            "id": "14c4c6e3",
+            "name": "T11 Reliability, Monitoring & Operations",
+            "color": "GREEN",
+            "description": "T11 Reliability, Monitoring & Operations"
+          },
+          {
+            "id": "b418701d",
+            "name": "T12 Quality Engineering & Acceptance",
+            "color": "YELLOW",
+            "description": "T12 Quality Engineering & Acceptance"
+          },
+          {
+            "id": "6cd41c7c",
+            "name": "T13 Documentation, Community & Release",
+            "color": "ORANGE",
+            "description": "T13 Documentation, Community & Release"
+          }
+        ]
+      },
+      {
+        "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XpY",
+        "name": "Readiness",
+        "dataType": "SINGLE_SELECT",
+        "options": [
+          {
+            "id": "9ac4d875",
+            "name": "Needs Input",
+            "color": "GRAY",
+            "description": "Needs Input"
+          },
+          {
+            "id": "050a13ac",
+            "name": "Needs Research",
+            "color": "PURPLE",
+            "description": "Needs Research"
+          },
+          {
+            "id": "95ffbdc5",
+            "name": "Needs Specification",
+            "color": "PURPLE",
+            "description": "Needs Specification"
+          },
+          {
+            "id": "48dbd4d6",
+            "name": "Ready",
+            "color": "GREEN",
+            "description": "Ready"
+          },
+          {
+            "id": "bd03c406",
+            "name": "Blocked",
+            "color": "RED",
+            "description": "Blocked"
+          },
+          {
+            "id": "e9ef6c98",
+            "name": "Not Applicable",
+            "color": "ORANGE",
+            "description": "Not Applicable"
+          }
+        ]
+      },
+      {
+        "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-Xpc",
+        "name": "Work Type",
+        "dataType": "SINGLE_SELECT",
+        "options": [
+          {
+            "id": "959cf085",
+            "name": "Epic",
+            "color": "GRAY",
+            "description": "Epic"
+          },
+          {
+            "id": "b2d160b2",
+            "name": "Capability",
+            "color": "BLUE",
+            "description": "Capability"
+          },
+          {
+            "id": "3cf3c494",
+            "name": "Feature",
+            "color": "PURPLE",
+            "description": "Feature"
+          },
+          {
+            "id": "fb01ce63",
+            "name": "Task",
+            "color": "GREEN",
+            "description": "Task"
+          },
+          {
+            "id": "9e1ff4e6",
+            "name": "Subtask",
+            "color": "YELLOW",
+            "description": "Subtask"
+          },
+          {
+            "id": "fd290d95",
+            "name": "Research",
+            "color": "ORANGE",
+            "description": "Research"
+          },
+          {
+            "id": "edf9168f",
+            "name": "Specification",
+            "color": "PINK",
+            "description": "Specification"
+          },
+          {
+            "id": "88ea93fa",
+            "name": "Test",
+            "color": "RED",
+            "description": "Test"
+          },
+          {
+            "id": "880dfc2e",
+            "name": "Documentation",
+            "color": "GRAY",
+            "description": "Documentation"
+          },
+          {
+            "id": "4897b434",
+            "name": "Operations",
+            "color": "BLUE",
+            "description": "Operations"
+          }
+        ]
+      },
+      {
+        "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-Xpg",
+        "name": "Research Confidence",
+        "dataType": "SINGLE_SELECT",
+        "options": [
+          {
+            "id": "abe0e0a4",
+            "name": "Unverified",
+            "color": "GRAY",
+            "description": "Unverified"
+          },
+          {
+            "id": "dc06bd63",
+            "name": "Preliminary",
+            "color": "BLUE",
+            "description": "Preliminary"
+          },
+          {
+            "id": "963d65ee",
+            "name": "Supported",
+            "color": "PURPLE",
+            "description": "Supported"
+          },
+          {
+            "id": "1b6db3a1",
+            "name": "Verified",
+            "color": "GREEN",
+            "description": "Verified"
+          },
+          {
+            "id": "388f1248",
+            "name": "Disputed",
+            "color": "YELLOW",
+            "description": "Disputed"
+          }
+        ]
+      },
+      {
+        "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-Xpk",
+        "name": "Dependency Status",
+        "dataType": "SINGLE_SELECT",
+        "options": [
+          {
+            "id": "cd12d923",
+            "name": "Unblocked",
+            "color": "GRAY",
+            "description": "Unblocked"
+          },
+          {
+            "id": "64dfbdc6",
+            "name": "Blocked",
+            "color": "RED",
+            "description": "Blocked"
+          },
+          {
+            "id": "bbe01b17",
+            "name": "Awaiting Decision",
+            "color": "YELLOW",
+            "description": "Awaiting Decision"
+          },
+          {
+            "id": "2b69093d",
+            "name": "External Blocker",
+            "color": "RED",
+            "description": "External Blocker"
+          }
+        ]
+      },
+      {
+        "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-X9s",
+        "name": "Verification Status",
+        "dataType": "SINGLE_SELECT",
+        "options": [
+          {
+            "id": "ac277922",
+            "name": "Unverified",
+            "color": "GRAY",
+            "description": "Unverified"
+          },
+          {
+            "id": "ee673ed3",
+            "name": "Tests Pending",
+            "color": "BLUE",
+            "description": "Tests Pending"
+          },
+          {
+            "id": "b832460a",
+            "name": "Under Verification",
+            "color": "PURPLE",
+            "description": "Under Verification"
+          },
+          {
+            "id": "612d2acb",
+            "name": "Verified",
+            "color": "GREEN",
+            "description": "Verified"
+          },
+          {
+            "id": "f0c0752e",
+            "name": "Failed",
+            "color": "RED",
+            "description": "Failed"
+          }
+        ]
+      },
+      {
+        "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-X9w",
+        "name": "Release Target",
+        "dataType": "SINGLE_SELECT",
+        "options": [
+          {
+            "id": "f4d60c62",
+            "name": "MVP",
+            "color": "GRAY",
+            "description": "MVP"
+          },
+          {
+            "id": "1a1d61d4",
+            "name": "v1.0",
+            "color": "BLUE",
+            "description": "v1.0"
+          },
+          {
+            "id": "c9b61498",
+            "name": "Post-v1.0",
+            "color": "PURPLE",
+            "description": "Post-v1.0"
+          }
+        ]
+      },
+      {
+        "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-X94",
+        "name": "Risk",
+        "dataType": "SINGLE_SELECT",
+        "options": [
+          {
+            "id": "2600e9a6",
+            "name": "Critical",
+            "color": "RED",
+            "description": "Critical"
+          },
+          {
+            "id": "215125f8",
+            "name": "High",
+            "color": "ORANGE",
+            "description": "High"
+          },
+          {
+            "id": "979138dd",
+            "name": "Medium",
+            "color": "YELLOW",
+            "description": "Medium"
+          },
+          {
+            "id": "a5d7547e",
+            "name": "Low",
+            "color": "BLUE",
+            "description": "Low"
+          }
+        ]
+      },
+      {
+        "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-X-A",
+        "name": "Effort",
+        "dataType": "SINGLE_SELECT",
+        "options": [
+          {
+            "id": "643f38e0",
+            "name": "XS",
+            "color": "GRAY",
+            "description": "XS"
+          },
+          {
+            "id": "419061fc",
+            "name": "S",
+            "color": "BLUE",
+            "description": "S"
+          },
+          {
+            "id": "2a9c340b",
+            "name": "M",
+            "color": "PURPLE",
+            "description": "M"
+          },
+          {
+            "id": "899fcd8f",
+            "name": "L",
+            "color": "GREEN",
+            "description": "L"
+          },
+          {
+            "id": "1a4cda9d",
+            "name": "XL",
+            "color": "YELLOW",
+            "description": "XL"
+          }
+        ]
+      },
+      {
+        "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-X-E",
+        "name": "Owner Role",
+        "dataType": "SINGLE_SELECT",
+        "options": [
+          {
+            "id": "aa7e9912",
+            "name": "Architecture",
+            "color": "GRAY",
+            "description": "Architecture"
+          },
+          {
+            "id": "163d1e89",
+            "name": "Discord Integration",
+            "color": "BLUE",
+            "description": "Discord Integration"
+          },
+          {
+            "id": "c2c55e87",
+            "name": "Security & Authorization",
+            "color": "PURPLE",
+            "description": "Security & Authorization"
+          },
+          {
+            "id": "d8e4b63a",
+            "name": "Frontend & Canvas",
+            "color": "GREEN",
+            "description": "Frontend & Canvas"
+          },
+          {
+            "id": "13dfe684",
+            "name": "Realtime Systems",
+            "color": "YELLOW",
+            "description": "Realtime Systems"
+          },
+          {
+            "id": "7e45362b",
+            "name": "Data Engineering",
+            "color": "ORANGE",
+            "description": "Data Engineering"
+          },
+          {
+            "id": "1bf245f9",
+            "name": "UX & Accessibility",
+            "color": "PINK",
+            "description": "UX & Accessibility"
+          },
+          {
+            "id": "ded251bb",
+            "name": "Backend & Bot",
+            "color": "RED",
+            "description": "Backend & Bot"
+          },
+          {
+            "id": "13cffb05",
+            "name": "Security Engineering",
+            "color": "GRAY",
+            "description": "Security Engineering"
+          },
+          {
+            "id": "2a5fc222",
+            "name": "Platform Engineering",
+            "color": "BLUE",
+            "description": "Platform Engineering"
+          },
+          {
+            "id": "cdbb889d",
+            "name": "SRE",
+            "color": "PURPLE",
+            "description": "SRE"
+          },
+          {
+            "id": "07833ed1",
+            "name": "Quality Engineering",
+            "color": "GREEN",
+            "description": "Quality Engineering"
+          },
+          {
+            "id": "4ae47b3d",
+            "name": "Maintainer & Documentation",
+            "color": "YELLOW",
+            "description": "Maintainer & Documentation"
+          }
+        ]
+      },
+      {
+        "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-X-g",
+        "name": "Target Date",
+        "dataType": "DATE"
+      }
+    ]
+  },
+  "views": {
+    "nodes": [
+      {
+        "id": "PVTV_lAHOAFlvLs4BoeZ9zgMNtsc",
+        "number": 1,
+        "name": "Workstream overview",
+        "layout": "TABLE_LAYOUT",
+        "filter": "",
+        "configuration": {
+          "visibleFields": {
+            "nodes": [
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-Xm8",
+                "name": "Title",
+                "dataType": "TITLE"
+              },
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XnE",
+                "name": "Assignees",
+                "dataType": "ASSIGNEES"
+              },
+              {
+                "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XnM",
+                "name": "Status",
+                "dataType": "SINGLE_SELECT",
+                "options": [
+                  {
+                    "id": "bd3fcc4b",
+                    "name": "Triage",
+                    "color": "GRAY",
+                    "description": "Triage"
+                  },
+                  {
+                    "id": "f75ad846",
+                    "name": "Backlog",
+                    "color": "BLUE",
+                    "description": "Backlog"
+                  },
+                  {
+                    "id": "163107ee",
+                    "name": "Ready",
+                    "color": "GREEN",
+                    "description": "Ready"
+                  },
+                  {
+                    "id": "47fc9ee4",
+                    "name": "In Progress",
+                    "color": "GREEN",
+                    "description": "In Progress"
+                  },
+                  {
+                    "id": "efe5e9b3",
+                    "name": "In Review",
+                    "color": "YELLOW",
+                    "description": "In Review"
+                  },
+                  {
+                    "id": "2e94491b",
+                    "name": "Blocked",
+                    "color": "RED",
+                    "description": "Blocked"
+                  },
+                  {
+                    "id": "98236657",
+                    "name": "Done",
+                    "color": "GREEN",
+                    "description": "Done"
+                  }
+                ]
+              },
+              {
+                "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XpU",
+                "name": "Tier",
+                "dataType": "SINGLE_SELECT",
+                "options": [
+                  {
+                    "id": "402b6e13",
+                    "name": "T0 Product Foundation & Architecture",
+                    "color": "GRAY",
+                    "description": "T0 Product Foundation & Architecture"
+                  },
+                  {
+                    "id": "0f8646bb",
+                    "name": "T1 Discord Activity & Identity",
+                    "color": "BLUE",
+                    "description": "T1 Discord Activity & Identity"
+                  },
+                  {
+                    "id": "659d04df",
+                    "name": "T2 Authorization & Moderation",
+                    "color": "PURPLE",
+                    "description": "T2 Authorization & Moderation"
+                  },
+                  {
+                    "id": "cc807dd3",
+                    "name": "T3 Whiteboard Canvas & Editing",
+                    "color": "GREEN",
+                    "description": "T3 Whiteboard Canvas & Editing"
+                  },
+                  {
+                    "id": "14b1a5e5",
+                    "name": "T4 Real-Time Collaboration & Presence",
+                    "color": "YELLOW",
+                    "description": "T4 Real-Time Collaboration & Presence"
+                  },
+                  {
+                    "id": "0c5ed212",
+                    "name": "T5 Boards, Persistence & Recovery",
+                    "color": "ORANGE",
+                    "description": "T5 Boards, Persistence & Recovery"
+                  },
+                  {
+                    "id": "4517b25d",
+                    "name": "T6 Collaboration Modes & Presentation",
+                    "color": "PINK",
+                    "description": "T6 Collaboration Modes & Presentation"
+                  },
+                  {
+                    "id": "8c92df9e",
+                    "name": "T7 User Interface & Accessibility",
+                    "color": "RED",
+                    "description": "T7 User Interface & Accessibility"
+                  },
+                  {
+                    "id": "3b2a74b7",
+                    "name": "T8 Backend APIs & Discord Commands",
+                    "color": "GRAY",
+                    "description": "T8 Backend APIs & Discord Commands"
+                  },
+                  {
+                    "id": "31086c4d",
+                    "name": "T9 Security, Privacy & Abuse Prevention",
+                    "color": "BLUE",
+                    "description": "T9 Security, Privacy & Abuse Prevention"
+                  },
+                  {
+                    "id": "2ba8e0f1",
+                    "name": "T10 GoDaddy Infrastructure & CI/CD",
+                    "color": "PURPLE",
+                    "description": "T10 GoDaddy Infrastructure & CI/CD"
+                  },
+                  {
+                    "id": "14c4c6e3",
+                    "name": "T11 Reliability, Monitoring & Operations",
+                    "color": "GREEN",
+                    "description": "T11 Reliability, Monitoring & Operations"
+                  },
+                  {
+                    "id": "b418701d",
+                    "name": "T12 Quality Engineering & Acceptance",
+                    "color": "YELLOW",
+                    "description": "T12 Quality Engineering & Acceptance"
+                  },
+                  {
+                    "id": "6cd41c7c",
+                    "name": "T13 Documentation, Community & Release",
+                    "color": "ORANGE",
+                    "description": "T13 Documentation, Community & Release"
+                  }
+                ]
+              },
+              {
+                "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XpQ",
+                "name": "Priority",
+                "dataType": "SINGLE_SELECT",
+                "options": [
+                  {
+                    "id": "c9dae3c0",
+                    "name": "Critical",
+                    "color": "RED",
+                    "description": "P0 — release-blocking or foundational"
+                  },
+                  {
+                    "id": "4d75b4bb",
+                    "name": "High",
+                    "color": "ORANGE",
+                    "description": "P1 — important for v1.0"
+                  },
+                  {
+                    "id": "cdffb7f7",
+                    "name": "Medium",
+                    "color": "YELLOW",
+                    "description": "P2 — valuable but nonblocking"
+                  },
+                  {
+                    "id": "e064ed0c",
+                    "name": "Low",
+                    "color": "BLUE",
+                    "description": "P3 — optional or exploratory"
+                  }
+                ]
+              },
+              {
+                "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XpY",
+                "name": "Readiness",
+                "dataType": "SINGLE_SELECT",
+                "options": [
+                  {
+                    "id": "9ac4d875",
+                    "name": "Needs Input",
+                    "color": "GRAY",
+                    "description": "Needs Input"
+                  },
+                  {
+                    "id": "050a13ac",
+                    "name": "Needs Research",
+                    "color": "PURPLE",
+                    "description": "Needs Research"
+                  },
+                  {
+                    "id": "95ffbdc5",
+                    "name": "Needs Specification",
+                    "color": "PURPLE",
+                    "description": "Needs Specification"
+                  },
+                  {
+                    "id": "48dbd4d6",
+                    "name": "Ready",
+                    "color": "GREEN",
+                    "description": "Ready"
+                  },
+                  {
+                    "id": "bd03c406",
+                    "name": "Blocked",
+                    "color": "RED",
+                    "description": "Blocked"
+                  },
+                  {
+                    "id": "e9ef6c98",
+                    "name": "Not Applicable",
+                    "color": "ORANGE",
+                    "description": "Not Applicable"
+                  }
+                ]
+              },
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XoQ",
+                "name": "Parent issue",
+                "dataType": "PARENT_ISSUE"
+              },
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XoY",
+                "name": "Sub-issues progress",
+                "dataType": "SUB_ISSUES_PROGRESS"
+              },
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XnU",
+                "name": "Labels",
+                "dataType": "LABELS"
+              },
+              {
+                "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-Xpc",
+                "name": "Work Type",
+                "dataType": "SINGLE_SELECT",
+                "options": [
+                  {
+                    "id": "959cf085",
+                    "name": "Epic",
+                    "color": "GRAY",
+                    "description": "Epic"
+                  },
+                  {
+                    "id": "b2d160b2",
+                    "name": "Capability",
+                    "color": "BLUE",
+                    "description": "Capability"
+                  },
+                  {
+                    "id": "3cf3c494",
+                    "name": "Feature",
+                    "color": "PURPLE",
+                    "description": "Feature"
+                  },
+                  {
+                    "id": "fb01ce63",
+                    "name": "Task",
+                    "color": "GREEN",
+                    "description": "Task"
+                  },
+                  {
+                    "id": "9e1ff4e6",
+                    "name": "Subtask",
+                    "color": "YELLOW",
+                    "description": "Subtask"
+                  },
+                  {
+                    "id": "fd290d95",
+                    "name": "Research",
+                    "color": "ORANGE",
+                    "description": "Research"
+                  },
+                  {
+                    "id": "edf9168f",
+                    "name": "Specification",
+                    "color": "PINK",
+                    "description": "Specification"
+                  },
+                  {
+                    "id": "88ea93fa",
+                    "name": "Test",
+                    "color": "RED",
+                    "description": "Test"
+                  },
+                  {
+                    "id": "880dfc2e",
+                    "name": "Documentation",
+                    "color": "GRAY",
+                    "description": "Documentation"
+                  },
+                  {
+                    "id": "4897b434",
+                    "name": "Operations",
+                    "color": "BLUE",
+                    "description": "Operations"
+                  }
+                ]
+              },
+              {
+                "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-Xpg",
+                "name": "Research Confidence",
+                "dataType": "SINGLE_SELECT",
+                "options": [
+                  {
+                    "id": "abe0e0a4",
+                    "name": "Unverified",
+                    "color": "GRAY",
+                    "description": "Unverified"
+                  },
+                  {
+                    "id": "dc06bd63",
+                    "name": "Preliminary",
+                    "color": "BLUE",
+                    "description": "Preliminary"
+                  },
+                  {
+                    "id": "963d65ee",
+                    "name": "Supported",
+                    "color": "PURPLE",
+                    "description": "Supported"
+                  },
+                  {
+                    "id": "1b6db3a1",
+                    "name": "Verified",
+                    "color": "GREEN",
+                    "description": "Verified"
+                  },
+                  {
+                    "id": "388f1248",
+                    "name": "Disputed",
+                    "color": "YELLOW",
+                    "description": "Disputed"
+                  }
+                ]
+              },
+              {
+                "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-Xpk",
+                "name": "Dependency Status",
+                "dataType": "SINGLE_SELECT",
+                "options": [
+                  {
+                    "id": "cd12d923",
+                    "name": "Unblocked",
+                    "color": "GRAY",
+                    "description": "Unblocked"
+                  },
+                  {
+                    "id": "64dfbdc6",
+                    "name": "Blocked",
+                    "color": "RED",
+                    "description": "Blocked"
+                  },
+                  {
+                    "id": "bbe01b17",
+                    "name": "Awaiting Decision",
+                    "color": "YELLOW",
+                    "description": "Awaiting Decision"
+                  },
+                  {
+                    "id": "2b69093d",
+                    "name": "External Blocker",
+                    "color": "RED",
+                    "description": "External Blocker"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "PVTV_lAHOAFlvLs4BoeZ9zgMNtso",
+        "number": 2,
+        "name": "Research backlog by priority",
+        "layout": "TABLE_LAYOUT",
+        "filter": "is:open label:\"type: research\"",
+        "configuration": {
+          "visibleFields": {
+            "nodes": [
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-Xm8",
+                "name": "Title",
+                "dataType": "TITLE"
+              },
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XnE",
+                "name": "Assignees",
+                "dataType": "ASSIGNEES"
+              },
+              {
+                "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XnM",
+                "name": "Status",
+                "dataType": "SINGLE_SELECT",
+                "options": [
+                  {
+                    "id": "bd3fcc4b",
+                    "name": "Triage",
+                    "color": "GRAY",
+                    "description": "Triage"
+                  },
+                  {
+                    "id": "f75ad846",
+                    "name": "Backlog",
+                    "color": "BLUE",
+                    "description": "Backlog"
+                  },
+                  {
+                    "id": "163107ee",
+                    "name": "Ready",
+                    "color": "GREEN",
+                    "description": "Ready"
+                  },
+                  {
+                    "id": "47fc9ee4",
+                    "name": "In Progress",
+                    "color": "GREEN",
+                    "description": "In Progress"
+                  },
+                  {
+                    "id": "efe5e9b3",
+                    "name": "In Review",
+                    "color": "YELLOW",
+                    "description": "In Review"
+                  },
+                  {
+                    "id": "2e94491b",
+                    "name": "Blocked",
+                    "color": "RED",
+                    "description": "Blocked"
+                  },
+                  {
+                    "id": "98236657",
+                    "name": "Done",
+                    "color": "GREEN",
+                    "description": "Done"
+                  }
+                ]
+              },
+              {
+                "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XpU",
+                "name": "Tier",
+                "dataType": "SINGLE_SELECT",
+                "options": [
+                  {
+                    "id": "402b6e13",
+                    "name": "T0 Product Foundation & Architecture",
+                    "color": "GRAY",
+                    "description": "T0 Product Foundation & Architecture"
+                  },
+                  {
+                    "id": "0f8646bb",
+                    "name": "T1 Discord Activity & Identity",
+                    "color": "BLUE",
+                    "description": "T1 Discord Activity & Identity"
+                  },
+                  {
+                    "id": "659d04df",
+                    "name": "T2 Authorization & Moderation",
+                    "color": "PURPLE",
+                    "description": "T2 Authorization & Moderation"
+                  },
+                  {
+                    "id": "cc807dd3",
+                    "name": "T3 Whiteboard Canvas & Editing",
+                    "color": "GREEN",
+                    "description": "T3 Whiteboard Canvas & Editing"
+                  },
+                  {
+                    "id": "14b1a5e5",
+                    "name": "T4 Real-Time Collaboration & Presence",
+                    "color": "YELLOW",
+                    "description": "T4 Real-Time Collaboration & Presence"
+                  },
+                  {
+                    "id": "0c5ed212",
+                    "name": "T5 Boards, Persistence & Recovery",
+                    "color": "ORANGE",
+                    "description": "T5 Boards, Persistence & Recovery"
+                  },
+                  {
+                    "id": "4517b25d",
+                    "name": "T6 Collaboration Modes & Presentation",
+                    "color": "PINK",
+                    "description": "T6 Collaboration Modes & Presentation"
+                  },
+                  {
+                    "id": "8c92df9e",
+                    "name": "T7 User Interface & Accessibility",
+                    "color": "RED",
+                    "description": "T7 User Interface & Accessibility"
+                  },
+                  {
+                    "id": "3b2a74b7",
+                    "name": "T8 Backend APIs & Discord Commands",
+                    "color": "GRAY",
+                    "description": "T8 Backend APIs & Discord Commands"
+                  },
+                  {
+                    "id": "31086c4d",
+                    "name": "T9 Security, Privacy & Abuse Prevention",
+                    "color": "BLUE",
+                    "description": "T9 Security, Privacy & Abuse Prevention"
+                  },
+                  {
+                    "id": "2ba8e0f1",
+                    "name": "T10 GoDaddy Infrastructure & CI/CD",
+                    "color": "PURPLE",
+                    "description": "T10 GoDaddy Infrastructure & CI/CD"
+                  },
+                  {
+                    "id": "14c4c6e3",
+                    "name": "T11 Reliability, Monitoring & Operations",
+                    "color": "GREEN",
+                    "description": "T11 Reliability, Monitoring & Operations"
+                  },
+                  {
+                    "id": "b418701d",
+                    "name": "T12 Quality Engineering & Acceptance",
+                    "color": "YELLOW",
+                    "description": "T12 Quality Engineering & Acceptance"
+                  },
+                  {
+                    "id": "6cd41c7c",
+                    "name": "T13 Documentation, Community & Release",
+                    "color": "ORANGE",
+                    "description": "T13 Documentation, Community & Release"
+                  }
+                ]
+              },
+              {
+                "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XpQ",
+                "name": "Priority",
+                "dataType": "SINGLE_SELECT",
+                "options": [
+                  {
+                    "id": "c9dae3c0",
+                    "name": "Critical",
+                    "color": "RED",
+                    "description": "P0 — release-blocking or foundational"
+                  },
+                  {
+                    "id": "4d75b4bb",
+                    "name": "High",
+                    "color": "ORANGE",
+                    "description": "P1 — important for v1.0"
+                  },
+                  {
+                    "id": "cdffb7f7",
+                    "name": "Medium",
+                    "color": "YELLOW",
+                    "description": "P2 — valuable but nonblocking"
+                  },
+                  {
+                    "id": "e064ed0c",
+                    "name": "Low",
+                    "color": "BLUE",
+                    "description": "P3 — optional or exploratory"
+                  }
+                ]
+              },
+              {
+                "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XpY",
+                "name": "Readiness",
+                "dataType": "SINGLE_SELECT",
+                "options": [
+                  {
+                    "id": "9ac4d875",
+                    "name": "Needs Input",
+                    "color": "GRAY",
+                    "description": "Needs Input"
+                  },
+                  {
+                    "id": "050a13ac",
+                    "name": "Needs Research",
+                    "color": "PURPLE",
+                    "description": "Needs Research"
+                  },
+                  {
+                    "id": "95ffbdc5",
+                    "name": "Needs Specification",
+                    "color": "PURPLE",
+                    "description": "Needs Specification"
+                  },
+                  {
+                    "id": "48dbd4d6",
+                    "name": "Ready",
+                    "color": "GREEN",
+                    "description": "Ready"
+                  },
+                  {
+                    "id": "bd03c406",
+                    "name": "Blocked",
+                    "color": "RED",
+                    "description": "Blocked"
+                  },
+                  {
+                    "id": "e9ef6c98",
+                    "name": "Not Applicable",
+                    "color": "ORANGE",
+                    "description": "Not Applicable"
+                  }
+                ]
+              },
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XoQ",
+                "name": "Parent issue",
+                "dataType": "PARENT_ISSUE"
+              },
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XnU",
+                "name": "Labels",
+                "dataType": "LABELS"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "PVTV_lAHOAFlvLs4BoeZ9zgMNtss",
+        "number": 3,
+        "name": "Ready to research",
+        "layout": "TABLE_LAYOUT",
+        "filter": "is:open label:\"type: research\" readiness:Ready status:Backlog,Ready",
+        "configuration": {
+          "visibleFields": {
+            "nodes": [
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-Xm8",
+                "name": "Title",
+                "dataType": "TITLE"
+              },
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XnE",
+                "name": "Assignees",
+                "dataType": "ASSIGNEES"
+              },
+              {
+                "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XnM",
+                "name": "Status",
+                "dataType": "SINGLE_SELECT",
+                "options": [
+                  {
+                    "id": "bd3fcc4b",
+                    "name": "Triage",
+                    "color": "GRAY",
+                    "description": "Triage"
+                  },
+                  {
+                    "id": "f75ad846",
+                    "name": "Backlog",
+                    "color": "BLUE",
+                    "description": "Backlog"
+                  },
+                  {
+                    "id": "163107ee",
+                    "name": "Ready",
+                    "color": "GREEN",
+                    "description": "Ready"
+                  },
+                  {
+                    "id": "47fc9ee4",
+                    "name": "In Progress",
+                    "color": "GREEN",
+                    "description": "In Progress"
+                  },
+                  {
+                    "id": "efe5e9b3",
+                    "name": "In Review",
+                    "color": "YELLOW",
+                    "description": "In Review"
+                  },
+                  {
+                    "id": "2e94491b",
+                    "name": "Blocked",
+                    "color": "RED",
+                    "description": "Blocked"
+                  },
+                  {
+                    "id": "98236657",
+                    "name": "Done",
+                    "color": "GREEN",
+                    "description": "Done"
+                  }
+                ]
+              },
+              {
+                "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XpU",
+                "name": "Tier",
+                "dataType": "SINGLE_SELECT",
+                "options": [
+                  {
+                    "id": "402b6e13",
+                    "name": "T0 Product Foundation & Architecture",
+                    "color": "GRAY",
+                    "description": "T0 Product Foundation & Architecture"
+                  },
+                  {
+                    "id": "0f8646bb",
+                    "name": "T1 Discord Activity & Identity",
+                    "color": "BLUE",
+                    "description": "T1 Discord Activity & Identity"
+                  },
+                  {
+                    "id": "659d04df",
+                    "name": "T2 Authorization & Moderation",
+                    "color": "PURPLE",
+                    "description": "T2 Authorization & Moderation"
+                  },
+                  {
+                    "id": "cc807dd3",
+                    "name": "T3 Whiteboard Canvas & Editing",
+                    "color": "GREEN",
+                    "description": "T3 Whiteboard Canvas & Editing"
+                  },
+                  {
+                    "id": "14b1a5e5",
+                    "name": "T4 Real-Time Collaboration & Presence",
+                    "color": "YELLOW",
+                    "description": "T4 Real-Time Collaboration & Presence"
+                  },
+                  {
+                    "id": "0c5ed212",
+                    "name": "T5 Boards, Persistence & Recovery",
+                    "color": "ORANGE",
+                    "description": "T5 Boards, Persistence & Recovery"
+                  },
+                  {
+                    "id": "4517b25d",
+                    "name": "T6 Collaboration Modes & Presentation",
+                    "color": "PINK",
+                    "description": "T6 Collaboration Modes & Presentation"
+                  },
+                  {
+                    "id": "8c92df9e",
+                    "name": "T7 User Interface & Accessibility",
+                    "color": "RED",
+                    "description": "T7 User Interface & Accessibility"
+                  },
+                  {
+                    "id": "3b2a74b7",
+                    "name": "T8 Backend APIs & Discord Commands",
+                    "color": "GRAY",
+                    "description": "T8 Backend APIs & Discord Commands"
+                  },
+                  {
+                    "id": "31086c4d",
+                    "name": "T9 Security, Privacy & Abuse Prevention",
+                    "color": "BLUE",
+                    "description": "T9 Security, Privacy & Abuse Prevention"
+                  },
+                  {
+                    "id": "2ba8e0f1",
+                    "name": "T10 GoDaddy Infrastructure & CI/CD",
+                    "color": "PURPLE",
+                    "description": "T10 GoDaddy Infrastructure & CI/CD"
+                  },
+                  {
+                    "id": "14c4c6e3",
+                    "name": "T11 Reliability, Monitoring & Operations",
+                    "color": "GREEN",
+                    "description": "T11 Reliability, Monitoring & Operations"
+                  },
+                  {
+                    "id": "b418701d",
+                    "name": "T12 Quality Engineering & Acceptance",
+                    "color": "YELLOW",
+                    "description": "T12 Quality Engineering & Acceptance"
+                  },
+                  {
+                    "id": "6cd41c7c",
+                    "name": "T13 Documentation, Community & Release",
+                    "color": "ORANGE",
+                    "description": "T13 Documentation, Community & Release"
+                  }
+                ]
+              },
+              {
+                "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XpQ",
+                "name": "Priority",
+                "dataType": "SINGLE_SELECT",
+                "options": [
+                  {
+                    "id": "c9dae3c0",
+                    "name": "Critical",
+                    "color": "RED",
+                    "description": "P0 — release-blocking or foundational"
+                  },
+                  {
+                    "id": "4d75b4bb",
+                    "name": "High",
+                    "color": "ORANGE",
+                    "description": "P1 — important for v1.0"
+                  },
+                  {
+                    "id": "cdffb7f7",
+                    "name": "Medium",
+                    "color": "YELLOW",
+                    "description": "P2 — valuable but nonblocking"
+                  },
+                  {
+                    "id": "e064ed0c",
+                    "name": "Low",
+                    "color": "BLUE",
+                    "description": "P3 — optional or exploratory"
+                  }
+                ]
+              },
+              {
+                "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XpY",
+                "name": "Readiness",
+                "dataType": "SINGLE_SELECT",
+                "options": [
+                  {
+                    "id": "9ac4d875",
+                    "name": "Needs Input",
+                    "color": "GRAY",
+                    "description": "Needs Input"
+                  },
+                  {
+                    "id": "050a13ac",
+                    "name": "Needs Research",
+                    "color": "PURPLE",
+                    "description": "Needs Research"
+                  },
+                  {
+                    "id": "95ffbdc5",
+                    "name": "Needs Specification",
+                    "color": "PURPLE",
+                    "description": "Needs Specification"
+                  },
+                  {
+                    "id": "48dbd4d6",
+                    "name": "Ready",
+                    "color": "GREEN",
+                    "description": "Ready"
+                  },
+                  {
+                    "id": "bd03c406",
+                    "name": "Blocked",
+                    "color": "RED",
+                    "description": "Blocked"
+                  },
+                  {
+                    "id": "e9ef6c98",
+                    "name": "Not Applicable",
+                    "color": "ORANGE",
+                    "description": "Not Applicable"
+                  }
+                ]
+              },
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XoQ",
+                "name": "Parent issue",
+                "dataType": "PARENT_ISSUE"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "PVTV_lAHOAFlvLs4BoeZ9zgMNtsw",
+        "number": 4,
+        "name": "Blocked or awaiting decision",
+        "layout": "TABLE_LAYOUT",
+        "filter": "is:open readiness:Blocked,\"Awaiting decision\"",
+        "configuration": {
+          "visibleFields": {
+            "nodes": [
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-Xm8",
+                "name": "Title",
+                "dataType": "TITLE"
+              },
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XnE",
+                "name": "Assignees",
+                "dataType": "ASSIGNEES"
+              },
+              {
+                "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XnM",
+                "name": "Status",
+                "dataType": "SINGLE_SELECT",
+                "options": [
+                  {
+                    "id": "bd3fcc4b",
+                    "name": "Triage",
+                    "color": "GRAY",
+                    "description": "Triage"
+                  },
+                  {
+                    "id": "f75ad846",
+                    "name": "Backlog",
+                    "color": "BLUE",
+                    "description": "Backlog"
+                  },
+                  {
+                    "id": "163107ee",
+                    "name": "Ready",
+                    "color": "GREEN",
+                    "description": "Ready"
+                  },
+                  {
+                    "id": "47fc9ee4",
+                    "name": "In Progress",
+                    "color": "GREEN",
+                    "description": "In Progress"
+                  },
+                  {
+                    "id": "efe5e9b3",
+                    "name": "In Review",
+                    "color": "YELLOW",
+                    "description": "In Review"
+                  },
+                  {
+                    "id": "2e94491b",
+                    "name": "Blocked",
+                    "color": "RED",
+                    "description": "Blocked"
+                  },
+                  {
+                    "id": "98236657",
+                    "name": "Done",
+                    "color": "GREEN",
+                    "description": "Done"
+                  }
+                ]
+              },
+              {
+                "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XpU",
+                "name": "Tier",
+                "dataType": "SINGLE_SELECT",
+                "options": [
+                  {
+                    "id": "402b6e13",
+                    "name": "T0 Product Foundation & Architecture",
+                    "color": "GRAY",
+                    "description": "T0 Product Foundation & Architecture"
+                  },
+                  {
+                    "id": "0f8646bb",
+                    "name": "T1 Discord Activity & Identity",
+                    "color": "BLUE",
+                    "description": "T1 Discord Activity & Identity"
+                  },
+                  {
+                    "id": "659d04df",
+                    "name": "T2 Authorization & Moderation",
+                    "color": "PURPLE",
+                    "description": "T2 Authorization & Moderation"
+                  },
+                  {
+                    "id": "cc807dd3",
+                    "name": "T3 Whiteboard Canvas & Editing",
+                    "color": "GREEN",
+                    "description": "T3 Whiteboard Canvas & Editing"
+                  },
+                  {
+                    "id": "14b1a5e5",
+                    "name": "T4 Real-Time Collaboration & Presence",
+                    "color": "YELLOW",
+                    "description": "T4 Real-Time Collaboration & Presence"
+                  },
+                  {
+                    "id": "0c5ed212",
+                    "name": "T5 Boards, Persistence & Recovery",
+                    "color": "ORANGE",
+                    "description": "T5 Boards, Persistence & Recovery"
+                  },
+                  {
+                    "id": "4517b25d",
+                    "name": "T6 Collaboration Modes & Presentation",
+                    "color": "PINK",
+                    "description": "T6 Collaboration Modes & Presentation"
+                  },
+                  {
+                    "id": "8c92df9e",
+                    "name": "T7 User Interface & Accessibility",
+                    "color": "RED",
+                    "description": "T7 User Interface & Accessibility"
+                  },
+                  {
+                    "id": "3b2a74b7",
+                    "name": "T8 Backend APIs & Discord Commands",
+                    "color": "GRAY",
+                    "description": "T8 Backend APIs & Discord Commands"
+                  },
+                  {
+                    "id": "31086c4d",
+                    "name": "T9 Security, Privacy & Abuse Prevention",
+                    "color": "BLUE",
+                    "description": "T9 Security, Privacy & Abuse Prevention"
+                  },
+                  {
+                    "id": "2ba8e0f1",
+                    "name": "T10 GoDaddy Infrastructure & CI/CD",
+                    "color": "PURPLE",
+                    "description": "T10 GoDaddy Infrastructure & CI/CD"
+                  },
+                  {
+                    "id": "14c4c6e3",
+                    "name": "T11 Reliability, Monitoring & Operations",
+                    "color": "GREEN",
+                    "description": "T11 Reliability, Monitoring & Operations"
+                  },
+                  {
+                    "id": "b418701d",
+                    "name": "T12 Quality Engineering & Acceptance",
+                    "color": "YELLOW",
+                    "description": "T12 Quality Engineering & Acceptance"
+                  },
+                  {
+                    "id": "6cd41c7c",
+                    "name": "T13 Documentation, Community & Release",
+                    "color": "ORANGE",
+                    "description": "T13 Documentation, Community & Release"
+                  }
+                ]
+              },
+              {
+                "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XpQ",
+                "name": "Priority",
+                "dataType": "SINGLE_SELECT",
+                "options": [
+                  {
+                    "id": "c9dae3c0",
+                    "name": "Critical",
+                    "color": "RED",
+                    "description": "P0 — release-blocking or foundational"
+                  },
+                  {
+                    "id": "4d75b4bb",
+                    "name": "High",
+                    "color": "ORANGE",
+                    "description": "P1 — important for v1.0"
+                  },
+                  {
+                    "id": "cdffb7f7",
+                    "name": "Medium",
+                    "color": "YELLOW",
+                    "description": "P2 — valuable but nonblocking"
+                  },
+                  {
+                    "id": "e064ed0c",
+                    "name": "Low",
+                    "color": "BLUE",
+                    "description": "P3 — optional or exploratory"
+                  }
+                ]
+              },
+              {
+                "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XpY",
+                "name": "Readiness",
+                "dataType": "SINGLE_SELECT",
+                "options": [
+                  {
+                    "id": "9ac4d875",
+                    "name": "Needs Input",
+                    "color": "GRAY",
+                    "description": "Needs Input"
+                  },
+                  {
+                    "id": "050a13ac",
+                    "name": "Needs Research",
+                    "color": "PURPLE",
+                    "description": "Needs Research"
+                  },
+                  {
+                    "id": "95ffbdc5",
+                    "name": "Needs Specification",
+                    "color": "PURPLE",
+                    "description": "Needs Specification"
+                  },
+                  {
+                    "id": "48dbd4d6",
+                    "name": "Ready",
+                    "color": "GREEN",
+                    "description": "Ready"
+                  },
+                  {
+                    "id": "bd03c406",
+                    "name": "Blocked",
+                    "color": "RED",
+                    "description": "Blocked"
+                  },
+                  {
+                    "id": "e9ef6c98",
+                    "name": "Not Applicable",
+                    "color": "ORANGE",
+                    "description": "Not Applicable"
+                  }
+                ]
+              },
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XoQ",
+                "name": "Parent issue",
+                "dataType": "PARENT_ISSUE"
+              },
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XnU",
+                "name": "Labels",
+                "dataType": "LABELS"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "PVTV_lAHOAFlvLs4BoeZ9zgMNts4",
+        "number": 5,
+        "name": "Unassigned or missing metadata",
+        "layout": "TABLE_LAYOUT",
+        "filter": "is:open no:assignee,priority,tier,readiness",
+        "configuration": {
+          "visibleFields": {
+            "nodes": [
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-Xm8",
+                "name": "Title",
+                "dataType": "TITLE"
+              },
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XnE",
+                "name": "Assignees",
+                "dataType": "ASSIGNEES"
+              },
+              {
+                "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XnM",
+                "name": "Status",
+                "dataType": "SINGLE_SELECT",
+                "options": [
+                  {
+                    "id": "bd3fcc4b",
+                    "name": "Triage",
+                    "color": "GRAY",
+                    "description": "Triage"
+                  },
+                  {
+                    "id": "f75ad846",
+                    "name": "Backlog",
+                    "color": "BLUE",
+                    "description": "Backlog"
+                  },
+                  {
+                    "id": "163107ee",
+                    "name": "Ready",
+                    "color": "GREEN",
+                    "description": "Ready"
+                  },
+                  {
+                    "id": "47fc9ee4",
+                    "name": "In Progress",
+                    "color": "GREEN",
+                    "description": "In Progress"
+                  },
+                  {
+                    "id": "efe5e9b3",
+                    "name": "In Review",
+                    "color": "YELLOW",
+                    "description": "In Review"
+                  },
+                  {
+                    "id": "2e94491b",
+                    "name": "Blocked",
+                    "color": "RED",
+                    "description": "Blocked"
+                  },
+                  {
+                    "id": "98236657",
+                    "name": "Done",
+                    "color": "GREEN",
+                    "description": "Done"
+                  }
+                ]
+              },
+              {
+                "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XpU",
+                "name": "Tier",
+                "dataType": "SINGLE_SELECT",
+                "options": [
+                  {
+                    "id": "402b6e13",
+                    "name": "T0 Product Foundation & Architecture",
+                    "color": "GRAY",
+                    "description": "T0 Product Foundation & Architecture"
+                  },
+                  {
+                    "id": "0f8646bb",
+                    "name": "T1 Discord Activity & Identity",
+                    "color": "BLUE",
+                    "description": "T1 Discord Activity & Identity"
+                  },
+                  {
+                    "id": "659d04df",
+                    "name": "T2 Authorization & Moderation",
+                    "color": "PURPLE",
+                    "description": "T2 Authorization & Moderation"
+                  },
+                  {
+                    "id": "cc807dd3",
+                    "name": "T3 Whiteboard Canvas & Editing",
+                    "color": "GREEN",
+                    "description": "T3 Whiteboard Canvas & Editing"
+                  },
+                  {
+                    "id": "14b1a5e5",
+                    "name": "T4 Real-Time Collaboration & Presence",
+                    "color": "YELLOW",
+                    "description": "T4 Real-Time Collaboration & Presence"
+                  },
+                  {
+                    "id": "0c5ed212",
+                    "name": "T5 Boards, Persistence & Recovery",
+                    "color": "ORANGE",
+                    "description": "T5 Boards, Persistence & Recovery"
+                  },
+                  {
+                    "id": "4517b25d",
+                    "name": "T6 Collaboration Modes & Presentation",
+                    "color": "PINK",
+                    "description": "T6 Collaboration Modes & Presentation"
+                  },
+                  {
+                    "id": "8c92df9e",
+                    "name": "T7 User Interface & Accessibility",
+                    "color": "RED",
+                    "description": "T7 User Interface & Accessibility"
+                  },
+                  {
+                    "id": "3b2a74b7",
+                    "name": "T8 Backend APIs & Discord Commands",
+                    "color": "GRAY",
+                    "description": "T8 Backend APIs & Discord Commands"
+                  },
+                  {
+                    "id": "31086c4d",
+                    "name": "T9 Security, Privacy & Abuse Prevention",
+                    "color": "BLUE",
+                    "description": "T9 Security, Privacy & Abuse Prevention"
+                  },
+                  {
+                    "id": "2ba8e0f1",
+                    "name": "T10 GoDaddy Infrastructure & CI/CD",
+                    "color": "PURPLE",
+                    "description": "T10 GoDaddy Infrastructure & CI/CD"
+                  },
+                  {
+                    "id": "14c4c6e3",
+                    "name": "T11 Reliability, Monitoring & Operations",
+                    "color": "GREEN",
+                    "description": "T11 Reliability, Monitoring & Operations"
+                  },
+                  {
+                    "id": "b418701d",
+                    "name": "T12 Quality Engineering & Acceptance",
+                    "color": "YELLOW",
+                    "description": "T12 Quality Engineering & Acceptance"
+                  },
+                  {
+                    "id": "6cd41c7c",
+                    "name": "T13 Documentation, Community & Release",
+                    "color": "ORANGE",
+                    "description": "T13 Documentation, Community & Release"
+                  }
+                ]
+              },
+              {
+                "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XpQ",
+                "name": "Priority",
+                "dataType": "SINGLE_SELECT",
+                "options": [
+                  {
+                    "id": "c9dae3c0",
+                    "name": "Critical",
+                    "color": "RED",
+                    "description": "P0 — release-blocking or foundational"
+                  },
+                  {
+                    "id": "4d75b4bb",
+                    "name": "High",
+                    "color": "ORANGE",
+                    "description": "P1 — important for v1.0"
+                  },
+                  {
+                    "id": "cdffb7f7",
+                    "name": "Medium",
+                    "color": "YELLOW",
+                    "description": "P2 — valuable but nonblocking"
+                  },
+                  {
+                    "id": "e064ed0c",
+                    "name": "Low",
+                    "color": "BLUE",
+                    "description": "P3 — optional or exploratory"
+                  }
+                ]
+              },
+              {
+                "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XpY",
+                "name": "Readiness",
+                "dataType": "SINGLE_SELECT",
+                "options": [
+                  {
+                    "id": "9ac4d875",
+                    "name": "Needs Input",
+                    "color": "GRAY",
+                    "description": "Needs Input"
+                  },
+                  {
+                    "id": "050a13ac",
+                    "name": "Needs Research",
+                    "color": "PURPLE",
+                    "description": "Needs Research"
+                  },
+                  {
+                    "id": "95ffbdc5",
+                    "name": "Needs Specification",
+                    "color": "PURPLE",
+                    "description": "Needs Specification"
+                  },
+                  {
+                    "id": "48dbd4d6",
+                    "name": "Ready",
+                    "color": "GREEN",
+                    "description": "Ready"
+                  },
+                  {
+                    "id": "bd03c406",
+                    "name": "Blocked",
+                    "color": "RED",
+                    "description": "Blocked"
+                  },
+                  {
+                    "id": "e9ef6c98",
+                    "name": "Not Applicable",
+                    "color": "ORANGE",
+                    "description": "Not Applicable"
+                  }
+                ]
+              },
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XoQ",
+                "name": "Parent issue",
+                "dataType": "PARENT_ISSUE"
+              },
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XnU",
+                "name": "Labels",
+                "dataType": "LABELS"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "PVTV_lAHOAFlvLs4BoeZ9zgMNts8",
+        "number": 6,
+        "name": "Kanban",
+        "layout": "BOARD_LAYOUT",
+        "filter": "",
+        "configuration": {
+          "visibleFields": {
+            "nodes": [
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-Xm8",
+                "name": "Title",
+                "dataType": "TITLE"
+              },
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XnE",
+                "name": "Assignees",
+                "dataType": "ASSIGNEES"
+              },
+              {
+                "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XnM",
+                "name": "Status",
+                "dataType": "SINGLE_SELECT",
+                "options": [
+                  {
+                    "id": "bd3fcc4b",
+                    "name": "Triage",
+                    "color": "GRAY",
+                    "description": "Triage"
+                  },
+                  {
+                    "id": "f75ad846",
+                    "name": "Backlog",
+                    "color": "BLUE",
+                    "description": "Backlog"
+                  },
+                  {
+                    "id": "163107ee",
+                    "name": "Ready",
+                    "color": "GREEN",
+                    "description": "Ready"
+                  },
+                  {
+                    "id": "47fc9ee4",
+                    "name": "In Progress",
+                    "color": "GREEN",
+                    "description": "In Progress"
+                  },
+                  {
+                    "id": "efe5e9b3",
+                    "name": "In Review",
+                    "color": "YELLOW",
+                    "description": "In Review"
+                  },
+                  {
+                    "id": "2e94491b",
+                    "name": "Blocked",
+                    "color": "RED",
+                    "description": "Blocked"
+                  },
+                  {
+                    "id": "98236657",
+                    "name": "Done",
+                    "color": "GREEN",
+                    "description": "Done"
+                  }
+                ]
+              },
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-Xnc",
+                "name": "Linked pull requests",
+                "dataType": "LINKED_PULL_REQUESTS"
+              },
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XoY",
+                "name": "Sub-issues progress",
+                "dataType": "SUB_ISSUES_PROGRESS"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "PVTV_lAHOAFlvLs4BoeZ9zgMNttA",
+        "number": 7,
+        "name": "Owner Workload",
+        "layout": "TABLE_LAYOUT",
+        "filter": "",
+        "configuration": {
+          "visibleFields": {
+            "nodes": [
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-Xm8",
+                "name": "Title",
+                "dataType": "TITLE"
+              },
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XnE",
+                "name": "Assignees",
+                "dataType": "ASSIGNEES"
+              },
+              {
+                "id": "PVTSSF_lAHOAFlvLs4BoeZ9zhm-XnM",
+                "name": "Status",
+                "dataType": "SINGLE_SELECT",
+                "options": [
+                  {
+                    "id": "bd3fcc4b",
+                    "name": "Triage",
+                    "color": "GRAY",
+                    "description": "Triage"
+                  },
+                  {
+                    "id": "f75ad846",
+                    "name": "Backlog",
+                    "color": "BLUE",
+                    "description": "Backlog"
+                  },
+                  {
+                    "id": "163107ee",
+                    "name": "Ready",
+                    "color": "GREEN",
+                    "description": "Ready"
+                  },
+                  {
+                    "id": "47fc9ee4",
+                    "name": "In Progress",
+                    "color": "GREEN",
+                    "description": "In Progress"
+                  },
+                  {
+                    "id": "efe5e9b3",
+                    "name": "In Review",
+                    "color": "YELLOW",
+                    "description": "In Review"
+                  },
+                  {
+                    "id": "2e94491b",
+                    "name": "Blocked",
+                    "color": "RED",
+                    "description": "Blocked"
+                  },
+                  {
+                    "id": "98236657",
+                    "name": "Done",
+                    "color": "GREEN",
+                    "description": "Done"
+                  }
+                ]
+              },
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-Xnc",
+                "name": "Linked pull requests",
+                "dataType": "LINKED_PULL_REQUESTS"
+              },
+              {
+                "id": "PVTF_lAHOAFlvLs4BoeZ9zhm-XoY",
+                "name": "Sub-issues progress",
+                "dataType": "SUB_ISSUES_PROGRESS"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "PVTV_lAHOAFlvLs4BoeZ9zgMNttE",
+        "number": 8,
+        "name": "Roadmap",
+        "layout": "ROADMAP_LAYOUT",
+        "filter": "",
+        "configuration": {
+          "visibleFields": {
+            "nodes": []
+          }
+        }
+      }
+    ]
+  },
+  "workflows": {
+    "nodes": [
+      {
+        "id": "PWF_lAHOAFlvLs4BoeZ9zgeAyIk",
+        "name": "Auto-add sub-issues to project",
+        "enabled": true
+      },
+      {
+        "id": "PWF_lAHOAFlvLs4BoeZ9zgeAyIg",
+        "name": "Auto-close issue",
+        "enabled": true
+      },
+      {
+        "id": "PWF_lAHOAFlvLs4BoeZ9zgeAyIs",
+        "name": "Item added to project",
+        "enabled": true
+      },
+      {
+        "id": "PWF_lAHOAFlvLs4BoeZ9zgeAyIU",
+        "name": "Item closed",
+        "enabled": true
+      },
+      {
+        "id": "PWF_lAHOAFlvLs4BoeZ9zgeAyIo",
+        "name": "Pull request linked to issue",
+        "enabled": true
+      },
+      {
+        "id": "PWF_lAHOAFlvLs4BoeZ9zgeAyIc",
+        "name": "Pull request merged",
+        "enabled": true
+      }
+    ]
+  },
+  "repositories": {
+    "nodes": [
+      {
+        "nameWithOwner": "CompleteDotTech/guildboard"
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+name: Bug report
+description: Report reproducible incorrect behavior
+labels: ["type: bug"]
+body:
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective and context
+      description: Include guild/client context without secrets or private data.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+      description: For bugs include reproducible steps and affected revision.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria and validation
+      description: Observable pass/fail behavior, negative cases and evidence.
+    validations:
+      required: true
+  - type: textarea
+    id: relationships
+    attributes:
+      label: Dependencies, workstream and security considerations
+      description: Distinguish native blockers from related information. Maintainers complete Project triage.

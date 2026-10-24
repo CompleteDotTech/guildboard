@@ -1,0 +1,106 @@
+{
+  "Status": [
+    "Triage",
+    "Backlog",
+    "Ready",
+    "In Progress",
+    "In Review",
+    "Blocked",
+    "Done"
+  ],
+  "Tier": [
+    "T0 Product Foundation & Architecture",
+    "T1 Discord Activity & Identity",
+    "T2 Authorization & Moderation",
+    "T3 Whiteboard Canvas & Editing",
+    "T4 Real-Time Collaboration & Presence",
+    "T5 Boards, Persistence & Recovery",
+    "T6 Collaboration Modes & Presentation",
+    "T7 User Interface & Accessibility",
+    "T8 Backend APIs & Discord Commands",
+    "T9 Security, Privacy & Abuse Prevention",
+    "T10 GoDaddy Infrastructure & CI/CD",
+    "T11 Reliability, Monitoring & Operations",
+    "T12 Quality Engineering & Acceptance",
+    "T13 Documentation, Community & Release"
+  ],
+  "Priority": [
+    "Critical",
+    "High",
+    "Medium",
+    "Low"
+  ],
+  "Readiness": [
+    "Needs Input",
+    "Needs Research",
+    "Needs Specification",
+    "Ready",
+    "Blocked",
+    "Not Applicable"
+  ],
+  "Work Type": [
+    "Epic",
+    "Capability",
+    "Feature",
+    "Task",
+    "Subtask",
+    "Research",
+    "Specification",
+    "Test",
+    "Documentation",
+    "Operations"
+  ],
+  "Research Confidence": [
+    "Unverified",
+    "Preliminary",
+    "Supported",
+    "Verified",
+    "Disputed"
+  ],
+  "Dependency Status": [
+    "Unblocked",
+    "Blocked",
+    "Awaiting Decision",
+    "External Blocker"
+  ],
+  "Verification Status": [
+    "Unverified",
+    "Tests Pending",
+    "Under Verification",
+    "Verified",
+    "Failed"
+  ],
+  "Release Target": [
+    "MVP",
+    "v1.0",
+    "Post-v1.0"
+  ],
+  "Risk": [
+    "Critical",
+    "High",
+    "Medium",
+    "Low"
+  ],
+  "Effort": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL"
+  ],
+  "Owner Role": [
+    "Architecture",
+    "Discord Integration",
+    "Security & Authorization",
+    "Frontend & Canvas",
+    "Realtime Systems",
+    "Data Engineering",
+    "UX & Accessibility",
+    "Backend & Bot",
+    "Security Engineering",
+    "Platform Engineering",
+    "SRE",
+    "Quality Engineering",
+    "Maintainer & Documentation"
+  ]
+}

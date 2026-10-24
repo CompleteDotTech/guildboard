@@ -1,0 +1,14 @@
+{
+  "name": "guildboard",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Guildboard engineering foundation; application implementation pending",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "planning:validate": "python3 scripts/github-bootstrap/validate.py",
+    "planning:audit": "python3 scripts/github-bootstrap/audit.py"
+  }
+}

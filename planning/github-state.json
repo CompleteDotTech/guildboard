@@ -1,0 +1,22 @@
+{
+  "owner": "CompleteDotTech",
+  "owner_id": "MDQ6VXNlcjU4NjExNjY=",
+  "repo": "CompleteDotTech/guildboard",
+  "project": {
+    "id": "PVT_kwHOAFlvLs4BoeZ9",
+    "number": 7,
+    "url": "https://github.com/users/CompleteDotTech/projects/7"
+  },
+  "repository_id": "R_kgDOVVah6A",
+  "milestones": {
+    "M0 — Research, Feasibility & Architecture": 1,
+    "M1 — Repository, Discord & Backend Foundation": 2,
+    "M2 — Collaborative Whiteboard MVP": 3,
+    "M3 — Moderation, Persistence & Recovery": 4,
+    "M4 — Complete Application Functionality": 5,
+    "M5 — GoDaddy Production Readiness": 6,
+    "M6 — Security, Performance & Final Acceptance": 7,
+    "M7 — Stable v1.0 Release": 8,
+    "Post-v1.0 — Enhancements and Maintenance": 9
+  }
+}

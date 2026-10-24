@@ -1,0 +1,11 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+*.tmp
+planning/audit/bootstrap-progress.log
+planning/audit/failures.jsonl
