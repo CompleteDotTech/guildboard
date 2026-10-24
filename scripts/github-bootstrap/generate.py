@@ -63,6 +63,13 @@ for t in range(13):
  deps=[x['id'] for x in items if x['workstream']==f'T{t}' and x['work_type']=='Test']
  add(f'GB-T{t}.G1',f'T{t} accepted workstream verification gate',t,'Test',f'GB-T{t}',requirements='Confirm all mandatory verification children for '+streams[t]['name']+' have real evidence; resolve defects and security exceptions; verify handoff documentation and integration on release candidate',deps=deps,priority='Critical',milestone=6)
 add('GB-T13.G3','Stable v1.0 release approval gate',13,'Test','GB-T13',requirements='All mandatory functionality, modes, moderation, import/export, accessibility and recovery accepted; independent security review findings resolved; production acceptance and full integration tests pass; reviewed versioned artifacts, release notes and support documentation exist',deps=[f'GB-T{t}.G1' for t in range(13)]+['GB-T13.G1','GB-T13.G2','GB-T13.01.01.V1','GB-T13.01.02.V1','GB-T13.02.01.V1','GB-T13.02.02.V1','GB-T13.03.01.V1','GB-T13.03.02.V1'],milestone=7,priority='Critical')
+# Handoff documents require the actual verified outcomes they describe.
+for t in range(14):
+    doc=next(x for x in items if x['id']==f'GB-T{t}.D1')
+    doc['dependencies']=list(dict.fromkeys(doc['dependencies']+[x['id'] for x in items if x['workstream']==f'T{t}' and x['id'].endswith('.V1') and x['fields']['Release Target']!='Post-v1.0']))
+    gate=next(x for x in items if x['id']==(f'GB-T{t}.G1' if t<13 else 'GB-T13.G3'))
+    gate['dependencies'].append(doc['id'])
+for x in items:x['description']='; '.join(x['requirements'])
 # No guessed issue URLs: rendering resolves only existing GitHub mappings.
 save(ROOT/'planning/guildboard-backlog.json',{'schema_version':1,'repository':state['repo'],'project':state['project'],'items':items})
 print('Compiled',len(items),'items')

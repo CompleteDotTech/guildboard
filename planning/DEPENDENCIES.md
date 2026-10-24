@@ -1,0 +1,560 @@
+# Dependency graph and critical path
+
+Only native blocking prerequisites impose execution order. Parent completion is aggregation, never a blanket blocker. Compatibility and information inputs can be bidirectional without becoming dependency cycles.
+
+## Longest prerequisite chain
+
+This is an unweighted chain, not a scheduled duration estimate. No dates or staffing commitments exist. Parallel release branches also matter.
+
+[GB-T1.R1](https://github.com/CompleteDotTech/guildboard/issues/34) → [GB-T1.S1](https://github.com/CompleteDotTech/guildboard/issues/35) → [GB-T1.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/45) → [GB-T1.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/46) → [GB-T1.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/55) → [GB-T1.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/56) → [GB-T2.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/73) → [GB-T2.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/74) → [GB-T2.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/77) → [GB-T2.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/78) → [GB-T2.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/80) → [GB-T2.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/81) → [GB-T6.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/203) → [GB-T6.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/204) → [GB-T6.D1](https://github.com/CompleteDotTech/guildboard/issues/226) → `GB-T6.G1` (creation pending) → `GB-T13.G3` (creation pending)
+
+## Native blocking edges
+
+| Blocked issue | Prerequisite |
+| --- | --- |
+| [GB-T0.S1](https://github.com/CompleteDotTech/guildboard/issues/3) | [GB-T0.R1](https://github.com/CompleteDotTech/guildboard/issues/2) |
+| [GB-T0.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/6) | [GB-T0.S1](https://github.com/CompleteDotTech/guildboard/issues/3) |
+| [GB-T0.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/7) | [GB-T0.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/6) |
+| [GB-T0.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/9) | [GB-T0.S1](https://github.com/CompleteDotTech/guildboard/issues/3) |
+| [GB-T0.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/10) | [GB-T0.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/9) |
+| [GB-T0.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/13) | [GB-T0.S1](https://github.com/CompleteDotTech/guildboard/issues/3) |
+| [GB-T0.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/14) | [GB-T0.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/13) |
+| [GB-T0.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/16) | [GB-T0.S1](https://github.com/CompleteDotTech/guildboard/issues/3) |
+| [GB-T0.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/17) | [GB-T0.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/16) |
+| [GB-T0.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/20) | [GB-T0.S1](https://github.com/CompleteDotTech/guildboard/issues/3) |
+| [GB-T0.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/21) | [GB-T0.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/20) |
+| [GB-T0.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/24) | [GB-T0.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/23) |
+| [GB-T0.04.01.T1](https://github.com/CompleteDotTech/guildboard/issues/27) | [GB-T0.S1](https://github.com/CompleteDotTech/guildboard/issues/3) |
+| [GB-T0.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/28) | [GB-T0.04.01.T1](https://github.com/CompleteDotTech/guildboard/issues/27) |
+| [GB-T0.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/30) | [GB-T0.S1](https://github.com/CompleteDotTech/guildboard/issues/3) |
+| [GB-T0.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/31) | [GB-T0.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/30) |
+| [GB-T0.D1](https://github.com/CompleteDotTech/guildboard/issues/32) | [GB-T0.S1](https://github.com/CompleteDotTech/guildboard/issues/3) |
+| [GB-T0.D1](https://github.com/CompleteDotTech/guildboard/issues/32) | [GB-T0.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/7) |
+| [GB-T0.D1](https://github.com/CompleteDotTech/guildboard/issues/32) | [GB-T0.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/10) |
+| [GB-T0.D1](https://github.com/CompleteDotTech/guildboard/issues/32) | [GB-T0.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/14) |
+| [GB-T0.D1](https://github.com/CompleteDotTech/guildboard/issues/32) | [GB-T0.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/17) |
+| [GB-T0.D1](https://github.com/CompleteDotTech/guildboard/issues/32) | [GB-T0.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/21) |
+| [GB-T0.D1](https://github.com/CompleteDotTech/guildboard/issues/32) | [GB-T0.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/24) |
+| [GB-T0.D1](https://github.com/CompleteDotTech/guildboard/issues/32) | [GB-T0.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/28) |
+| [GB-T0.D1](https://github.com/CompleteDotTech/guildboard/issues/32) | [GB-T0.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/31) |
+| [GB-T1.S1](https://github.com/CompleteDotTech/guildboard/issues/35) | [GB-T1.R1](https://github.com/CompleteDotTech/guildboard/issues/34) |
+| [GB-T1.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/38) | [GB-T1.S1](https://github.com/CompleteDotTech/guildboard/issues/35) |
+| [GB-T1.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/39) | [GB-T1.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/38) |
+| [GB-T1.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/41) | [GB-T1.S1](https://github.com/CompleteDotTech/guildboard/issues/35) |
+| [GB-T1.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/42) | [GB-T1.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/41) |
+| [GB-T1.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/45) | [GB-T1.S1](https://github.com/CompleteDotTech/guildboard/issues/35) |
+| [GB-T1.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/46) | [GB-T1.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/45) |
+| [GB-T1.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/48) | [GB-T1.S1](https://github.com/CompleteDotTech/guildboard/issues/35) |
+| [GB-T1.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/49) | [GB-T1.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/48) |
+| [GB-T1.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/52) | [GB-T1.S1](https://github.com/CompleteDotTech/guildboard/issues/35) |
+| [GB-T1.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/53) | [GB-T1.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/52) |
+| [GB-T1.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/55) | [GB-T1.S1](https://github.com/CompleteDotTech/guildboard/issues/35) |
+| [GB-T1.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/55) | [GB-T1.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/46) |
+| [GB-T1.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/55) | [GB-T1.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/53) |
+| [GB-T1.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/56) | [GB-T1.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/55) |
+| [GB-T1.04.01.T1](https://github.com/CompleteDotTech/guildboard/issues/59) | [GB-T1.S1](https://github.com/CompleteDotTech/guildboard/issues/35) |
+| [GB-T1.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/60) | [GB-T1.04.01.T1](https://github.com/CompleteDotTech/guildboard/issues/59) |
+| [GB-T1.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/62) | [GB-T1.S1](https://github.com/CompleteDotTech/guildboard/issues/35) |
+| [GB-T1.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/63) | [GB-T1.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/62) |
+| [GB-T1.D1](https://github.com/CompleteDotTech/guildboard/issues/64) | [GB-T1.S1](https://github.com/CompleteDotTech/guildboard/issues/35) |
+| [GB-T1.D1](https://github.com/CompleteDotTech/guildboard/issues/64) | [GB-T1.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/39) |
+| [GB-T1.D1](https://github.com/CompleteDotTech/guildboard/issues/64) | [GB-T1.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/42) |
+| [GB-T1.D1](https://github.com/CompleteDotTech/guildboard/issues/64) | [GB-T1.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/46) |
+| [GB-T1.D1](https://github.com/CompleteDotTech/guildboard/issues/64) | [GB-T1.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/49) |
+| [GB-T1.D1](https://github.com/CompleteDotTech/guildboard/issues/64) | [GB-T1.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/53) |
+| [GB-T1.D1](https://github.com/CompleteDotTech/guildboard/issues/64) | [GB-T1.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/56) |
+| [GB-T1.D1](https://github.com/CompleteDotTech/guildboard/issues/64) | [GB-T1.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/60) |
+| [GB-T1.D1](https://github.com/CompleteDotTech/guildboard/issues/64) | [GB-T1.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/63) |
+| [GB-T2.S1](https://github.com/CompleteDotTech/guildboard/issues/67) | [GB-T2.R1](https://github.com/CompleteDotTech/guildboard/issues/66) |
+| [GB-T2.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/70) | [GB-T2.S1](https://github.com/CompleteDotTech/guildboard/issues/67) |
+| [GB-T2.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/71) | [GB-T2.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/70) |
+| [GB-T2.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/73) | [GB-T2.S1](https://github.com/CompleteDotTech/guildboard/issues/67) |
+| [GB-T2.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/73) | [GB-T1.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/56) |
+| [GB-T2.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/74) | [GB-T2.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/73) |
+| [GB-T2.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/77) | [GB-T2.S1](https://github.com/CompleteDotTech/guildboard/issues/67) |
+| [GB-T2.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/77) | [GB-T2.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/74) |
+| [GB-T2.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/78) | [GB-T2.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/77) |
+| [GB-T2.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/80) | [GB-T2.S1](https://github.com/CompleteDotTech/guildboard/issues/67) |
+| [GB-T2.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/80) | [GB-T2.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/78) |
+| [GB-T2.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/81) | [GB-T2.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/80) |
+| [GB-T2.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/84) | [GB-T2.S1](https://github.com/CompleteDotTech/guildboard/issues/67) |
+| [GB-T2.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/85) | [GB-T2.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/84) |
+| [GB-T2.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/87) | [GB-T2.S1](https://github.com/CompleteDotTech/guildboard/issues/67) |
+| [GB-T2.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/88) | [GB-T2.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/87) |
+| [GB-T2.04.01.T1](https://github.com/CompleteDotTech/guildboard/issues/91) | [GB-T2.S1](https://github.com/CompleteDotTech/guildboard/issues/67) |
+| [GB-T2.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/92) | [GB-T2.04.01.T1](https://github.com/CompleteDotTech/guildboard/issues/91) |
+| [GB-T2.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/94) | [GB-T2.S1](https://github.com/CompleteDotTech/guildboard/issues/67) |
+| [GB-T2.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/95) | [GB-T2.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/94) |
+| [GB-T2.D1](https://github.com/CompleteDotTech/guildboard/issues/96) | [GB-T2.S1](https://github.com/CompleteDotTech/guildboard/issues/67) |
+| [GB-T2.D1](https://github.com/CompleteDotTech/guildboard/issues/96) | [GB-T2.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/71) |
+| [GB-T2.D1](https://github.com/CompleteDotTech/guildboard/issues/96) | [GB-T2.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/74) |
+| [GB-T2.D1](https://github.com/CompleteDotTech/guildboard/issues/96) | [GB-T2.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/78) |
+| [GB-T2.D1](https://github.com/CompleteDotTech/guildboard/issues/96) | [GB-T2.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/81) |
+| [GB-T2.D1](https://github.com/CompleteDotTech/guildboard/issues/96) | [GB-T2.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/85) |
+| [GB-T2.D1](https://github.com/CompleteDotTech/guildboard/issues/96) | [GB-T2.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/88) |
+| [GB-T2.D1](https://github.com/CompleteDotTech/guildboard/issues/96) | [GB-T2.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/92) |
+| [GB-T2.D1](https://github.com/CompleteDotTech/guildboard/issues/96) | [GB-T2.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/95) |
+| [GB-T3.S1](https://github.com/CompleteDotTech/guildboard/issues/99) | [GB-T3.R1](https://github.com/CompleteDotTech/guildboard/issues/98) |
+| [GB-T3.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/102) | [GB-T3.S1](https://github.com/CompleteDotTech/guildboard/issues/99) |
+| [GB-T3.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/103) | [GB-T3.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/102) |
+| [GB-T3.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/105) | [GB-T3.S1](https://github.com/CompleteDotTech/guildboard/issues/99) |
+| [GB-T3.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/106) | [GB-T3.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/105) |
+| [GB-T3.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/109) | [GB-T3.S1](https://github.com/CompleteDotTech/guildboard/issues/99) |
+| [GB-T3.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/110) | [GB-T3.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/109) |
+| [GB-T3.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/112) | [GB-T3.S1](https://github.com/CompleteDotTech/guildboard/issues/99) |
+| [GB-T3.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/113) | [GB-T3.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/112) |
+| [GB-T3.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/116) | [GB-T3.S1](https://github.com/CompleteDotTech/guildboard/issues/99) |
+| [GB-T3.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/117) | [GB-T3.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/116) |
+| [GB-T3.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/119) | [GB-T3.S1](https://github.com/CompleteDotTech/guildboard/issues/99) |
+| [GB-T3.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/121) | [GB-T3.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/119) |
+| [GB-T3.04.01.T1](https://github.com/CompleteDotTech/guildboard/issues/125) | [GB-T3.S1](https://github.com/CompleteDotTech/guildboard/issues/99) |
+| [GB-T3.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/126) | [GB-T3.04.01.T1](https://github.com/CompleteDotTech/guildboard/issues/125) |
+| [GB-T3.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/128) | [GB-T3.S1](https://github.com/CompleteDotTech/guildboard/issues/99) |
+| [GB-T3.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/129) | [GB-T3.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/128) |
+| [GB-T3.D1](https://github.com/CompleteDotTech/guildboard/issues/130) | [GB-T3.S1](https://github.com/CompleteDotTech/guildboard/issues/99) |
+| [GB-T3.D1](https://github.com/CompleteDotTech/guildboard/issues/130) | [GB-T3.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/103) |
+| [GB-T3.D1](https://github.com/CompleteDotTech/guildboard/issues/130) | [GB-T3.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/106) |
+| [GB-T3.D1](https://github.com/CompleteDotTech/guildboard/issues/130) | [GB-T3.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/110) |
+| [GB-T3.D1](https://github.com/CompleteDotTech/guildboard/issues/130) | [GB-T3.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/113) |
+| [GB-T3.D1](https://github.com/CompleteDotTech/guildboard/issues/130) | [GB-T3.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/117) |
+| [GB-T3.D1](https://github.com/CompleteDotTech/guildboard/issues/130) | [GB-T3.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/121) |
+| [GB-T3.D1](https://github.com/CompleteDotTech/guildboard/issues/130) | [GB-T3.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/126) |
+| [GB-T3.D1](https://github.com/CompleteDotTech/guildboard/issues/130) | [GB-T3.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/129) |
+| [GB-T4.S1](https://github.com/CompleteDotTech/guildboard/issues/133) | [GB-T4.R1](https://github.com/CompleteDotTech/guildboard/issues/132) |
+| [GB-T4.S1](https://github.com/CompleteDotTech/guildboard/issues/133) | [GB-T3.S1](https://github.com/CompleteDotTech/guildboard/issues/99) |
+| [GB-T4.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/136) | [GB-T4.S1](https://github.com/CompleteDotTech/guildboard/issues/133) |
+| [GB-T4.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/136) | [GB-T2.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/74) |
+| [GB-T4.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/136) | [GB-T1.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/49) |
+| [GB-T4.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/137) | [GB-T4.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/136) |
+| [GB-T4.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/139) | [GB-T4.S1](https://github.com/CompleteDotTech/guildboard/issues/133) |
+| [GB-T4.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/140) | [GB-T4.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/139) |
+| [GB-T4.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/150) | [GB-T4.S1](https://github.com/CompleteDotTech/guildboard/issues/133) |
+| [GB-T4.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/150) | [GB-T3.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/106) |
+| [GB-T4.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/150) | [GB-T5.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/149) |
+| [GB-T4.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/151) | [GB-T4.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/150) |
+| [GB-T4.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/153) | [GB-T4.S1](https://github.com/CompleteDotTech/guildboard/issues/133) |
+| [GB-T4.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/154) | [GB-T4.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/153) |
+| [GB-T4.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/157) | [GB-T4.S1](https://github.com/CompleteDotTech/guildboard/issues/133) |
+| [GB-T4.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/158) | [GB-T4.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/157) |
+| [GB-T4.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/160) | [GB-T4.S1](https://github.com/CompleteDotTech/guildboard/issues/133) |
+| [GB-T4.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/161) | [GB-T4.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/160) |
+| [GB-T4.04.01.T1](https://github.com/CompleteDotTech/guildboard/issues/164) | [GB-T4.S1](https://github.com/CompleteDotTech/guildboard/issues/133) |
+| [GB-T4.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/165) | [GB-T4.04.01.T1](https://github.com/CompleteDotTech/guildboard/issues/164) |
+| [GB-T4.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/167) | [GB-T4.S1](https://github.com/CompleteDotTech/guildboard/issues/133) |
+| [GB-T4.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/168) | [GB-T4.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/167) |
+| [GB-T4.D1](https://github.com/CompleteDotTech/guildboard/issues/169) | [GB-T4.S1](https://github.com/CompleteDotTech/guildboard/issues/133) |
+| [GB-T4.D1](https://github.com/CompleteDotTech/guildboard/issues/169) | [GB-T4.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/137) |
+| [GB-T4.D1](https://github.com/CompleteDotTech/guildboard/issues/169) | [GB-T4.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/140) |
+| [GB-T4.D1](https://github.com/CompleteDotTech/guildboard/issues/169) | [GB-T4.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/151) |
+| [GB-T4.D1](https://github.com/CompleteDotTech/guildboard/issues/169) | [GB-T4.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/154) |
+| [GB-T4.D1](https://github.com/CompleteDotTech/guildboard/issues/169) | [GB-T4.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/158) |
+| [GB-T4.D1](https://github.com/CompleteDotTech/guildboard/issues/169) | [GB-T4.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/161) |
+| [GB-T4.D1](https://github.com/CompleteDotTech/guildboard/issues/169) | [GB-T4.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/165) |
+| [GB-T4.D1](https://github.com/CompleteDotTech/guildboard/issues/169) | [GB-T4.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/168) |
+| [GB-T5.S1](https://github.com/CompleteDotTech/guildboard/issues/147) | [GB-T5.R1](https://github.com/CompleteDotTech/guildboard/issues/146) |
+| [GB-T5.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/172) | [GB-T5.S1](https://github.com/CompleteDotTech/guildboard/issues/147) |
+| [GB-T5.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/173) | [GB-T5.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/172) |
+| [GB-T5.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/175) | [GB-T5.S1](https://github.com/CompleteDotTech/guildboard/issues/147) |
+| [GB-T5.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/176) | [GB-T5.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/175) |
+| [GB-T5.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/148) | [GB-T5.S1](https://github.com/CompleteDotTech/guildboard/issues/147) |
+| [GB-T5.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/149) | [GB-T5.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/148) |
+| [GB-T5.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/178) | [GB-T5.S1](https://github.com/CompleteDotTech/guildboard/issues/147) |
+| [GB-T5.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/178) | [GB-T5.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/149) |
+| [GB-T5.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/179) | [GB-T5.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/178) |
+| [GB-T5.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/182) | [GB-T5.S1](https://github.com/CompleteDotTech/guildboard/issues/147) |
+| [GB-T5.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/182) | [GB-T5.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/179) |
+| [GB-T5.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/183) | [GB-T5.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/182) |
+| [GB-T5.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/185) | [GB-T5.S1](https://github.com/CompleteDotTech/guildboard/issues/147) |
+| [GB-T5.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/185) | [GB-T5.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/183) |
+| [GB-T5.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/185) | [GB-T5.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/179) |
+| [GB-T5.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/186) | [GB-T5.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/185) |
+| [GB-T5.04.01.T1](https://github.com/CompleteDotTech/guildboard/issues/189) | [GB-T5.S1](https://github.com/CompleteDotTech/guildboard/issues/147) |
+| [GB-T5.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/190) | [GB-T5.04.01.T1](https://github.com/CompleteDotTech/guildboard/issues/189) |
+| [GB-T5.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/192) | [GB-T5.S1](https://github.com/CompleteDotTech/guildboard/issues/147) |
+| [GB-T5.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/193) | [GB-T5.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/192) |
+| [GB-T5.D1](https://github.com/CompleteDotTech/guildboard/issues/194) | [GB-T5.S1](https://github.com/CompleteDotTech/guildboard/issues/147) |
+| [GB-T5.D1](https://github.com/CompleteDotTech/guildboard/issues/194) | [GB-T5.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/173) |
+| [GB-T5.D1](https://github.com/CompleteDotTech/guildboard/issues/194) | [GB-T5.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/176) |
+| [GB-T5.D1](https://github.com/CompleteDotTech/guildboard/issues/194) | [GB-T5.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/149) |
+| [GB-T5.D1](https://github.com/CompleteDotTech/guildboard/issues/194) | [GB-T5.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/179) |
+| [GB-T5.D1](https://github.com/CompleteDotTech/guildboard/issues/194) | [GB-T5.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/183) |
+| [GB-T5.D1](https://github.com/CompleteDotTech/guildboard/issues/194) | [GB-T5.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/186) |
+| [GB-T5.D1](https://github.com/CompleteDotTech/guildboard/issues/194) | [GB-T5.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/190) |
+| [GB-T5.D1](https://github.com/CompleteDotTech/guildboard/issues/194) | [GB-T5.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/193) |
+| [GB-T6.S1](https://github.com/CompleteDotTech/guildboard/issues/197) | [GB-T6.R1](https://github.com/CompleteDotTech/guildboard/issues/196) |
+| [GB-T6.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/200) | [GB-T6.S1](https://github.com/CompleteDotTech/guildboard/issues/197) |
+| [GB-T6.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/201) | [GB-T6.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/200) |
+| [GB-T6.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/203) | [GB-T6.S1](https://github.com/CompleteDotTech/guildboard/issues/197) |
+| [GB-T6.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/203) | [GB-T2.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/81) |
+| [GB-T6.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/204) | [GB-T6.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/203) |
+| [GB-T6.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/207) | [GB-T6.S1](https://github.com/CompleteDotTech/guildboard/issues/197) |
+| [GB-T6.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/208) | [GB-T6.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/207) |
+| [GB-T6.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/210) | [GB-T6.S1](https://github.com/CompleteDotTech/guildboard/issues/197) |
+| [GB-T6.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/211) | [GB-T6.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/210) |
+| [GB-T6.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/214) | [GB-T6.S1](https://github.com/CompleteDotTech/guildboard/issues/197) |
+| [GB-T6.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/215) | [GB-T6.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/214) |
+| [GB-T6.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/217) | [GB-T6.S1](https://github.com/CompleteDotTech/guildboard/issues/197) |
+| [GB-T6.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/218) | [GB-T6.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/217) |
+| [GB-T6.04.01.T1](https://github.com/CompleteDotTech/guildboard/issues/221) | [GB-T6.S1](https://github.com/CompleteDotTech/guildboard/issues/197) |
+| [GB-T6.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/222) | [GB-T6.04.01.T1](https://github.com/CompleteDotTech/guildboard/issues/221) |
+| [GB-T6.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/224) | [GB-T6.S1](https://github.com/CompleteDotTech/guildboard/issues/197) |
+| [GB-T6.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/225) | [GB-T6.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/224) |
+| [GB-T6.D1](https://github.com/CompleteDotTech/guildboard/issues/226) | [GB-T6.S1](https://github.com/CompleteDotTech/guildboard/issues/197) |
+| [GB-T6.D1](https://github.com/CompleteDotTech/guildboard/issues/226) | [GB-T6.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/201) |
+| [GB-T6.D1](https://github.com/CompleteDotTech/guildboard/issues/226) | [GB-T6.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/204) |
+| [GB-T6.D1](https://github.com/CompleteDotTech/guildboard/issues/226) | [GB-T6.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/208) |
+| [GB-T6.D1](https://github.com/CompleteDotTech/guildboard/issues/226) | [GB-T6.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/211) |
+| [GB-T6.D1](https://github.com/CompleteDotTech/guildboard/issues/226) | [GB-T6.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/215) |
+| [GB-T6.D1](https://github.com/CompleteDotTech/guildboard/issues/226) | [GB-T6.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/218) |
+| [GB-T6.D1](https://github.com/CompleteDotTech/guildboard/issues/226) | [GB-T6.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/222) |
+| [GB-T6.D1](https://github.com/CompleteDotTech/guildboard/issues/226) | [GB-T6.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/225) |
+| [GB-T7.S1](https://github.com/CompleteDotTech/guildboard/issues/229) | [GB-T7.R1](https://github.com/CompleteDotTech/guildboard/issues/228) |
+| [GB-T7.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/232) | [GB-T7.S1](https://github.com/CompleteDotTech/guildboard/issues/229) |
+| [GB-T7.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/233) | [GB-T7.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/232) |
+| [GB-T7.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/235) | [GB-T7.S1](https://github.com/CompleteDotTech/guildboard/issues/229) |
+| [GB-T7.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/236) | [GB-T7.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/235) |
+| [GB-T7.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/239) | [GB-T7.S1](https://github.com/CompleteDotTech/guildboard/issues/229) |
+| [GB-T7.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/240) | [GB-T7.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/239) |
+| [GB-T7.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/242) | [GB-T7.S1](https://github.com/CompleteDotTech/guildboard/issues/229) |
+| [GB-T7.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/243) | [GB-T7.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/242) |
+| [GB-T7.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/246) | [GB-T7.S1](https://github.com/CompleteDotTech/guildboard/issues/229) |
+| [GB-T7.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/247) | [GB-T7.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/246) |
+| [GB-T7.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/249) | [GB-T7.S1](https://github.com/CompleteDotTech/guildboard/issues/229) |
+| [GB-T7.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/250) | [GB-T7.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/249) |
+| [GB-T7.04.01.T1](https://github.com/CompleteDotTech/guildboard/issues/253) | [GB-T7.S1](https://github.com/CompleteDotTech/guildboard/issues/229) |
+| [GB-T7.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/254) | [GB-T7.04.01.T1](https://github.com/CompleteDotTech/guildboard/issues/253) |
+| [GB-T7.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/256) | [GB-T7.S1](https://github.com/CompleteDotTech/guildboard/issues/229) |
+| [GB-T7.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/257) | [GB-T7.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/256) |
+| [GB-T7.D1](https://github.com/CompleteDotTech/guildboard/issues/258) | [GB-T7.S1](https://github.com/CompleteDotTech/guildboard/issues/229) |
+| [GB-T7.D1](https://github.com/CompleteDotTech/guildboard/issues/258) | [GB-T7.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/233) |
+| [GB-T7.D1](https://github.com/CompleteDotTech/guildboard/issues/258) | [GB-T7.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/236) |
+| [GB-T7.D1](https://github.com/CompleteDotTech/guildboard/issues/258) | [GB-T7.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/240) |
+| [GB-T7.D1](https://github.com/CompleteDotTech/guildboard/issues/258) | [GB-T7.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/243) |
+| [GB-T7.D1](https://github.com/CompleteDotTech/guildboard/issues/258) | [GB-T7.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/247) |
+| [GB-T7.D1](https://github.com/CompleteDotTech/guildboard/issues/258) | [GB-T7.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/250) |
+| [GB-T7.D1](https://github.com/CompleteDotTech/guildboard/issues/258) | [GB-T7.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/254) |
+| [GB-T7.D1](https://github.com/CompleteDotTech/guildboard/issues/258) | [GB-T7.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/257) |
+| [GB-T8.S1](https://github.com/CompleteDotTech/guildboard/issues/261) | [GB-T8.R1](https://github.com/CompleteDotTech/guildboard/issues/260) |
+| [GB-T8.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/264) | [GB-T8.S1](https://github.com/CompleteDotTech/guildboard/issues/261) |
+| [GB-T8.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/265) | [GB-T8.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/264) |
+| [GB-T8.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/267) | [GB-T8.S1](https://github.com/CompleteDotTech/guildboard/issues/261) |
+| [GB-T8.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/268) | [GB-T8.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/267) |
+| [GB-T8.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/271) | [GB-T8.S1](https://github.com/CompleteDotTech/guildboard/issues/261) |
+| [GB-T8.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/272) | [GB-T8.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/271) |
+| [GB-T8.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/274) | [GB-T8.S1](https://github.com/CompleteDotTech/guildboard/issues/261) |
+| [GB-T8.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/275) | [GB-T8.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/274) |
+| [GB-T8.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/278) | [GB-T8.S1](https://github.com/CompleteDotTech/guildboard/issues/261) |
+| [GB-T8.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/279) | [GB-T8.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/278) |
+| [GB-T8.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/281) | [GB-T8.S1](https://github.com/CompleteDotTech/guildboard/issues/261) |
+| [GB-T8.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/282) | [GB-T8.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/281) |
+| [GB-T8.04.01.T1](https://github.com/CompleteDotTech/guildboard/issues/285) | [GB-T8.S1](https://github.com/CompleteDotTech/guildboard/issues/261) |
+| [GB-T8.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/286) | [GB-T8.04.01.T1](https://github.com/CompleteDotTech/guildboard/issues/285) |
+| [GB-T8.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/288) | [GB-T8.S1](https://github.com/CompleteDotTech/guildboard/issues/261) |
+| [GB-T8.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/289) | [GB-T8.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/288) |
+| [GB-T8.D1](https://github.com/CompleteDotTech/guildboard/issues/290) | [GB-T8.S1](https://github.com/CompleteDotTech/guildboard/issues/261) |
+| [GB-T8.D1](https://github.com/CompleteDotTech/guildboard/issues/290) | [GB-T8.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/265) |
+| [GB-T8.D1](https://github.com/CompleteDotTech/guildboard/issues/290) | [GB-T8.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/268) |
+| [GB-T8.D1](https://github.com/CompleteDotTech/guildboard/issues/290) | [GB-T8.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/272) |
+| [GB-T8.D1](https://github.com/CompleteDotTech/guildboard/issues/290) | [GB-T8.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/275) |
+| [GB-T8.D1](https://github.com/CompleteDotTech/guildboard/issues/290) | [GB-T8.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/279) |
+| [GB-T8.D1](https://github.com/CompleteDotTech/guildboard/issues/290) | [GB-T8.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/282) |
+| [GB-T8.D1](https://github.com/CompleteDotTech/guildboard/issues/290) | [GB-T8.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/286) |
+| [GB-T8.D1](https://github.com/CompleteDotTech/guildboard/issues/290) | [GB-T8.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/289) |
+| [GB-T9.S1](https://github.com/CompleteDotTech/guildboard/issues/293) | [GB-T9.R1](https://github.com/CompleteDotTech/guildboard/issues/292) |
+| [GB-T9.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/296) | [GB-T9.S1](https://github.com/CompleteDotTech/guildboard/issues/293) |
+| [GB-T9.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/297) | [GB-T9.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/296) |
+| [GB-T9.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/299) | [GB-T9.S1](https://github.com/CompleteDotTech/guildboard/issues/293) |
+| [GB-T9.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/300) | [GB-T9.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/299) |
+| [GB-T9.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/303) | [GB-T9.S1](https://github.com/CompleteDotTech/guildboard/issues/293) |
+| [GB-T9.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/304) | [GB-T9.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/303) |
+| [GB-T9.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/306) | [GB-T9.S1](https://github.com/CompleteDotTech/guildboard/issues/293) |
+| [GB-T9.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/307) | [GB-T9.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/306) |
+| [GB-T9.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/310) | [GB-T9.S1](https://github.com/CompleteDotTech/guildboard/issues/293) |
+| [GB-T9.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/311) | [GB-T9.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/310) |
+| [GB-T9.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/313) | [GB-T9.S1](https://github.com/CompleteDotTech/guildboard/issues/293) |
+| [GB-T9.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/314) | [GB-T9.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/313) |
+| [GB-T9.04.01.T1](https://github.com/CompleteDotTech/guildboard/issues/317) | [GB-T9.S1](https://github.com/CompleteDotTech/guildboard/issues/293) |
+| [GB-T9.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/318) | [GB-T9.04.01.T1](https://github.com/CompleteDotTech/guildboard/issues/317) |
+| [GB-T9.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/320) | [GB-T9.S1](https://github.com/CompleteDotTech/guildboard/issues/293) |
+| [GB-T9.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/320) | [GB-T9.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/297) |
+| [GB-T9.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/320) | [GB-T9.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/300) |
+| [GB-T9.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/320) | [GB-T9.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/304) |
+| [GB-T9.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/320) | [GB-T9.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/307) |
+| [GB-T9.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/321) | [GB-T9.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/320) |
+| [GB-T9.D1](https://github.com/CompleteDotTech/guildboard/issues/322) | [GB-T9.S1](https://github.com/CompleteDotTech/guildboard/issues/293) |
+| [GB-T9.D1](https://github.com/CompleteDotTech/guildboard/issues/322) | [GB-T9.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/297) |
+| [GB-T9.D1](https://github.com/CompleteDotTech/guildboard/issues/322) | [GB-T9.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/300) |
+| [GB-T9.D1](https://github.com/CompleteDotTech/guildboard/issues/322) | [GB-T9.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/304) |
+| [GB-T9.D1](https://github.com/CompleteDotTech/guildboard/issues/322) | [GB-T9.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/307) |
+| [GB-T9.D1](https://github.com/CompleteDotTech/guildboard/issues/322) | [GB-T9.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/311) |
+| [GB-T9.D1](https://github.com/CompleteDotTech/guildboard/issues/322) | [GB-T9.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/314) |
+| [GB-T9.D1](https://github.com/CompleteDotTech/guildboard/issues/322) | [GB-T9.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/318) |
+| [GB-T9.D1](https://github.com/CompleteDotTech/guildboard/issues/322) | [GB-T9.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/321) |
+| [GB-T10.S1](https://github.com/CompleteDotTech/guildboard/issues/325) | [GB-T10.R1](https://github.com/CompleteDotTech/guildboard/issues/324) |
+| [GB-T10.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/328) | [GB-T10.S1](https://github.com/CompleteDotTech/guildboard/issues/325) |
+| [GB-T10.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/329) | [GB-T10.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/328) |
+| [GB-T10.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/331) | [GB-T10.S1](https://github.com/CompleteDotTech/guildboard/issues/325) |
+| [GB-T10.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/332) | [GB-T10.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/331) |
+| [GB-T10.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/335) | [GB-T10.S1](https://github.com/CompleteDotTech/guildboard/issues/325) |
+| [GB-T10.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/336) | [GB-T10.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/335) |
+| [GB-T10.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/338) | [GB-T10.S1](https://github.com/CompleteDotTech/guildboard/issues/325) |
+| [GB-T10.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/338) | [GB-T10.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/336) |
+| [GB-T10.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/339) | [GB-T10.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/338) |
+| [GB-T10.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/342) | [GB-T10.S1](https://github.com/CompleteDotTech/guildboard/issues/325) |
+| [GB-T10.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/343) | [GB-T10.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/342) |
+| [GB-T10.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/345) | [GB-T10.S1](https://github.com/CompleteDotTech/guildboard/issues/325) |
+| [GB-T10.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/346) | [GB-T10.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/345) |
+| [GB-T10.04.01.T1](https://github.com/CompleteDotTech/guildboard/issues/349) | [GB-T10.S1](https://github.com/CompleteDotTech/guildboard/issues/325) |
+| [GB-T10.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/350) | [GB-T10.04.01.T1](https://github.com/CompleteDotTech/guildboard/issues/349) |
+| [GB-T10.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/352) | [GB-T10.S1](https://github.com/CompleteDotTech/guildboard/issues/325) |
+| [GB-T10.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/352) | [GB-T10.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/336) |
+| [GB-T10.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/352) | [GB-T10.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/339) |
+| [GB-T10.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/352) | [GB-T10.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/346) |
+| [GB-T10.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/353) | [GB-T10.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/352) |
+| [GB-T10.D1](https://github.com/CompleteDotTech/guildboard/issues/354) | [GB-T10.S1](https://github.com/CompleteDotTech/guildboard/issues/325) |
+| [GB-T10.D1](https://github.com/CompleteDotTech/guildboard/issues/354) | [GB-T10.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/329) |
+| [GB-T10.D1](https://github.com/CompleteDotTech/guildboard/issues/354) | [GB-T10.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/332) |
+| [GB-T10.D1](https://github.com/CompleteDotTech/guildboard/issues/354) | [GB-T10.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/336) |
+| [GB-T10.D1](https://github.com/CompleteDotTech/guildboard/issues/354) | [GB-T10.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/339) |
+| [GB-T10.D1](https://github.com/CompleteDotTech/guildboard/issues/354) | [GB-T10.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/343) |
+| [GB-T10.D1](https://github.com/CompleteDotTech/guildboard/issues/354) | [GB-T10.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/346) |
+| [GB-T10.D1](https://github.com/CompleteDotTech/guildboard/issues/354) | [GB-T10.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/350) |
+| [GB-T10.D1](https://github.com/CompleteDotTech/guildboard/issues/354) | [GB-T10.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/353) |
+| [GB-T11.S1](https://github.com/CompleteDotTech/guildboard/issues/357) | [GB-T11.R1](https://github.com/CompleteDotTech/guildboard/issues/356) |
+| [GB-T11.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/360) | [GB-T11.S1](https://github.com/CompleteDotTech/guildboard/issues/357) |
+| [GB-T11.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/361) | [GB-T11.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/360) |
+| [GB-T11.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/363) | [GB-T11.S1](https://github.com/CompleteDotTech/guildboard/issues/357) |
+| [GB-T11.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/364) | [GB-T11.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/363) |
+| [GB-T11.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/367) | [GB-T11.S1](https://github.com/CompleteDotTech/guildboard/issues/357) |
+| [GB-T11.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/368) | [GB-T11.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/367) |
+| [GB-T11.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/370) | [GB-T11.S1](https://github.com/CompleteDotTech/guildboard/issues/357) |
+| [GB-T11.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/371) | [GB-T11.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/370) |
+| [GB-T11.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/374) | [GB-T11.S1](https://github.com/CompleteDotTech/guildboard/issues/357) |
+| [GB-T11.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/375) | [GB-T11.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/374) |
+| [GB-T11.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/377) | [GB-T11.S1](https://github.com/CompleteDotTech/guildboard/issues/357) |
+| [GB-T11.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/377) | [GB-T11.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/375) |
+| [GB-T11.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/378) | [GB-T11.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/377) |
+| [GB-T11.04.01.T1](https://github.com/CompleteDotTech/guildboard/issues/381) | [GB-T11.S1](https://github.com/CompleteDotTech/guildboard/issues/357) |
+| [GB-T11.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/382) | [GB-T11.04.01.T1](https://github.com/CompleteDotTech/guildboard/issues/381) |
+| [GB-T11.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/384) | [GB-T11.S1](https://github.com/CompleteDotTech/guildboard/issues/357) |
+| [GB-T11.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/385) | [GB-T11.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/384) |
+| [GB-T11.D1](https://github.com/CompleteDotTech/guildboard/issues/386) | [GB-T11.S1](https://github.com/CompleteDotTech/guildboard/issues/357) |
+| [GB-T11.D1](https://github.com/CompleteDotTech/guildboard/issues/386) | [GB-T11.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/361) |
+| [GB-T11.D1](https://github.com/CompleteDotTech/guildboard/issues/386) | [GB-T11.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/364) |
+| [GB-T11.D1](https://github.com/CompleteDotTech/guildboard/issues/386) | [GB-T11.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/368) |
+| [GB-T11.D1](https://github.com/CompleteDotTech/guildboard/issues/386) | [GB-T11.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/371) |
+| [GB-T11.D1](https://github.com/CompleteDotTech/guildboard/issues/386) | [GB-T11.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/375) |
+| [GB-T11.D1](https://github.com/CompleteDotTech/guildboard/issues/386) | [GB-T11.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/378) |
+| [GB-T11.D1](https://github.com/CompleteDotTech/guildboard/issues/386) | [GB-T11.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/382) |
+| [GB-T11.D1](https://github.com/CompleteDotTech/guildboard/issues/386) | [GB-T11.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/385) |
+| [GB-T12.S1](https://github.com/CompleteDotTech/guildboard/issues/389) | [GB-T12.R1](https://github.com/CompleteDotTech/guildboard/issues/388) |
+| [GB-T12.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/392) | [GB-T12.S1](https://github.com/CompleteDotTech/guildboard/issues/389) |
+| [GB-T12.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/393) | [GB-T12.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/392) |
+| [GB-T12.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/395) | [GB-T12.S1](https://github.com/CompleteDotTech/guildboard/issues/389) |
+| [GB-T12.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/396) | [GB-T12.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/395) |
+| [GB-T12.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/399) | [GB-T12.S1](https://github.com/CompleteDotTech/guildboard/issues/389) |
+| [GB-T12.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/400) | [GB-T12.02.01.T1](https://github.com/CompleteDotTech/guildboard/issues/399) |
+| [GB-T12.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/402) | [GB-T12.S1](https://github.com/CompleteDotTech/guildboard/issues/389) |
+| [GB-T12.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/403) | [GB-T12.02.02.T1](https://github.com/CompleteDotTech/guildboard/issues/402) |
+| [GB-T12.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/406) | [GB-T12.S1](https://github.com/CompleteDotTech/guildboard/issues/389) |
+| [GB-T12.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/406) | [GB-T4.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/154) |
+| [GB-T12.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/406) | [GB-T4.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/140) |
+| [GB-T12.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/407) | [GB-T12.03.01.T1](https://github.com/CompleteDotTech/guildboard/issues/406) |
+| [GB-T12.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/409) | [GB-T12.S1](https://github.com/CompleteDotTech/guildboard/issues/389) |
+| [GB-T12.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/409) | [GB-T5.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/186) |
+| [GB-T12.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/409) | [GB-T11.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/378) |
+| [GB-T12.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/410) | [GB-T12.03.02.T1](https://github.com/CompleteDotTech/guildboard/issues/409) |
+| [GB-T12.04.01.T1](https://github.com/CompleteDotTech/guildboard/issues/413) | [GB-T12.S1](https://github.com/CompleteDotTech/guildboard/issues/389) |
+| [GB-T12.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/414) | [GB-T12.04.01.T1](https://github.com/CompleteDotTech/guildboard/issues/413) |
+| [GB-T12.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/416) | [GB-T12.S1](https://github.com/CompleteDotTech/guildboard/issues/389) |
+| [GB-T12.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/417) | [GB-T12.04.02.T1](https://github.com/CompleteDotTech/guildboard/issues/416) |
+| [GB-T12.D1](https://github.com/CompleteDotTech/guildboard/issues/418) | [GB-T12.S1](https://github.com/CompleteDotTech/guildboard/issues/389) |
+| [GB-T12.D1](https://github.com/CompleteDotTech/guildboard/issues/418) | [GB-T12.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/393) |
+| [GB-T12.D1](https://github.com/CompleteDotTech/guildboard/issues/418) | [GB-T12.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/396) |
+| [GB-T12.D1](https://github.com/CompleteDotTech/guildboard/issues/418) | [GB-T12.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/400) |
+| [GB-T12.D1](https://github.com/CompleteDotTech/guildboard/issues/418) | [GB-T12.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/403) |
+| [GB-T12.D1](https://github.com/CompleteDotTech/guildboard/issues/418) | [GB-T12.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/407) |
+| [GB-T12.D1](https://github.com/CompleteDotTech/guildboard/issues/418) | [GB-T12.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/410) |
+| [GB-T12.D1](https://github.com/CompleteDotTech/guildboard/issues/418) | [GB-T12.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/414) |
+| [GB-T12.D1](https://github.com/CompleteDotTech/guildboard/issues/418) | [GB-T12.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/417) |
+| [GB-T13.S1](https://github.com/CompleteDotTech/guildboard/issues/421) | [GB-T13.R1](https://github.com/CompleteDotTech/guildboard/issues/420) |
+| [GB-T13.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/424) | [GB-T13.S1](https://github.com/CompleteDotTech/guildboard/issues/421) |
+| [GB-T13.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/425) | [GB-T13.01.01.T1](https://github.com/CompleteDotTech/guildboard/issues/424) |
+| [GB-T13.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/427) | [GB-T13.S1](https://github.com/CompleteDotTech/guildboard/issues/421) |
+| [GB-T13.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/428) | [GB-T13.01.02.T1](https://github.com/CompleteDotTech/guildboard/issues/427) |
+| `GB-T13.02.01.T1` (creation pending) | [GB-T13.S1](https://github.com/CompleteDotTech/guildboard/issues/421) |
+| `GB-T13.02.01.V1` (creation pending) | `GB-T13.02.01.T1` (creation pending) |
+| `GB-T13.02.02.T1` (creation pending) | [GB-T13.S1](https://github.com/CompleteDotTech/guildboard/issues/421) |
+| `GB-T13.02.02.V1` (creation pending) | `GB-T13.02.02.T1` (creation pending) |
+| `GB-T13.03.01.T1` (creation pending) | [GB-T13.S1](https://github.com/CompleteDotTech/guildboard/issues/421) |
+| `GB-T13.03.01.V1` (creation pending) | `GB-T13.03.01.T1` (creation pending) |
+| `GB-T13.03.02.T1` (creation pending) | [GB-T13.S1](https://github.com/CompleteDotTech/guildboard/issues/421) |
+| `GB-T13.03.02.V1` (creation pending) | `GB-T13.03.02.T1` (creation pending) |
+| `GB-T13.04.01.T1` (creation pending) | [GB-T13.S1](https://github.com/CompleteDotTech/guildboard/issues/421) |
+| `GB-T13.04.01.V1` (creation pending) | `GB-T13.04.01.T1` (creation pending) |
+| `GB-T13.04.02.T1` (creation pending) | [GB-T13.S1](https://github.com/CompleteDotTech/guildboard/issues/421) |
+| `GB-T13.04.02.V1` (creation pending) | `GB-T13.04.02.T1` (creation pending) |
+| `GB-T13.D1` (creation pending) | [GB-T13.S1](https://github.com/CompleteDotTech/guildboard/issues/421) |
+| `GB-T13.D1` (creation pending) | [GB-T13.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/425) |
+| `GB-T13.D1` (creation pending) | [GB-T13.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/428) |
+| `GB-T13.D1` (creation pending) | `GB-T13.02.01.V1` (creation pending) |
+| `GB-T13.D1` (creation pending) | `GB-T13.02.02.V1` (creation pending) |
+| `GB-T13.D1` (creation pending) | `GB-T13.03.01.V1` (creation pending) |
+| `GB-T13.D1` (creation pending) | `GB-T13.03.02.V1` (creation pending) |
+| `GB-T13.D1` (creation pending) | `GB-T13.04.01.V1` (creation pending) |
+| `GB-T13.G1` (creation pending) | [GB-T1.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/39) |
+| `GB-T13.G1` (creation pending) | [GB-T1.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/46) |
+| `GB-T13.G1` (creation pending) | [GB-T1.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/56) |
+| `GB-T13.G1` (creation pending) | [GB-T2.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/74) |
+| `GB-T13.G1` (creation pending) | [GB-T2.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/85) |
+| `GB-T13.G1` (creation pending) | [GB-T3.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/103) |
+| `GB-T13.G1` (creation pending) | [GB-T3.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/129) |
+| `GB-T13.G1` (creation pending) | [GB-T4.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/137) |
+| `GB-T13.G1` (creation pending) | [GB-T4.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/140) |
+| `GB-T13.G1` (creation pending) | [GB-T4.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/154) |
+| `GB-T13.G1` (creation pending) | [GB-T5.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/179) |
+| `GB-T13.G1` (creation pending) | [GB-T12.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/400) |
+| `GB-T13.G1` (creation pending) | [GB-T12.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/407) |
+| `GB-T13.G2` (creation pending) | [GB-T10.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/353) |
+| `GB-T13.G2` (creation pending) | [GB-T11.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/378) |
+| `GB-T13.G2` (creation pending) | [GB-T12.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/414) |
+| `GB-T13.G2` (creation pending) | [GB-T12.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/417) |
+| `GB-T0.G1` (creation pending) | [GB-T0.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/7) |
+| `GB-T0.G1` (creation pending) | [GB-T0.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/10) |
+| `GB-T0.G1` (creation pending) | [GB-T0.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/14) |
+| `GB-T0.G1` (creation pending) | [GB-T0.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/17) |
+| `GB-T0.G1` (creation pending) | [GB-T0.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/21) |
+| `GB-T0.G1` (creation pending) | [GB-T0.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/24) |
+| `GB-T0.G1` (creation pending) | [GB-T0.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/28) |
+| `GB-T0.G1` (creation pending) | [GB-T0.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/31) |
+| `GB-T0.G1` (creation pending) | [GB-T0.D1](https://github.com/CompleteDotTech/guildboard/issues/32) |
+| `GB-T1.G1` (creation pending) | [GB-T1.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/39) |
+| `GB-T1.G1` (creation pending) | [GB-T1.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/42) |
+| `GB-T1.G1` (creation pending) | [GB-T1.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/46) |
+| `GB-T1.G1` (creation pending) | [GB-T1.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/49) |
+| `GB-T1.G1` (creation pending) | [GB-T1.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/53) |
+| `GB-T1.G1` (creation pending) | [GB-T1.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/56) |
+| `GB-T1.G1` (creation pending) | [GB-T1.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/60) |
+| `GB-T1.G1` (creation pending) | [GB-T1.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/63) |
+| `GB-T1.G1` (creation pending) | [GB-T1.D1](https://github.com/CompleteDotTech/guildboard/issues/64) |
+| `GB-T2.G1` (creation pending) | [GB-T2.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/71) |
+| `GB-T2.G1` (creation pending) | [GB-T2.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/74) |
+| `GB-T2.G1` (creation pending) | [GB-T2.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/78) |
+| `GB-T2.G1` (creation pending) | [GB-T2.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/81) |
+| `GB-T2.G1` (creation pending) | [GB-T2.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/85) |
+| `GB-T2.G1` (creation pending) | [GB-T2.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/88) |
+| `GB-T2.G1` (creation pending) | [GB-T2.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/92) |
+| `GB-T2.G1` (creation pending) | [GB-T2.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/95) |
+| `GB-T2.G1` (creation pending) | [GB-T2.D1](https://github.com/CompleteDotTech/guildboard/issues/96) |
+| `GB-T3.G1` (creation pending) | [GB-T3.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/103) |
+| `GB-T3.G1` (creation pending) | [GB-T3.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/106) |
+| `GB-T3.G1` (creation pending) | [GB-T3.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/110) |
+| `GB-T3.G1` (creation pending) | [GB-T3.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/113) |
+| `GB-T3.G1` (creation pending) | [GB-T3.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/117) |
+| `GB-T3.G1` (creation pending) | [GB-T3.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/121) |
+| `GB-T3.G1` (creation pending) | [GB-T3.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/126) |
+| `GB-T3.G1` (creation pending) | [GB-T3.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/129) |
+| `GB-T3.G1` (creation pending) | [GB-T3.D1](https://github.com/CompleteDotTech/guildboard/issues/130) |
+| `GB-T4.G1` (creation pending) | [GB-T4.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/137) |
+| `GB-T4.G1` (creation pending) | [GB-T4.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/140) |
+| `GB-T4.G1` (creation pending) | [GB-T4.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/151) |
+| `GB-T4.G1` (creation pending) | [GB-T4.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/154) |
+| `GB-T4.G1` (creation pending) | [GB-T4.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/158) |
+| `GB-T4.G1` (creation pending) | [GB-T4.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/161) |
+| `GB-T4.G1` (creation pending) | [GB-T4.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/165) |
+| `GB-T4.G1` (creation pending) | [GB-T4.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/168) |
+| `GB-T4.G1` (creation pending) | [GB-T4.D1](https://github.com/CompleteDotTech/guildboard/issues/169) |
+| `GB-T5.G1` (creation pending) | [GB-T5.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/173) |
+| `GB-T5.G1` (creation pending) | [GB-T5.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/176) |
+| `GB-T5.G1` (creation pending) | [GB-T5.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/149) |
+| `GB-T5.G1` (creation pending) | [GB-T5.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/179) |
+| `GB-T5.G1` (creation pending) | [GB-T5.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/183) |
+| `GB-T5.G1` (creation pending) | [GB-T5.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/186) |
+| `GB-T5.G1` (creation pending) | [GB-T5.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/190) |
+| `GB-T5.G1` (creation pending) | [GB-T5.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/193) |
+| `GB-T5.G1` (creation pending) | [GB-T5.D1](https://github.com/CompleteDotTech/guildboard/issues/194) |
+| `GB-T6.G1` (creation pending) | [GB-T6.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/201) |
+| `GB-T6.G1` (creation pending) | [GB-T6.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/204) |
+| `GB-T6.G1` (creation pending) | [GB-T6.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/208) |
+| `GB-T6.G1` (creation pending) | [GB-T6.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/211) |
+| `GB-T6.G1` (creation pending) | [GB-T6.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/215) |
+| `GB-T6.G1` (creation pending) | [GB-T6.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/218) |
+| `GB-T6.G1` (creation pending) | [GB-T6.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/222) |
+| `GB-T6.G1` (creation pending) | [GB-T6.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/225) |
+| `GB-T6.G1` (creation pending) | [GB-T6.D1](https://github.com/CompleteDotTech/guildboard/issues/226) |
+| `GB-T7.G1` (creation pending) | [GB-T7.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/233) |
+| `GB-T7.G1` (creation pending) | [GB-T7.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/236) |
+| `GB-T7.G1` (creation pending) | [GB-T7.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/240) |
+| `GB-T7.G1` (creation pending) | [GB-T7.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/243) |
+| `GB-T7.G1` (creation pending) | [GB-T7.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/247) |
+| `GB-T7.G1` (creation pending) | [GB-T7.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/250) |
+| `GB-T7.G1` (creation pending) | [GB-T7.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/254) |
+| `GB-T7.G1` (creation pending) | [GB-T7.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/257) |
+| `GB-T7.G1` (creation pending) | [GB-T7.D1](https://github.com/CompleteDotTech/guildboard/issues/258) |
+| `GB-T8.G1` (creation pending) | [GB-T8.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/265) |
+| `GB-T8.G1` (creation pending) | [GB-T8.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/268) |
+| `GB-T8.G1` (creation pending) | [GB-T8.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/272) |
+| `GB-T8.G1` (creation pending) | [GB-T8.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/275) |
+| `GB-T8.G1` (creation pending) | [GB-T8.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/279) |
+| `GB-T8.G1` (creation pending) | [GB-T8.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/282) |
+| `GB-T8.G1` (creation pending) | [GB-T8.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/286) |
+| `GB-T8.G1` (creation pending) | [GB-T8.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/289) |
+| `GB-T8.G1` (creation pending) | [GB-T8.D1](https://github.com/CompleteDotTech/guildboard/issues/290) |
+| `GB-T9.G1` (creation pending) | [GB-T9.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/297) |
+| `GB-T9.G1` (creation pending) | [GB-T9.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/300) |
+| `GB-T9.G1` (creation pending) | [GB-T9.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/304) |
+| `GB-T9.G1` (creation pending) | [GB-T9.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/307) |
+| `GB-T9.G1` (creation pending) | [GB-T9.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/311) |
+| `GB-T9.G1` (creation pending) | [GB-T9.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/314) |
+| `GB-T9.G1` (creation pending) | [GB-T9.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/318) |
+| `GB-T9.G1` (creation pending) | [GB-T9.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/321) |
+| `GB-T9.G1` (creation pending) | [GB-T9.D1](https://github.com/CompleteDotTech/guildboard/issues/322) |
+| `GB-T10.G1` (creation pending) | [GB-T10.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/329) |
+| `GB-T10.G1` (creation pending) | [GB-T10.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/332) |
+| `GB-T10.G1` (creation pending) | [GB-T10.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/336) |
+| `GB-T10.G1` (creation pending) | [GB-T10.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/339) |
+| `GB-T10.G1` (creation pending) | [GB-T10.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/343) |
+| `GB-T10.G1` (creation pending) | [GB-T10.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/346) |
+| `GB-T10.G1` (creation pending) | [GB-T10.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/350) |
+| `GB-T10.G1` (creation pending) | [GB-T10.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/353) |
+| `GB-T10.G1` (creation pending) | [GB-T10.D1](https://github.com/CompleteDotTech/guildboard/issues/354) |
+| `GB-T11.G1` (creation pending) | [GB-T11.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/361) |
+| `GB-T11.G1` (creation pending) | [GB-T11.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/364) |
+| `GB-T11.G1` (creation pending) | [GB-T11.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/368) |
+| `GB-T11.G1` (creation pending) | [GB-T11.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/371) |
+| `GB-T11.G1` (creation pending) | [GB-T11.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/375) |
+| `GB-T11.G1` (creation pending) | [GB-T11.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/378) |
+| `GB-T11.G1` (creation pending) | [GB-T11.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/382) |
+| `GB-T11.G1` (creation pending) | [GB-T11.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/385) |
+| `GB-T11.G1` (creation pending) | [GB-T11.D1](https://github.com/CompleteDotTech/guildboard/issues/386) |
+| `GB-T12.G1` (creation pending) | [GB-T12.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/393) |
+| `GB-T12.G1` (creation pending) | [GB-T12.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/396) |
+| `GB-T12.G1` (creation pending) | [GB-T12.02.01.V1](https://github.com/CompleteDotTech/guildboard/issues/400) |
+| `GB-T12.G1` (creation pending) | [GB-T12.02.02.V1](https://github.com/CompleteDotTech/guildboard/issues/403) |
+| `GB-T12.G1` (creation pending) | [GB-T12.03.01.V1](https://github.com/CompleteDotTech/guildboard/issues/407) |
+| `GB-T12.G1` (creation pending) | [GB-T12.03.02.V1](https://github.com/CompleteDotTech/guildboard/issues/410) |
+| `GB-T12.G1` (creation pending) | [GB-T12.04.01.V1](https://github.com/CompleteDotTech/guildboard/issues/414) |
+| `GB-T12.G1` (creation pending) | [GB-T12.04.02.V1](https://github.com/CompleteDotTech/guildboard/issues/417) |
+| `GB-T12.G1` (creation pending) | [GB-T12.D1](https://github.com/CompleteDotTech/guildboard/issues/418) |
+| `GB-T13.G3` (creation pending) | `GB-T0.G1` (creation pending) |
+| `GB-T13.G3` (creation pending) | `GB-T1.G1` (creation pending) |
+| `GB-T13.G3` (creation pending) | `GB-T2.G1` (creation pending) |
+| `GB-T13.G3` (creation pending) | `GB-T3.G1` (creation pending) |
+| `GB-T13.G3` (creation pending) | `GB-T4.G1` (creation pending) |
+| `GB-T13.G3` (creation pending) | `GB-T5.G1` (creation pending) |
+| `GB-T13.G3` (creation pending) | `GB-T6.G1` (creation pending) |
+| `GB-T13.G3` (creation pending) | `GB-T7.G1` (creation pending) |
+| `GB-T13.G3` (creation pending) | `GB-T8.G1` (creation pending) |
+| `GB-T13.G3` (creation pending) | `GB-T9.G1` (creation pending) |
+| `GB-T13.G3` (creation pending) | `GB-T10.G1` (creation pending) |
+| `GB-T13.G3` (creation pending) | `GB-T11.G1` (creation pending) |
+| `GB-T13.G3` (creation pending) | `GB-T12.G1` (creation pending) |
+| `GB-T13.G3` (creation pending) | `GB-T13.G1` (creation pending) |
+| `GB-T13.G3` (creation pending) | `GB-T13.G2` (creation pending) |
+| `GB-T13.G3` (creation pending) | [GB-T13.01.01.V1](https://github.com/CompleteDotTech/guildboard/issues/425) |
+| `GB-T13.G3` (creation pending) | [GB-T13.01.02.V1](https://github.com/CompleteDotTech/guildboard/issues/428) |
+| `GB-T13.G3` (creation pending) | `GB-T13.02.01.V1` (creation pending) |
+| `GB-T13.G3` (creation pending) | `GB-T13.02.02.V1` (creation pending) |
+| `GB-T13.G3` (creation pending) | `GB-T13.03.01.V1` (creation pending) |
+| `GB-T13.G3` (creation pending) | `GB-T13.03.02.V1` (creation pending) |
+| `GB-T13.G3` (creation pending) | `GB-T13.D1` (creation pending) |

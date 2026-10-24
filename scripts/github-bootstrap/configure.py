@@ -17,7 +17,7 @@ schema={
 for name,values in schema.items():
  opts=[]
  for i,v in enumerate(values):
-  color={'Critical':'RED','High':'ORANGE','Medium':'YELLOW','Low':'BLUE','Blocked':'RED','Ready':'GREEN','Done':'GREEN','Unverified':'GRAY','Verified':'GREEN','Needs Research':'PURPLE','Failed':'RED','External Blocker':'RED','Awaiting Decision':'YELLOW'}.get(v,colors[i%len(colors)])
+  color={'Triage':'GRAY','Backlog':'GRAY','In Progress':'YELLOW','In Review':'PURPLE','Needs Input':'YELLOW','Needs Specification':'ORANGE','Not Applicable':'GRAY','Unblocked':'GREEN','Preliminary':'YELLOW','Supported':'BLUE','Disputed':'RED','Tests Pending':'YELLOW','Under Verification':'BLUE','Critical':'RED','High':'ORANGE','Medium':'YELLOW','Low':'BLUE','Blocked':'RED','Ready':'BLUE','Done':'GREEN','Unverified':'GRAY','Verified':'GREEN','Needs Research':'PURPLE','Failed':'RED','External Blocker':'RED','Awaiting Decision':'YELLOW'}.get(v,colors[i%len(colors)])
   o={'name':v,'color':color,'description':('P'+str(i)+' — '+['release-blocking or foundational','important for v1.0','valuable but nonblocking','optional or exploratory'][i]) if name=='Priority' else v}
   existing=next((x for x in fields.get(name,{}).get('options',[]) if x['name']==v),None)
   if existing:o['id']=existing['id']
@@ -54,3 +54,7 @@ for m in milestones:
 s['milestones']={n:v['number'] for n,v in existing.items()};save(STATE,s)
 save(ROOT/'planning/project-schema.json',schema);save(ROOT/'planning/audit/configured-project.json',project())
 print('Configuration complete',flush=True)
+
+# Public-repository security features; read-back in final audit is authoritative.
+api("repos/"+repo+"/private-vulnerability-reporting","PUT")
+api("repos/"+repo,"PATCH",{"security_and_analysis":{"secret_scanning":{"status":"enabled"},"secret_scanning_push_protection":{"status":"enabled"}}})

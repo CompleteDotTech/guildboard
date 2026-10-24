@@ -5,7 +5,9 @@ from api import *
 import argparse,hashlib,re,collections
 parser=argparse.ArgumentParser();parser.add_argument('--verify-only',action='store_true');parser.add_argument('--phase',default='all',choices=['issues','links','fields','comments','all']);args=parser.parse_args()
 manifest=ROOT/'planning/guildboard-backlog.json';m=json.loads(manifest.read_text());s=json.loads(STATE.read_text());repo=s['repo'];pid=s['project']['id'];by={x['id']:x for x in m['items']}
-def persist():save(manifest,m)
+def persist():
+ for x in m['items']:x.setdefault('description','; '.join(x['requirements']))
+ save(manifest,m)
 def all_issues():
  out=[];page=1
  while True:
@@ -193,12 +195,12 @@ if args.phase in ['links','fields','all']:
 if args.phase in ['comments','all']:
  for x in ordered:
   if not x.get('github'):continue
-  if x['work_type']=='Epic':
+  if x['work_type']=='Epic' or x['id'].endswith('.D1'):
    content=body(x);r=api(f"repos/{repo}/issues/{x['github']['number']}");oldbody=r.get('body') or ''
    # Only update bootstrap-owned body when it has not been edited by a maintainer.
    if hashlib.sha256(oldbody.encode()).hexdigest()==x.get('body_hash') and content!=oldbody:
     api(f"repos/{repo}/issues/{x['github']['number']}",'PATCH',{'body':content});x['body_hash']=hashlib.sha256(content.encode()).hexdigest();persist()
-  if x['work_type']!='Specification' and not x['id'].endswith(('.G2','.G3')):continue
+  if x['work_type']!='Specification' and not x['id'].endswith(('.G2','.G3')) and x['id']!='GB-T0.03.02.T1':continue
   marker='<!-- guildboard-handoff:'+x['id']+' -->';comments=api(f"repos/{repo}/issues/{x['github']['number']}/comments?per_page=100")
   if any(marker in c.get('body','') for c in comments):continue
   deps=', '.join(link(d) for d in x['dependencies']) or 'none'

@@ -14,10 +14,14 @@ def api(path,method='GET',data=None):
    if not isinstance(result,dict) or not result.get('errors'): return result
   else: result={'stderr':p.stderr,'response':p.stdout}
   (ROOT/'planning/audit/failures.jsonl').open('a').write(json.dumps({'time':datetime.datetime.now(datetime.timezone.utc).isoformat(),'endpoint':path,'method':method,'error':result})+'\n')
-  if any(t in json.dumps(result).lower() for t in ['rate limit','secondary','502','503','timeout']):time.sleep(min(60,2**attempt*5));continue
+  retryable=any(t in json.dumps(result).lower() for t in ['rate limit','secondary','502','503','timeout'])
+  read_query=path=='graphql' and data and data.get('query','').lstrip().startswith('query')
+  if read_query and 'something went wrong' in json.dumps(result).lower():retryable=True
+  if method=='POST' and path.endswith('/issues'):retryable=False  # uncertain creates must refresh stable markers before retry
+  if retryable:time.sleep(min(60,2**attempt*5));continue
   raise RuntimeError(json.dumps(result))
  raise RuntimeError('GitHub retry budget exhausted')
 def gql(query,**variables):return api('graphql','POST',{'query':query,'variables':variables})['data']
 FIELD_FRAGMENT='... on ProjectV2Field{id name dataType} ... on ProjectV2SingleSelectField{id name dataType options{id name color description}}'
 def project():
- s=json.loads(STATE.read_text());return gql('query($id:ID!){node(id:$id){... on ProjectV2{id title url number public fields(first:100){nodes{'+FIELD_FRAGMENT+'}} views(first:100){nodes{id number name layout filter configuration{visibleFields(first:100){nodes{'+FIELD_FRAGMENT+'}}}}} workflows(first:100){nodes{id name enabled}} repositories(first:50){nodes{nameWithOwner}}}}}',id=s['project']['id'])['node']
+ s=json.loads(STATE.read_text());return gql('query($id:ID!){node(id:$id){... on ProjectV2{id title url number public fields(first:100){nodes{'+FIELD_FRAGMENT+'}} views(first:100){nodes{id number name layout filter groupByFields(first:10){nodes{'+FIELD_FRAGMENT+'}} verticalGroupByFields(first:10){nodes{'+FIELD_FRAGMENT+'}} configuration{visibleFields(first:100){nodes{'+FIELD_FRAGMENT+'}}}}} workflows(first:100){nodes{id name enabled}} repositories(first:50){nodes{nameWithOwner}}}}}',id=s['project']['id'])['node']

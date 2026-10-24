@@ -2,7 +2,7 @@
   "result": "pass",
   "item_count": 466,
   "native_relationships_expected": 452,
-  "dependencies_expected": 421,
+  "dependencies_expected": 546,
   "max_depth": 5,
   "errors": [],
   "longest_prerequisite_chain": [
@@ -20,6 +20,7 @@
     "GB-T2.02.02.V1",
     "GB-T6.01.02.T1",
     "GB-T6.01.02.V1",
+    "GB-T6.D1",
     "GB-T6.G1",
     "GB-T13.G3"
   ],

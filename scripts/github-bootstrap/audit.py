@@ -64,6 +64,12 @@ def walk(n):
  if n in seen:return paths[n]
  visiting.add(n);v=[walk(b) for b in graph[n]];visiting.remove(n);seen.add(n);paths[n]=(max(v,key=len) if v else [])+[n];return paths[n]
 for n in list(graph):walk(n)
+def native_depth(id,seen=None):
+ seen=seen or set()
+ if id in seen:flag('hierarchy_cycle',id,'Cycle detected');return 0
+ n=native.get(id);parent=n.get('parent') if n else None
+ return 1 if not parent else 1+native_depth(parent['id'],seen|{id})
+max_depth=max((native_depth(id) for id in native),default=0)
 p=project();schema=json.loads((ROOT/'planning/project-schema.json').read_text());actual_fields={x['name']:x for x in p['fields']['nodes']}
 for name,options in schema.items():
  if name not in actual_fields:flag('missing_project_field',name,'Field absent')
@@ -72,14 +78,24 @@ expectedviews=json.loads((ROOT/'planning/view-definitions.json').read_text());vi
 for v in expectedviews:
  if v['name'] not in views:flag('missing_view',v['name'],'Absent')
  elif views[v['name']]['layout']!=v['layout'] or views[v['name']]['filter']!=v['filter']:flag('view_drift',v['name'],views[v['name']])
+for name,field in [('Workstream overview','Tier'),('Engineering backlog by priority','Priority'),('Owner Workload','Assignees'),('Roadmap','Milestone')]:
+ view=views.get(name,{})
+ if [f['name'] for f in view.get('groupByFields',{}).get('nodes',[])]!=[field]:flag('view_grouping',name,field)
+if [f['name'] for f in views.get('Kanban',{}).get('verticalGroupByFields',{}).get('nodes',[])]!=['Status']:flag('kanban_columns','Kanban','Expected Status')
+for v in expectedviews:
+ if v['layout']!='ROADMAP_LAYOUT' and v['name'] in views:
+  columns=[f['name'] for f in views[v['name']]['configuration']['visibleFields']['nodes']]
+  if columns!=v['columns']:flag('visible_columns',v['name'],{'expected':v['columns'],'live':columns})
 if repo not in [r['nameWithOwner'] for r in p['repositories']['nodes']]:flag('repository_association',repo,'Missing link')
 r=api('repos/'+repo);branch=r['default_branch'];branchinfo=api(f'repos/{repo}/branches/{branch}')
 for path in ['README.md','LICENSE','SECURITY.md','CONTRIBUTING.md','.github/CODEOWNERS','.github/dependabot.yml','.github/workflows/planning.yml','planning/guildboard-backlog.json']:
  try:api(f'repos/{repo}/contents/{path}?ref={branch}')
  except RuntimeError:flag('missing_repository_file',path,'Not committed on default branch')
 settings={}
-for name,path in {'actions':'actions/permissions','vulnerability_alerts':'vulnerability-alerts','rules':'rulesets','workflows':'actions/workflows'}.items():
+for name,path in {'actions':'actions/permissions','vulnerability_alerts':'vulnerability-alerts','rules':'rulesets','private_vulnerability_reporting':'private-vulnerability-reporting','workflows':'actions/workflows'}.items():
  try:settings[name]=api(f'repos/{repo}/{path}')
  except RuntimeError as e:settings[name]={'unsupported':str(e)}
-report={'generated_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'repository':{'url':r['html_url'],'owner':r['owner']['login'],'visibility':r['visibility'],'default_branch':branch,'license':r.get('license'),'topics':r['topics'],'issues_enabled':r['has_issues'],'head':branchinfo['commit']['sha'],'settings':settings},'project':p,'expected_issues':len(m['items']),'live_expected_issues':sum(counts[k] for k in set(x['work_type'] for x in m['items'])),'project_items':len(project_items),'expected_enrolled':enrolled,'native_parent_links':native_links,'native_blocking_dependencies':len(edges),'counts':dict(counts),'field_counts':{k:dict(v) for k,v in field_counts.items()},'missing_metadata_issues':len(missing),'longest_unweighted_dependency_chain':max(paths.values(),key=len) if paths else [],'findings':findings,'result':'pass' if not findings else 'incomplete'}
+report={'generated_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'repository':{'url':r['html_url'],'owner':r['owner']['login'],'visibility':r['visibility'],'default_branch':branch,'license':r.get('license'),'topics':r['topics'],'issues_enabled':r['has_issues'],'security_and_analysis':r.get('security_and_analysis'),'head':branchinfo['commit']['sha'],'settings':settings},'project':p,'expected_issues':len(m['items']),'live_expected_issues':sum(counts[k] for k in set(x['work_type'] for x in m['items'])),'project_items':len(project_items),'expected_enrolled':enrolled,'max_actual_hierarchy_depth':max_depth,'native_parent_links':native_links,'native_blocking_dependencies':len(edges),'counts':dict(counts),'field_counts':{k:dict(v) for k,v in field_counts.items()},'missing_metadata_issues':len(missing),'longest_unweighted_dependency_chain':max(paths.values(),key=len) if paths else [],'findings':findings,'result':'pass' if not findings else 'incomplete'}
 save(ROOT/'planning/audit/remote-audit.json',report);print(json.dumps({k:v for k,v in report.items() if k not in ['repository','project','findings','field_counts']},indent=2));print('Findings:',len(findings));print(json.dumps(findings[:15],indent=2))
+
+raise SystemExit(bool(findings))

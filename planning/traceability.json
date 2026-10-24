@@ -1,0 +1,4286 @@
+[
+  {
+    "requirement": "Define moderator-led workshops, viewer participation, guild-owned boards and abuse cases",
+    "workstream": "T0",
+    "feature": "GB-T0.01.01",
+    "implementation": [
+      "GB-T0.01.01.T1"
+    ],
+    "tests": [
+      "GB-T0.01.01.V1"
+    ],
+    "documentation": "GB-T0.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "distinguish MVP from v1.0",
+    "workstream": "T0",
+    "feature": "GB-T0.01.01",
+    "implementation": [
+      "GB-T0.01.01.T1"
+    ],
+    "tests": [
+      "GB-T0.01.01.V1"
+    ],
+    "documentation": "GB-T0.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "record measurable availability, latency, capacity and recovery objectives without claiming measurements",
+    "workstream": "T0",
+    "feature": "GB-T0.01.01",
+    "implementation": [
+      "GB-T0.01.01.T1"
+    ],
+    "tests": [
+      "GB-T0.01.01.V1"
+    ],
+    "documentation": "GB-T0.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Map Activity, API, bot, collaboration, database and assets",
+    "workstream": "T0",
+    "feature": "GB-T0.01.02",
+    "implementation": [
+      "GB-T0.01.02.T1"
+    ],
+    "tests": [
+      "GB-T0.01.02.V1"
+    ],
+    "documentation": "GB-T0.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "diagram data flows and trust boundaries",
+    "workstream": "T0",
+    "feature": "GB-T0.01.02",
+    "implementation": [
+      "GB-T0.01.02.T1"
+    ],
+    "tests": [
+      "GB-T0.01.02.V1"
+    ],
+    "documentation": "GB-T0.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "document transport, storage and identity ownership with ADR alternatives and handoffs",
+    "workstream": "T0",
+    "feature": "GB-T0.01.02",
+    "implementation": [
+      "GB-T0.01.02.T1"
+    ],
+    "tests": [
+      "GB-T0.01.02.V1"
+    ],
+    "documentation": "GB-T0.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Compare Excalidraw integration hooks, read-only guarantees, serialization and custom extensions",
+    "workstream": "T0",
+    "feature": "GB-T0.02.01",
+    "implementation": [
+      "GB-T0.02.01.T1"
+    ],
+    "tests": [
+      "GB-T0.02.01.V1"
+    ],
+    "documentation": "GB-T0.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "evaluate React/TypeScript/Fastify and MySQL/MariaDB",
+    "workstream": "T0",
+    "feature": "GB-T0.02.01",
+    "implementation": [
+      "GB-T0.02.01.T1"
+    ],
+    "tests": [
+      "GB-T0.02.01.V1"
+    ],
+    "documentation": "GB-T0.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "pin evaluated versions and compatibility limitations",
+    "workstream": "T0",
+    "feature": "GB-T0.02.01",
+    "implementation": [
+      "GB-T0.02.01.T1"
+    ],
+    "tests": [
+      "GB-T0.02.01.V1"
+    ],
+    "documentation": "GB-T0.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Review MIT compatibility of direct and transitive dependencies, fonts, icons and imported assets",
+    "workstream": "T0",
+    "feature": "GB-T0.02.02",
+    "implementation": [
+      "GB-T0.02.02.T1"
+    ],
+    "tests": [
+      "GB-T0.02.02.V1"
+    ],
+    "documentation": "GB-T0.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "record SPDX identifiers, attribution, distribution obligations and upgrade policy before adoption",
+    "workstream": "T0",
+    "feature": "GB-T0.02.02",
+    "implementation": [
+      "GB-T0.02.02.T1"
+    ],
+    "tests": [
+      "GB-T0.02.02.V1"
+    ],
+    "documentation": "GB-T0.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Define frontend, API, bot and shared contract package boundaries",
+    "workstream": "T0",
+    "feature": "GB-T0.03.01",
+    "implementation": [
+      "GB-T0.03.01.T1"
+    ],
+    "tests": [
+      "GB-T0.03.01.V1"
+    ],
+    "documentation": "GB-T0.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "configure reproducible installs, lint, type checking, formatting and versioned builds",
+    "workstream": "T0",
+    "feature": "GB-T0.03.01",
+    "implementation": [
+      "GB-T0.03.01.T1"
+    ],
+    "tests": [
+      "GB-T0.03.01.V1"
+    ],
+    "documentation": "GB-T0.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "reject cross-layer imports",
+    "workstream": "T0",
+    "feature": "GB-T0.03.01",
+    "implementation": [
+      "GB-T0.03.01.T1"
+    ],
+    "tests": [
+      "GB-T0.03.01.V1"
+    ],
+    "documentation": "GB-T0.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Provide environment schema with PORT integer 1–65535, NODE_ENV development/test/production, DATABASE_URL mysql scheme, DISCORD_CLIENT_ID decimal string and SESSION_SECRET minimum 32 characters",
+    "workstream": "T0",
+    "feature": "GB-T0.03.02",
+    "implementation": [
+      "GB-T0.03.02.T1"
+    ],
+    "tests": [
+      "GB-T0.03.02.V1"
+    ],
+    "documentation": "GB-T0.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "report missing names without secret values",
+    "workstream": "T0",
+    "feature": "GB-T0.03.02",
+    "implementation": [
+      "GB-T0.03.02.T1"
+    ],
+    "tests": [
+      "GB-T0.03.02.V1"
+    ],
+    "documentation": "GB-T0.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "test valid, missing and malformed input",
+    "workstream": "T0",
+    "feature": "GB-T0.03.02",
+    "implementation": [
+      "GB-T0.03.02.T1"
+    ],
+    "tests": [
+      "GB-T0.03.02.V1"
+    ],
+    "documentation": "GB-T0.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Define maintainers, review roles, decision escalation, contributor conduct and issue ownership",
+    "workstream": "T0",
+    "feature": "GB-T0.04.01",
+    "implementation": [
+      "GB-T0.04.01.T1"
+    ],
+    "tests": [
+      "GB-T0.04.01.V1"
+    ],
+    "documentation": "GB-T0.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "document Definition of Ready and Done",
+    "workstream": "T0",
+    "feature": "GB-T0.04.01",
+    "implementation": [
+      "GB-T0.04.01.T1"
+    ],
+    "tests": [
+      "GB-T0.04.01.V1"
+    ],
+    "documentation": "GB-T0.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "preserve unassigned backlog visibility",
+    "workstream": "T0",
+    "feature": "GB-T0.04.01",
+    "implementation": [
+      "GB-T0.04.01.T1"
+    ],
+    "tests": [
+      "GB-T0.04.01.V1"
+    ],
+    "documentation": "GB-T0.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Maintain versioned decisions with alternatives and evidence",
+    "workstream": "T0",
+    "feature": "GB-T0.04.02",
+    "implementation": [
+      "GB-T0.04.02.T1"
+    ],
+    "tests": [
+      "GB-T0.04.02.V1"
+    ],
+    "documentation": "GB-T0.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "trace requirements to interfaces, security controls and acceptance tests",
+    "workstream": "T0",
+    "feature": "GB-T0.04.02",
+    "implementation": [
+      "GB-T0.04.02.T1"
+    ],
+    "tests": [
+      "GB-T0.04.02.V1"
+    ],
+    "documentation": "GB-T0.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "detect undocumented boundary changes in PR review",
+    "workstream": "T0",
+    "feature": "GB-T0.04.02",
+    "implementation": [
+      "GB-T0.04.02.T1"
+    ],
+    "tests": [
+      "GB-T0.04.02.V1"
+    ],
+    "documentation": "GB-T0.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Document Developer Portal setup without creating credentials in source",
+    "workstream": "T1",
+    "feature": "GB-T1.01.01",
+    "implementation": [
+      "GB-T1.01.01.T1"
+    ],
+    "tests": [
+      "GB-T1.01.01.V1"
+    ],
+    "documentation": "GB-T1.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "initialize Embedded App SDK, wait for ready, handle launch/close and client disconnect",
+    "workstream": "T1",
+    "feature": "GB-T1.01.01",
+    "implementation": [
+      "GB-T1.01.01.T1"
+    ],
+    "tests": [
+      "GB-T1.01.01.V1"
+    ],
+    "documentation": "GB-T1.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "surface unsupported contexts",
+    "workstream": "T1",
+    "feature": "GB-T1.01.01",
+    "implementation": [
+      "GB-T1.01.01.T1"
+    ],
+    "tests": [
+      "GB-T1.01.01.V1"
+    ],
+    "documentation": "GB-T1.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Configure URL mappings and proxied HTTP/WSS routes",
+    "workstream": "T1",
+    "feature": "GB-T1.01.02",
+    "implementation": [
+      "GB-T1.01.02.T1"
+    ],
+    "tests": [
+      "GB-T1.01.02.V1"
+    ],
+    "documentation": "GB-T1.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "validate desktop, browser and explicitly supported mobile clients with versioned evidence",
+    "workstream": "T1",
+    "feature": "GB-T1.01.02",
+    "implementation": [
+      "GB-T1.01.02.T1"
+    ],
+    "tests": [
+      "GB-T1.01.02.V1"
+    ],
+    "documentation": "GB-T1.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "record unsupported touch or iframe behavior",
+    "workstream": "T1",
+    "feature": "GB-T1.01.02",
+    "implementation": [
+      "GB-T1.01.02.T1"
+    ],
+    "tests": [
+      "GB-T1.01.02.V1"
+    ],
+    "documentation": "GB-T1.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Perform server-side one-time code exchange",
+    "workstream": "T1",
+    "feature": "GB-T1.02.01",
+    "implementation": [
+      "GB-T1.02.01.T1"
+    ],
+    "tests": [
+      "GB-T1.02.01.V1"
+    ],
+    "documentation": "GB-T1.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "validate redirect/context binding, state and applicable PKCE requirements",
+    "workstream": "T1",
+    "feature": "GB-T1.02.01",
+    "implementation": [
+      "GB-T1.02.01.T1"
+    ],
+    "tests": [
+      "GB-T1.02.01.V1"
+    ],
+    "documentation": "GB-T1.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "keep Discord credentials and refresh tokens out of iframe storage and logs",
+    "workstream": "T1",
+    "feature": "GB-T1.02.01",
+    "implementation": [
+      "GB-T1.02.01.T1"
+    ],
+    "tests": [
+      "GB-T1.02.01.V1"
+    ],
+    "documentation": "GB-T1.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Bind session to Discord user and verified guild/channel context",
+    "workstream": "T1",
+    "feature": "GB-T1.02.02",
+    "implementation": [
+      "GB-T1.02.02.T1"
+    ],
+    "tests": [
+      "GB-T1.02.02.V1"
+    ],
+    "documentation": "GB-T1.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "rotate session identifiers, enforce TTL and logout",
+    "workstream": "T1",
+    "feature": "GB-T1.02.02",
+    "implementation": [
+      "GB-T1.02.02.T1"
+    ],
+    "tests": [
+      "GB-T1.02.02.V1"
+    ],
+    "documentation": "GB-T1.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "reject expired, revoked and replayed credentials across HTTP and WSS",
+    "workstream": "T1",
+    "feature": "GB-T1.02.02",
+    "implementation": [
+      "GB-T1.02.02.T1"
+    ],
+    "tests": [
+      "GB-T1.02.02.V1"
+    ],
+    "documentation": "GB-T1.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Resolve membership and channel access server-side",
+    "workstream": "T1",
+    "feature": "GB-T1.03.01",
+    "implementation": [
+      "GB-T1.03.01.T1"
+    ],
+    "tests": [
+      "GB-T1.03.01.V1"
+    ],
+    "documentation": "GB-T1.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "reject client-asserted guild membership and cross-guild identifiers",
+    "workstream": "T1",
+    "feature": "GB-T1.03.01",
+    "implementation": [
+      "GB-T1.03.01.T1"
+    ],
+    "tests": [
+      "GB-T1.03.01.V1"
+    ],
+    "documentation": "GB-T1.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "define least-privilege bot/API scopes and missing-access behavior",
+    "workstream": "T1",
+    "feature": "GB-T1.03.01",
+    "implementation": [
+      "GB-T1.03.01.T1"
+    ],
+    "tests": [
+      "GB-T1.03.01.V1"
+    ],
+    "documentation": "GB-T1.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Fetch current roles with bounded cache TTL",
+    "workstream": "T1",
+    "feature": "GB-T1.03.02",
+    "implementation": [
+      "GB-T1.03.02.T1"
+    ],
+    "tests": [
+      "GB-T1.03.02.V1"
+    ],
+    "documentation": "GB-T1.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "invalidate on relevant events and failures",
+    "workstream": "T1",
+    "feature": "GB-T1.03.02",
+    "implementation": [
+      "GB-T1.03.02.T1"
+    ],
+    "tests": [
+      "GB-T1.03.02.V1"
+    ],
+    "documentation": "GB-T1.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "fail closed for privileged mutations when membership freshness cannot be established",
+    "workstream": "T1",
+    "feature": "GB-T1.03.02",
+    "implementation": [
+      "GB-T1.03.02.T1"
+    ],
+    "tests": [
+      "GB-T1.03.02.V1"
+    ],
+    "documentation": "GB-T1.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "test role removal during editing",
+    "workstream": "T1",
+    "feature": "GB-T1.03.02",
+    "implementation": [
+      "GB-T1.03.02.T1"
+    ],
+    "tests": [
+      "GB-T1.03.02.V1"
+    ],
+    "documentation": "GB-T1.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Recover SDK/session lifecycle after sleep, token expiry and reconnect without privilege widening",
+    "workstream": "T1",
+    "feature": "GB-T1.04.01",
+    "implementation": [
+      "GB-T1.04.01.T1"
+    ],
+    "tests": [
+      "GB-T1.04.01.V1"
+    ],
+    "documentation": "GB-T1.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "handle user/guild context changes and partial authentication safely",
+    "workstream": "T1",
+    "feature": "GB-T1.04.01",
+    "implementation": [
+      "GB-T1.04.01.T1"
+    ],
+    "tests": [
+      "GB-T1.04.01.V1"
+    ],
+    "documentation": "GB-T1.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Respect retry-after and route/global buckets",
+    "workstream": "T1",
+    "feature": "GB-T1.04.02",
+    "implementation": [
+      "GB-T1.04.02.T1"
+    ],
+    "tests": [
+      "GB-T1.04.02.V1"
+    ],
+    "documentation": "GB-T1.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "bound retries with jitter and cancellation",
+    "workstream": "T1",
+    "feature": "GB-T1.04.02",
+    "implementation": [
+      "GB-T1.04.02.T1"
+    ],
+    "tests": [
+      "GB-T1.04.02.V1"
+    ],
+    "documentation": "GB-T1.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "distinguish forbidden, missing access, invalid token and transient outage without leaking tokens",
+    "workstream": "T1",
+    "feature": "GB-T1.04.02",
+    "implementation": [
+      "GB-T1.04.02.T1"
+    ],
+    "tests": [
+      "GB-T1.04.02.V1"
+    ],
+    "documentation": "GB-T1.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Configure Discord role mappings through verified guild administrators",
+    "workstream": "T2",
+    "feature": "GB-T2.01.01",
+    "implementation": [
+      "GB-T2.01.01.T1"
+    ],
+    "tests": [
+      "GB-T2.01.01.V1"
+    ],
+    "documentation": "GB-T2.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "define viewer/writer/moderator/admin precedence and explicit-deny rules",
+    "workstream": "T2",
+    "feature": "GB-T2.01.01",
+    "implementation": [
+      "GB-T2.01.01.T1"
+    ],
+    "tests": [
+      "GB-T2.01.01.V1"
+    ],
+    "documentation": "GB-T2.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "prevent users from editing their own privilege mappings",
+    "workstream": "T2",
+    "feature": "GB-T2.01.01",
+    "implementation": [
+      "GB-T2.01.01.T1"
+    ],
+    "tests": [
+      "GB-T2.01.01.V1"
+    ],
+    "documentation": "GB-T2.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Evaluate guild membership, board visibility, mode, restrictions and object ownership on every mutation",
+    "workstream": "T2",
+    "feature": "GB-T2.01.02",
+    "implementation": [
+      "GB-T2.01.02.T1"
+    ],
+    "tests": [
+      "GB-T2.01.02.V1"
+    ],
+    "documentation": "GB-T2.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "isolate tenants and distinguish system/admin actions from ordinary writer operations",
+    "workstream": "T2",
+    "feature": "GB-T2.01.02",
+    "implementation": [
+      "GB-T2.01.02.T1"
+    ],
+    "tests": [
+      "GB-T2.01.02.V1"
+    ],
+    "documentation": "GB-T2.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Implement request queue, moderation approval/denial and targeted writing grants",
+    "workstream": "T2",
+    "feature": "GB-T2.02.01",
+    "implementation": [
+      "GB-T2.02.01.T1"
+    ],
+    "tests": [
+      "GB-T2.02.01.V1"
+    ],
+    "documentation": "GB-T2.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "authorize grant issuers and recipients",
+    "workstream": "T2",
+    "feature": "GB-T2.02.01",
+    "implementation": [
+      "GB-T2.02.01.T1"
+    ],
+    "tests": [
+      "GB-T2.02.01.V1"
+    ],
+    "documentation": "GB-T2.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "reject self-approval and cross-board requests",
+    "workstream": "T2",
+    "feature": "GB-T2.02.01",
+    "implementation": [
+      "GB-T2.02.01.T1"
+    ],
+    "tests": [
+      "GB-T2.02.01.V1"
+    ],
+    "documentation": "GB-T2.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "communicate outcomes",
+    "workstream": "T2",
+    "feature": "GB-T2.02.01",
+    "implementation": [
+      "GB-T2.02.01.T1"
+    ],
+    "tests": [
+      "GB-T2.02.01.V1"
+    ],
+    "documentation": "GB-T2.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Use server time for TTL",
+    "workstream": "T2",
+    "feature": "GB-T2.02.02",
+    "implementation": [
+      "GB-T2.02.02.T1"
+    ],
+    "tests": [
+      "GB-T2.02.02.V1"
+    ],
+    "documentation": "GB-T2.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "revoke on expiry, moderator action or role removal",
+    "workstream": "T2",
+    "feature": "GB-T2.02.02",
+    "implementation": [
+      "GB-T2.02.02.T1"
+    ],
+    "tests": [
+      "GB-T2.02.02.V1"
+    ],
+    "documentation": "GB-T2.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "fence in-flight writes and active sockets with policy generation",
+    "workstream": "T2",
+    "feature": "GB-T2.02.02",
+    "implementation": [
+      "GB-T2.02.02.T1"
+    ],
+    "tests": [
+      "GB-T2.02.02.V1"
+    ],
+    "documentation": "GB-T2.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "ensure stale clients cannot continue editing",
+    "workstream": "T2",
+    "feature": "GB-T2.02.02",
+    "implementation": [
+      "GB-T2.02.02.T1"
+    ],
+    "tests": [
+      "GB-T2.02.02.V1"
+    ],
+    "documentation": "GB-T2.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Persist lock state, authorize unlock, broadcast policy changes and reject concurrent unauthorized writes",
+    "workstream": "T2",
+    "feature": "GB-T2.03.01",
+    "implementation": [
+      "GB-T2.03.01.T1"
+    ],
+    "tests": [
+      "GB-T2.03.01.V1"
+    ],
+    "documentation": "GB-T2.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "ensure emergency lockdown overrides temporary grants and all ordinary writers",
+    "workstream": "T2",
+    "feature": "GB-T2.03.01",
+    "implementation": [
+      "GB-T2.03.01.T1"
+    ],
+    "tests": [
+      "GB-T2.03.01.V1"
+    ],
+    "documentation": "GB-T2.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Allow authorized moderators to restrict users, review requests, grant/revoke writing and inspect active permissions",
+    "workstream": "T2",
+    "feature": "GB-T2.03.02",
+    "implementation": [
+      "GB-T2.03.02.T1"
+    ],
+    "tests": [
+      "GB-T2.03.02.V1"
+    ],
+    "documentation": "GB-T2.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "separate UI visibility from backend enforcement",
+    "workstream": "T2",
+    "feature": "GB-T2.03.02",
+    "implementation": [
+      "GB-T2.03.02.T1"
+    ],
+    "tests": [
+      "GB-T2.03.02.V1"
+    ],
+    "documentation": "GB-T2.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "prevent moderator escalation",
+    "workstream": "T2",
+    "feature": "GB-T2.03.02",
+    "implementation": [
+      "GB-T2.03.02.T1"
+    ],
+    "tests": [
+      "GB-T2.03.02.V1"
+    ],
+    "documentation": "GB-T2.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Record actor, guild, board, policy generation, reason, action and outcome using append-only semantics",
+    "workstream": "T2",
+    "feature": "GB-T2.04.01",
+    "implementation": [
+      "GB-T2.04.01.T1"
+    ],
+    "tests": [
+      "GB-T2.04.01.V1"
+    ],
+    "documentation": "GB-T2.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "avoid tokens and unnecessary content",
+    "workstream": "T2",
+    "feature": "GB-T2.04.01",
+    "implementation": [
+      "GB-T2.04.01.T1"
+    ],
+    "tests": [
+      "GB-T2.04.01.V1"
+    ],
+    "documentation": "GB-T2.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "scope audit access and retention",
+    "workstream": "T2",
+    "feature": "GB-T2.04.01",
+    "implementation": [
+      "GB-T2.04.01.T1"
+    ],
+    "tests": [
+      "GB-T2.04.01.V1"
+    ],
+    "documentation": "GB-T2.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Exercise all allow/deny pairs, wrong guild/board/object, stale roles, expired grants, concurrent revocation, forged administrator flags and replayed actions",
+    "workstream": "T2",
+    "feature": "GB-T2.04.02",
+    "implementation": [
+      "GB-T2.04.02.T1"
+    ],
+    "tests": [
+      "GB-T2.04.02.V1"
+    ],
+    "documentation": "GB-T2.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "require negative tests for every critical rule",
+    "workstream": "T2",
+    "feature": "GB-T2.04.02",
+    "implementation": [
+      "GB-T2.04.02.T1"
+    ],
+    "tests": [
+      "GB-T2.04.02.V1"
+    ],
+    "documentation": "GB-T2.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Wrap pinned editor behind an adapter",
+    "workstream": "T3",
+    "feature": "GB-T3.01.01",
+    "implementation": [
+      "GB-T3.01.01.T1"
+    ],
+    "tests": [
+      "GB-T3.01.01.V1"
+    ],
+    "documentation": "GB-T3.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "preserve stable element identifiers and schema versions",
+    "workstream": "T3",
+    "feature": "GB-T3.01.01",
+    "implementation": [
+      "GB-T3.01.01.T1"
+    ],
+    "tests": [
+      "GB-T3.01.01.V1"
+    ],
+    "documentation": "GB-T3.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "render infinite canvas and hydrate validated state without treating UI callbacks as authorized server writes",
+    "workstream": "T3",
+    "feature": "GB-T3.01.01",
+    "implementation": [
+      "GB-T3.01.01.T1"
+    ],
+    "tests": [
+      "GB-T3.01.01.V1"
+    ],
+    "documentation": "GB-T3.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Serialize elements, app state and asset references with size limits",
+    "workstream": "T3",
+    "feature": "GB-T3.01.02",
+    "implementation": [
+      "GB-T3.01.02.T1"
+    ],
+    "tests": [
+      "GB-T3.01.02.V1"
+    ],
+    "documentation": "GB-T3.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "exclude ephemeral identity and tokens",
+    "workstream": "T3",
+    "feature": "GB-T3.01.02",
+    "implementation": [
+      "GB-T3.01.02.T1"
+    ],
+    "tests": [
+      "GB-T3.01.02.V1"
+    ],
+    "documentation": "GB-T3.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "validate schemas and support explicit migration or safe rejection of incompatible imports",
+    "workstream": "T3",
+    "feature": "GB-T3.01.02",
+    "implementation": [
+      "GB-T3.01.02.T1"
+    ],
+    "tests": [
+      "GB-T3.01.02.V1"
+    ],
+    "documentation": "GB-T3.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Support pen, eraser, shapes, arrows and connectors with bounded geometry",
+    "workstream": "T3",
+    "feature": "GB-T3.02.01",
+    "implementation": [
+      "GB-T3.02.01.T1"
+    ],
+    "tests": [
+      "GB-T3.02.01.V1"
+    ],
+    "documentation": "GB-T3.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "preserve bindings and reject malformed coordinates",
+    "workstream": "T3",
+    "feature": "GB-T3.02.01",
+    "implementation": [
+      "GB-T3.02.01.T1"
+    ],
+    "tests": [
+      "GB-T3.02.01.V1"
+    ],
+    "documentation": "GB-T3.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "synchronize edits through canonical operations",
+    "workstream": "T3",
+    "feature": "GB-T3.02.01",
+    "implementation": [
+      "GB-T3.02.01.T1"
+    ],
+    "tests": [
+      "GB-T3.02.01.V1"
+    ],
+    "documentation": "GB-T3.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Support text and sticky-note representation with font/style controls",
+    "workstream": "T3",
+    "feature": "GB-T3.02.02",
+    "implementation": [
+      "GB-T3.02.02.T1"
+    ],
+    "tests": [
+      "GB-T3.02.02.V1"
+    ],
+    "documentation": "GB-T3.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "sanitize text and external links",
+    "workstream": "T3",
+    "feature": "GB-T3.02.02",
+    "implementation": [
+      "GB-T3.02.02.T1"
+    ],
+    "tests": [
+      "GB-T3.02.02.V1"
+    ],
+    "documentation": "GB-T3.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "document missing native editor behavior and required custom extensions",
+    "workstream": "T3",
+    "feature": "GB-T3.02.02",
+    "implementation": [
+      "GB-T3.02.02.T1"
+    ],
+    "tests": [
+      "GB-T3.02.02.V1"
+    ],
+    "documentation": "GB-T3.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Support selection, movement, rotation, resize, grouping and layer ordering",
+    "workstream": "T3",
+    "feature": "GB-T3.03.01",
+    "implementation": [
+      "GB-T3.03.01.T1"
+    ],
+    "tests": [
+      "GB-T3.03.01.V1"
+    ],
+    "documentation": "GB-T3.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "express multi-element changes atomically",
+    "workstream": "T3",
+    "feature": "GB-T3.03.01",
+    "implementation": [
+      "GB-T3.03.01.T1"
+    ],
+    "tests": [
+      "GB-T3.03.01.V1"
+    ],
+    "documentation": "GB-T3.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "preserve connector relationships and ownership constraints",
+    "workstream": "T3",
+    "feature": "GB-T3.03.01",
+    "implementation": [
+      "GB-T3.03.01.T1"
+    ],
+    "tests": [
+      "GB-T3.03.01.V1"
+    ],
+    "documentation": "GB-T3.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Validate clipboard input and remap identifiers",
+    "workstream": "T3",
+    "feature": "GB-T3.03.02",
+    "implementation": [
+      "GB-T3.03.02.T1"
+    ],
+    "tests": [
+      "GB-T3.03.02.V1"
+    ],
+    "documentation": "GB-T3.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "prevent resurrection of forbidden/deleted elements",
+    "workstream": "T3",
+    "feature": "GB-T3.03.02",
+    "implementation": [
+      "GB-T3.03.02.T1"
+    ],
+    "tests": [
+      "GB-T3.03.02.V1"
+    ],
+    "documentation": "GB-T3.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "undo only accepted local intent without overwriting another editor's subsequent changes",
+    "workstream": "T3",
+    "feature": "GB-T3.03.02",
+    "implementation": [
+      "GB-T3.03.02.T1"
+    ],
+    "tests": [
+      "GB-T3.03.02.V1"
+    ],
+    "documentation": "GB-T3.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Support viewport navigation and pointer pressure where available",
+    "workstream": "T3",
+    "feature": "GB-T3.04.01",
+    "implementation": [
+      "GB-T3.04.01.T1"
+    ],
+    "tests": [
+      "GB-T3.04.01.V1"
+    ],
+    "documentation": "GB-T3.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "distinguish touch drawing from navigation",
+    "workstream": "T3",
+    "feature": "GB-T3.04.01",
+    "implementation": [
+      "GB-T3.04.01.T1"
+    ],
+    "tests": [
+      "GB-T3.04.01.V1"
+    ],
+    "documentation": "GB-T3.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "validate stylus behavior and minimum target sizes on supported Discord clients",
+    "workstream": "T3",
+    "feature": "GB-T3.04.01",
+    "implementation": [
+      "GB-T3.04.01.T1"
+    ],
+    "tests": [
+      "GB-T3.04.01.V1"
+    ],
+    "documentation": "GB-T3.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Disable local editing affordances for viewers while keeping navigation",
+    "workstream": "T3",
+    "feature": "GB-T3.04.02",
+    "implementation": [
+      "GB-T3.04.02.T1"
+    ],
+    "tests": [
+      "GB-T3.04.02.V1"
+    ],
+    "documentation": "GB-T3.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "require server denial of forged writes",
+    "workstream": "T3",
+    "feature": "GB-T3.04.02",
+    "implementation": [
+      "GB-T3.04.02.T1"
+    ],
+    "tests": [
+      "GB-T3.04.02.V1"
+    ],
+    "documentation": "GB-T3.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "measure agreed large-board render budgets, memory and interaction latency",
+    "workstream": "T3",
+    "feature": "GB-T3.04.02",
+    "implementation": [
+      "GB-T3.04.02.T1"
+    ],
+    "tests": [
+      "GB-T3.04.02.V1"
+    ],
+    "documentation": "GB-T3.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Authenticate WSS upgrades and bind sockets to verified user/guild/board",
+    "workstream": "T4",
+    "feature": "GB-T4.01.01",
+    "implementation": [
+      "GB-T4.01.01.T1"
+    ],
+    "tests": [
+      "GB-T4.01.01.V1"
+    ],
+    "documentation": "GB-T4.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "recheck membership and edit permissions",
+    "workstream": "T4",
+    "feature": "GB-T4.01.01",
+    "implementation": [
+      "GB-T4.01.01.T1"
+    ],
+    "tests": [
+      "GB-T4.01.01.V1"
+    ],
+    "documentation": "GB-T4.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "enforce origin/proxy constraints and reject expired or cross-tenant credentials",
+    "workstream": "T4",
+    "feature": "GB-T4.01.01",
+    "implementation": [
+      "GB-T4.01.01.T1"
+    ],
+    "tests": [
+      "GB-T4.01.01.V1"
+    ],
+    "documentation": "GB-T4.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Resume from last durably accepted revision",
+    "workstream": "T4",
+    "feature": "GB-T4.01.02",
+    "implementation": [
+      "GB-T4.01.02.T1"
+    ],
+    "tests": [
+      "GB-T4.01.02.V1"
+    ],
+    "documentation": "GB-T4.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "replay missing operations or bounded snapshot plus tail",
+    "workstream": "T4",
+    "feature": "GB-T4.01.02",
+    "implementation": [
+      "GB-T4.01.02.T1"
+    ],
+    "tests": [
+      "GB-T4.01.02.V1"
+    ],
+    "documentation": "GB-T4.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "handle session renewal, duplicate delivery and interrupted transfer without divergence",
+    "workstream": "T4",
+    "feature": "GB-T4.01.02",
+    "implementation": [
+      "GB-T4.01.02.T1"
+    ],
+    "tests": [
+      "GB-T4.01.02.V1"
+    ],
+    "documentation": "GB-T4.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Validate versioned operation schema and payload sizes",
+    "workstream": "T4",
+    "feature": "GB-T4.02.01",
+    "implementation": [
+      "GB-T4.02.01.T1"
+    ],
+    "tests": [
+      "GB-T4.02.01.V1"
+    ],
+    "documentation": "GB-T4.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "assign monotonic board revisions",
+    "workstream": "T4",
+    "feature": "GB-T4.02.01",
+    "implementation": [
+      "GB-T4.02.01.T1"
+    ],
+    "tests": [
+      "GB-T4.02.01.V1"
+    ],
+    "documentation": "GB-T4.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "deduplicate by scoped operation ID and return prior result",
+    "workstream": "T4",
+    "feature": "GB-T4.02.01",
+    "implementation": [
+      "GB-T4.02.01.T1"
+    ],
+    "tests": [
+      "GB-T4.02.01.V1"
+    ],
+    "documentation": "GB-T4.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "acknowledge only after durable commit",
+    "workstream": "T4",
+    "feature": "GB-T4.02.01",
+    "implementation": [
+      "GB-T4.02.01.T1"
+    ],
+    "tests": [
+      "GB-T4.02.01.V1"
+    ],
+    "documentation": "GB-T4.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Use server-authoritative per-element conflict policy, explicit base revisions and atomic compound operations",
+    "workstream": "T4",
+    "feature": "GB-T4.02.02",
+    "implementation": [
+      "GB-T4.02.02.T1"
+    ],
+    "tests": [
+      "GB-T4.02.02.V1"
+    ],
+    "documentation": "GB-T4.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "reject or transform stale intent deterministically",
+    "workstream": "T4",
+    "feature": "GB-T4.02.02",
+    "implementation": [
+      "GB-T4.02.02.T1"
+    ],
+    "tests": [
+      "GB-T4.02.02.V1"
+    ],
+    "documentation": "GB-T4.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "avoid naive full-document last-write-wins",
+    "workstream": "T4",
+    "feature": "GB-T4.02.02",
+    "implementation": [
+      "GB-T4.02.02.T1"
+    ],
+    "tests": [
+      "GB-T4.02.02.V1"
+    ],
+    "documentation": "GB-T4.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Publish bounded ephemeral cursor/selection updates for authorized room members",
+    "workstream": "T4",
+    "feature": "GB-T4.03.01",
+    "implementation": [
+      "GB-T4.03.01.T1"
+    ],
+    "tests": [
+      "GB-T4.03.01.V1"
+    ],
+    "documentation": "GB-T4.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "expire disconnected presence",
+    "workstream": "T4",
+    "feature": "GB-T4.03.01",
+    "implementation": [
+      "GB-T4.03.01.T1"
+    ],
+    "tests": [
+      "GB-T4.03.01.V1"
+    ],
+    "documentation": "GB-T4.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "avoid persistence of cursor history and hidden board participants",
+    "workstream": "T4",
+    "feature": "GB-T4.03.01",
+    "implementation": [
+      "GB-T4.03.01.T1"
+    ],
+    "tests": [
+      "GB-T4.03.01.V1"
+    ],
+    "documentation": "GB-T4.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Apply per-user and board message/byte budgets",
+    "workstream": "T4",
+    "feature": "GB-T4.03.02",
+    "implementation": [
+      "GB-T4.03.02.T1"
+    ],
+    "tests": [
+      "GB-T4.03.02.V1"
+    ],
+    "documentation": "GB-T4.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "coalesce lossy presence, preserve accepted operations, bound queues and disconnect slow consumers with resumable recovery",
+    "workstream": "T4",
+    "feature": "GB-T4.03.02",
+    "implementation": [
+      "GB-T4.03.02.T1"
+    ],
+    "tests": [
+      "GB-T4.03.02.V1"
+    ],
+    "documentation": "GB-T4.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Specify protocol errors, unsupported versions and replay handling",
+    "workstream": "T4",
+    "feature": "GB-T4.04.01",
+    "implementation": [
+      "GB-T4.04.01.T1"
+    ],
+    "tests": [
+      "GB-T4.04.01.V1"
+    ],
+    "documentation": "GB-T4.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "inject dropped/reordered frames and process crashes",
+    "workstream": "T4",
+    "feature": "GB-T4.04.01",
+    "implementation": [
+      "GB-T4.04.01.T1"
+    ],
+    "tests": [
+      "GB-T4.04.01.V1"
+    ],
+    "documentation": "GB-T4.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "ensure accepted mutations survive restart exactly once at logical level",
+    "workstream": "T4",
+    "feature": "GB-T4.04.01",
+    "implementation": [
+      "GB-T4.04.01.T1"
+    ],
+    "tests": [
+      "GB-T4.04.01.V1"
+    ],
+    "documentation": "GB-T4.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Build deterministic multi-client harness for simultaneous same-object edits, groups, deletion, reconnect and snapshot boundaries",
+    "workstream": "T4",
+    "feature": "GB-T4.04.02",
+    "implementation": [
+      "GB-T4.04.02.T1"
+    ],
+    "tests": [
+      "GB-T4.04.02.V1"
+    ],
+    "documentation": "GB-T4.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "compare canonical board hashes and durable revision history",
+    "workstream": "T4",
+    "feature": "GB-T4.04.02",
+    "implementation": [
+      "GB-T4.04.02.T1"
+    ],
+    "tests": [
+      "GB-T4.04.02.V1"
+    ],
+    "documentation": "GB-T4.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Create, list and select boards with guild-scoped visibility",
+    "workstream": "T5",
+    "feature": "GB-T5.01.01",
+    "implementation": [
+      "GB-T5.01.01.T1"
+    ],
+    "tests": [
+      "GB-T5.01.01.V1"
+    ],
+    "documentation": "GB-T5.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "support rename, duplication and channel defaults",
+    "workstream": "T5",
+    "feature": "GB-T5.01.01",
+    "implementation": [
+      "GB-T5.01.01.T1"
+    ],
+    "tests": [
+      "GB-T5.01.01.V1"
+    ],
+    "documentation": "GB-T5.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "prohibit cross-guild references and copy assets safely",
+    "workstream": "T5",
+    "feature": "GB-T5.01.01",
+    "implementation": [
+      "GB-T5.01.01.T1"
+    ],
+    "tests": [
+      "GB-T5.01.01.V1"
+    ],
+    "documentation": "GB-T5.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Implement reversible archive and explicit deletion confirmation with access checks",
+    "workstream": "T5",
+    "feature": "GB-T5.01.02",
+    "implementation": [
+      "GB-T5.01.02.T1"
+    ],
+    "tests": [
+      "GB-T5.01.02.V1"
+    ],
+    "documentation": "GB-T5.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "define soft-delete retention, purge policy and stale socket behavior",
+    "workstream": "T5",
+    "feature": "GB-T5.01.02",
+    "implementation": [
+      "GB-T5.01.02.T1"
+    ],
+    "tests": [
+      "GB-T5.01.02.V1"
+    ],
+    "documentation": "GB-T5.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "record lifecycle audit events",
+    "workstream": "T5",
+    "feature": "GB-T5.01.02",
+    "implementation": [
+      "GB-T5.01.02.T1"
+    ],
+    "tests": [
+      "GB-T5.01.02.V1"
+    ],
+    "documentation": "GB-T5.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Create tenant-scoped board, member policy, operations, snapshots, assets and audit tables with constraints/indexes",
+    "workstream": "T5",
+    "feature": "GB-T5.02.01",
+    "implementation": [
+      "GB-T5.02.01.T1"
+    ],
+    "tests": [
+      "GB-T5.02.01.V1"
+    ],
+    "documentation": "GB-T5.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "test clean install, upgrade and failed migration recovery",
+    "workstream": "T5",
+    "feature": "GB-T5.02.01",
+    "implementation": [
+      "GB-T5.02.01.T1"
+    ],
+    "tests": [
+      "GB-T5.02.01.V1"
+    ],
+    "documentation": "GB-T5.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Commit authorized operation, deduplication receipt and revision atomically",
+    "workstream": "T5",
+    "feature": "GB-T5.02.02",
+    "implementation": [
+      "GB-T5.02.02.T1"
+    ],
+    "tests": [
+      "GB-T5.02.02.V1"
+    ],
+    "documentation": "GB-T5.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "emit durable acknowledgments only after commit",
+    "workstream": "T5",
+    "feature": "GB-T5.02.02",
+    "implementation": [
+      "GB-T5.02.02.T1"
+    ],
+    "tests": [
+      "GB-T5.02.02.V1"
+    ],
+    "documentation": "GB-T5.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "expose save status and recover from database timeout without false success",
+    "workstream": "T5",
+    "feature": "GB-T5.02.02",
+    "implementation": [
+      "GB-T5.02.02.T1"
+    ],
+    "tests": [
+      "GB-T5.02.02.V1"
+    ],
+    "documentation": "GB-T5.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Create snapshots at consistent revision boundaries",
+    "workstream": "T5",
+    "feature": "GB-T5.03.01",
+    "implementation": [
+      "GB-T5.03.01.T1"
+    ],
+    "tests": [
+      "GB-T5.03.01.V1"
+    ],
+    "documentation": "GB-T5.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "expose authorized history and named checkpoints with audit attribution",
+    "workstream": "T5",
+    "feature": "GB-T5.03.01",
+    "implementation": [
+      "GB-T5.03.01.T1"
+    ],
+    "tests": [
+      "GB-T5.03.01.V1"
+    ],
+    "documentation": "GB-T5.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "compact logs only after safe snapshot and backup retention conditions",
+    "workstream": "T5",
+    "feature": "GB-T5.03.01",
+    "implementation": [
+      "GB-T5.03.01.T1"
+    ],
+    "tests": [
+      "GB-T5.03.01.V1"
+    ],
+    "documentation": "GB-T5.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Restore as a new audited revision/lineage",
+    "workstream": "T5",
+    "feature": "GB-T5.03.02",
+    "implementation": [
+      "GB-T5.03.02.T1"
+    ],
+    "tests": [
+      "GB-T5.03.02.V1"
+    ],
+    "documentation": "GB-T5.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "fence active writers and preserve recoverable previous state",
+    "workstream": "T5",
+    "feature": "GB-T5.03.02",
+    "implementation": [
+      "GB-T5.03.02.T1"
+    ],
+    "tests": [
+      "GB-T5.03.02.V1"
+    ],
+    "documentation": "GB-T5.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "recover snapshot plus operation tail and verify integrity after forced crash",
+    "workstream": "T5",
+    "feature": "GB-T5.03.02",
+    "implementation": [
+      "GB-T5.03.02.T1"
+    ],
+    "tests": [
+      "GB-T5.03.02.V1"
+    ],
+    "documentation": "GB-T5.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Store uploads outside web root under opaque tenant-scoped IDs",
+    "workstream": "T5",
+    "feature": "GB-T5.04.01",
+    "implementation": [
+      "GB-T5.04.01.T1"
+    ],
+    "tests": [
+      "GB-T5.04.01.V1"
+    ],
+    "documentation": "GB-T5.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "validate type, decoded size and quotas",
+    "workstream": "T5",
+    "feature": "GB-T5.04.01",
+    "implementation": [
+      "GB-T5.04.01.T1"
+    ],
+    "tests": [
+      "GB-T5.04.01.V1"
+    ],
+    "documentation": "GB-T5.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "reject active content/path traversal",
+    "workstream": "T5",
+    "feature": "GB-T5.04.01",
+    "implementation": [
+      "GB-T5.04.01.T1"
+    ],
+    "tests": [
+      "GB-T5.04.01.V1"
+    ],
+    "documentation": "GB-T5.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "authorize reads and clean orphaned assets safely",
+    "workstream": "T5",
+    "feature": "GB-T5.04.01",
+    "implementation": [
+      "GB-T5.04.01.T1"
+    ],
+    "tests": [
+      "GB-T5.04.01.V1"
+    ],
+    "documentation": "GB-T5.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Provide versioned export/import of board and asset references with limits",
+    "workstream": "T5",
+    "feature": "GB-T5.04.02",
+    "implementation": [
+      "GB-T5.04.02.T1"
+    ],
+    "tests": [
+      "GB-T5.04.02.V1"
+    ],
+    "documentation": "GB-T5.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "validate untrusted files",
+    "workstream": "T5",
+    "feature": "GB-T5.04.02",
+    "implementation": [
+      "GB-T5.04.02.T1"
+    ],
+    "tests": [
+      "GB-T5.04.02.V1"
+    ],
+    "documentation": "GB-T5.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "apply documented privacy retention, data deletion and database integrity checks",
+    "workstream": "T5",
+    "feature": "GB-T5.04.02",
+    "implementation": [
+      "GB-T5.04.02.T1"
+    ],
+    "tests": [
+      "GB-T5.04.02.V1"
+    ],
+    "documentation": "GB-T5.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Persist mode selection and enforce mode-specific editing rights on server",
+    "workstream": "T6",
+    "feature": "GB-T6.01.01",
+    "implementation": [
+      "GB-T6.01.01.T1"
+    ],
+    "tests": [
+      "GB-T6.01.01.V1"
+    ],
+    "documentation": "GB-T6.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "distinguish all-writer collaboration from moderator-only and locked state",
+    "workstream": "T6",
+    "feature": "GB-T6.01.01",
+    "implementation": [
+      "GB-T6.01.01.T1"
+    ],
+    "tests": [
+      "GB-T6.01.01.V1"
+    ],
+    "documentation": "GB-T6.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "publish current mode to clients",
+    "workstream": "T6",
+    "feature": "GB-T6.01.01",
+    "implementation": [
+      "GB-T6.01.01.T1"
+    ],
+    "tests": [
+      "GB-T6.01.01.V1"
+    ],
+    "documentation": "GB-T6.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Integrate queue/grant policies with mode transitions",
+    "workstream": "T6",
+    "feature": "GB-T6.01.02",
+    "implementation": [
+      "GB-T6.01.02.T1"
+    ],
+    "tests": [
+      "GB-T6.01.02.V1"
+    ],
+    "documentation": "GB-T6.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "define pending request and grant lifecycle when switching modes",
+    "workstream": "T6",
+    "feature": "GB-T6.01.02",
+    "implementation": [
+      "GB-T6.01.02.T1"
+    ],
+    "tests": [
+      "GB-T6.01.02.V1"
+    ],
+    "documentation": "GB-T6.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "reject stale mode revision changes",
+    "workstream": "T6",
+    "feature": "GB-T6.01.02",
+    "implementation": [
+      "GB-T6.01.02.T1"
+    ],
+    "tests": [
+      "GB-T6.01.02.V1"
+    ],
+    "documentation": "GB-T6.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Allow authorized moderator to designate/revoke presenter and start/end presentation",
+    "workstream": "T6",
+    "feature": "GB-T6.02.01",
+    "implementation": [
+      "GB-T6.02.01.T1"
+    ],
+    "tests": [
+      "GB-T6.02.01.V1"
+    ],
+    "documentation": "GB-T6.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "prevent forged presenter events",
+    "workstream": "T6",
+    "feature": "GB-T6.02.01",
+    "implementation": [
+      "GB-T6.02.01.T1"
+    ],
+    "tests": [
+      "GB-T6.02.01.V1"
+    ],
+    "documentation": "GB-T6.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "preserve editing authorization separately from viewport authority",
+    "workstream": "T6",
+    "feature": "GB-T6.02.01",
+    "implementation": [
+      "GB-T6.02.01.T1"
+    ],
+    "tests": [
+      "GB-T6.02.01.V1"
+    ],
+    "documentation": "GB-T6.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Distribute bounded presenter viewport state with sequence number",
+    "workstream": "T6",
+    "feature": "GB-T6.02.02",
+    "implementation": [
+      "GB-T6.02.02.T1"
+    ],
+    "tests": [
+      "GB-T6.02.02.V1"
+    ],
+    "documentation": "GB-T6.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "allow explicit follow/unfollow",
+    "workstream": "T6",
+    "feature": "GB-T6.02.02",
+    "implementation": [
+      "GB-T6.02.02.T1"
+    ],
+    "tests": [
+      "GB-T6.02.02.V1"
+    ],
+    "documentation": "GB-T6.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "restore personal viewport and avoid leaking another board's navigation",
+    "workstream": "T6",
+    "feature": "GB-T6.02.02",
+    "implementation": [
+      "GB-T6.02.02.T1"
+    ],
+    "tests": [
+      "GB-T6.02.02.V1"
+    ],
+    "documentation": "GB-T6.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Expose follow status, zoom/pan and rejoin controls with keyboard access",
+    "workstream": "T6",
+    "feature": "GB-T6.03.01",
+    "implementation": [
+      "GB-T6.03.01.T1"
+    ],
+    "tests": [
+      "GB-T6.03.01.V1"
+    ],
+    "documentation": "GB-T6.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "document navigation behavior for viewers and writers while preserving mode policy",
+    "workstream": "T6",
+    "feature": "GB-T6.03.01",
+    "implementation": [
+      "GB-T6.03.01.T1"
+    ],
+    "tests": [
+      "GB-T6.03.01.V1"
+    ],
+    "documentation": "GB-T6.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Provide mode/presenter indicators, control labels and reduced-motion transitions",
+    "workstream": "T6",
+    "feature": "GB-T6.03.02",
+    "implementation": [
+      "GB-T6.03.02.T1"
+    ],
+    "tests": [
+      "GB-T6.03.02.V1"
+    ],
+    "documentation": "GB-T6.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "support narrow Discord layouts and announce meaningful state changes without cursor noise",
+    "workstream": "T6",
+    "feature": "GB-T6.03.02",
+    "implementation": [
+      "GB-T6.03.02.T1"
+    ],
+    "tests": [
+      "GB-T6.03.02.V1"
+    ],
+    "documentation": "GB-T6.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Serialize mode transitions with expected revision",
+    "workstream": "T6",
+    "feature": "GB-T6.04.01",
+    "implementation": [
+      "GB-T6.04.01.T1"
+    ],
+    "tests": [
+      "GB-T6.04.01.V1"
+    ],
+    "documentation": "GB-T6.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "reject stale requests",
+    "workstream": "T6",
+    "feature": "GB-T6.04.01",
+    "implementation": [
+      "GB-T6.04.01.T1"
+    ],
+    "tests": [
+      "GB-T6.04.01.V1"
+    ],
+    "documentation": "GB-T6.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "fence mutation authorization against current mode and recover authoritative state after reconnect",
+    "workstream": "T6",
+    "feature": "GB-T6.04.01",
+    "implementation": [
+      "GB-T6.04.01.T1"
+    ],
+    "tests": [
+      "GB-T6.04.01.V1"
+    ],
+    "documentation": "GB-T6.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Test each role across each mode, concurrent presenter changes, reconnect, follow/unfollow and revoked presenter",
+    "workstream": "T6",
+    "feature": "GB-T6.04.02",
+    "implementation": [
+      "GB-T6.04.02.T1"
+    ],
+    "tests": [
+      "GB-T6.04.02.V1"
+    ],
+    "documentation": "GB-T6.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "ensure viewers never acquire write permission through presentation",
+    "workstream": "T6",
+    "feature": "GB-T6.04.02",
+    "implementation": [
+      "GB-T6.04.02.T1"
+    ],
+    "tests": [
+      "GB-T6.04.02.V1"
+    ],
+    "documentation": "GB-T6.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Build Discord-compatible board switcher, drawing toolbar and participant display",
+    "workstream": "T7",
+    "feature": "GB-T7.01.01",
+    "implementation": [
+      "GB-T7.01.01.T1"
+    ],
+    "tests": [
+      "GB-T7.01.01.V1"
+    ],
+    "documentation": "GB-T7.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "adapt to desktop and mobile available space",
+    "workstream": "T7",
+    "feature": "GB-T7.01.01",
+    "implementation": [
+      "GB-T7.01.01.T1"
+    ],
+    "tests": [
+      "GB-T7.01.01.V1"
+    ],
+    "documentation": "GB-T7.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "keep current board and role visible",
+    "workstream": "T7",
+    "feature": "GB-T7.01.01",
+    "implementation": [
+      "GB-T7.01.01.T1"
+    ],
+    "tests": [
+      "GB-T7.01.01.V1"
+    ],
+    "documentation": "GB-T7.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Expose guild/board settings according to permission",
+    "workstream": "T7",
+    "feature": "GB-T7.01.02",
+    "implementation": [
+      "GB-T7.01.02.T1"
+    ],
+    "tests": [
+      "GB-T7.01.02.V1"
+    ],
+    "documentation": "GB-T7.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "implement dark/light tokens, clear edit restrictions, mode indicators and accessible permission explanations",
+    "workstream": "T7",
+    "feature": "GB-T7.01.02",
+    "implementation": [
+      "GB-T7.01.02.T1"
+    ],
+    "tests": [
+      "GB-T7.01.02.V1"
+    ],
+    "documentation": "GB-T7.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Distinguish local pending edits, durably saved revision, reconnecting and failed state",
+    "workstream": "T7",
+    "feature": "GB-T7.02.01",
+    "implementation": [
+      "GB-T7.02.01.T1"
+    ],
+    "tests": [
+      "GB-T7.02.01.V1"
+    ],
+    "documentation": "GB-T7.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "provide retry/recovery actions without falsely reporting save success",
+    "workstream": "T7",
+    "feature": "GB-T7.02.01",
+    "implementation": [
+      "GB-T7.02.01.T1"
+    ],
+    "tests": [
+      "GB-T7.02.01.V1"
+    ],
+    "documentation": "GB-T7.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Display pending drawing requests, grant expiry and revoke feedback",
+    "workstream": "T7",
+    "feature": "GB-T7.02.02",
+    "implementation": [
+      "GB-T7.02.02.T1"
+    ],
+    "tests": [
+      "GB-T7.02.02.V1"
+    ],
+    "documentation": "GB-T7.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "avoid optimistic privilege grants",
+    "workstream": "T7",
+    "feature": "GB-T7.02.02",
+    "implementation": [
+      "GB-T7.02.02.T1"
+    ],
+    "tests": [
+      "GB-T7.02.02.V1"
+    ],
+    "documentation": "GB-T7.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "keep focus stable after moderator decisions",
+    "workstream": "T7",
+    "feature": "GB-T7.02.02",
+    "implementation": [
+      "GB-T7.02.02.T1"
+    ],
+    "tests": [
+      "GB-T7.02.02.V1"
+    ],
+    "documentation": "GB-T7.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Define keyboard shortcuts without Discord collisions",
+    "workstream": "T7",
+    "feature": "GB-T7.03.01",
+    "implementation": [
+      "GB-T7.03.01.T1"
+    ],
+    "tests": [
+      "GB-T7.03.01.V1"
+    ],
+    "documentation": "GB-T7.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "trap/restore modal focus, expose visible focus and accessible names",
+    "workstream": "T7",
+    "feature": "GB-T7.03.01",
+    "implementation": [
+      "GB-T7.03.01.T1"
+    ],
+    "tests": [
+      "GB-T7.03.01.V1"
+    ],
+    "documentation": "GB-T7.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "provide keyboard alternatives for moderation and board navigation",
+    "workstream": "T7",
+    "feature": "GB-T7.03.01",
+    "implementation": [
+      "GB-T7.03.01.T1"
+    ],
+    "tests": [
+      "GB-T7.03.01.V1"
+    ],
+    "documentation": "GB-T7.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Provide meaningful non-canvas controls and announcements",
+    "workstream": "T7",
+    "feature": "GB-T7.03.02",
+    "implementation": [
+      "GB-T7.03.02.T1"
+    ],
+    "tests": [
+      "GB-T7.03.02.V1"
+    ],
+    "documentation": "GB-T7.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "verify touch targets, contrast and reduced-motion settings",
+    "workstream": "T7",
+    "feature": "GB-T7.03.02",
+    "implementation": [
+      "GB-T7.03.02.T1"
+    ],
+    "tests": [
+      "GB-T7.03.02.V1"
+    ],
+    "documentation": "GB-T7.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "document accessible limitations and supported alternatives",
+    "workstream": "T7",
+    "feature": "GB-T7.03.02",
+    "implementation": [
+      "GB-T7.03.02.T1"
+    ],
+    "tests": [
+      "GB-T7.03.02.V1"
+    ],
+    "documentation": "GB-T7.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Exercise loading, forbidden, offline, empty and large-content states using role-aware fixtures",
+    "workstream": "T7",
+    "feature": "GB-T7.04.01",
+    "implementation": [
+      "GB-T7.04.01.T1"
+    ],
+    "tests": [
+      "GB-T7.04.01.V1"
+    ],
+    "documentation": "GB-T7.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "verify layout and touch behavior at supported viewport sizes",
+    "workstream": "T7",
+    "feature": "GB-T7.04.01",
+    "implementation": [
+      "GB-T7.04.01.T1"
+    ],
+    "tests": [
+      "GB-T7.04.01.V1"
+    ],
+    "documentation": "GB-T7.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Run automated accessibility checks plus manual keyboard and screen-reader scenarios",
+    "workstream": "T7",
+    "feature": "GB-T7.04.02",
+    "implementation": [
+      "GB-T7.04.02.T1"
+    ],
+    "tests": [
+      "GB-T7.04.02.V1"
+    ],
+    "documentation": "GB-T7.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "track canvas limitations and blocking defects with reproducible evidence",
+    "workstream": "T7",
+    "feature": "GB-T7.04.02",
+    "implementation": [
+      "GB-T7.04.02.T1"
+    ],
+    "tests": [
+      "GB-T7.04.02.V1"
+    ],
+    "documentation": "GB-T7.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Compose modular routes and typed request/response schemas",
+    "workstream": "T8",
+    "feature": "GB-T8.01.01",
+    "implementation": [
+      "GB-T8.01.01.T1"
+    ],
+    "tests": [
+      "GB-T8.01.01.V1"
+    ],
+    "documentation": "GB-T8.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "expose versioned API",
+    "workstream": "T8",
+    "feature": "GB-T8.01.01",
+    "implementation": [
+      "GB-T8.01.01.T1"
+    ],
+    "tests": [
+      "GB-T8.01.01.V1"
+    ],
+    "documentation": "GB-T8.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "validate input before side effects and use consistent error envelope with request ID",
+    "workstream": "T8",
+    "feature": "GB-T8.01.01",
+    "implementation": [
+      "GB-T8.01.01.T1"
+    ],
+    "tests": [
+      "GB-T8.01.01.V1"
+    ],
+    "documentation": "GB-T8.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Resolve server session, tenant and policy once per request with freshness checks",
+    "workstream": "T8",
+    "feature": "GB-T8.01.02",
+    "implementation": [
+      "GB-T8.01.02.T1"
+    ],
+    "tests": [
+      "GB-T8.01.02.V1"
+    ],
+    "documentation": "GB-T8.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "enforce route action permissions and object scope",
+    "workstream": "T8",
+    "feature": "GB-T8.01.02",
+    "implementation": [
+      "GB-T8.01.02.T1"
+    ],
+    "tests": [
+      "GB-T8.01.02.V1"
+    ],
+    "documentation": "GB-T8.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "prevent body parameters overriding authenticated context",
+    "workstream": "T8",
+    "feature": "GB-T8.01.02",
+    "implementation": [
+      "GB-T8.01.02.T1"
+    ],
+    "tests": [
+      "GB-T8.01.02.V1"
+    ],
+    "documentation": "GB-T8.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Implement scoped board CRUD, channel defaults, role mappings, requests, grants and locks",
+    "workstream": "T8",
+    "feature": "GB-T8.02.01",
+    "implementation": [
+      "GB-T8.02.01.T1"
+    ],
+    "tests": [
+      "GB-T8.02.01.V1"
+    ],
+    "documentation": "GB-T8.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "enforce idempotency for retried actions and consistent audit records",
+    "workstream": "T8",
+    "feature": "GB-T8.02.01",
+    "implementation": [
+      "GB-T8.02.01.T1"
+    ],
+    "tests": [
+      "GB-T8.02.01.V1"
+    ],
+    "documentation": "GB-T8.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Authorize scoped upload/download/export/import",
+    "workstream": "T8",
+    "feature": "GB-T8.02.02",
+    "implementation": [
+      "GB-T8.02.02.T1"
+    ],
+    "tests": [
+      "GB-T8.02.02.V1"
+    ],
+    "documentation": "GB-T8.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "bound streaming size and resource use",
+    "workstream": "T8",
+    "feature": "GB-T8.02.02",
+    "implementation": [
+      "GB-T8.02.02.T1"
+    ],
+    "tests": [
+      "GB-T8.02.02.V1"
+    ],
+    "documentation": "GB-T8.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "validate content disposition and prevent arbitrary path resolution",
+    "workstream": "T8",
+    "feature": "GB-T8.02.02",
+    "implementation": [
+      "GB-T8.02.02.T1"
+    ],
+    "tests": [
+      "GB-T8.02.02.V1"
+    ],
+    "documentation": "GB-T8.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Document least-privilege install flow and command registration lifecycle",
+    "workstream": "T8",
+    "feature": "GB-T8.03.01",
+    "implementation": [
+      "GB-T8.03.01.T1"
+    ],
+    "tests": [
+      "GB-T8.03.01.V1"
+    ],
+    "documentation": "GB-T8.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "separate development guild and production rollout",
+    "workstream": "T8",
+    "feature": "GB-T8.03.01",
+    "implementation": [
+      "GB-T8.03.01.T1"
+    ],
+    "tests": [
+      "GB-T8.03.01.V1"
+    ],
+    "documentation": "GB-T8.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "verify interactions and avoid secrets in registration logs",
+    "workstream": "T8",
+    "feature": "GB-T8.03.01",
+    "implementation": [
+      "GB-T8.03.01.T1"
+    ],
+    "tests": [
+      "GB-T8.03.01.V1"
+    ],
+    "documentation": "GB-T8.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Provide authorized board selection/linking, permission inspection and lock/unlock commands",
+    "workstream": "T8",
+    "feature": "GB-T8.03.02",
+    "implementation": [
+      "GB-T8.03.02.T1"
+    ],
+    "tests": [
+      "GB-T8.03.02.V1"
+    ],
+    "documentation": "GB-T8.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "verify guild context and ephemeral error handling",
+    "workstream": "T8",
+    "feature": "GB-T8.03.02",
+    "implementation": [
+      "GB-T8.03.02.T1"
+    ],
+    "tests": [
+      "GB-T8.03.02.V1"
+    ],
+    "documentation": "GB-T8.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "reject unauthorized or cross-guild invocation",
+    "workstream": "T8",
+    "feature": "GB-T8.03.02",
+    "implementation": [
+      "GB-T8.03.02.T1"
+    ],
+    "tests": [
+      "GB-T8.03.02.V1"
+    ],
+    "documentation": "GB-T8.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Generate OpenAPI from shared schemas",
+    "workstream": "T8",
+    "feature": "GB-T8.04.01",
+    "implementation": [
+      "GB-T8.04.01.T1"
+    ],
+    "tests": [
+      "GB-T8.04.01.V1"
+    ],
+    "documentation": "GB-T8.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "publish WebSocket message version compatibility policy",
+    "workstream": "T8",
+    "feature": "GB-T8.04.01",
+    "implementation": [
+      "GB-T8.04.01.T1"
+    ],
+    "tests": [
+      "GB-T8.04.01.V1"
+    ],
+    "documentation": "GB-T8.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "reject unknown breaking versions and maintain migration notes",
+    "workstream": "T8",
+    "feature": "GB-T8.04.01",
+    "implementation": [
+      "GB-T8.04.01.T1"
+    ],
+    "tests": [
+      "GB-T8.04.01.V1"
+    ],
+    "documentation": "GB-T8.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Test all endpoints/commands with invalid sessions, malformed input, wrong guild, insufficient roles, Discord failures and database rollback",
+    "workstream": "T8",
+    "feature": "GB-T8.04.02",
+    "implementation": [
+      "GB-T8.04.02.T1"
+    ],
+    "tests": [
+      "GB-T8.04.02.V1"
+    ],
+    "documentation": "GB-T8.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "compare documented and implemented contracts",
+    "workstream": "T8",
+    "feature": "GB-T8.04.02",
+    "implementation": [
+      "GB-T8.04.02.T1"
+    ],
+    "tests": [
+      "GB-T8.04.02.V1"
+    ],
+    "documentation": "GB-T8.D1",
+    "release_gate": "GB-T13.G1",
+    "release": "MVP"
+  },
+  {
+    "requirement": "Review code exchange, replay, session fixation, token exposure and secret rotation",
+    "workstream": "T9",
+    "feature": "GB-T9.01.01",
+    "implementation": [
+      "GB-T9.01.01.T1"
+    ],
+    "tests": [
+      "GB-T9.01.01.V1"
+    ],
+    "documentation": "GB-T9.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "validate CSRF/origin controls appropriate to chosen auth transport",
+    "workstream": "T9",
+    "feature": "GB-T9.01.01",
+    "implementation": [
+      "GB-T9.01.01.T1"
+    ],
+    "tests": [
+      "GB-T9.01.01.V1"
+    ],
+    "documentation": "GB-T9.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "prohibit secrets in source, logs and exports",
+    "workstream": "T9",
+    "feature": "GB-T9.01.01",
+    "implementation": [
+      "GB-T9.01.01.T1"
+    ],
+    "tests": [
+      "GB-T9.01.01.V1"
+    ],
+    "documentation": "GB-T9.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Prove route/socket/object authorization denies foreign guild identifiers, forged roles, stale grants and moderator-to-admin escalation",
+    "workstream": "T9",
+    "feature": "GB-T9.01.02",
+    "implementation": [
+      "GB-T9.01.02.T1"
+    ],
+    "tests": [
+      "GB-T9.01.02.V1"
+    ],
+    "documentation": "GB-T9.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "add negative test for each critical boundary",
+    "workstream": "T9",
+    "feature": "GB-T9.01.02",
+    "implementation": [
+      "GB-T9.01.02.T1"
+    ],
+    "tests": [
+      "GB-T9.01.02.V1"
+    ],
+    "documentation": "GB-T9.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Validate and parameterize database input",
+    "workstream": "T9",
+    "feature": "GB-T9.02.01",
+    "implementation": [
+      "GB-T9.02.01.T1"
+    ],
+    "tests": [
+      "GB-T9.02.01.V1"
+    ],
+    "documentation": "GB-T9.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "sanitize imported text/URLs",
+    "workstream": "T9",
+    "feature": "GB-T9.02.01",
+    "implementation": [
+      "GB-T9.02.01.T1"
+    ],
+    "tests": [
+      "GB-T9.02.01.V1"
+    ],
+    "documentation": "GB-T9.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "prohibit arbitrary filesystem paths and unsafe rendering",
+    "workstream": "T9",
+    "feature": "GB-T9.02.01",
+    "implementation": [
+      "GB-T9.02.01.T1"
+    ],
+    "tests": [
+      "GB-T9.02.01.V1"
+    ],
+    "documentation": "GB-T9.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "define and test Discord-compatible content security policy",
+    "workstream": "T9",
+    "feature": "GB-T9.02.01",
+    "implementation": [
+      "GB-T9.02.01.T1"
+    ],
+    "tests": [
+      "GB-T9.02.01.V1"
+    ],
+    "documentation": "GB-T9.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Enforce decoded file limits, content type checks, quotas and safe storage",
+    "workstream": "T9",
+    "feature": "GB-T9.02.02",
+    "implementation": [
+      "GB-T9.02.02.T1"
+    ],
+    "tests": [
+      "GB-T9.02.02.V1"
+    ],
+    "documentation": "GB-T9.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "test polyglots, oversized payloads, decompression bombs, message floods and slow clients",
+    "workstream": "T9",
+    "feature": "GB-T9.02.02",
+    "implementation": [
+      "GB-T9.02.02.T1"
+    ],
+    "tests": [
+      "GB-T9.02.02.V1"
+    ],
+    "documentation": "GB-T9.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Inventory Discord identifiers, board content, assets, logs and backups",
+    "workstream": "T9",
+    "feature": "GB-T9.03.01",
+    "implementation": [
+      "GB-T9.03.01.T1"
+    ],
+    "tests": [
+      "GB-T9.03.01.V1"
+    ],
+    "documentation": "GB-T9.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "define purpose/access/retention",
+    "workstream": "T9",
+    "feature": "GB-T9.03.01",
+    "implementation": [
+      "GB-T9.03.01.T1"
+    ],
+    "tests": [
+      "GB-T9.03.01.V1"
+    ],
+    "documentation": "GB-T9.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "implement deletion propagation and explain backup retention exceptions",
+    "workstream": "T9",
+    "feature": "GB-T9.03.01",
+    "implementation": [
+      "GB-T9.03.01.T1"
+    ],
+    "tests": [
+      "GB-T9.03.01.V1"
+    ],
+    "documentation": "GB-T9.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Protect audit records from ordinary writers and moderators",
+    "workstream": "T9",
+    "feature": "GB-T9.03.02",
+    "implementation": [
+      "GB-T9.03.02.T1"
+    ],
+    "tests": [
+      "GB-T9.03.02.V1"
+    ],
+    "documentation": "GB-T9.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "record security events without tokens or unnecessary content",
+    "workstream": "T9",
+    "feature": "GB-T9.03.02",
+    "implementation": [
+      "GB-T9.03.02.T1"
+    ],
+    "tests": [
+      "GB-T9.03.02.V1"
+    ],
+    "documentation": "GB-T9.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "define access control, integrity checks and evidence preservation",
+    "workstream": "T9",
+    "feature": "GB-T9.03.02",
+    "implementation": [
+      "GB-T9.03.02.T1"
+    ],
+    "tests": [
+      "GB-T9.03.02.V1"
+    ],
+    "documentation": "GB-T9.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Run dependency, secret and static analysis checks with triaged findings",
+    "workstream": "T9",
+    "feature": "GB-T9.04.01",
+    "implementation": [
+      "GB-T9.04.01.T1"
+    ],
+    "tests": [
+      "GB-T9.04.01.V1"
+    ],
+    "documentation": "GB-T9.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "record exceptions with expiry conditions",
+    "workstream": "T9",
+    "feature": "GB-T9.04.01",
+    "implementation": [
+      "GB-T9.04.01.T1"
+    ],
+    "tests": [
+      "GB-T9.04.01.V1"
+    ],
+    "documentation": "GB-T9.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "verify lockfile provenance and license obligations",
+    "workstream": "T9",
+    "feature": "GB-T9.04.01",
+    "implementation": [
+      "GB-T9.04.01.T1"
+    ],
+    "tests": [
+      "GB-T9.04.01.V1"
+    ],
+    "documentation": "GB-T9.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Obtain an actual independent review of auth, tenancy, imports, replay and VPS exposure",
+    "workstream": "T9",
+    "feature": "GB-T9.04.02",
+    "implementation": [
+      "GB-T9.04.02.T1"
+    ],
+    "tests": [
+      "GB-T9.04.02.V1"
+    ],
+    "documentation": "GB-T9.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "remediate findings and retain evidence",
+    "workstream": "T9",
+    "feature": "GB-T9.04.02",
+    "implementation": [
+      "GB-T9.04.02.T1"
+    ],
+    "tests": [
+      "GB-T9.04.02.V1"
+    ],
+    "documentation": "GB-T9.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "block release on unresolved critical/high risk without accepted disposition",
+    "workstream": "T9",
+    "feature": "GB-T9.04.02",
+    "implementation": [
+      "GB-T9.04.02.T1"
+    ],
+    "tests": [
+      "GB-T9.04.02.V1"
+    ],
+    "documentation": "GB-T9.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Select supported Linux and current Node LTS after compatibility review",
+    "workstream": "T10",
+    "feature": "GB-T10.01.01",
+    "implementation": [
+      "GB-T10.01.01.T1"
+    ],
+    "tests": [
+      "GB-T10.01.01.V1"
+    ],
+    "documentation": "GB-T10.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "size CPU/RAM/disk from load goals",
+    "workstream": "T10",
+    "feature": "GB-T10.01.01",
+    "implementation": [
+      "GB-T10.01.01.T1"
+    ],
+    "tests": [
+      "GB-T10.01.01.V1"
+    ],
+    "documentation": "GB-T10.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "document provisioning, SSH hardening, firewall and patch ownership without claiming provisioned resources",
+    "workstream": "T10",
+    "feature": "GB-T10.01.01",
+    "implementation": [
+      "GB-T10.01.01.T1"
+    ],
+    "tests": [
+      "GB-T10.01.01.V1"
+    ],
+    "documentation": "GB-T10.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Configure private database listener, least-privilege app credentials, persistent asset volumes and backup paths",
+    "workstream": "T10",
+    "feature": "GB-T10.01.02",
+    "implementation": [
+      "GB-T10.01.02.T1"
+    ],
+    "tests": [
+      "GB-T10.01.02.V1"
+    ],
+    "documentation": "GB-T10.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "use runtime secret files/environment outside source and images",
+    "workstream": "T10",
+    "feature": "GB-T10.01.02",
+    "implementation": [
+      "GB-T10.01.02.T1"
+    ],
+    "tests": [
+      "GB-T10.01.02.V1"
+    ],
+    "documentation": "GB-T10.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "test restart persistence",
+    "workstream": "T10",
+    "feature": "GB-T10.01.02",
+    "implementation": [
+      "GB-T10.01.02.T1"
+    ],
+    "tests": [
+      "GB-T10.01.02.V1"
+    ],
+    "documentation": "GB-T10.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Configure trusted DNS hostname, HTTPS redirect, TLS renewal and WebSocket upgrade/timeouts",
+    "workstream": "T10",
+    "feature": "GB-T10.02.01",
+    "implementation": [
+      "GB-T10.02.01.T1"
+    ],
+    "tests": [
+      "GB-T10.02.01.V1"
+    ],
+    "documentation": "GB-T10.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "set secure headers and request limits",
+    "workstream": "T10",
+    "feature": "GB-T10.02.01",
+    "implementation": [
+      "GB-T10.02.01.T1"
+    ],
+    "tests": [
+      "GB-T10.02.01.V1"
+    ],
+    "documentation": "GB-T10.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "verify actual certificate chain and WSS from outside VPS",
+    "workstream": "T10",
+    "feature": "GB-T10.02.01",
+    "implementation": [
+      "GB-T10.02.01.T1"
+    ],
+    "tests": [
+      "GB-T10.02.01.V1"
+    ],
+    "documentation": "GB-T10.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Map Developer Portal routes to production HTTPS/WSS",
+    "workstream": "T10",
+    "feature": "GB-T10.02.02",
+    "implementation": [
+      "GB-T10.02.02.T1"
+    ],
+    "tests": [
+      "GB-T10.02.02.V1"
+    ],
+    "documentation": "GB-T10.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "verify proxy behavior, iframe CSP/origins and supported clients on actual GoDaddy deployment",
+    "workstream": "T10",
+    "feature": "GB-T10.02.02",
+    "implementation": [
+      "GB-T10.02.02.T1"
+    ],
+    "tests": [
+      "GB-T10.02.02.V1"
+    ],
+    "documentation": "GB-T10.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "record evidence and unresolved platform limitations",
+    "workstream": "T10",
+    "feature": "GB-T10.02.02",
+    "implementation": [
+      "GB-T10.02.02.T1"
+    ],
+    "tests": [
+      "GB-T10.02.02.V1"
+    ],
+    "documentation": "GB-T10.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Define reproducible Docker Compose or systemd service management with separate env, database and secrets",
+    "workstream": "T10",
+    "feature": "GB-T10.03.01",
+    "implementation": [
+      "GB-T10.03.01.T1"
+    ],
+    "tests": [
+      "GB-T10.03.01.V1"
+    ],
+    "documentation": "GB-T10.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "configure health/readiness, resource limits, restart and graceful shutdown",
+    "workstream": "T10",
+    "feature": "GB-T10.03.01",
+    "implementation": [
+      "GB-T10.03.01.T1"
+    ],
+    "tests": [
+      "GB-T10.03.01.V1"
+    ],
+    "documentation": "GB-T10.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Run lint/type/tests/security before versioned artifacts",
+    "workstream": "T10",
+    "feature": "GB-T10.03.02",
+    "implementation": [
+      "GB-T10.03.02.T1"
+    ],
+    "tests": [
+      "GB-T10.03.02.V1"
+    ],
+    "documentation": "GB-T10.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "deploy via protected environment with host-key verification and least privilege",
+    "workstream": "T10",
+    "feature": "GB-T10.03.02",
+    "implementation": [
+      "GB-T10.03.02.T1"
+    ],
+    "tests": [
+      "GB-T10.03.02.V1"
+    ],
+    "documentation": "GB-T10.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "prevent untrusted PR secrets and concurrent deployment races",
+    "workstream": "T10",
+    "feature": "GB-T10.03.02",
+    "implementation": [
+      "GB-T10.03.02.T1"
+    ],
+    "tests": [
+      "GB-T10.03.02.V1"
+    ],
+    "documentation": "GB-T10.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Apply compatibility-aware migrations with backups and explicit rollback boundaries",
+    "workstream": "T10",
+    "feature": "GB-T10.04.01",
+    "implementation": [
+      "GB-T10.04.01.T1"
+    ],
+    "tests": [
+      "GB-T10.04.01.V1"
+    ],
+    "documentation": "GB-T10.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "verify health before traffic switch",
+    "workstream": "T10",
+    "feature": "GB-T10.04.01",
+    "implementation": [
+      "GB-T10.04.01.T1"
+    ],
+    "tests": [
+      "GB-T10.04.01.V1"
+    ],
+    "documentation": "GB-T10.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "roll back image safely without pretending destructive schema reversal is automatic",
+    "workstream": "T10",
+    "feature": "GB-T10.04.01",
+    "implementation": [
+      "GB-T10.04.01.T1"
+    ],
+    "tests": [
+      "GB-T10.04.01.V1"
+    ],
+    "documentation": "GB-T10.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Run external HTTPS/WSS, reconnect, large-message, idle-timeout and renewal tests against real VPS",
+    "workstream": "T10",
+    "feature": "GB-T10.04.02",
+    "implementation": [
+      "GB-T10.04.02.T1"
+    ],
+    "tests": [
+      "GB-T10.04.02.V1"
+    ],
+    "documentation": "GB-T10.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "prove firewall/database isolation and Discord launch",
+    "workstream": "T10",
+    "feature": "GB-T10.04.02",
+    "implementation": [
+      "GB-T10.04.02.T1"
+    ],
+    "tests": [
+      "GB-T10.04.02.V1"
+    ],
+    "documentation": "GB-T10.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "attach timestamped environment evidence",
+    "workstream": "T10",
+    "feature": "GB-T10.04.02",
+    "implementation": [
+      "GB-T10.04.02.T1"
+    ],
+    "tests": [
+      "GB-T10.04.02.V1"
+    ],
+    "documentation": "GB-T10.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Emit request/operation/board correlation and classified errors",
+    "workstream": "T11",
+    "feature": "GB-T11.01.01",
+    "implementation": [
+      "GB-T11.01.01.T1"
+    ],
+    "tests": [
+      "GB-T11.01.01.V1"
+    ],
+    "documentation": "GB-T11.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "redact tokens and content",
+    "workstream": "T11",
+    "feature": "GB-T11.01.01",
+    "implementation": [
+      "GB-T11.01.01.T1"
+    ],
+    "tests": [
+      "GB-T11.01.01.V1"
+    ],
+    "documentation": "GB-T11.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "define retention, access and useful error reporting without sensitive payloads",
+    "workstream": "T11",
+    "feature": "GB-T11.01.01",
+    "implementation": [
+      "GB-T11.01.01.T1"
+    ],
+    "tests": [
+      "GB-T11.01.01.V1"
+    ],
+    "documentation": "GB-T11.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Measure active sockets/boards, operation latency, queue depth, CPU/RAM, database health and disk",
+    "workstream": "T11",
+    "feature": "GB-T11.01.02",
+    "implementation": [
+      "GB-T11.01.02.T1"
+    ],
+    "tests": [
+      "GB-T11.01.02.V1"
+    ],
+    "documentation": "GB-T11.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "bound metric cardinality and configure actionable alerts from measured budgets",
+    "workstream": "T11",
+    "feature": "GB-T11.01.02",
+    "implementation": [
+      "GB-T11.01.02.T1"
+    ],
+    "tests": [
+      "GB-T11.01.02.V1"
+    ],
+    "documentation": "GB-T11.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Stop new work, drain accepted operations, close sockets with reconnect guidance and flush telemetry",
+    "workstream": "T11",
+    "feature": "GB-T11.02.01",
+    "implementation": [
+      "GB-T11.02.01.T1"
+    ],
+    "tests": [
+      "GB-T11.02.01.V1"
+    ],
+    "documentation": "GB-T11.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "verify systemd/Compose restart preserves state and avoids duplicate acknowledgments",
+    "workstream": "T11",
+    "feature": "GB-T11.02.01",
+    "implementation": [
+      "GB-T11.02.01.T1"
+    ],
+    "tests": [
+      "GB-T11.02.01.V1"
+    ],
+    "documentation": "GB-T11.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Load test realistic boards, assets and concurrent editors",
+    "workstream": "T11",
+    "feature": "GB-T11.02.02",
+    "implementation": [
+      "GB-T11.02.02.T1"
+    ],
+    "tests": [
+      "GB-T11.02.02.V1"
+    ],
+    "documentation": "GB-T11.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "identify CPU/database/disk bottlenecks and documented scale limits",
+    "workstream": "T11",
+    "feature": "GB-T11.02.02",
+    "implementation": [
+      "GB-T11.02.02.T1"
+    ],
+    "tests": [
+      "GB-T11.02.02.V1"
+    ],
+    "documentation": "GB-T11.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "define triggers for VPS resizing or topology change",
+    "workstream": "T11",
+    "feature": "GB-T11.02.02",
+    "implementation": [
+      "GB-T11.02.02.T1"
+    ],
+    "tests": [
+      "GB-T11.02.02.V1"
+    ],
+    "documentation": "GB-T11.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Create consistent encrypted database/asset backups, retention schedule and integrity checks",
+    "workstream": "T11",
+    "feature": "GB-T11.03.01",
+    "implementation": [
+      "GB-T11.03.01.T1"
+    ],
+    "tests": [
+      "GB-T11.03.01.V1"
+    ],
+    "documentation": "GB-T11.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "restrict backup credentials and storage access",
+    "workstream": "T11",
+    "feature": "GB-T11.03.01",
+    "implementation": [
+      "GB-T11.03.01.T1"
+    ],
+    "tests": [
+      "GB-T11.03.01.V1"
+    ],
+    "documentation": "GB-T11.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "monitor missing/failed backups",
+    "workstream": "T11",
+    "feature": "GB-T11.03.01",
+    "implementation": [
+      "GB-T11.03.01.T1"
+    ],
+    "tests": [
+      "GB-T11.03.01.V1"
+    ],
+    "documentation": "GB-T11.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Restore isolated fresh environment from backup plus required logs/assets",
+    "workstream": "T11",
+    "feature": "GB-T11.03.02",
+    "implementation": [
+      "GB-T11.03.02.T1"
+    ],
+    "tests": [
+      "GB-T11.03.02.V1"
+    ],
+    "documentation": "GB-T11.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "measure achieved RPO/RTO and reconcile board hashes",
+    "workstream": "T11",
+    "feature": "GB-T11.03.02",
+    "implementation": [
+      "GB-T11.03.02.T1"
+    ],
+    "tests": [
+      "GB-T11.03.02.V1"
+    ],
+    "documentation": "GB-T11.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "prove credential recovery and document data-loss boundaries",
+    "workstream": "T11",
+    "feature": "GB-T11.03.02",
+    "implementation": [
+      "GB-T11.03.02.T1"
+    ],
+    "tests": [
+      "GB-T11.03.02.V1"
+    ],
+    "documentation": "GB-T11.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Document deploy/rollback, patching, disk pressure, outage triage, on-call ownership and communications",
+    "workstream": "T11",
+    "feature": "GB-T11.04.01",
+    "implementation": [
+      "GB-T11.04.01.T1"
+    ],
+    "tests": [
+      "GB-T11.04.01.V1"
+    ],
+    "documentation": "GB-T11.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "rehearse operational scenarios before production acceptance",
+    "workstream": "T11",
+    "feature": "GB-T11.04.01",
+    "implementation": [
+      "GB-T11.04.01.T1"
+    ],
+    "tests": [
+      "GB-T11.04.01.V1"
+    ],
+    "documentation": "GB-T11.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Define credential revocation, isolation, forensic preservation and disclosure routing",
+    "workstream": "T11",
+    "feature": "GB-T11.04.02",
+    "implementation": [
+      "GB-T11.04.02.T1"
+    ],
+    "tests": [
+      "GB-T11.04.02.V1"
+    ],
+    "documentation": "GB-T11.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "maintain dependency updates, backup checks and post-incident improvement backlog",
+    "workstream": "T11",
+    "feature": "GB-T11.04.02",
+    "implementation": [
+      "GB-T11.04.02.T1"
+    ],
+    "tests": [
+      "GB-T11.04.02.V1"
+    ],
+    "documentation": "GB-T11.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Provide isolated database fixtures, fake Discord adapter and deterministic clocks",
+    "workstream": "T12",
+    "feature": "GB-T12.01.01",
+    "implementation": [
+      "GB-T12.01.01.T1"
+    ],
+    "tests": [
+      "GB-T12.01.01.V1"
+    ],
+    "documentation": "GB-T12.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "cover shared contracts, auth, policy, storage and bot APIs",
+    "workstream": "T12",
+    "feature": "GB-T12.01.01",
+    "implementation": [
+      "GB-T12.01.01.T1"
+    ],
+    "tests": [
+      "GB-T12.01.01.V1"
+    ],
+    "documentation": "GB-T12.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "keep tests repeatable and independent",
+    "workstream": "T12",
+    "feature": "GB-T12.01.01",
+    "implementation": [
+      "GB-T12.01.01.T1"
+    ],
+    "tests": [
+      "GB-T12.01.01.V1"
+    ],
+    "documentation": "GB-T12.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Exercise actual UI launch/ready/auth/navigation with controlled SDK mocks and separately real supported Discord clients",
+    "workstream": "T12",
+    "feature": "GB-T12.01.02",
+    "implementation": [
+      "GB-T12.01.02.T1"
+    ],
+    "tests": [
+      "GB-T12.01.02.V1"
+    ],
+    "documentation": "GB-T12.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "distinguish mock coverage from platform compatibility evidence",
+    "workstream": "T12",
+    "feature": "GB-T12.01.02",
+    "implementation": [
+      "GB-T12.01.02.T1"
+    ],
+    "tests": [
+      "GB-T12.01.02.V1"
+    ],
+    "documentation": "GB-T12.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Test expired/replayed sessions, read-only viewers, role removal, grant expiration and in-flight revocation",
+    "workstream": "T12",
+    "feature": "GB-T12.02.01",
+    "implementation": [
+      "GB-T12.02.01.T1"
+    ],
+    "tests": [
+      "GB-T12.02.01.V1"
+    ],
+    "documentation": "GB-T12.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "assert server rejects forged writes and UI reflects authoritative policy",
+    "workstream": "T12",
+    "feature": "GB-T12.02.01",
+    "implementation": [
+      "GB-T12.02.01.T1"
+    ],
+    "tests": [
+      "GB-T12.02.01.V1"
+    ],
+    "documentation": "GB-T12.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Attempt foreign guild/board/asset access, escalation and malicious imports/uploads",
+    "workstream": "T12",
+    "feature": "GB-T12.02.02",
+    "implementation": [
+      "GB-T12.02.02.T1"
+    ],
+    "tests": [
+      "GB-T12.02.02.V1"
+    ],
+    "documentation": "GB-T12.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "verify denial leaves no persisted side effects or leaked identifiers",
+    "workstream": "T12",
+    "feature": "GB-T12.02.02",
+    "implementation": [
+      "GB-T12.02.02.T1"
+    ],
+    "tests": [
+      "GB-T12.02.02.V1"
+    ],
+    "documentation": "GB-T12.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Run simultaneous moderators, same-object conflicts, duplicates, reconnect and late join",
+    "workstream": "T12",
+    "feature": "GB-T12.03.01",
+    "implementation": [
+      "GB-T12.03.01.T1"
+    ],
+    "tests": [
+      "GB-T12.03.01.V1"
+    ],
+    "documentation": "GB-T12.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "assert convergence, ordered durable revisions and preservation of accepted edits",
+    "workstream": "T12",
+    "feature": "GB-T12.03.01",
+    "implementation": [
+      "GB-T12.03.01.T1"
+    ],
+    "tests": [
+      "GB-T12.03.01.V1"
+    ],
+    "documentation": "GB-T12.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Kill server around commit/ack boundaries",
+    "workstream": "T12",
+    "feature": "GB-T12.03.02",
+    "implementation": [
+      "GB-T12.03.02.T1"
+    ],
+    "tests": [
+      "GB-T12.03.02.V1"
+    ],
+    "documentation": "GB-T12.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "restore snapshot plus tail and backups",
+    "workstream": "T12",
+    "feature": "GB-T12.03.02",
+    "implementation": [
+      "GB-T12.03.02.T1"
+    ],
+    "tests": [
+      "GB-T12.03.02.V1"
+    ],
+    "documentation": "GB-T12.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "verify no falsely acknowledged loss, tenant leakage or broken asset references",
+    "workstream": "T12",
+    "feature": "GB-T12.03.02",
+    "implementation": [
+      "GB-T12.03.02.T1"
+    ],
+    "tests": [
+      "GB-T12.03.02.V1"
+    ],
+    "documentation": "GB-T12.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Run keyboard/screen-reader scenarios, load/resource budgets and real GoDaddy HTTPS/WSS/idle timeout checks",
+    "workstream": "T12",
+    "feature": "GB-T12.04.01",
+    "implementation": [
+      "GB-T12.04.01.T1"
+    ],
+    "tests": [
+      "GB-T12.04.01.V1"
+    ],
+    "documentation": "GB-T12.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "retain versions, environment, raw results and limitations",
+    "workstream": "T12",
+    "feature": "GB-T12.04.01",
+    "implementation": [
+      "GB-T12.04.01.T1"
+    ],
+    "tests": [
+      "GB-T12.04.01.V1"
+    ],
+    "documentation": "GB-T12.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Map mandatory MVP/v1.0 behavior to automated and manual tests",
+    "workstream": "T12",
+    "feature": "GB-T12.04.02",
+    "implementation": [
+      "GB-T12.04.02.T1"
+    ],
+    "tests": [
+      "GB-T12.04.02.V1"
+    ],
+    "documentation": "GB-T12.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "run production smoke after deployment",
+    "workstream": "T12",
+    "feature": "GB-T12.04.02",
+    "implementation": [
+      "GB-T12.04.02.T1"
+    ],
+    "tests": [
+      "GB-T12.04.02.V1"
+    ],
+    "documentation": "GB-T12.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "require evidence for every release gate and record failures honestly",
+    "workstream": "T12",
+    "feature": "GB-T12.04.02",
+    "implementation": [
+      "GB-T12.04.02.T1"
+    ],
+    "tests": [
+      "GB-T12.04.02.V1"
+    ],
+    "documentation": "GB-T12.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Explain actual implementation state, local prerequisites, package boundaries, auth/data flows and configuration",
+    "workstream": "T13",
+    "feature": "GB-T13.01.01",
+    "implementation": [
+      "GB-T13.01.01.T1"
+    ],
+    "tests": [
+      "GB-T13.01.01.V1"
+    ],
+    "documentation": "GB-T13.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "test setup on clean environment",
+    "workstream": "T13",
+    "feature": "GB-T13.01.01",
+    "implementation": [
+      "GB-T13.01.01.T1"
+    ],
+    "tests": [
+      "GB-T13.01.01.V1"
+    ],
+    "documentation": "GB-T13.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "never advertise unimplemented functionality as available",
+    "workstream": "T13",
+    "feature": "GB-T13.01.01",
+    "implementation": [
+      "GB-T13.01.01.T1"
+    ],
+    "tests": [
+      "GB-T13.01.01.V1"
+    ],
+    "documentation": "GB-T13.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Document application registration, scopes, URL mappings, SDK lifecycle, bot installation and OpenAPI/WS contracts with verified versions and safe credential handling",
+    "workstream": "T13",
+    "feature": "GB-T13.01.02",
+    "implementation": [
+      "GB-T13.01.02.T1"
+    ],
+    "tests": [
+      "GB-T13.01.02.V1"
+    ],
+    "documentation": "GB-T13.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Document mandatory Linux VPS, DNS/TLS/WSS, migrations, secrets, backups, monitoring and rollback",
+    "workstream": "T13",
+    "feature": "GB-T13.02.01",
+    "implementation": [
+      "GB-T13.02.01.T1"
+    ],
+    "tests": [
+      "GB-T13.02.01.V1"
+    ],
+    "documentation": "GB-T13.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "distinguish planned examples from tested commands and actual deployment evidence",
+    "workstream": "T13",
+    "feature": "GB-T13.02.01",
+    "implementation": [
+      "GB-T13.02.01.T1"
+    ],
+    "tests": [
+      "GB-T13.02.01.V1"
+    ],
+    "documentation": "GB-T13.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Describe role mapping, board management, Grant the Pen, requests, lockdown, modes, drawing, save status, history and accessible alternatives with permission-aware troubleshooting",
+    "workstream": "T13",
+    "feature": "GB-T13.02.02",
+    "implementation": [
+      "GB-T13.02.02.T1"
+    ],
+    "tests": [
+      "GB-T13.02.02.V1"
+    ],
+    "documentation": "GB-T13.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Publish private security reporting route, review expectations, Code of Conduct and decision process",
+    "workstream": "T13",
+    "feature": "GB-T13.03.01",
+    "implementation": [
+      "GB-T13.03.01.T1"
+    ],
+    "tests": [
+      "GB-T13.03.01.V1"
+    ],
+    "documentation": "GB-T13.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "use actual known maintainers only",
+    "workstream": "T13",
+    "feature": "GB-T13.03.01",
+    "implementation": [
+      "GB-T13.03.01.T1"
+    ],
+    "tests": [
+      "GB-T13.03.01.V1"
+    ],
+    "documentation": "GB-T13.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "define issue/PR templates and welcoming contribution scope",
+    "workstream": "T13",
+    "feature": "GB-T13.03.01",
+    "implementation": [
+      "GB-T13.03.01.T1"
+    ],
+    "tests": [
+      "GB-T13.03.01.V1"
+    ],
+    "documentation": "GB-T13.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Adopt semantic versioning and compatibility/deprecation policy",
+    "workstream": "T13",
+    "feature": "GB-T13.03.02",
+    "implementation": [
+      "GB-T13.03.02.T1"
+    ],
+    "tests": [
+      "GB-T13.03.02.V1"
+    ],
+    "documentation": "GB-T13.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "generate reviewed release notes with migrations, known issues, license notices and verified test/deployment evidence",
+    "workstream": "T13",
+    "feature": "GB-T13.03.02",
+    "implementation": [
+      "GB-T13.03.02.T1"
+    ],
+    "tests": [
+      "GB-T13.03.02.V1"
+    ],
+    "documentation": "GB-T13.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Prepare tagged artifacts only after corresponding release gates pass",
+    "workstream": "T13",
+    "feature": "GB-T13.04.01",
+    "implementation": [
+      "GB-T13.04.01.T1"
+    ],
+    "tests": [
+      "GB-T13.04.01.V1"
+    ],
+    "documentation": "GB-T13.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "record production acceptance separately from merged PRs",
+    "workstream": "T13",
+    "feature": "GB-T13.04.01",
+    "implementation": [
+      "GB-T13.04.01.T1"
+    ],
+    "tests": [
+      "GB-T13.04.01.V1"
+    ],
+    "documentation": "GB-T13.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "verify rollback/support docs and publish reproducible release provenance",
+    "workstream": "T13",
+    "feature": "GB-T13.04.01",
+    "implementation": [
+      "GB-T13.04.01.T1"
+    ],
+    "tests": [
+      "GB-T13.04.01.V1"
+    ],
+    "documentation": "GB-T13.D1",
+    "release_gate": "GB-T13.G3",
+    "release": "v1.0"
+  },
+  {
+    "requirement": "Collect measured post-release needs, optional managed Node hosting research and nonessential enhancements",
+    "workstream": "T13",
+    "feature": "GB-T13.04.02",
+    "implementation": [
+      "GB-T13.04.02.T1"
+    ],
+    "tests": [
+      "GB-T13.04.02.V1"
+    ],
+    "documentation": "GB-T13.D1",
+    "release_gate": null,
+    "release": "Post-v1.0"
+  },
+  {
+    "requirement": "prioritize independently without substituting them for mandatory GoDaddy VPS delivery",
+    "workstream": "T13",
+    "feature": "GB-T13.04.02",
+    "implementation": [
+      "GB-T13.04.02.T1"
+    ],
+    "tests": [
+      "GB-T13.04.02.V1"
+    ],
+    "documentation": "GB-T13.D1",
+    "release_gate": null,
+    "release": "Post-v1.0"
+  }
+]

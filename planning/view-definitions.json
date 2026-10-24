@@ -1,0 +1,296 @@
+[
+  {
+    "name": "Workstream overview",
+    "layout": "TABLE_LAYOUT",
+    "filter": "",
+    "columns": [
+      "Title",
+      "Assignees",
+      "Status",
+      "Tier",
+      "Priority",
+      "Readiness",
+      "Parent issue",
+      "Sub-issues progress",
+      "Labels",
+      "Work Type",
+      "Research Confidence",
+      "Dependency Status",
+      "Verification Status",
+      "Release Target"
+    ]
+  },
+  {
+    "name": "Engineering backlog by priority",
+    "layout": "TABLE_LAYOUT",
+    "filter": "is:open -status:Done",
+    "columns": [
+      "Title",
+      "Assignees",
+      "Priority",
+      "Tier",
+      "Readiness",
+      "Dependency Status",
+      "Effort",
+      "Work Type",
+      "Milestone"
+    ]
+  },
+  {
+    "name": "Ready to implement",
+    "layout": "TABLE_LAYOUT",
+    "filter": "is:open readiness:Ready dependency-status:Unblocked work-type:Task,Subtask status:Backlog,Ready",
+    "columns": [
+      "Title",
+      "Assignees",
+      "Priority",
+      "Tier",
+      "Effort",
+      "Work Type",
+      "Readiness",
+      "Dependency Status",
+      "Parent issue"
+    ]
+  },
+  {
+    "name": "Blocked or awaiting decision",
+    "layout": "TABLE_LAYOUT",
+    "filter": "is:open dependency-status:Blocked,\"Awaiting Decision\",\"External Blocker\"",
+    "columns": [
+      "Title",
+      "Tier",
+      "Priority",
+      "Readiness",
+      "Dependency Status",
+      "Blocking Reason",
+      "Parent issue",
+      "Owner Role"
+    ]
+  },
+  {
+    "name": "Unassigned or missing metadata",
+    "layout": "TABLE_LAYOUT",
+    "filter": "is:open no:assignee,priority,tier,readiness,work-type,release-target",
+    "columns": [
+      "Title",
+      "Assignees",
+      "Tier",
+      "Priority",
+      "Readiness",
+      "Work Type",
+      "Release Target",
+      "Parent issue",
+      "Milestone",
+      "Labels"
+    ]
+  },
+  {
+    "name": "Kanban",
+    "layout": "BOARD_LAYOUT",
+    "filter": "",
+    "columns": [
+      "Title",
+      "Assignees",
+      "Priority",
+      "Work Type",
+      "Dependency Status",
+      "Sub-issues progress"
+    ]
+  },
+  {
+    "name": "Owner Workload",
+    "layout": "TABLE_LAYOUT",
+    "filter": "is:open",
+    "columns": [
+      "Title",
+      "Assignees",
+      "Priority",
+      "Effort",
+      "Status",
+      "Owner Role",
+      "Tier"
+    ]
+  },
+  {
+    "name": "Roadmap",
+    "layout": "ROADMAP_LAYOUT",
+    "filter": "work-type:Epic,Capability,Test",
+    "columns": [
+      "Title",
+      "Assignees",
+      "Milestone",
+      "Release Target",
+      "Priority",
+      "Dependency Status",
+      "Target Date"
+    ]
+  },
+  {
+    "name": "MVP Critical Path",
+    "layout": "TABLE_LAYOUT",
+    "filter": "is:open release-target:MVP priority:Critical",
+    "columns": [
+      "Title",
+      "Priority",
+      "Readiness",
+      "Dependency Status",
+      "Tier",
+      "Parent issue",
+      "Milestone"
+    ]
+  },
+  {
+    "name": "Discord Activity Integration",
+    "layout": "TABLE_LAYOUT",
+    "filter": "is:open label:\"topic: discord-sdk\",\"topic: discord-oauth\",\"topic: discord-bot\"",
+    "columns": [
+      "Title",
+      "Assignees",
+      "Status",
+      "Tier",
+      "Priority",
+      "Readiness",
+      "Parent issue",
+      "Sub-issues progress",
+      "Labels",
+      "Work Type",
+      "Research Confidence",
+      "Dependency Status",
+      "Verification Status",
+      "Release Target"
+    ]
+  },
+  {
+    "name": "Authorization and Moderation",
+    "layout": "TABLE_LAYOUT",
+    "filter": "is:open label:\"topic: authorization\",\"topic: moderation\"",
+    "columns": [
+      "Title",
+      "Assignees",
+      "Status",
+      "Tier",
+      "Priority",
+      "Readiness",
+      "Parent issue",
+      "Sub-issues progress",
+      "Labels",
+      "Work Type",
+      "Research Confidence",
+      "Dependency Status",
+      "Verification Status",
+      "Release Target"
+    ]
+  },
+  {
+    "name": "Canvas and Collaboration",
+    "layout": "TABLE_LAYOUT",
+    "filter": "is:open label:\"topic: canvas\",\"topic: websockets\",\"topic: synchronization\"",
+    "columns": [
+      "Title",
+      "Assignees",
+      "Status",
+      "Tier",
+      "Priority",
+      "Readiness",
+      "Parent issue",
+      "Sub-issues progress",
+      "Labels",
+      "Work Type",
+      "Research Confidence",
+      "Dependency Status",
+      "Verification Status",
+      "Release Target"
+    ]
+  },
+  {
+    "name": "GoDaddy Deployment",
+    "layout": "TABLE_LAYOUT",
+    "filter": "is:open label:\"topic: godaddy\"",
+    "columns": [
+      "Title",
+      "Assignees",
+      "Status",
+      "Tier",
+      "Priority",
+      "Readiness",
+      "Parent issue",
+      "Sub-issues progress",
+      "Labels",
+      "Work Type",
+      "Research Confidence",
+      "Dependency Status",
+      "Verification Status",
+      "Release Target"
+    ]
+  },
+  {
+    "name": "Security and Privacy",
+    "layout": "TABLE_LAYOUT",
+    "filter": "is:open label:\"topic: security\",\"topic: privacy\"",
+    "columns": [
+      "Title",
+      "Assignees",
+      "Status",
+      "Tier",
+      "Priority",
+      "Readiness",
+      "Parent issue",
+      "Sub-issues progress",
+      "Labels",
+      "Work Type",
+      "Research Confidence",
+      "Dependency Status",
+      "Verification Status",
+      "Release Target"
+    ]
+  },
+  {
+    "name": "Testing and Verification",
+    "layout": "TABLE_LAYOUT",
+    "filter": "is:open work-type:Test",
+    "columns": [
+      "Title",
+      "Tier",
+      "Priority",
+      "Readiness",
+      "Dependency Status",
+      "Verification Status",
+      "Milestone"
+    ]
+  },
+  {
+    "name": "Release Readiness",
+    "layout": "TABLE_LAYOUT",
+    "filter": "is:open work-type:Test priority:Critical",
+    "columns": [
+      "Title",
+      "Tier",
+      "Priority",
+      "Readiness",
+      "Dependency Status",
+      "Verification Status",
+      "Milestone"
+    ]
+  },
+  {
+    "name": "Post-Release Enhancements",
+    "layout": "TABLE_LAYOUT",
+    "filter": "release-target:\"Post-v1.0\"",
+    "columns": [
+      "Title",
+      "Assignees",
+      "Status",
+      "Tier",
+      "Priority",
+      "Readiness",
+      "Parent issue",
+      "Sub-issues progress",
+      "Labels",
+      "Work Type",
+      "Research Confidence",
+      "Dependency Status",
+      "Verification Status",
+      "Release Target"
+    ]
+  }
+]

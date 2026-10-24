@@ -1,0 +1,41 @@
+name: Remote roadmap integrity
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 9 * * *'
+permissions:
+  contents: read
+  issues: read
+concurrency:
+  group: roadmap-integrity
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - name: Validate local manifest
+        run: python3 scripts/github-bootstrap/validate.py
+      - name: Audit repository hierarchy and gates
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/github-bootstrap/repository_integrity.py
+      - name: Audit actual Project metadata when scoped credential is available
+        env:
+          GH_TOKEN: ${{ secrets.GUILDBOARD_PROJECT_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo '::notice::Full Project audit requires GUILDBOARD_PROJECT_TOKEN; run audit.py locally with project read scope. No personal OAuth token was copied into Actions.'
+          else
+            python3 scripts/github-bootstrap/audit.py
+          fi
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: roadmap-integrity-audit
+          path: planning/audit/*.json

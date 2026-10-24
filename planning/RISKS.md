@@ -1,0 +1,24 @@
+# Risk and uncertainty register
+
+Every research conclusion is initially Unverified. These are actionable evidence gaps, not discovered production defects. No account access, client compatibility, load capacity or deployed networking is presumed.
+
+| Workstream | Evidence gap | Owner expertise | Research | Acceptance contract |
+| --- | --- | --- | --- | --- |
+| T0 | Evaluate Excalidraw licensing, controlled editing hooks, Discord iframe constraints and GoDaddy VPS feasibility using versioned primary evidence | Architecture | [GB-T0.R1](https://github.com/CompleteDotTech/guildboard/issues/2) | [GB-T0.S1](https://github.com/CompleteDotTech/guildboard/issues/3) |
+| T1 | Verify current Discord Activity launch, proxy mappings, OAuth scopes, guild/channel context and supported desktop/browser/mobile clients | Discord Integration | [GB-T1.R1](https://github.com/CompleteDotTech/guildboard/issues/34) | [GB-T1.S1](https://github.com/CompleteDotTech/guildboard/issues/35) |
+| T2 | Resolve role mapping precedence, required Discord privileges and revocation freshness guarantees with explicit abuse cases | Security & Authorization | [GB-T2.R1](https://github.com/CompleteDotTech/guildboard/issues/66) | [GB-T2.S1](https://github.com/CompleteDotTech/guildboard/issues/67) |
+| T3 | Evaluate pinned Excalidraw API for element identity, controlled changes, undo, assets, accessibility, touch and custom moderated editing | Frontend & Canvas | [GB-T3.R1](https://github.com/CompleteDotTech/guildboard/issues/98) | [GB-T3.S1](https://github.com/CompleteDotTech/guildboard/issues/99) |
+| T4 | Choose element conflict and operation sequencing strategy; compare authoritative operation log approaches against Excalidraw semantics without full-document last-write-wins | Realtime Systems | [GB-T4.R1](https://github.com/CompleteDotTech/guildboard/issues/132) | [GB-T4.S1](https://github.com/CompleteDotTech/guildboard/issues/133) |
+| T5 | Evaluate MySQL/MariaDB transaction, snapshot, asset storage and retention strategy for VPS crash recovery and board scale | Data Engineering | [GB-T5.R1](https://github.com/CompleteDotTech/guildboard/issues/146) | [GB-T5.S1](https://github.com/CompleteDotTech/guildboard/issues/147) |
+| T6 | Specify presenter and follow behavior across Discord clients, user navigation and concurrent mode changes | Frontend & Canvas | [GB-T6.R1](https://github.com/CompleteDotTech/guildboard/issues/196) | [GB-T6.S1](https://github.com/CompleteDotTech/guildboard/issues/197) |
+| T7 | Define supported Discord viewport/client matrix and practical accessibility alternatives for canvas interactions | UX & Accessibility | [GB-T7.R1](https://github.com/CompleteDotTech/guildboard/issues/228) | [GB-T7.S1](https://github.com/CompleteDotTech/guildboard/issues/229) |
+| T8 | Verify least-privilege bot installation, slash-command permissions and API surface needed by Activity administration | Backend & Bot | [GB-T8.R1](https://github.com/CompleteDotTech/guildboard/issues/260) | [GB-T8.S1](https://github.com/CompleteDotTech/guildboard/issues/261) |
+| T9 | Threat-model Discord iframe, OAuth, tenant isolation, authoritative edits and public VPS attack surface; prioritize abuse scenarios | Security Engineering | [GB-T9.R1](https://github.com/CompleteDotTech/guildboard/issues/292) | [GB-T9.S1](https://github.com/CompleteDotTech/guildboard/issues/293) |
+| T10 | Verify GoDaddy Linux VPS sizing, supported Linux images, resource/storage limits and networking; keep managed Node hosting optional and unverified | Platform Engineering | [GB-T10.R1](https://github.com/CompleteDotTech/guildboard/issues/324) | [GB-T10.S1](https://github.com/CompleteDotTech/guildboard/issues/325) |
+| T11 | Define availability, latency, recovery and capacity objectives from expected guild/board use with measured baseline plan | SRE | [GB-T11.R1](https://github.com/CompleteDotTech/guildboard/issues/356) | [GB-T11.S1](https://github.com/CompleteDotTech/guildboard/issues/357) |
+| T12 | Select deterministic concurrency, Discord-client and VPS test strategies; define representative load and accessibility acceptance budgets | Quality Engineering | [GB-T12.R1](https://github.com/CompleteDotTech/guildboard/issues/388) | [GB-T12.S1](https://github.com/CompleteDotTech/guildboard/issues/389) |
+| T13 | Validate contributor, guild administrator, moderator and end-user journeys for missing documentation and release support assumptions | Maintainer & Documentation | [GB-T13.R1](https://github.com/CompleteDotTech/guildboard/issues/420) | [GB-T13.S1](https://github.com/CompleteDotTech/guildboard/issues/421) |
+
+## Operational prerequisites
+
+Actual Discord application credentials, guild admin access, GoDaddy VPS account/provisioning, domain/DNS control, production secrets and real client test environments remain implementation-stage prerequisites. No VPS purchase or deployment was authorized or performed by this planning bootstrap.
