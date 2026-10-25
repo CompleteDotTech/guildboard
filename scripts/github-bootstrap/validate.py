@@ -228,7 +228,7 @@ def main(argv=None):
         report = {'result': 'fail', 'errors': ['input: ' + str(exc)]}
     try:
         save_report(args.report, report)
-    except (OSError, UnicodeError) as exc:
+    except (OSError, UnicodeError, ValueError) as exc:
         report['result'] = 'fail'
         report['errors'].append('cannot write validation report: ' + str(exc))
     print(json.dumps(report, indent=2))

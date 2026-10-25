@@ -249,6 +249,19 @@ class CliTests(unittest.TestCase):
             self.assertEqual(proc.stdout, 'imported\n')
             self.assertEqual(list(Path(tmp).iterdir()), [])
 
+    def test_cli_nameless_report_paths_return_json_failure(self):
+        for report_path in ('.', Path.cwd().anchor):
+            with self.subTest(report_path=report_path):
+                proc = subprocess.run(
+                    [sys.executable, str(SCRIPTS / 'validate.py'), '--report', str(report_path)],
+                    capture_output=True, text=True, timeout=15)
+                self.assertEqual(proc.returncode, 1)
+                self.assertEqual(proc.stderr, '')
+                report = json.loads(proc.stdout)
+                self.assertEqual(report['result'], 'fail')
+                self.assertTrue(any(error.startswith('cannot write validation report:')
+                                    for error in report['errors']), report)
+
 
 if __name__ == '__main__':
     unittest.main()
