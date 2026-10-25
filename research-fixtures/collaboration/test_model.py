@@ -88,6 +88,8 @@ class Experiment(unittest.TestCase):
         self.assertEqual(b.revision, 1)
 
     def test_restore_fences_old_commands(self):
+        # This toy clears receipts on restore; it does not model #481's proposed
+        # retained historical receipts or cross-restore unknown-outcome recovery.
         b = Board(); b.submit(Context(), command()); b.restore()
         before = b.observable()
         self.assertEqual(b.submit(Context(), command())[0], "LINEAGE_CHANGED")
@@ -123,9 +125,32 @@ class Experiment(unittest.TestCase):
         for rev in (2, 3, 4):
             self.assertEqual(r.deliver({"lineage": r.lineage, "revision": rev, "changes": {}}), "GAP")
         self.assertEqual(r.revision, 0)
+        before = deepcopy(r.__dict__)
         self.assertEqual(r.deliver({"lineage": r.lineage, "revision": 5, "changes": {}}), "SNAPSHOT_REQUIRED")
         self.assertEqual(len(r.pending), 3)
+        self.assertEqual(r.__dict__, before)
+        self.assertEqual(r.deliver({"lineage": r.lineage, "revision": 2, "changes": {}}), "GAP")
+        self.assertEqual(r.__dict__, before)
         self.assertEqual(r.deliver({"lineage": "old", "revision": 1, "changes": {}}), "SNAPSHOT_REQUIRED")
+        self.assertEqual(r.__dict__, before)
+
+    def test_full_buffer_applies_gap_closing_revision_and_drains_all_orders(self):
+        events = {rev: {"lineage": "lineage-A", "revision": rev,
+                        "changes": {"A": (rev, rev)}} for rev in range(1, 5)}
+        regression = (2, 3, 4, 1)
+        schedules = [regression] + [order for order in permutations(range(1, 5))
+                                    if order != regression]
+        for order in schedules:
+            with self.subTest(order=order):
+                r = Replica()
+                for rev in order:
+                    self.assertIn(r.deliver(events[rev]), ("APPLIED", "GAP"))
+                    self.assertLessEqual(len(r.pending), 3)
+                self.assertEqual(r.revision, 4)
+                self.assertEqual(r.elements, {"A": (4, 4), "B": (0, 0), "C": (0, 0)})
+                self.assertEqual(r.pending, {})
+                for rev in order:
+                    self.assertEqual(r.deliver(events[rev]), "DUPLICATE")
 
     def test_conflicting_pending_event_detected(self):
         r = Replica(); e = {"lineage": r.lineage, "revision": 2, "changes": {}}

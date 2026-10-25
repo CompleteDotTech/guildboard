@@ -38,7 +38,7 @@ python3 scripts/github-bootstrap/validate.py
 git diff --check
 ```
 
-Observed: **15 tests passed**, including all **720 positional permutations** of three accepted events repeated twice (90 unique value-order sequences; duplicate positional permutations are intentionally not described as independent cases). Tests also cover:
+The initial 2026-10-24 run used Python 3.12.14 and passed 15 tests. Review remediation on 2026-10-25 used Python 3.14.3 on Windows: **16 tests pass**, including all **720 positional permutations** of three accepted events repeated twice (90 unique value-order sequences; duplicate positional permutations are intentionally not described as independent cases). Tests also cover:
 
 - all six command orderings for both board-CAS and element-precondition strategies;
 - same-element conflict in both orders; compound rejection after a valid first candidate leaves the original state untouched; successful compound gets one modeled revision;
@@ -48,6 +48,7 @@ Observed: **15 tests passed**, including all **720 positional permutations** of 
 - old-lineage denial after modeled restore, deletion tombstone rejecting stale/ordinary inverse resurrection;
 - empty/duplicate/oversized compound and invalid scalar cases;
 - replay gap buffering, duplicate delivery, conflicting pending event detection and bounded overflow returning snapshot-required.
+- all 24 delivery orders of four revisions, including `(2, 3, 4, 1)`: the contiguous gap-closing event applies immediately and drains buffered successors without consuming a fourth pending slot. A fourth distinct out-of-order event still returns snapshot-required without changing replica state. The six orders delivering revision 1 last failed before the remediation and pass after it.
 
 `model.py` and `test_model.py` hashes, Python version and exact observations are retained in [evidence](evidence/collaboration-model-2026-10-24.json). The modeled transition copies candidate state and commits only after validation; it is a statement of intended semantics, not proof real SQL transactions implement them.
 
@@ -55,9 +56,11 @@ Observed: **15 tests passed**, including all **720 positional permutations** of 
 
 Propose a receipt key scoped by guild, board, lineage, actor and operation ID. Digest semantic kind/payload/preconditions using an agreed strict canonical codec; exclude transport correlation ID. Verify identity and current read access before receipt disclosure; require current write authority for a new operation. Same key/different digest rejects. A retry of an already committed operation can return its receipt after write revocation only while read access remains. Do not issue a new operation ID because acknowledgment timed out.
 
+**Cross-restore limitation:** this toy's `Board.restore` clears all receipts and events, and `submit` rejects an old lineage before receipt lookup. It therefore returns `LINEAGE_CHANGED` even for an operation that committed before restore and lost its acknowledgment; that result cannot settle the historical unknown outcome. The proposed [#481 system contract at `19d5f5a35511a1edf3a8bd34773fbb4d57546b89`](https://github.com/CompleteTech-DiscordApps/guildboard/blob/19d5f5a35511a1edf3a8bd34773fbb4d57546b89/docs/specifications/GB-T0-S1-system-contract.md), sections 5–6, instead retains retired-lineage receipts: after current identity/read checks, an identical committed retry returns its historical receipt, a changed digest conflicts, and only an old command without a receipt gets `LINEAGE_CHANGED`. Historical acceptance does not restore that content into the active document. This experiment does not implement or verify that proposal's retention, lookup precedence or client reconciliation. Those differences require T4/T5/T7/T8/T9/T12 review before adoption; the modeled receipt behavior remains unchanged by this replay-buffer remediation.
+
 Persist state, receipt and event/outbox atomically before acknowledging. Use a globally consistent lock order for board/policy/session invalidation, explicit transaction isolation, uniqueness constraints and bounded deadlock retry. A revoke that commits first fences stale intent; an already locked writer may commit before the queued revoke. This model merely enumerates those serial orders. Database faults, restarts, multiple processes and commit-time policy races require separate real tests.
 
-Reordered delivery may buffer only within a fixed budget; gaps never advance accepted state. On overflow, old lineage or unavailable retained events, request a validated snapshot plus strictly newer tail. Snapshot installation must be atomic after complete verification; this fixture does **not** implement snapshots, digest verification or interrupted-transfer recovery. Existing applied-revision duplicates are trusted/ignored in the toy, while conflicting pending events are detected. A production codec must validate event integrity and source before either behavior.
+Reordered delivery may buffer only within a fixed budget; gaps never advance accepted state. A contiguous event applies immediately and drains available successors; only a new out-of-order insertion consumes the three-event toy budget. On overflow, old lineage or unavailable retained events, request a validated snapshot plus strictly newer tail. Snapshot installation must be atomic after complete verification; this fixture does **not** implement snapshots, digest verification or interrupted-transfer recovery. Existing applied-revision duplicates are trusted/ignored in the toy, while conflicting pending events are detected. A production codec must validate event integrity and source before either behavior.
 
 ## Uncertainty and acceptance still open
 

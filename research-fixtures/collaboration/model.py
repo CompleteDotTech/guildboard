@@ -104,6 +104,7 @@ class Board:
         self.policy += 1
 
     def restore(self):
+        """Toy reset discards receipts; cross-restore retention is not modeled."""
         self.lineage = "lineage-B"
         self.revision = 0
         self.elements = {key: (0, 0) for key in "ABC"}
@@ -125,10 +126,15 @@ class Replica:
             return "DUPLICATE"
         if revision in self.pending and self.pending[revision] != event:
             return "INCONSISTENT_EVENT"
-        if revision not in self.pending and len(self.pending) >= 3:
-            return "SNAPSHOT_REQUIRED"
-        self.pending[revision] = deepcopy(event)
+        if revision > self.revision + 1:
+            if revision not in self.pending and len(self.pending) >= 3:
+                return "SNAPSHOT_REQUIRED"
+            self.pending[revision] = deepcopy(event)
+            return "GAP"
+        # A contiguous event consumes no reorder-buffer slot, even when full.
+        self.revision = revision
+        self.elements.update(deepcopy(event["changes"]))
         while self.revision + 1 in self.pending:
             self.revision += 1
             self.elements.update(self.pending.pop(self.revision)["changes"])
-        return "APPLIED" if revision <= self.revision else "GAP"
+        return "APPLIED"
