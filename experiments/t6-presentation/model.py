@@ -78,6 +78,7 @@ class Viewer:
     displayed: tuple = (0, 0, 1)
     following: bool = False
     sequence: int = -1
+    presenter_view: tuple | None = None
 
 
 def snapshot(viewer, authority):
@@ -90,15 +91,19 @@ def snapshot(viewer, authority):
         return Viewer(authority)
     if authority.revision < viewer.authority.revision:
         return viewer
-    watermark = viewer.sequence if authority.epoch == viewer.authority.epoch else -1
-    return Viewer(authority, viewer.personal, viewer.personal, sequence=watermark)
+    same_stream = authority.epoch == viewer.authority.epoch
+    return Viewer(authority, personal=viewer.personal, displayed=viewer.personal,
+                  sequence=viewer.sequence if same_stream else -1,
+                  presenter_view=viewer.presenter_view if same_stream else None)
 
 
 def follow(viewer):
     if viewer.authority.presenter is None:
         return viewer
-    # Idempotence: repeated Follow cannot reset sequence or overwrite personal view.
-    return replace(viewer, following=True)
+    # Restore the last current-stream view without resetting replay protection or
+    # overwriting personal navigation. No packet is needed for an explicit rejoin.
+    view = viewer.presenter_view if viewer.presenter_view is not None else viewer.personal
+    return replace(viewer, following=True, displayed=view)
 
 
 def unfollow(viewer):
@@ -117,4 +122,5 @@ def receive(viewer, packet):
             not admitted(viewer.authority, packet, session_valid=True, read_allowed=True)
             or packet.sequence <= viewer.sequence):
         return viewer
-    return replace(viewer, displayed=packet.view, sequence=packet.sequence)
+    return replace(viewer, displayed=packet.view, sequence=packet.sequence,
+                   presenter_view=packet.view)

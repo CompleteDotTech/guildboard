@@ -30,8 +30,27 @@ class PresentationResearch(unittest.TestCase):
         v = navigate(receive(self.v, self.p), (33, 44, 3))
         self.assertFalse(v.following)
         self.assertEqual(receive(v, replace(self.p, sequence=1)), v)
-        v = receive(follow(v), replace(self.p, sequence=1))
+        rejoined = follow(v)
+        self.assertEqual(rejoined.displayed, self.p.view)
+        self.assertEqual(rejoined.personal, (33, 44, 3))
+        self.assertEqual(receive(rejoined, self.p), rejoined)
+        v = receive(rejoined, replace(self.p, sequence=1))
         self.assertEqual(unfollow(v).displayed, (33, 44, 3))
+
+    def test_unfollow_rejoin_restores_presenter_without_a_new_packet(self):
+        latest = replace(self.p, sequence=10, view=(10, 10, 2))
+        v = receive(self.v, latest)
+        for _ in range(2):
+            personal = unfollow(v)
+            self.assertEqual(personal.displayed, personal.personal)
+            v = follow(personal)
+            self.assertTrue(v.following)
+            self.assertEqual(v.displayed, latest.view)
+            self.assertEqual(v.personal, (0, 0, 1))
+            self.assertEqual(v.sequence, 10)
+            self.assertEqual(follow(v), v)
+            # A duplicate with a different viewport still cannot overwrite it.
+            self.assertEqual(receive(v, replace(latest, view=(99, 99, 1))), v)
 
     def test_revocation_and_same_presenter_aba_counterexample(self):
         # Alice -> none -> Alice: user-ID-only acceptance wrongly accepts old seq99.
@@ -115,8 +134,14 @@ class PresentationResearch(unittest.TestCase):
                 self.assertEqual(navigate(self.v, tuple(view)), self.v)
 
     def test_same_stream_reconnect_preserves_watermark(self):
-        v = receive(self.v, replace(self.p, sequence=10, view=(10, 10, 1)))
-        rejoined = follow(snapshot(v, self.a))
+        latest = replace(self.p, sequence=10, view=(10, 10, 1))
+        v = receive(self.v, latest)
+        reconnect = snapshot(v, self.a)
+        self.assertFalse(reconnect.following)
+        self.assertEqual(reconnect.displayed, reconnect.personal)
+        rejoined = follow(reconnect)
+        self.assertEqual(rejoined.displayed, latest.view)
+        self.assertEqual(rejoined.personal, (0, 0, 1))
         self.assertEqual(rejoined.sequence, 10)
         # Previously snapshot reset sequence=-1 and accepted delayed seq1.
         old = replace(self.p, sequence=1, view=(1, 1, 1))
@@ -126,7 +151,32 @@ class PresentationResearch(unittest.TestCase):
         renewed, _ = transition(self.a, 1, control_allowed=True, presenter='alice')
         fresh = follow(snapshot(v, renewed))
         self.assertEqual(fresh.sequence, -1)
-        self.assertEqual(receive(fresh, replace(self.p, epoch=renewed.epoch)).sequence, 0)
+        self.assertEqual(fresh.displayed, fresh.personal)
+        self.assertEqual(receive(fresh, latest), fresh)
+        current = replace(self.p, epoch=renewed.epoch)
+        fresh = receive(fresh, current)
+        self.assertEqual(fresh.sequence, 0)
+        self.assertEqual(fresh.displayed, current.view)
+
+    def test_scope_change_clears_presenter_view_and_watermark(self):
+        personal = navigate(self.v, (33, 44, 3))
+        latest = replace(self.p, sequence=10, view=(10, 10, 2))
+        v = receive(follow(personal), latest)
+        for scope in [('guild-b', 'board-a'), ('guild-a', 'board-b')]:
+            with self.subTest(scope=scope):
+                authority = replace(self.a, scope=scope)
+                other = follow(snapshot(v, authority))
+                self.assertEqual(other.sequence, -1)
+                self.assertEqual(other.personal, (0, 0, 1))
+                self.assertEqual(other.displayed, other.personal)
+                self.assertEqual(receive(other, latest), other)
+                returned = follow(snapshot(other, self.a))
+                self.assertEqual(returned.sequence, -1)
+                self.assertEqual(returned.displayed, returned.personal)
+                current = replace(self.p, scope=scope)
+                other = receive(other, current)
+                self.assertEqual(other.sequence, 0)
+                self.assertEqual(other.displayed, current.view)
 
     def test_naive_follow_snapshot_overwrites_personal_counterexample(self):
         displayed = receive(self.v, self.p)

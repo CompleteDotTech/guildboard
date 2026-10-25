@@ -37,6 +37,14 @@ experiment consumes trusted policy decisions rather than choosing their contract
    explicit presenter is supplied atomically. Whether continuity is preferable,
    how grants/requests survive mode changes, and disconnect grace duration remain
    product/specification decisions; no guessed timers or grant lifecycle added.
+5. **Retain the sequence watermark without its presenter viewport:** rejected by
+   the follow/rejoin regression. After seq10, Unfollow or a same-stream reconnect
+   restores personal navigation; explicit Follow must restore the cached seq10
+   presenter viewport immediately while duplicate seq10 remains rejected. Cache
+   the last accepted presenter view with its watermark, preserve both across a
+   same-stream snapshot, and discard both on a scope or epoch change. New streams
+   show personal navigation until their first accepted packet. Personal navigation
+   remains separate throughout.
 
 These are recommendations for review, not accepted policy. Sequence-only can be
 made safe with an independently scoped stream identifier: that is equivalent to
@@ -68,7 +76,7 @@ zoom 0.1–10, safe-integer sequence 0–2^53−1. Bool-as-number, NaN, infinity
 wrong board/guild, wrong presenter, stale epoch and invalid sequence are rejected
 without state changes. Wire parsing and malicious object types are not modeled.
 
-Reproduce from repository root (Python **3.12.14**, standard library only):
+Reproduce from repository root (Python **3.12+**, standard library only):
 
 ```sh
 PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s experiments/t6-presentation -v
@@ -76,13 +84,19 @@ python3 scripts/github-bootstrap/validate.py
 git diff --check
 ```
 
-Observed: **12 tests pass**, including all 64 combinations of four mode values,
+Initial v0 evidence used Python **3.12.14** with 12 tests. Review remediation on
+2026-10-25 used Python **3.14.3** on Windows: **14 tests pass**, including all 64
+combinations of four mode values,
 trusted T2 allow/deny, session valid/invalid, scope match/mismatch and presenter
 present/absent; 24 packet permutations replayed twice; both concurrent CAS control
 orders; negative publication/control cases and the research counterexamples. Regression
 cases additionally reject huge integers without float overflow and retain the
 same-stream sequence watermark across reconnect (seq10 then delayed seq1).
-A new epoch or board resets the watermark; an unchanged epoch does not. These are
+Displayed-viewport regressions cover Unfollow/rejoin, navigation/rejoin and
+same-stream reconnect/rejoin without a newer packet, plus epoch and guild/board
+reset. The three rejoin assertions failed before the remediation and pass after
+it. A new epoch or scope resets the watermark and cached presenter viewport; an
+unchanged stream preserves both. These are
 bounded deterministic schedules, not exhaustive distributed-state verification.
 Calls serialize atomically in memory; there is no claim about transaction locks,
 multi-process behavior, fairness, persistence, liveness, or real network ordering.
@@ -104,7 +118,8 @@ multi-process behavior, fairness, persistence, liveness, or real network orderin
   the base commit above: current policy and tenant scope must govern mutations.
   That document itself labels its architecture a proposal.
 
-The only executable evaluated version is model **v0** on Python **3.12.14**.
+The only executable evaluated version is model **v0**, initially on Python
+**3.12.14** and on Python **3.14.3** for the follow/rejoin remediation.
 No primary source is being represented as proving a candidate product choice.
 
 ## Acceptance mapping and remaining evidence
@@ -112,7 +127,7 @@ No primary source is being represented as proving a candidate product choice.
 | #196 scope | Observable evidence | Still open |
 | --- | --- | --- |
 | Presenter authority / concurrent mode changes | CAS both orders; revoke/regrant ABA test; stale and forged identity tests | Reviewed T2/T4 contracts, server integration, disconnect policy |
-| Follow / personal navigation | Idempotence, unfollow restore, navigation exits follow, explicit rejoin, scoped snapshot tests | Real canvas coordinate conversion and UI behavior |
+| Follow / personal navigation | Idempotence, personal-view restore, immediate explicit rejoin from cached presenter view, replay rejection, scoped/epoch snapshot tests | Real canvas coordinate conversion and UI behavior |
 | Across Discord clients | Primary source identifies desktop/web/mobile applicability | All actual desktop/web/mobile results; iframe/proxy behavior |
 | Alternatives / versions / uncertainty | Counterexamples and source/version notes above | Functional, security and consumer review; accepted decision |
 
