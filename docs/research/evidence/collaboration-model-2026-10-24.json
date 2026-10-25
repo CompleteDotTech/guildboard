@@ -1,0 +1,19 @@
+{
+  "observed_date_utc": "2026-10-24",
+  "base_commit": "da811252acc975a0e5a1b087ab653b523443f3fa",
+  "python": "3.12.14",
+  "result": "finite-model-tests-passed",
+  "tests": 15,
+  "replay_positional_permutations": 720,
+  "replay_unique_value_sequences": 90,
+  "files_sha256": {
+    "research-fixtures/collaboration/model.py": "6f27a4fee48a9371b055c37aa39e19c60eca3e1835d5867c45e8ce835cab6a8a",
+    "research-fixtures/collaboration/test_model.py": "ff1d81f12fdaa4f89ccb871fd1460743409c3c695af39656a0435c49a9a55e24"
+  },
+  "limitations": [
+    "Sequential scalar model; atomicity assumed, not implemented by a database",
+    "No real authorization, Excalidraw, browser, network, Discord or GoDaddy tests",
+    "No production implementation or accepted specification",
+    "Snapshot and real persistence/crash behavior unimplemented"
+  ]
+}
