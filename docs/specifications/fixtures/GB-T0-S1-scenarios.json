@@ -161,7 +161,9 @@
       "owner": "T2/T4/T5",
       "given": {
         "oldLineage": "lineage-A",
-        "newLineage": "lineage-B"
+        "newLineage": "lineage-B",
+        "committedReceiptForQueuedEdit": false,
+        "currentReadAccess": true
       },
       "when": "send old-lineage queued edit after restore commits",
       "expected": {
@@ -263,6 +265,136 @@
         "returnedPriorReceipt": true,
         "additionalWrites": 0,
         "additionalRevisions": 0
+      }
+    },
+    {
+      "id": "F18",
+      "invariant": "lost-ack-receipt-after-restore",
+      "owner": "T2/T4/T5/T7/T12",
+      "given": {
+        "operation": "guild-A/board-A/lineage-A/actor-A/operation-A",
+        "digest": "digest-A",
+        "committedReceipt": "lineage-A/revision11",
+        "ackReceived": false,
+        "restoreCheckpoint": "lineage-A/revision5",
+        "activeLineage": "lineage-B",
+        "activeRevision": 0,
+        "session": "valid",
+        "currentReadAccess": true,
+        "currentWriteAccess": false
+      },
+      "when": "complete document restore from revision5 without rolling back receipt history; retry identical operation identity/digest/preconditions after restore",
+      "expected": {
+        "code": "accepted",
+        "returnedPriorReceipt": true,
+        "receiptLineage": "lineage-A",
+        "receiptRevision": 11,
+        "receiptCountForOriginalIdentity": 1,
+        "additionalWrites": 0,
+        "additionalRevisions": 0,
+        "newAcceptedEvents": 0,
+        "activeLineage": "lineage-B",
+        "activeRevision": 0,
+        "restoredContentChanged": false,
+        "historicalCommitSettled": true,
+        "currentStateReconciliationRequired": true,
+        "restoredDocumentSavedFromReceipt": false
+      }
+    },
+    {
+      "id": "F19",
+      "invariant": "never-committed-old-lineage-retry",
+      "owner": "T2/T4/T5/T7/T12",
+      "given": {
+        "operation": "guild-A/board-A/lineage-A/actor-A/operation-B",
+        "commandCommitted": false,
+        "committedReceiptExists": false,
+        "activeLineage": "lineage-B",
+        "session": "valid",
+        "currentReadAccess": true,
+        "currentWriteAccess": true
+      },
+      "when": "retry never-committed lineage-A command after an ordinary document restore with intact receipt history",
+      "expected": {
+        "code": "LINEAGE_CHANGED",
+        "additionalWrites": 0,
+        "additionalRevisions": 0,
+        "newAcceptedEvents": 0,
+        "returnedPriorReceipt": false,
+        "restoredContentChanged": false,
+        "currentStateReconciliationRequired": true,
+        "automaticNewLineageRetry": false
+      }
+    },
+    {
+      "id": "F20",
+      "invariant": "retired-receipt-read-revocation",
+      "owner": "T1/T2/T4/T5/T9/T12",
+      "given": {
+        "operation": "guild-A/board-A/lineage-A/actor-A/operation-A",
+        "committedReceipt": "digest-A/lineage-A/revision11",
+        "activeLineage": "lineage-B",
+        "session": "valid",
+        "currentReadAccess": false,
+        "boardVisible": false
+      },
+      "when": "revoke actor-A's board visibility; retry original operation with either digest-A or digest-B after restore",
+      "expected": {
+        "codeForEitherDigest": "NOT_FOUND",
+        "receiptExposed": false,
+        "digestMatchExposed": false,
+        "lineageExposed": false,
+        "additionalWrites": 0,
+        "additionalRevisions": 0,
+        "newAcceptedEvents": 0,
+        "unknownOutcomeSettledByDenial": false
+      }
+    },
+    {
+      "id": "F21",
+      "invariant": "retired-receipt-digest-conflict-precedence",
+      "owner": "T2/T4/T5/T9/T12",
+      "given": {
+        "operation": "guild-A/board-A/lineage-A/actor-A/operation-A",
+        "committedReceipt": "digest-A/lineage-A/revision11",
+        "retryDigest": "digest-B",
+        "activeLineage": "lineage-B",
+        "session": "valid",
+        "currentReadAccess": true,
+        "currentWriteAccess": false
+      },
+      "when": "reuse the identical retired-lineage operation key with changed semantic payload or preconditions after restore",
+      "expected": {
+        "code": "IDEMPOTENCY_CONFLICT",
+        "returnedPriorReceipt": false,
+        "additionalWrites": 0,
+        "additionalRevisions": 0,
+        "newAcceptedEvents": 0,
+        "restoredContentChanged": false
+      }
+    },
+    {
+      "id": "F22",
+      "invariant": "historical-receipt-cannot-replay-restored-document",
+      "owner": "T3/T4/T5/T7/T8/T12",
+      "given": {
+        "pendingOperation": "guild-A/board-A/lineage-A/actor-A/operation-A",
+        "pendingPayload": "create-element-X",
+        "returnedReceipt": "operation-A/lineage-A/revision11",
+        "validatedCurrentSnapshot": "lineage-B/revision0/without-element-X"
+      },
+      "when": "reconcile lost ACK using the historical receipt, then install the validated current-lineage snapshot and tail",
+      "expected": {
+        "historicalCommitSettled": true,
+        "originalPendingRetryCleared": true,
+        "acceptedClientLineage": "lineage-B",
+        "acceptedClientRevision": 0,
+        "elementXPresent": false,
+        "oldPayloadAppliedToNewLineage": false,
+        "automaticRelabeledCommandSent": false,
+        "additionalServerWrites": 0,
+        "additionalServerRevisions": 0,
+        "saveStatusDerivedFromCurrentAcceptedState": true
       }
     }
   ]

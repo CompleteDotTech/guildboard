@@ -140,10 +140,18 @@ budgets; missing budgets block that operation kind rather than permit infinity.
    request ID. Same identity with different digest is `IDEMPOTENCY_CONFLICT`.
 3. A prior committed receipt with the same digest returns the existing receipt
    only if the caller still has read access; it causes no new write or sequence.
-   Current loss of write permission must not repeat the mutation. If the
-   identity is no longer authorized to read, deny without exposing the receipt.
-4. For a new operation, validate the latest authoritative fence and affected
-   element versions. Proposed conservative conflict policy: reject stale
+   This applies to retained receipts from retired lineages after restore, before
+   checking whether the command lineage is active. A different digest still
+   returns `IDEMPOTENCY_CONFLICT` at step 2, even for a retired lineage. Current
+   loss of write permission must not repeat the mutation. If the identity is no
+   longer authorized to read, deny at step 1 without exposing the receipt or
+   digest-match result. A historical receipt records acceptance in its original
+   lineage; it does not assert that its content exists in the active document.
+4. Only when no committed receipt exists, reject an inactive command lineage
+   with `LINEAGE_CHANGED` before attempting a new write. For an active-lineage
+   new operation, require current write authority and validate the latest
+   authoritative fence and affected element versions. Proposed conservative
+   conflict policy: reject stale
    affected-element preconditions; edits on distinct unchanged elements may
    proceed despite a newer board revision. T3/T4 must prove the adapter's
    precondition/compound/undo mapping before adopting this policy.
@@ -173,16 +181,57 @@ metadata includes schema version, lineage, revision, content digest and scoped
 asset references. Verify complete content and digest before replacing the
 client's accepted state. Interrupted transfer never promotes a partial snapshot.
 A slow client is disconnected with recoverable guidance rather than losing
-accepted durable events. Proposed receipts are retained for the active lineage;
-compaction/expiry needs an explicit duplicate-retry policy before implementation.
+accepted durable events.
+
+Proposed receipt retention covers every committed operation in the active and
+all retired lineages of a retained board, including its original scoped identity,
+canonical digest and receipt fields. A document restore must preserve this
+commit evidence even when it restores an earlier content checkpoint; it must
+not roll receipt history back to that checkpoint. Restore publication, lineage
+fencing and preservation of these receipts must be atomic from command
+processing's perspective. Receipt storage/lookup is separate from bounded event
+replay: snapshotting or event compaction cannot remove deduplication evidence.
+This draft authorizes no receipt expiry, compaction or physical purge. A future
+T5/T9 retention policy must explicitly define retry horizons, client handling
+when commit evidence is unavailable, resource bounds and deletion obligations
+before any such behavior ships. Missing durable evidence after disaster recovery
+is not proof that a command never committed; the separate RPO/restore contract
+must address that case rather than treating it as an ordinary document restore.
 
 Restore/archive/delete increment a fencing generation and prevent stale active
 writers from committing. A restore starts a new lineage with an audited reference
-to the source checkpoint and preserves the previous recoverable lineage. Old
-lineage commands receive `LINEAGE_CHANGED`; do not silently replay them into the
-new document. Board revision within each lineage is monotonic. Physical purges
+to the source checkpoint and preserves the previous recoverable lineage. The
+§5 ordering is normative for this proposal: after current identity/read checks,
+an identical retained committed operation returns its original receipt; an
+identity/digest collision returns `IDEMPOTENCY_CONFLICT`; an old-lineage command
+without a committed receipt receives `LINEAGE_CHANGED`. None of these paths
+changes the restored document, allocates a revision or emits a new accepted
+event. Never silently replay old commands into the new document. Board revision
+within each lineage is monotonic. Physical purges
 and backup retention are a separately approved T5/T9 policy, not implied by an
 archive command. During deletion, existing sockets lose scoped access.
+
+Client reconciliation keeps original operation identity, digest and preconditions
+across unknown outcomes. A returned receipt from a retired lineage settles only
+that operation's historical commit: clear its pending retry, but do not apply its
+payload/event to the active document or mark the restored document saved from
+that receipt. Rejoin/reconnect and validate the current lineage's snapshot/tail
+before rendering its accepted state and save status. On `LINEAGE_CHANGED` for an
+uncommitted old intent, reconcile current state and offer deliberate discard or
+a separately authorized new intent with a new operation ID and current-lineage
+preconditions. Do not automatically relabel or replay the old intent. Read denial
+or a digest conflict cannot settle an unknown outcome as accepted or uncommitted;
+keep it unresolved/rejected as appropriate without exposing protected history.
+
+Compatibility handoff: the unaccepted T4 experiment in
+[PR #484](https://github.com/CompleteTech-DiscordApps/guildboard/pull/484), head
+`0bfdf0e976ffbe3de3cf22b5280b863db15e72fc`, clears receipts on its toy restore and
+rejects old lineages before lookup. That experiment does not satisfy this
+cross-restore proposal. T4/T5/T7/T8/T9/T12 must reconcile that difference and review
+precedence, retention and client recovery together before adoption. Neither the
+toy's results nor these declarative fixtures prove the proposed behavior. This
+is a proposed clarification, not a second runtime implementation or architecture
+acceptance.
 
 Upload bytes enter bounded quarantine outside the web root, are validated by
 content/decoded size, and become addressable only through an authorized opaque
@@ -258,7 +307,7 @@ adapter can exercise policy branches but cannot prove Discord membership APIs.
 | Issue #3 clause | Reviewable artifact | Required result not yet obtained |
 |---|---|---|
 | Boundaries/trust zones/ownership | §§2–3 and transport-to-transaction flow | Architecture + T1/T2/T8/T9 review |
-| Consistency and versioned schemas | §§4–6; fixtures F01–F17 | T3/T4/T5/T8 integration review and executable payload schemas |
+| Consistency and versioned schemas | §§4–6; fixtures F01–F22 | T3/T4/T5/T8 integration review and executable payload schemas |
 | Errors/security/fixtures | Error table and negative/crash fixtures | T9/T12 no-side-effect and fault-injection evidence |
 | ADR process | §8 | Maintainer/consumer review, native #2 gate and formal PR approval |
 | Measurable scope/limits | §7, bounded-ingress proposal | T0 #6/T11/T12 accepted workload and actual measurements |
@@ -287,11 +336,11 @@ p = Path('docs/specifications/fixtures/GB-T0-S1-scenarios.json')
 d = json.loads(p.read_text())
 s = d['scenarios']
 assert d['status'] == 'proposed-not-executed'
-assert [x['id'] for x in s] == [f'F{i:02}' for i in range(1, 18)]
-assert len({x['invariant'] for x in s}) == 17
+assert [x['id'] for x in s] == [f'F{i:02}' for i in range(1, 23)]
+assert len({x['invariant'] for x in s}) == 22
 assert all(set(x) == {'id', 'invariant', 'owner', 'given', 'when', 'expected'}
            and x['expected'] for x in s)
-print('17 declarative scenarios structurally valid; product behavior not executed')
+print('22 declarative scenarios structurally valid; product behavior not executed')
 PY
 git diff --check
 ```
