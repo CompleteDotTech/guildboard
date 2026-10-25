@@ -1,37 +1,230 @@
 {
-  "observed_date_utc": "2026-10-24",
+  "observed_date_utc": "2026-10-25",
   "base_commit": "da811252acc975a0e5a1b087ab653b523443f3fa",
   "source_commit": "a2ec2889babf7d2295469c6d90ebe77fae57df84",
-  "node": "24.22.1",
-  "npm": "11.9.0",
-  "chromium": "155.0.8059.79",
+  "node": "24.18.0",
+  "npm": "12.2.0",
+  "chromium": "156.0.8078.4",
   "excalidraw": {
     "version": "0.18.1",
     "integrity": "sha512-6i5Gt7IDTOH//qa0Z315Ly5iVRhjWpu2whrlQFqkuwrkKUWgRsMk0P5qdE7bpyDpai7jeLeWYkyj1eVAfni1lw==",
     "resolved": "https://registry.npmjs.org/@excalidraw/excalidraw/-/excalidraw-0.18.1.tgz"
   },
   "fixture_files_sha256": {
-    "package.json": "8644cdcb9350cf0cfdeba10162a5949b78ea203485c6bbf10fba33ddd9367f87",
-    "package-lock.json": "9391dbbc382a07f6368c6c7878e8d2e1768e786b1986f45b3a7ee490881f077f",
-    "src.jsx": "4b8b7377969cc53852e0cbf51e1483441f73ff4f6011e0850e778dc4d9a146da",
-    "probe.mjs": "6d652d5e7a8ac6a1d946342814c41a2249da8b4e693b6b0b68ff3fb0e6f9732f",
+    "dependency-security.test.mjs": "2913b7020573bd418cb2f1bac6af4fc771c424f9e079a6552c4540b3ba58fe0f",
     "index.html": "55c4a7fa16834ff7da3e4364b5ee6909d776ce4cf4d2a52788655ced2330cc00",
+    "package-lock.json": "32fb212e1a50493ad2346fb22722d9351d1d9e8ab902ce0afefbfbfa22ae5cdf",
+    "package.json": "59eeb0055faa43e2d3794796711c2d3759936973ca8bc41c8176c7f259fc3d5a",
     "preserve-ids.mjs": "3fd7f597f13ee84cc9fc25075a63232018c1984db436c59f84f034e858dea828",
-    "preserve-ids.test.mjs": "5132285e144f04a5137e5e6e9749f23964d4740d815b97ed2e3c8a83ffcb65d0"
+    "preserve-ids.test.mjs": "5132285e144f04a5137e5e6e9749f23964d4740d815b97ed2e3c8a83ffcb65d0",
+    "probe.mjs": "6d652d5e7a8ac6a1d946342814c41a2249da8b4e693b6b0b68ff3fb0e6f9732f",
+    "src.jsx": "4b8b7377969cc53852e0cbf51e1483441f73ff4f6011e0850e778dc4d9a146da"
   },
   "checks": {
     "registry_install_ignore_scripts": "passed",
+    "full_dependency_audit": "passed; zero reported vulnerabilities",
     "production_condition_bundle": "passed",
     "probe_syntax": "passed",
-    "planning_validation": "passed",
-    "browser_launch": "blocked-before-page-load",
-    "browser_assertions_executed": 0,
-    "wrapper_contract_unit_test": "1 passed; does not execute editor converter"
+    "planning_validation": "passed; 471 items",
+    "browser_launch": "passed; chromiumSandbox=true; cached executable supplied via CHROMIUM_PATH",
+    "browser_assertions_executed": 3,
+    "wrapper_contract_unit_test": "1 passed; unit does not execute editor converter",
+    "dependency_security_regressions": "5 passed; all 5 failed against the original lockfile",
+    "unit_tests_total": 6
   },
-  "launch_error": "process_singleton_posix.cc: socket() failed: Operation not permitted; crashpad directory errors",
   "limitations": [
-    "No sandbox/security changes or alternate executor retry",
-    "Behavioral probe prepared but unvalidated",
-    "No Discord/VPS, server authorization, accessibility, touch/stylus or distribution-license acceptance"
-  ]
+    "Excalidraw 0.18.1 publisher identity/integrity retained; runtime dependency overrides are separate from publisher declarations",
+    "Nano ID 4 to 5 and KaTeX 0.16 to 0.18 cross requested ranges; bounded APIs/build/browser smoke are not every Mermaid/math/editor workflow",
+    "Zero-advisory npm registry observation is dated and not exhaustive security or license clearance",
+    "Playwright 1.56.1 with supplied Chromium 156.0.8078.4 is a local observed pairing, not portable CI or Discord acceptance",
+    "Not yet tested in Discord",
+    "No server permission checks",
+    "No touch/stylus or accessibility acceptance",
+    "No concurrent remote overwrite/rollback coverage",
+    "Delete and undo smoke lack selection/history preconditions",
+    "Original blocked launch and supervisor-supplied original-tree browser/audit captures are preserved separately",
+    "No production implementation, accepted specification, deployment or issue completion"
+  ],
+  "initial_observation": {
+    "observed_date_utc": "2026-10-24",
+    "base_commit": "da811252acc975a0e5a1b087ab653b523443f3fa",
+    "source_commit": "a2ec2889babf7d2295469c6d90ebe77fae57df84",
+    "node": "24.22.1",
+    "npm": "11.9.0",
+    "chromium": "155.0.8059.79",
+    "excalidraw": {
+      "version": "0.18.1",
+      "integrity": "sha512-6i5Gt7IDTOH//qa0Z315Ly5iVRhjWpu2whrlQFqkuwrkKUWgRsMk0P5qdE7bpyDpai7jeLeWYkyj1eVAfni1lw==",
+      "resolved": "https://registry.npmjs.org/@excalidraw/excalidraw/-/excalidraw-0.18.1.tgz"
+    },
+    "fixture_files_sha256": {
+      "package.json": "8644cdcb9350cf0cfdeba10162a5949b78ea203485c6bbf10fba33ddd9367f87",
+      "package-lock.json": "9391dbbc382a07f6368c6c7878e8d2e1768e786b1986f45b3a7ee490881f077f",
+      "src.jsx": "4b8b7377969cc53852e0cbf51e1483441f73ff4f6011e0850e778dc4d9a146da",
+      "probe.mjs": "6d652d5e7a8ac6a1d946342814c41a2249da8b4e693b6b0b68ff3fb0e6f9732f",
+      "index.html": "55c4a7fa16834ff7da3e4364b5ee6909d776ce4cf4d2a52788655ced2330cc00",
+      "preserve-ids.mjs": "3fd7f597f13ee84cc9fc25075a63232018c1984db436c59f84f034e858dea828",
+      "preserve-ids.test.mjs": "5132285e144f04a5137e5e6e9749f23964d4740d815b97ed2e3c8a83ffcb65d0"
+    },
+    "checks": {
+      "registry_install_ignore_scripts": "passed",
+      "production_condition_bundle": "passed",
+      "probe_syntax": "passed",
+      "planning_validation": "passed",
+      "browser_launch": "blocked-before-page-load",
+      "browser_assertions_executed": 0,
+      "wrapper_contract_unit_test": "1 passed; does not execute editor converter"
+    },
+    "launch_error": "process_singleton_posix.cc: socket() failed: Operation not permitted; crashpad directory errors",
+    "limitations": [
+      "No sandbox/security changes or alternate executor retry",
+      "Behavioral probe prepared but unvalidated",
+      "No Discord/VPS, server authorization, accessibility, touch/stylus or distribution-license acceptance"
+    ]
+  },
+  "observed_at_utc": "2026-10-25T23:55:24.599510+00:00",
+  "remediation_base_commit": "3edbe00a2264dd7878062eaceb511c51e84c04e5",
+  "platform": "Windows",
+  "browser_probe": {
+    "result": "local-fixture-passed",
+    "browser": "156.0.8078.4",
+    "remoteCallbacks": 1,
+    "checks": [
+      "remote ID preserved",
+      "NEVER remote baseline survives local undo",
+      "view-mode pointer/unselected shortcut smoke leaves content unchanged"
+    ],
+    "blockedRequests": [],
+    "limitations": [
+      "Not yet tested in Discord",
+      "No server permission checks",
+      "No touch/stylus or accessibility acceptance",
+      "No concurrent remote overwrite/rollback coverage",
+      "Delete and undo smoke lack selection/history preconditions"
+    ]
+  },
+  "browser_executable": "Windows Playwright cache chromium-1248/chrome-win64/chrome.exe",
+  "audit": {
+    "auditReportVersion": 2,
+    "vulnerabilities": {},
+    "metadata": {
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "dependencies": {
+        "prod": 260,
+        "dev": 29,
+        "optional": 28,
+        "peer": 0,
+        "peerOptional": 0,
+        "total": 290
+      }
+    }
+  },
+  "original_lock_audit": {
+    "metadata": {
+      "vulnerabilities": {
+        "info": 0,
+        "low": 2,
+        "moderate": 7,
+        "high": 2,
+        "critical": 0,
+        "total": 11
+      },
+      "dependencies": {
+        "prod": 260,
+        "dev": 29,
+        "optional": 28,
+        "peer": 0,
+        "peerOptional": 0,
+        "total": 290
+      }
+    },
+    "provided_capture_sha256": "29137cf27109f2bae147021b243b1d33629a4b7f7f3b76d74026da6c6981a9ee"
+  },
+  "pre_remediation_browser_observation": {
+    "source_commit": "3edbe00a2264dd7878062eaceb511c51e84c04e5",
+    "provenance": "Supervisor supplied exact-source captured probe output; artifact contains no timestamp",
+    "provided_capture_sha256": "e3745ac9b0ce2893e5478542f22c9feb46737bfa213e2d8dc97a90f41e77891a",
+    "result": {
+      "result": "local-fixture-passed",
+      "browser": "156.0.8078.4",
+      "remoteCallbacks": 1,
+      "checks": [
+        "remote ID preserved",
+        "NEVER remote baseline survives local undo",
+        "view-mode pointer/unselected shortcut smoke leaves content unchanged"
+      ],
+      "blockedRequests": [],
+      "limitations": [
+        "Not yet tested in Discord",
+        "No server permission checks",
+        "No touch/stylus or accessibility acceptance",
+        "No concurrent remote overwrite/rollback coverage",
+        "Delete and undo smoke lack selection/history preconditions"
+      ]
+    }
+  },
+  "fixture_overrides": {
+    "nanoid@3.3.3": "3.3.18",
+    "nanoid@4.0.2": "5.1.16",
+    "lodash-es": "4.18.1",
+    "mermaid": {
+      "katex": "0.18.2"
+    }
+  },
+  "publisher_declarations_and_fixture_runtime": [
+    {
+      "consumer": "@excalidraw/excalidraw",
+      "dependency": "nanoid",
+      "publisher_declared": "3.3.3",
+      "fixture_resolved": "3.3.18",
+      "integrity": "sha512-DTg4MJbGMWkfi6VZFdNt2/caMbQy4Ou+Op/hJQvGEWcnVfoA1QA+xzRKAzw9jD6+GVOOeYr/mIcuDSdug6F6+w=="
+    },
+    {
+      "consumer": "@excalidraw/mermaid-to-excalidraw",
+      "dependency": "nanoid",
+      "publisher_declared": "4.0.2",
+      "fixture_resolved": "5.1.16",
+      "integrity": "sha512-kVrnsrJqMR8+oLJnGEmSWw9BivK5mt7H3FZatVRjrc5wGqFYuBxX1yG7+A7Gi5AefkX6t/oCkizcQgpu0cY1dQ=="
+    },
+    {
+      "consumer": "@chevrotain/gast",
+      "dependency": "lodash-es",
+      "publisher_declared": "4.17.21",
+      "fixture_resolved": "4.18.1",
+      "integrity": "sha512-J8xewKD/Gk22OZbhpOVSwcs60zhd95ESDwezOFuA3/099925PdHJ7OFHNTGtajL3AlZkykD32HykiMo+BIBI8A=="
+    },
+    {
+      "consumer": "mermaid",
+      "dependency": "katex",
+      "publisher_declared": "^0.16.47",
+      "fixture_resolved": "0.18.2",
+      "integrity": "sha512-3snve4y0SXTMequLim1FMiPvLGElySam0blN5xQZBqEY3lOJz1TnuaaiugnBZBqHzlSAGmFTYL7MCQkORuLKCA=="
+    }
+  ],
+  "changed_lockfile_package_entries": [
+    "node_modules/@excalidraw/mermaid-to-excalidraw/node_modules/nanoid",
+    "node_modules/katex",
+    "node_modules/lodash-es",
+    "node_modules/nanoid"
+  ],
+  "primary_security_sources": [
+    "https://github.com/ai/nanoid/security/advisories/GHSA-xwg4-73v4-xw9w",
+    "https://github.com/ai/nanoid/releases/tag/3.3.18",
+    "https://github.com/ai/nanoid/releases/tag/5.1.16",
+    "https://github.com/lodash/lodash/security/advisories/GHSA-r5fr-rjxr-66jc",
+    "https://github.com/lodash/lodash/security/advisories/GHSA-f23m-r3pf-42rh",
+    "https://github.com/lodash/lodash/security/advisories/GHSA-xxjr-mmjv-4gpg",
+    "https://github.com/KaTeX/KaTeX/security/advisories/GHSA-238p-pmpm-9mq7"
+  ],
+  "bundle_bytes": {
+    "app.js": 13697008,
+    "app.css": 163861
+  }
 }
