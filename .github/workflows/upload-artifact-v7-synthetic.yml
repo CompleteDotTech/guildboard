@@ -1,0 +1,162 @@
+# LOCAL PROPOSAL ONLY. Do not merge this temporary component test to main.
+# Intended parent: PR476 head 596603a4af809118f8de2da93013b64d69228227.
+# This tests synthetic artifact transport, NOT the roadmap/Project audit.
+name: Synthetic upload-artifact v7 component validation
+run-name: Synthetic artifact component test (not a roadmap audit)
+
+on:
+  push:
+    branches:
+      - validation/upload-artifact-v7-20261025
+    paths:
+      - .github/workflows/upload-artifact-v7-synthetic.yml
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-artifact-roundtrip:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/validation/upload-artifact-v7-20261025' && github.event.deleted == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Generate only synthetic JSON fixtures (no checkout)
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import os
+
+          assert Path.cwd().resolve() == Path(os.environ['GITHUB_WORKSPACE']).resolve()
+          root = Path('planning/audit')
+          root.mkdir(parents=True, exist_ok=False)
+          fixtures = {
+              'synthetic-planning.json': b'{"kind":"planning","schema":1,"synthetic":true,"items":[{"id":"fixture-1","state":"planned"}]}\n',
+              'synthetic-audit.json': b'{"kind":"audit","schema":1,"synthetic":true,"status":"fixture-only","checks":[{"name":"synthetic-roundtrip","ok":true}]}\n',
+              '.synthetic-negative-control.json': b'{"synthetic":true,"must_not_upload":true}\n',
+          }
+          for name, contents in fixtures.items():
+              target = root / name
+              with target.open('xb') as stream:
+                  stream.write(contents)
+          print('Created two regular synthetic JSON fixtures and one hidden negative control.')
+          PY
+
+      - name: Upload synthetic fixtures with the exact PR476 action pin and glob
+        id: upload
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: synthetic-upload-v7-${{ github.run_id }}-${{ github.run_attempt }}
+          path: planning/audit/*.json
+          if-no-files-found: error
+          retention-days: 1
+          # Deliberately omit archive and include-hidden-files to exercise
+          # the same defaults as PR476: archive=true, hidden files excluded.
+
+      - name: Require nonempty, well-formed upload outputs
+        env:
+          ARTIFACT_ID: ${{ steps.upload.outputs.artifact-id }}
+          ARTIFACT_DIGEST: ${{ steps.upload.outputs.artifact-digest }}
+          ARTIFACT_URL: ${{ steps.upload.outputs.artifact-url }}
+        run: |
+          python3 - <<'PY'
+          import os
+          import re
+
+          artifact_id = os.environ['ARTIFACT_ID']
+          digest = os.environ['ARTIFACT_DIGEST']
+          assert re.fullmatch(r'[1-9][0-9]*', artifact_id), 'Invalid/empty artifact ID'
+          assert re.fullmatch(r'[0-9a-f]{64}', digest), 'Invalid/empty SHA-256 digest'
+          expected_url = (
+              f"{os.environ['GITHUB_SERVER_URL']}/{os.environ['GITHUB_REPOSITORY']}"
+              f"/actions/runs/{os.environ['GITHUB_RUN_ID']}/artifacts/{artifact_id}"
+          )
+          assert os.environ['ARTIFACT_URL'] == expected_url, 'Unexpected/empty artifact URL'
+          print(f'Synthetic artifact ID: {artifact_id}; archive SHA-256: {digest}')
+          PY
+
+      - name: Download that immutable artifact ID from this same run
+        id: download
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          artifact-ids: ${{ steps.upload.outputs.artifact-id }}
+          path: ${{ runner.temp }}/synthetic-artifact-download
+          # Keep ZIP bytes so the next step independently compares their
+          # SHA-256 with the upload output before inspecting member contents.
+          skip-decompress: true
+          digest-mismatch: error
+
+      - name: Verify exact ZIP member set, bytes, JSON, and SHA-256 hashes
+        env:
+          ARTIFACT_ID: ${{ steps.upload.outputs.artifact-id }}
+          ARTIFACT_DIGEST: ${{ steps.upload.outputs.artifact-digest }}
+          DOWNLOAD_PATH: ${{ steps.download.outputs.download-path }}
+        run: |
+          python3 - <<'PY'
+          from hashlib import sha256
+          from pathlib import Path
+          import json
+          import os
+          import re
+          import stat
+          import zipfile
+
+          root = Path(os.environ['RUNNER_TEMP']) / 'synthetic-artifact-download'
+          assert os.environ['DOWNLOAD_PATH'], 'Empty download-path output'
+          assert root.is_dir() and not root.is_symlink(), 'Missing/unsafe download directory'
+          assert Path(os.environ['DOWNLOAD_PATH']).resolve() == root.resolve(), 'Wrong download path'
+          files = list(root.iterdir())
+          assert len(files) == 1, 'Expected exactly one raw artifact archive'
+          archive = files[0]
+          assert archive.is_file() and not archive.is_symlink(), 'Archive must be a regular file'
+          assert 0 < archive.stat().st_size < 65536, 'Unexpected archive size'
+          expected_digest = os.environ['ARTIFACT_DIGEST']
+          assert re.fullmatch(r'[0-9a-f]{64}', expected_digest), 'Invalid upload digest'
+          assert sha256(archive.read_bytes()).hexdigest() == expected_digest, 'Archive digest mismatch'
+
+          expected = {
+              'synthetic-planning.json': (
+                  b'{"kind":"planning","schema":1,"synthetic":true,"items":[{"id":"fixture-1","state":"planned"}]}\n',
+                  'd48768cfb0988b45874ec0419d4b96b7775ba6edcf2d588f1cf25168c0fc0809',
+              ),
+              'synthetic-audit.json': (
+                  b'{"kind":"audit","schema":1,"synthetic":true,"status":"fixture-only","checks":[{"name":"synthetic-roundtrip","ok":true}]}\n',
+                  '86d470a5ae2285df788b19a8441765389f181d1c3dcce2084faf40cef276de2a',
+              ),
+          }
+          with zipfile.ZipFile(archive) as bundle:
+              members = bundle.infolist()
+              names = [member.filename for member in members]
+              assert len(names) == len(expected) and set(names) == set(expected), (
+                  'Wrong ZIP member set, duplicate, or hidden-control inclusion'
+              )
+              for member in members:
+                  mode = member.external_attr >> 16
+                  assert not member.is_dir() and stat.S_IFMT(mode) in (0, stat.S_IFREG), (
+                      'Unexpected non-regular ZIP member'
+                  )
+                  expected_bytes, expected_hash = expected[member.filename]
+                  assert member.file_size == len(expected_bytes), 'Wrong member size'
+                  actual = bundle.read(member)
+                  assert actual == expected_bytes, 'Downloaded content differs from synthetic fixture'
+                  assert sha256(actual).hexdigest() == expected_hash, 'Fixture SHA-256 mismatch'
+                  assert json.loads(actual)['synthetic'] is True, 'Fixture is not marked synthetic'
+                  print(f'{member.filename}: {len(actual)} bytes; SHA-256 {expected_hash}')
+
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as summary:
+              summary.write(
+                  '## Synthetic artifact component validation passed\n\n'
+                  f"Run commit: `{os.environ['GITHUB_SHA']}`. "
+                  'Test-only commit intended atop PR476 head '
+                  '`596603a4af809118f8de2da93013b64d69228227`.\n\n'
+                  f"Artifact ID: `{os.environ['ARTIFACT_ID']}`; "
+                  f'archive SHA-256: `{expected_digest}`.\n\n'
+                  'Verified exactly two synthetic JSON members, their exact bytes and hashes, '
+                  'archive digest, and hidden-file exclusion. '
+                  'No repository checkout, roadmap audit, Project audit, or deployment was performed. '
+                  'This is not execution of the unchanged PR476-head workflow and does not satisfy '
+                  'or override review/CODEOWNER/merge gates.\n'
+              )
+          PY
