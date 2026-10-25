@@ -2,6 +2,12 @@
 
 Run from this repository using Python 3.11+ and authenticated `gh`. Never put tokens in the manifest or command output. Destination is pinned in `planning/github-state.json`; the reference Project is read-only and no script mutates it.
 
+`validate.py` and its tests are offline exceptions: they require only Python's standard library, not `gh`, authentication, network access, application architecture decisions, or a GoDaddy deployment. Run `python3 -m unittest discover -s tests/planning -v` before changing the validator. Planning CI runs this regression suite before checking the manifest.
+
+The validator always exits nonzero for invalid input and prints a JSON failure report. Missing references, malformed input, duplicate JSON keys, hierarchy/blocker cycles, and empty manifests produce diagnostics rather than uncaught graph traversal exceptions. When the report destination is writable, failure replaces any previous report atomically; a report-write failure also exits nonzero and is reported on stdout. Never interpret an old report file as evidence when the command failed to write its current result. Graph traversal is iterative, so deep invalid chains do not depend on Python's recursion limit.
+
+By default, validation reads `planning/guildboard-backlog.json` and `planning/project-schema.json`, and writes `planning/audit/local-validation.json`. Test fixtures can use `--manifest PATH --schema PATH --report PATH` without changing repository inputs. Validation does not modify the manifest, infer completion of native blockers, or reconcile live Project fields. A passing report is planning-structure evidence only, not product, Discord, concurrency, security, or VPS acceptance.
+
 ## Canonical sources
 
 `planning/workstreams.json` contains authored capability requirements. `generate.py` compiles stable work units into `planning/guildboard-backlog.json`, preserving existing remote mappings. Project fields are live execution authority; the manifest records initial planning intent. Do not regenerate during a concurrent reconciliation process.
