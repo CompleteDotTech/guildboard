@@ -1,0 +1,37 @@
+{
+  "observed_date_utc": "2026-10-24",
+  "base_commit": "da811252acc975a0e5a1b087ab653b523443f3fa",
+  "source_commit": "a2ec2889babf7d2295469c6d90ebe77fae57df84",
+  "node": "24.22.1",
+  "npm": "11.9.0",
+  "chromium": "155.0.8059.79",
+  "excalidraw": {
+    "version": "0.18.1",
+    "integrity": "sha512-6i5Gt7IDTOH//qa0Z315Ly5iVRhjWpu2whrlQFqkuwrkKUWgRsMk0P5qdE7bpyDpai7jeLeWYkyj1eVAfni1lw==",
+    "resolved": "https://registry.npmjs.org/@excalidraw/excalidraw/-/excalidraw-0.18.1.tgz"
+  },
+  "fixture_files_sha256": {
+    "package.json": "8644cdcb9350cf0cfdeba10162a5949b78ea203485c6bbf10fba33ddd9367f87",
+    "package-lock.json": "9391dbbc382a07f6368c6c7878e8d2e1768e786b1986f45b3a7ee490881f077f",
+    "src.jsx": "4b8b7377969cc53852e0cbf51e1483441f73ff4f6011e0850e778dc4d9a146da",
+    "probe.mjs": "6d652d5e7a8ac6a1d946342814c41a2249da8b4e693b6b0b68ff3fb0e6f9732f",
+    "index.html": "55c4a7fa16834ff7da3e4364b5ee6909d776ce4cf4d2a52788655ced2330cc00",
+    "preserve-ids.mjs": "3fd7f597f13ee84cc9fc25075a63232018c1984db436c59f84f034e858dea828",
+    "preserve-ids.test.mjs": "5132285e144f04a5137e5e6e9749f23964d4740d815b97ed2e3c8a83ffcb65d0"
+  },
+  "checks": {
+    "registry_install_ignore_scripts": "passed",
+    "production_condition_bundle": "passed",
+    "probe_syntax": "passed",
+    "planning_validation": "passed",
+    "browser_launch": "blocked-before-page-load",
+    "browser_assertions_executed": 0,
+    "wrapper_contract_unit_test": "1 passed; does not execute editor converter"
+  },
+  "launch_error": "process_singleton_posix.cc: socket() failed: Operation not permitted; crashpad directory errors",
+  "limitations": [
+    "No sandbox/security changes or alternate executor retry",
+    "Behavioral probe prepared but unvalidated",
+    "No Discord/VPS, server authorization, accessibility, touch/stylus or distribution-license acceptance"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "guildboard-canvas-research",
+  "private": true,
+  "type": "module",
+  "version": "0.0.0",
+  "description": "Isolated research fixture, not adopted application dependencies",
+  "dependencies": {
+    "@excalidraw/excalidraw": "0.18.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12",
+    "playwright": "1.56.1"
+  },
+  "scripts": {
+    "build": "esbuild src.jsx --bundle --format=esm --conditions=production --outfile=dist/app.js --loader:.woff2=file --loader:.woff=file --loader:.ttf=file --loader:.svg=file --loader:.png=file --define:process.env.NODE_ENV=\\\"production\\\"",
+    "probe": "npm run build && node probe.mjs",
+    "test": "node --test preserve-ids.test.mjs"
+  }
+}
