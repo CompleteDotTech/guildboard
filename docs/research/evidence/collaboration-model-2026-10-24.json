@@ -1,0 +1,52 @@
+{
+  "observed_date_utc": "2026-10-25",
+  "base_commit": "da811252acc975a0e5a1b087ab653b523443f3fa",
+  "python": "3.14.3",
+  "result": "finite-model-tests-passed",
+  "tests": 16,
+  "replay_positional_permutations": 720,
+  "replay_unique_value_sequences": 90,
+  "files_sha256": {
+    "research-fixtures/collaboration/model.py": "8a55115c5535d24fc060e79280e9a730b44025fb4dc99e5c3dcd278b5dc7d78e",
+    "research-fixtures/collaboration/test_model.py": "1e70ae44aec86ee894758e4c221f3597fe2a48bc951cc878ab27d65c816bc8b8"
+  },
+  "limitations": [
+    "Sequential scalar model; atomicity assumed, not implemented by a database",
+    "No real authorization, Excalidraw, browser, network, Discord or GoDaddy tests",
+    "No production implementation or accepted specification",
+    "Snapshot and real persistence/crash behavior unimplemented",
+    "Toy restore clears receipts; #481 retired-lineage receipt retention and replay precedence are not modeled"
+  ],
+  "initial_observation": {
+    "observed_date_utc": "2026-10-24",
+    "python": "3.12.14",
+    "tests": 15,
+    "files_sha256": {
+      "research-fixtures/collaboration/model.py": "6f27a4fee48a9371b055c37aa39e19c60eca3e1835d5867c45e8ce835cab6a8a",
+      "research-fixtures/collaboration/test_model.py": "ff1d81f12fdaa4f89ccb871fd1460743409c3c695af39656a0435c49a9a55e24"
+    }
+  },
+  "observed_at_utc": "2026-10-25T23:42:46.587552+00:00",
+  "platform": "Windows",
+  "replay_four_revision_permutations": 24,
+  "review_remediation": {
+    "base_commit": "0bfdf0e976ffbe3de3cf22b5280b863db15e72fc",
+    "finding": "https://github.com/CompleteTech-DiscordApps/guildboard/pull/484#discussion_r4372942614",
+    "gap_closing_regression": [
+      2,
+      3,
+      4,
+      1
+    ],
+    "pre_fix_failing_schedules": 6,
+    "pending_event_limit": 3,
+    "out_of_order_overflow_result": "SNAPSHOT_REQUIRED with no replica state change",
+    "compared_proposed_contract_commit": "19d5f5a35511a1edf3a8bd34773fbb4d57546b89",
+    "cross_restore_receipt_behavior": "not implemented; toy clears receipts and checks lineage before lookup",
+    "commands": [
+      "python -m unittest discover -s research-fixtures/collaboration -v",
+      "python scripts/github-bootstrap/validate.py",
+      "git diff --check"
+    ]
+  }
+}
