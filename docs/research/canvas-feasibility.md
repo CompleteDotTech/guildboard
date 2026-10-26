@@ -1,6 +1,6 @@
 # GB-T3.R1: pinned canvas research, partial evidence
 
-Issue [#98](https://github.com/CompleteTech-DiscordApps/guildboard/issues/98), initially observed 2026-10-24 UTC and refreshed 2026-10-25 UTC. **Research is incomplete and not accepted.** This record and isolated fixture do not unblock #99, adopt dependencies into the application, or establish editor/server/platform correctness.
+Issue [#98](https://github.com/CompleteTech-DiscordApps/guildboard/issues/98), initially observed 2026-10-24 UTC with refreshes on 2026-10-25 and 2026-10-26 UTC. **Research is incomplete and not accepted.** This record and isolated fixture do not unblock #99, adopt dependencies into the application, or establish editor/server/platform correctness.
 
 ## Evaluated version and method
 
@@ -50,12 +50,18 @@ npm audit --json
 npm test
 npm run build
 node --check probe.mjs
-CHROMIUM_PATH=/usr/bin/chromium npm run probe
+npm run probe
+npm run probe:network
 ```
+
+By default Playwright selects its managed browser, which must already be provisioned.
+Set `CHROMIUM_PATH` only to use an explicit executable; neither probe downloads a
+browser or disables Chromium sandboxing. The recorded Windows runs supply the
+existing cached Chromium 156.0.8078.4 executable through that variable.
 
 Build uses `--conditions=production`, required by this pinned package's conditional CSS export. The earlier build without the condition failed and was corrected; the final production-condition bundle builds. Output is an unminified research artifact (about 13.1 MiB JS and 160 KiB CSS), **not** a production payload/performance result.
 
-The probe binds only loopback, blocks external page requests, enables Chromium sandboxing, records bounded callback metadata from synthetic elements and closes the browser/server. It never uses production board data or credentials. No screenshots are collected. It is not a required CI gate; portable browser provisioning and the broader runtime matrix remain separate work.
+The probe binds only loopback, allows intercepted network requests only to its exact fixture origin, enables Chromium sandboxing, records bounded callback metadata from synthetic elements and closes the browser/server. The file server resolves both root and requested file with `realpath` and checks `path.relative` containment before serving; an in-root symlink/junction cannot disclose a file outside that root. The named recorder retains the original event fields and fixed 200-entry cap. No production board data, credentials or screenshots are collected. These are local fixture controls, not application-server or authorization acceptance. They are not required CI gates; portable browser provisioning and the broader runtime matrix remain separate work.
 
 ### Actual result
 
@@ -63,14 +69,41 @@ The initial 2026-10-24 attempt using Chromium 155.0.8059.79 failed **before load
 
 The authorized 2026-10-25 refresh on Windows used Node **24.18.0**, npm **12.2.0**, Playwright **1.56.1** and explicitly supplied cached Chromium **156.0.8078.4** through `CHROMIUM_PATH`. A clean scripts-disabled install, clean full audit, six unit tests, final bundle build, syntax check and planning validation passed. With the overrides installed, the unchanged original `probe.mjs` passed its **three bounded smoke checks**: preserved remote ID, a NEVER-captured remote baseline surviving one local undo, and unchanged content after view-mode pointer/unselected shortcut attempts. It recorded **one remote callback**, **zero blocked external requests** and no page errors. Chromium sandboxing stayed enabled. This browser/version pairing is observed local evidence, not a portable CI or Discord compatibility guarantee.
 
-The wrapper unit test still only verifies forwarding `{regenerateIds:false}` and preserving input/result references. The browser smoke now executes the editor converter, but the full scenario matrix below remains open. In particular, the Delete/undo smoke has no selected element or remaining local history and does not establish those editing controls' protection.
+The 2026-10-26 review remediation passes **14 unit tests**, a clean full audit,
+build/syntax/planning checks, **six editor smoke checks** and **four synthetic
+network controls** on the same Node/npm/Chromium versions. Actual Windows junction
+tests reproduce the former escape (HTTP 200 before the fix, 404 afterward), retain
+an in-root junction as a 200 control, and reject encoded traversal and malformed
+paths. Recorder tests preserve the event shape and prove recording stops at 200.
+
+The editor probe now prepares an undoable local edit, selects existing content
+through the editor API, and observes unchanged content after view-mode Delete,
+undo and pointer attempts. Re-enabling editing and successfully undoing the
+prepared edit is a positive control for retained history. It still records one
+remote callback, no blocked editor requests and no page errors. This is bounded
+local evidence; API-supplied selection is not a real user-selection workflow.
+
+The routing probe observes successful `data:`/`blob:` text fetches and image
+decoding, with **zero corresponding Playwright route interceptions**. The claim
+that the hostname guard aborted those resources is not reproduced in this
+scenario; no broad non-network allowlist was added. A request to another
+`127.0.0.1` port is deliberately blocked, and its server receives zero requests.
+The origin check prevents that real network boundary crossing. These controls
+do not establish universal scheme behavior across browsers or a production CSP.
+
+The historically named evidence JSON is an aggregate: its top-level fields name
+the latest run, `initial_observation` retains the dated blocked attempt, and
+`refresh_history` retains the prior successful refresh. Its top-level aggregate
+note explains this without renaming the file or dropping history. The wrapper
+unit test still only verifies the converter option and references; editor
+conversion is exercised by the browser probe. The full matrix below remains open.
 
 ## Runtime matrix still required
 
 1. Remote hydration with NEVER: preserve IDs/tombstones; observe callback counts/origin; prove repeated accepted state does not emit proposed writes.
-2. Local edit A then remote edit B then undo/redo: preserve B, express only accepted A inverse, reject stale revisions and prevent forbidden resurrection. Current probe covers only a simpler remote baseline/local-history undo scenario when executable.
+2. Local edit A then remote edit B then undo/redo: preserve B, express only accepted A inverse, reject stale revisions and prevent forbidden resurrection. Current probe passes only a simpler remote baseline/local-history undo scenario; it does not test concurrent remote overwrites or server-fenced inverse intent.
 3. Reject optimistic local change and rollback; repeat after role revocation/epoch change, reconnect and restore. No accidental re-proposal or polluted undo history.
-4. Viewer keyboard shortcuts, pointer drag, delete, paste, drop, text input, context menu and imperative hydration; navigation remains available, server denies every forged mutation. Current probe samples pointer/keyboard UX only. Its Delete/undo attempts have no selected-element/nonempty-history preconditions, so they are merely ineffective-smoke attempts, not proof of those editing controls. Add meaningful preconditions in a separate executable scenario before making that claim.
+4. Viewer keyboard shortcuts, pointer drag, delete, paste, drop, text input, context menu and imperative hydration; navigation remains available, server denies every forged mutation. The current local probe supplies selected content through the API and retained history for Delete/undo controls, with a writable undo positive control. Real user selection, paste/drop/text/context-menu paths and every server denial remain unverified.
 5. Asset add/roundtrip/export, missing files, excessive data, malformed imports, external URL requests, fonts/CSP and private-file denial.
 6. Keyboard-only/assistive technology, touch and real stylus; drag interruption, focus restoration and repeated controls.
 7. Compound groups/arrows/text/sticky-note representation; deterministic IDs/bindings, multi-element atomicity and concurrent changes.

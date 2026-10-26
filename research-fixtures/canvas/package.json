@@ -24,6 +24,7 @@
   "scripts": {
     "build": "esbuild src.jsx --bundle --format=esm --conditions=production --outfile=dist/app.js --loader:.woff2=file --loader:.woff=file --loader:.ttf=file --loader:.svg=file --loader:.png=file --define:process.env.NODE_ENV=\\\"production\\\"",
     "probe": "npm run build && node probe.mjs",
+    "probe:network": "node network-probe.mjs",
     "test": "node --test *.test.mjs"
   }
 }
