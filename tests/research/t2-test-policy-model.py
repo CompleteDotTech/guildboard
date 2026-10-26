@@ -67,7 +67,9 @@ class PolicyResearchTests(unittest.TestCase):
 
     def test_unknown_action_and_self_mapping_deny(self):
         self.deny_without_effects(Facts(action="undefined"), "unknown_action")
-        self.deny_without_effects(Facts(roles=frozenset({"admin"}), action="map_roles", self_target=True))
+        admin_mapping = Facts(roles=frozenset({"admin"}), action="map_roles")
+        self.assertEqual(candidate(admin_mapping), "control_allowed")
+        self.deny_without_effects(replace(admin_mapping, self_target=True), "control_denied")
 
     def test_local_revocation_fences_prepared_write(self):
         self.deny_without_effects(Facts(expected_generation=0, current_generation=1), "policy_stale")

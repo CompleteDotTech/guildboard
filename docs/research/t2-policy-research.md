@@ -216,6 +216,19 @@ errors. Restored the validator's unrelated CRLF-only audit rewrite; final
 whitespace validation passed. Research tests run explicitly; hosted workflows
 are unchanged. The PR records the exact published/tested SHA and hosted status.
 
+Review follow-up on 2026-10-26 UTC strengthens administrator self-mapping to
+require the explicit `control_denied` outcome, alongside a positive control for
+an administrator mapping another target. Edit counters alone cannot distinguish
+allowed and denied control decisions in this model. A temporary copy outside the
+checkout removes only the administrator self-target predicate: all 15 original
+tests remain green, but the strengthened selected test fails with
+`control_allowed != control_denied`. The unchanged candidate passes all 15 tests.
+[Separate regression evidence](t2-self-mapping-regression-2026-10-26.json) records
+the mutation, exact base, old/new test hashes and outcomes. Candidate source,
+deterministic report bytes and original source-response observations are unchanged;
+the earlier evidence is not relabeled as a new run. This validates one regression
+test's sensitivity, not production policy or complete mutation coverage.
+
 ## Real acceptance and remaining decisions
 
 Authorized config inspection still found only `.env.example` under repo/app/
