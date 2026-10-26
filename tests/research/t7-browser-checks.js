@@ -51,9 +51,48 @@ async (page) => {
   check('reduced-motion and forced-colors CSS branches available in emulation',await page.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches&&matchMedia('(forced-colors: active)').matches));
   await page.emulateMedia({reducedMotion:'no-preference',forcedColors:'none'});
   await page.setViewportSize({width:1280,height:900});
+  const selectionBaseline=await state();
+  const selectionStatus=await page.locator('#status').textContent();
+  const invalidFields={text:'Accessible next action',x:'1001',y:'160'};
+  async function selectionPhase(selected, fields, focus) {
+    const observed=await page.evaluate(()=>({
+      selected:[...document.querySelectorAll('[data-object][aria-current="true"]')].map(e=>e.dataset.object),
+      fields:{text:document.querySelector('#object-text').value,x:document.querySelector('#object-x').value,y:document.querySelector('#object-y').value},
+      focus:document.activeElement.id,
+      formValid:document.querySelector('#editor').checkValidity(),
+      alert:document.querySelector('#error').textContent,
+      status:document.querySelector('#status').textContent
+    }));
+    const snapshot=await state();
+    return {...observed,
+      selectionMatches:JSON.stringify(observed.selected)===JSON.stringify([selected]),
+      fieldsMatch:JSON.stringify(observed.fields)===JSON.stringify(fields),
+      focusMatches:observed.focus===focus,
+      acceptedUnchanged:JSON.stringify(snapshot.accepted)===JSON.stringify(selectionBaseline.accepted),
+      revisionUnchanged:snapshot.revision===selectionBaseline.revision,
+      pendingUnchanged:JSON.stringify(snapshot.pending)===JSON.stringify(selectionBaseline.pending),
+      statusUnchanged:observed.status===selectionStatus};
+  }
+  const phases={};
+  phases.initialInvalidDraft=await selectionPhase('note-b',invalidFields,'object-x');
+  await page.locator('[data-object="note-a"]').focus(); await page.keyboard.press('Enter');
+  const validObject=selectionBaseline.accepted.find(object=>object.id==='note-a');
+  phases.validSelection=await selectionPhase('note-a',
+    {text:validObject.text,x:String(validObject.x),y:String(validObject.y)},'object-text');
+  phases.validSelection.clearsUnrelatedStaleAlert=phases.validSelection.alert==='';
+  await page.locator('[data-object="note-b"]').focus(); await page.keyboard.press('Enter');
+  phases.returnedInvalidDraft=await selectionPhase('note-b',invalidFields,'object-text');
   await page.locator('#object-x').fill('123');
+  phases.correctedDraft=await selectionPhase('note-b',{...invalidFields,x:'123'},'object-x');
+  phases.correctedDraft.clearsAlert=phases.correctedDraft.alert==='';
+  phases.correctedDraft.notQueuedOrAccepted=phases.correctedDraft.status.includes('not queued or accepted');
   check('correcting input clears stale error without claiming acceptance',
-    (await page.locator('#error').textContent())===''&&(await page.locator('#status').textContent()).includes('not queued or accepted'));
+    Object.values(phases).every(phase=>phase.selectionMatches&&phase.fieldsMatch&&phase.focusMatches&&
+      phase.acceptedUnchanged&&phase.revisionUnchanged&&phase.pendingUnchanged&&phase.statusUnchanged)&&
+    !phases.initialInvalidDraft.formValid&&phases.initialInvalidDraft.alert.includes('0 to 1000')&&
+    phases.validSelection.formValid&&phases.validSelection.clearsUnrelatedStaleAlert&&
+    !phases.returnedInvalidDraft.formValid&&phases.correctedDraft.formValid&&
+    phases.correctedDraft.clearsAlert&&phases.correctedDraft.notQueuedOrAccepted,phases);
   await page.screenshot({path:'/tmp/guildboard-t7-fixture.png',fullPage:true});
   return {result:'pass',evidence_kind:'local-headless-browser-fixture-only',browser:page.context().browser().version(),
     checks,viewports,limitations:['No real Discord iframe/client','No screen reader or human review','No Excalidraw integration','Local state simulations, no server authorization/durability','Viewport/input emulation is not hardware acceptance']};
