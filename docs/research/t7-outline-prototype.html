@@ -114,6 +114,7 @@
     $('editor-heading').textContent=`Edit ${current().name}`;
     $('object-text').value=object.text; $('object-x').value=object.x; $('object-y').value=object.y;
     sync();
+    $('error').textContent=$('editor').checkValidity()&&$('object-text').value.trim()?'':'Enter nonblank text and whole-number positions from 0 to 1000.';
   }
   function sync() {
     for (const id of ['object-text','object-x','object-y']) $(id).readOnly=!canEdit()||pending?.id===selected;
