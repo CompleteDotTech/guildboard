@@ -108,15 +108,19 @@ appoint reviewers, authorize agent delegation, or change issue readiness.
   clients, real GoDaddy verification and post-merge acceptance. Research, a green
   planning check, a review request or merged documentation proves none of the
   untested runtime claims. Mark unavailable checks as pending or blocked.
-- Before merge, obtain actual Copilot review and a fresh independent
-  `gpt-6.1-sol` review at **MAX reasoning** against the actual current PR head SHA,
-  covering the delta and relevant integration. Record reviewer identity/tool,
-  configuration, reviewed SHA, findings and disposition with links. A request,
-  assignment, author self-review, stale review or fabricated clean report is not
-  completed review. These requirements do not provision paid agents or authorize
-  delegation; if a reviewer is unavailable, keep the gate pending and report it.
-- Resolve actionable findings, then obtain both reviews again on the new head
-  after any change. Read back the live PR head, review evidence and current checks
+- Before merge, obtain an actual GitHub Copilot code review against the current
+  full PR head SHA, covering the delta and relevant integration. Use the supported
+  Copilot code-review request; a coding-agent assignment is not a code review.
+  Record the actual reviewer, reviewed SHA, reported review effort, findings and
+  disposition with links. Do not relabel a limited or Lite review as Balanced or
+  claim checks Copilot did not perform. A request, quota failure, author self-review,
+  stale review or fabricated clean report is not completed review. No independent
+  model review is required. This policy does not authorize purchases or delegation;
+  if Copilot cannot complete the review, keep the gate pending and report why.
+- Evaluate all inline and summary findings, remediate valid actionable findings,
+  and record evidence for fixes or non-applicable findings. Obtain Copilot review
+  again on the new head after any change. Read back the live PR head, actual
+  current-head review evidence and current checks
   before merge. Required functional/security expertise, CODEOWNER approvals,
   native prerequisite gates and passing required CI remain separate requirements.
   Never bypass branch protection, use an administrator override, weaken tests or

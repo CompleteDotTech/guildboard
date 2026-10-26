@@ -48,11 +48,15 @@ Planning changes run `python3 scripts/github-bootstrap/validate.py`.
 Record commands, environment, exact SHA, results and limits. Local/model/mock
 checks do not prove real Discord, GoDaddy, recovery or production acceptance.
 
-Before merge require actual Copilot review AND fresh independent `gpt-6.1-sol`
-**MAX reasoning** review of the current full PR head SHA and relevant integration;
-record linked evidence and resolve findings. Re-review both after any head change.
-A request, self-review or stale result is insufficient. Preserve required CI,
-CODEOWNER/security review and native gates; never bypass protections or weaken
-tests. Unavailable review stays pending. This file grants no delegation authority.
+Before merge require actual GitHub Copilot code review of the current full PR
+head SHA and relevant integration; use its supported code-review request, not a
+coding-agent assignment. Record linked evidence, the actual reported review
+effort, all inline and summary findings and their disposition. Remediate valid
+actionable findings and re-request Copilot review after any head change. Do not
+relabel Lite or limited reviews, invent unperformed checks, or treat a request,
+quota failure, self-review or stale result as completed review. No independent
+model review is required. Preserve required CI, CODEOWNER/security review and
+native gates; never bypass protections or weaken tests. Unavailable Copilot review
+stays pending with its reason. This file authorizes no purchases or delegation.
 Reference issues without closing directives until their full Definition of Done;
 never claim deployment or completed capabilities from scaffolds or documents.
