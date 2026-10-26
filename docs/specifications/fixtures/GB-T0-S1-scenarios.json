@@ -2,7 +2,7 @@
   "contract": "GB-T0.S1",
   "version": "0.1",
   "status": "proposed-not-executed",
-  "note": "Symbolic IDs describe fixtures, not wire-valid IDs. Outcomes are proposed assertions, not observed results. Each real test must create valid concrete IDs, exact payloads, clock and deterministic scheduling under accepted child schemas.",
+  "note": "Symbolic IDs and illustrative numeric policy/revision counters describe scenarios, not wire-valid messages. Executable fixture builders must supply valid concrete IDs and encode wire counter fields (such as baseRevision, expectedPolicyGeneration and receipt/event revision) as canonical decimal strings within the unsigned 64-bit range under contract section 4 and accepted child codecs/schemas. Numeric assertion metrics such as operation counts and byte lengths are not revision/policy wire counters and remain numeric as appropriate to their accepted schemas. Outcomes are proposed assertions, not observed results. Each real test must create exact payloads, clock and deterministic scheduling under accepted child schemas.",
   "scenarios": [
     {
       "id": "F01",
