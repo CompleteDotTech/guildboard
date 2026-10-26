@@ -12,7 +12,8 @@ STATES = {'documented', 'partial', 'blocked'}
 def audit(root, manifest):
     root = Path(root).resolve()
     errors = []
-    if not isinstance(manifest, dict) or manifest.get('schema_version') != 1:
+    if (not isinstance(manifest, dict) or type(manifest.get('schema_version')) is not int
+            or manifest['schema_version'] != 1):
         return ['unsupported manifest schema'], {}
     journeys = manifest.get('journeys')
     if not isinstance(journeys, list):
@@ -53,7 +54,10 @@ def audit(root, manifest):
                     errors.append('invalid evidence record')
                     continue
                 relative = Path(item['path'])
-                resolved = (root / relative).resolve()
+                try:
+                    resolved = (root / relative).resolve()
+                except RuntimeError as exc:
+                    raise ValueError(f'evidence path cannot be resolved: {relative}') from exc
                 if relative.is_absolute() or '..' in relative.parts or not resolved.is_relative_to(root):
                     errors.append('evidence path escapes repository')
                     continue
