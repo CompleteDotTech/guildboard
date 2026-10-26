@@ -104,5 +104,5 @@ if __name__ == "__main__":
         raise SystemExit("Owned Docker probe failed: " + error.stderr)
     output = json.dumps(report, indent=2) + "\n"
     if args.output:
-        args.output.write_text(output, encoding="utf-8")
+        args.output.write_text(output, encoding="utf-8", newline="\n")
     print(output, end="")
