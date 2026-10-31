@@ -47,6 +47,11 @@ def run(control=None):
             config = config.replace("proxy_set_header Upgrade $http_upgrade;", "proxy_set_header Upgrade '';" )
         elif control == "publish-private-assets":
             config = config.replace("location /private-assets/ { return 404; }", "location /private-assets/ { return 200 'exposed'; }")
+        elif control == "long-read-timeout":
+            setting = "proxy_read_timeout 2s;"
+            if config.count(setting) != 1:
+                raise ValueError("long-read-timeout control requires exactly one " + setting)
+            config = config.replace(setting, "proxy_read_timeout 60s;")
         elif control is not None:
             raise ValueError("unknown negative control")
         docker("exec", "-i", proxy, "sh", "-c", "cat > /tmp/nginx.conf", input_text=config)
@@ -69,7 +74,8 @@ def run(control=None):
         try:
             report["result"] = json.loads(docker("exec", backend, "python", "/tmp/probe.py", "probe").stdout)
         except subprocess.CalledProcessError as error:
-            expected = {"strip-upgrade": "HTTP/1.1 426", "publish-private-assets": "private-assets-not-public"}
+            expected = {"strip-upgrade": "HTTP/1.1 426", "publish-private-assets": "private-assets-not-public",
+                        "long-read-timeout": "idle-close-within-bounded-window: client deadline expired before proxy EOF"}
             if control not in expected or expected[control] not in error.stderr:
                 raise
             report["negative_control"] = {"variant": control, "detected": True, "failure": error.stderr.strip()}
@@ -96,7 +102,7 @@ def run(control=None):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path)
-    parser.add_argument("--negative-control", choices=["strip-upgrade", "publish-private-assets"])
+    parser.add_argument("--negative-control", choices=["strip-upgrade", "publish-private-assets", "long-read-timeout"])
     args = parser.parse_args()
     try:
         report = run(args.negative_control)

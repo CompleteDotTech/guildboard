@@ -9,6 +9,10 @@ import sys
 import threading
 import time
 
+# Keep the upstream silent and open beyond the client acceptance deadline.
+IDLE_CLOSE_DEADLINE = 4.5
+IDLE_BACKEND_HOLD_SECONDS = 10
+
 
 class Handler(http.server.BaseHTTPRequestHandler):
     protocol_version = "HTTP/1.1"
@@ -35,7 +39,7 @@ class Handler(http.server.BaseHTTPRequestHandler):
             self.send_header("Sec-WebSocket-Accept", accept)
             self.end_headers()
             if self.path == "/idle":
-                time.sleep(3)
+                self.server.idle_stop.wait(IDLE_BACKEND_HOLD_SECONDS)
             else:
                 self.wfile.write(b"\x81\x05hello")
                 self.wfile.flush()
@@ -60,27 +64,36 @@ def request(path, method="GET", body=None, headers=None):
         client.close()
 
 
-def websocket(path):
-    client = socket.create_connection(("127.0.0.1", 8080), timeout=5)
-    client.settimeout(5)
-    client.sendall((f"GET {path} HTTP/1.1\r\nHost: research.invalid\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Version: 13\r\nSec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ==\r\n\r\n").encode())
-    stream = client.makefile("rb")
-    status = stream.readline()
-    headers = {}
-    while True:
-        line = stream.readline()
-        if line == b"\r\n":
-            break
-        if not line:
-            raise AssertionError("truncated handshake")
-        name, value = line.decode().split(":", 1)
-        headers[name.lower()] = value.strip()
-    assert b"101" in status, status
-    assert headers["sec-websocket-accept"] == "s3pPLMBiTxaQ9kYGzzhZRbK+xOo=", headers
-    payload = stream.read(7)
-    stream.close()
-    client.close()
-    return payload
+def websocket(path, timeout=5):
+    with socket.create_connection(("127.0.0.1", 8080), timeout=timeout) as client:
+        client.settimeout(timeout)
+        client.sendall((f"GET {path} HTTP/1.1\r\nHost: research.invalid\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Version: 13\r\nSec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ==\r\n\r\n").encode())
+        with client.makefile("rb") as stream:
+            status = stream.readline()
+            headers = {}
+            while True:
+                line = stream.readline()
+                if line == b"\r\n":
+                    break
+                if not line:
+                    raise AssertionError("truncated handshake")
+                name, value = line.decode().split(":", 1)
+                headers[name.lower()] = value.strip()
+            assert b"101" in status, status
+            assert headers["sec-websocket-accept"] == "s3pPLMBiTxaQ9kYGzzhZRbK+xOo=", headers
+            return stream.read(7)
+
+
+def idle_close():
+    started = time.monotonic()
+    try:
+        payload = websocket("/idle", timeout=IDLE_CLOSE_DEADLINE)
+    except TimeoutError as error:
+        raise AssertionError("idle-close-within-bounded-window: client deadline expired before proxy EOF") from error
+    elapsed = time.monotonic() - started
+    assert payload == b"", "idle-upstream-closed"
+    assert 1.5 <= elapsed < IDLE_CLOSE_DEADLINE, "idle-close-within-bounded-window"
+    return elapsed
 
 
 def probe():
@@ -99,10 +112,9 @@ def probe():
     check("oversized-body-rejected", request("/health", "POST", b"x" * 2048)[0] == 413)
     check("missing-websocket-upgrade-rejected", request("/ws")[0] == 426)
     check("actual-101-and-frame", websocket("/ws") == b"\x81\x05hello")
-    started = time.monotonic()
-    check("idle-upstream-closed", websocket("/idle") == b"")
-    elapsed = time.monotonic() - started
-    check("idle-close-within-bounded-window", 1.5 <= elapsed < 4.5)
+    elapsed = idle_close()
+    check("idle-upstream-closed", True)
+    check("idle-close-within-bounded-window", True)
     check("fixture-shutdown-ack", request("/shutdown")[0] == 200)
     time.sleep(0.6)
     check("upstream-unavailable-fails", request("/health")[0] == 502)
@@ -112,8 +124,12 @@ def probe():
 if __name__ == "__main__":
     if sys.argv[1] == "serve":
         server = http.server.ThreadingHTTPServer(("0.0.0.0", 8000), Handler)
-        server.serve_forever()
-        server.server_close()
+        server.idle_stop = threading.Event()
+        try:
+            server.serve_forever()
+        finally:
+            server.idle_stop.set()
+            server.server_close()
         # Keep the owned container available for the client after backend failure.
         threading.Event().wait()
     elif sys.argv[1] == "probe":
