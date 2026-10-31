@@ -1,0 +1,88 @@
+{
+  "observed_at": "2026-10-26T00:58:50.822398+00:00",
+  "host": "Windows-11-10.0.26200-SP0",
+  "host_python": "3.14.3",
+  "images": {
+    "nginx": "sha256:62ff2089abf5a9ed33bd232895bef5e22f7bb4b200675cec49a5ebc48e3d4ac8",
+    "python": "sha256:6a0e06f5ba0b373d051aabd3fffb9b873f27f9a2a3a14bcbe37dee6f0e3bbc70"
+  },
+  "resource_scope": {
+    "network": "network=none backend; nginx shares its owned network namespace",
+    "published_ports": [],
+    "mounts": [],
+    "per_container": "0.5 CPU / 128MiB / 64 PIDs / nonroot / read-only / cap-drop ALL"
+  },
+  "nginx_config_check": "nginx: the configuration file /tmp/nginx.conf syntax is ok\nnginx: configuration file /tmp/nginx.conf test is successful",
+  "nginx_version": "nginx version: nginx/1.31.6",
+  "container_python": "Python 3.12.15",
+  "result": {
+    "checks": [
+      {
+        "name": "path-query-preserved",
+        "passed": true
+      },
+      {
+        "name": "upstream-host-fixed",
+        "passed": true
+      },
+      {
+        "name": "forwarded-ip-overwritten",
+        "passed": true
+      },
+      {
+        "name": "forwarded-proto-overwritten",
+        "passed": true
+      },
+      {
+        "name": "private-assets-not-public",
+        "passed": true
+      },
+      {
+        "name": "oversized-body-rejected",
+        "passed": true
+      },
+      {
+        "name": "missing-websocket-upgrade-rejected",
+        "passed": true
+      },
+      {
+        "name": "actual-101-and-frame",
+        "passed": true
+      },
+      {
+        "name": "idle-upstream-closed",
+        "passed": true
+      },
+      {
+        "name": "idle-close-within-bounded-window",
+        "passed": true
+      },
+      {
+        "name": "fixture-shutdown-ack",
+        "passed": true
+      },
+      {
+        "name": "upstream-unavailable-fails",
+        "passed": true
+      }
+    ],
+    "idle_close_seconds": 2.0036,
+    "scope": "local HTTP/WS real nginx + synthetic stdlib backend; no TLS/Discord/VPS proof"
+  },
+  "fixture_hashes": {
+    "docs/research/t10-nginx-probe.conf": "b13ecb4a371891e723b4524c30d4ebdbccf5113ec0c37694e1b4fce8c768ed77",
+    "scripts/research/t10-proxy-fixture.py": "8d9d64ef0f616d6848554e18446b9ccdb064d7115aaa1629f28d778c447f49d8"
+  },
+  "cleanup": [
+    {
+      "kind": "container",
+      "name": "gb-t10-f31e3d50a085-proxy",
+      "absence_verified": true
+    },
+    {
+      "kind": "container",
+      "name": "gb-t10-f31e3d50a085-backend",
+      "absence_verified": true
+    }
+  ]
+}
